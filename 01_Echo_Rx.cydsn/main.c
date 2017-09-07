@@ -1,19 +1,16 @@
 /*
- * 01_Echo_Tx
+ * 01_Echo_Rx
  * 
- * This project is the receiver side of the Echo project,
- * The nrf24 radio is configurd to transmit 1 byte and receive the same byte via
- * ACK with payload from the receiver radio.
- * The data sent is the char received with the UART component, when the receiver
- * radio send the char back, the transmitter radio will print it on the UART.
+ * The nrf24 radio is configured to send back ACK + 1 byte payload.
+ * The payload byte is the received char turned into uppercase.
  */
 #include "project.h"
 #include <stdbool.h>
+#include <ctype.h>
 
 volatile bool irq_flag = false;
 
-// This handler is executed when we get an interrupt from
-// the IRQ pin of the radio
+// Executed when the IRQ pin triggers an interrupt
 CY_ISR(IRQ_Handler)
 {
     irq_flag = true;
@@ -40,13 +37,20 @@ int main(void)
             NrfIRQ flag = nRF24_getIRQFlag();
             nRF24_clearIRQFlag(flag);
             
+            // here we will store the received data
             unsigned char data;
             
+            // How many bytes are in the pipe0 (data received)?
+            uint8_t payload_size = nRF24_getPayloadSize(NRF_DATA_PIPE0);
+            
             // get the data from the transmitter
-            nRF24_getRxPayload(&data, 1);
+            nRF24_getRxPayload(&data, payload_size);
+            
+            // turn received data into uppercase
+            data = toupper(data);
 
-            // Send the data + ACK
-            nRF24_rxWritePayload(0, &data, 1);
+            // Send the ACK + data via pipe0
+            nRF24_rxWritePayload(NRF_DATA_PIPE0, &data, 1);
             
             irq_flag = false;
         }
