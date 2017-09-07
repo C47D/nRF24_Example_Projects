@@ -16,6 +16,7 @@
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="IRQ" />
       <Data key="068bbdfe-7810-44e8-b50c-8626e0a0245f" value="CE" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="Rx" />
+      <Data key="61204427-8c23-47e4-a83c-4b6119d67621" value="LED" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="SS" />
       <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="Tx" />
     </Group>
@@ -1254,17 +1255,22 @@
     </Group>
     <Group key="1425177d-0d0e-4468-8bcc-e638e5509a9b">
       <Group key="0">
-        <Data key="Port Format" value="3,6" />
+        <Data key="Port Format" value="3,0" />
+      </Group>
+    </Group>
+    <Group key="61204427-8c23-47e4-a83c-4b6119d67621">
+      <Group key="0">
+        <Data key="Port Format" value="0,2" />
       </Group>
     </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
-        <Data key="Port Format" value="0,3" />
+        <Data key="Port Format" value="1,1" />
       </Group>
     </Group>
     <Group key="ed092b9b-d398-4703-be89-cebf998501f6">
       <Group key="0">
-        <Data key="Port Format" value="3,7" />
+        <Data key="Port Format" value="3,1" />
       </Group>
     </Group>
     <Group key="UnAssigned Pins" />

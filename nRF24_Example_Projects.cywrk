@@ -3,12 +3,14 @@
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
 <CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="nRF24_Example_Projects" persistent="nRF24_Example_Projects.cywrk" platform="NOT_USED">
-<current_project name=".\01_Echo_Rx.cydsn\01_Echo_Rx.cyprj" />
+<current_project name=".\01_Echo_Tx.cydsn\01_Echo_Tx.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
 <v>.\01_Echo_Rx.cydsn\01_Echo_Rx.cyprj</v>
 <v>.\01_Echo_Tx.cydsn\01_Echo_Tx.cyprj</v>
+<v>.\00_Basic_Tx.cydsn\00_Basic_Tx.cyprj</v>
+<v>.\00_Basic_Rx.cydsn\00_Basic_Rx.cyprj</v>
 </projects>
 <workspace_id v="f968dd57-2101-4315-84bf-3811ec50e4c7" />
 <WriteAppVersionLastSavedWith v="4.1.0.3210" />

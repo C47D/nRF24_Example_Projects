@@ -1,11 +1,10 @@
 /*
  * 01_Echo_Tx
  * 
- * This project is the transmitter side of the Echo project,
- * The nrf24 radio is configurd to transmit 1 byte and receive the same byte via
- * ACK with payload from the receiver radio.
- * The data sent is the char received with the UART component, when the receiver
- * radio send the char back, the transmitter radio will print it on the UART.
+ * The nrf24 radio is configured to transmit 1 byte and receive the same byte via
+ * ACK + payload from the Rx radio.
+ * The data sent is the char received with the UART Rx, when the receiver
+ * radio send reply with payload, the transmitter radio will print it on the UART.
  */
 #include "project.h"
 #include <stdbool.h>
@@ -15,7 +14,7 @@ volatile bool uart_flag = false;
 
 volatile unsigned char data;
 
-// This handler is executed when we get a byte via UART
+// We got a byte via UART
 CY_ISR(UART_Handler)
 {
     uart_flag = true;
@@ -23,10 +22,10 @@ CY_ISR(UART_Handler)
     isr_UART_ClearPending();
 }
 
-// This handler is executed when we get an interrupt from
-// the IRQ pin of the radio
+// the IRQ pin triggered an interrupt
 CY_ISR(IRQ_Handler)
 {
+    LED_Write(~LED_Read());
     irq_flag = true;
     IRQ_ClearInterrupt();
 }
@@ -37,8 +36,13 @@ int main(void)
     
     const uint8_t TX_ADDR[5]= {0xBA, 0xAD, 0xC0, 0xFF, 0xEE};
     
-    // Set the Handler for the IRQ interrupt
+    // Set the interrupts handlers
     isr_IRQ_StartEx(IRQ_Handler);
+    isr_UART_StartEx(UART_Handler);
+    
+    UART_Start();
+    UART_PutChar(0x0C);
+    UART_PutString("Echo test project\r\n");
     
     nRF24_start();
     nRF24_setTxAddress(TX_ADDR, 5);
@@ -47,23 +51,37 @@ int main(void)
         
         if (true == irq_flag) {
             
+            unsigned char received;
+            
             // Get and clear the flag that caused the IRQ interrupt
             NrfIRQ flag = nRF24_getIRQFlag();
             nRF24_clearIRQFlag(flag);
             
-            // Get the data sent from the receiver
-            unsigned char received;
-            nRF24_getRxPayload(&received, 1);
-            
-            // print the received char
-            UART_PutChar(received);
+            // check what caused the interrupt
+            switch(flag) {
+            case NRF_RX_DR_IRQ: // interrupt caused by receiving data
+                UART_PutString("\r\nData received\r\n");
+                // Get the data sent from the Rx
+                nRF24_getRxPayload(&received, 1);
+                // print the received char
+                UART_PutChar(received);
+                break;
+            case NRF_TX_DS_IRQ: //  interrupt caused by sending data
+                UART_PutString("\r\nData transmitted\r\n");
+                break;
+            case NRF_MAX_RT_IRQ:
+                UART_PutString("\r\nCan't send data\r\n");
+                break;
+            default:
+                break;
+            }
             
             irq_flag = false;
         }
         
         if (true == uart_flag) {
             
-            // Transmit the data from UART RX to nrf24 receiver
+            // Transmit the data from UART RX to nrf24 Rx
             nRF24_PTX_Transmit(&data, 1);
             
             uart_flag = false;
