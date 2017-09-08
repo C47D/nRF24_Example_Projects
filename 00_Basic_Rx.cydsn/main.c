@@ -1,19 +1,20 @@
 /*
  * 00_Basic_Rx
  * 
- * The nrf24 radio is configured to be Rx, it will print the received data
- * via UART.
+ * The nrf24 is configured as Rx, it will print the received data via UART.
  */
+
 #include "project.h"
 #include <stdbool.h>
-#include <ctype.h>
 
 volatile bool irq_flag = false;
+
+// here we will store the received data
+char data;
 
 // Executed when the IRQ pin triggers an interrupt
 CY_ISR(IRQ_Handler)
 {
-    LED_Write(~LED_Read());
     irq_flag = true;
     IRQ_ClearInterrupt();
 }
@@ -27,9 +28,16 @@ int main(void)
     // Set the Handler for the IRQ interrupt
     isr_IRQ_StartEx(IRQ_Handler);
     
+    UART_Start();
+    UART_PutChar(0x0c);
+    UART_PutString("Basic project, Rx\r\n");
+    
     nRF24_start();
     nRF24_setRxPipe0Address(RX_ADDR, 5);
+    nRF24_startListening();
 
+    LED_Write(~LED_Read());
+    
     while (1) {
         
         if (true == irq_flag) {
@@ -40,8 +48,7 @@ int main(void)
             NrfIRQ flag = nRF24_getIRQFlag();
             nRF24_clearIRQFlag(flag);
             
-            // here we will store the received data
-            unsigned char data;
+            LED_Write(~LED_Read());
             
             // How many bytes are in the pipe0 (data received)?
             uint8_t payload_size = nRF24_getPayloadSize(NRF_DATA_PIPE0);

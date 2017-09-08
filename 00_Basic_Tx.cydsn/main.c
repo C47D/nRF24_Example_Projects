@@ -12,7 +12,7 @@
 volatile bool irq_flag = false;
 volatile bool uart_flag = false;
 
-volatile unsigned char data;
+volatile char data;
 
 // We got a byte via UART
 CY_ISR(UART_Handler)
@@ -25,7 +25,6 @@ CY_ISR(UART_Handler)
 // the IRQ pin triggered an interrupt
 CY_ISR(IRQ_Handler)
 {
-    LED_Write(~LED_Read());
     irq_flag = true;
     IRQ_ClearInterrupt();
 }
@@ -42,7 +41,7 @@ int main(void)
     
     UART_Start();
     UART_PutChar(0x0C);
-    UART_PutString("Echo test project\r\n");
+    UART_PutString("Basic project: Tx\r\n");
     
     nRF24_start();
     nRF24_setTxAddress(TX_ADDR, 5);
@@ -57,12 +56,31 @@ int main(void)
             NrfIRQ flag = nRF24_getIRQFlag();
             nRF24_clearIRQFlag(flag);
             
-            // Get the data sent from the Rx
-            unsigned char received;
-            nRF24_getRxPayload(&received, 1);
+            LED_Write(~LED_Read());
             
-            // print the received char
-            UART_PutChar(received);
+            UART_PutChar(0x0C);
+            switch (flag) {
+            case NRF_TX_DS_IRQ:
+                UART_PutString("Data sent!");
+                break;
+            case NRF_RX_DR_IRQ:
+                UART_PutString("Data received!");
+                break;
+            case NRF_MAX_RT_IRQ:
+                UART_PutString("Timeout!");
+                break;
+            default:
+                break;
+            }
+            UART_PutString("\r\n");
+            
+            UART_PutString("Status: ");
+            uint8_t sts = nRF24_NOPCmd();
+            UART_PutChar(sts);
+            
+            if (flag == NRF_TX_DS_IRQ) {
+
+            } else if (flag)
             
             irq_flag = false;
         }
