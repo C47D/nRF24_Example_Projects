@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
   28:Generated_Source\PSoC4/SPI_SPI.c ****     const SPI_SPI_INIT_STRUCT SPI_configSpi =
   29:Generated_Source\PSoC4/SPI_SPI.c ****     {
   30:Generated_Source\PSoC4/SPI_SPI.c ****         SPI_SPI_MODE,
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 2
 
 
   31:Generated_Source\PSoC4/SPI_SPI.c ****         SPI_SPI_SUB_MODE,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
   85:Generated_Source\PSoC4/SPI_SPI.c ****             SPI_SetPins(SPI_SCB_MODE_SPI, config->mode, SPI_DUMMY_PARAM);
   86:Generated_Source\PSoC4/SPI_SPI.c **** 
   87:Generated_Source\PSoC4/SPI_SPI.c ****             /* Store internal configuration */
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 3
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 3
 
 
   88:Generated_Source\PSoC4/SPI_SPI.c ****             SPI_scbMode       = (uint8) SPI_SCB_MODE_SPI;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  142:Generated_Source\PSoC4/SPI_SPI.c ****             SPI_INTR_MASTER_MASK_REG = SPI_GET_SPI_INTR_MASTER_MASK(config->txInterruptMask);
  143:Generated_Source\PSoC4/SPI_SPI.c ****             SPI_INTR_RX_MASK_REG     = SPI_GET_SPI_INTR_RX_MASK(config->rxInterruptMask);
  144:Generated_Source\PSoC4/SPI_SPI.c ****             SPI_INTR_TX_MASK_REG     = SPI_GET_SPI_INTR_TX_MASK(config->txInterruptMask);
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 4
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 4
 
 
  145:Generated_Source\PSoC4/SPI_SPI.c ****             
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  199:Generated_Source\PSoC4/SPI_SPI.c ****         SPI_INTR_TX_MASK_REG     = SPI_SPI_DEFAULT_INTR_TX_MASK;
  200:Generated_Source\PSoC4/SPI_SPI.c **** 
  201:Generated_Source\PSoC4/SPI_SPI.c ****         /* Configure TX interrupt sources to restore. */
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 5
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 5
 
 
  202:Generated_Source\PSoC4/SPI_SPI.c ****         SPI_IntrTxMask = LO16(SPI_INTR_TX_MASK_REG);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  251:Generated_Source\PSoC4/SPI_SPI.c ****         SPI_SET_HSIOM_SEL(SPI_SS1_HSIOM_REG, SPI_SS1_HSIOM_MASK,
  252:Generated_Source\PSoC4/SPI_SPI.c ****                                        SPI_SS1_HSIOM_POS, SPI_SS1_HSIOM_SEL_SPI);
  253:Generated_Source\PSoC4/SPI_SPI.c ****     #endif /* (SPI_SS1_PIN) */
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 6
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 6
 
 
  254:Generated_Source\PSoC4/SPI_SPI.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  301:Generated_Source\PSoC4/SPI_SPI.c **** 
  302:Generated_Source\PSoC4/SPI_SPI.c ****     /* Restore TX interrupt sources. */
  303:Generated_Source\PSoC4/SPI_SPI.c ****     SPI_SetTxInterruptMode(SPI_IntrTxMask);
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 7
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 7
 
 
   40              		.loc 1 303 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  325:Generated_Source\PSoC4/SPI_SPI.c **** 
  326:Generated_Source\PSoC4/SPI_SPI.c ****         /* Set GPIO to drive output pin */
  327:Generated_Source\PSoC4/SPI_SPI.c ****         SPI_SET_HSIOM_SEL(SPI_CTS_SCLK_HSIOM_REG, SPI_CTS_SCLK_HSIOM_MASK,
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 8
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 8
 
 
  328:Generated_Source\PSoC4/SPI_SPI.c ****                                        SPI_CTS_SCLK_HSIOM_POS, SPI_CTS_SCLK_HSIOM_SEL_GPIO);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
   74 0002 0A4B     		ldr	r3, .L5
   75 0004 1B68     		ldr	r3, [r3]
   76 0006 0820     		movs	r0, #8
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 9
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 9
 
 
   77 0008 1840     		ands	r0, r3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  423:Generated_Source\PSoC4/SPI_SPI.c ****     #if (SPI_SPI_MASTER_CONST)
  424:Generated_Source\PSoC4/SPI_SPI.c ****         /* Store TX interrupt sources (exclude level triggered). */
  425:Generated_Source\PSoC4/SPI_SPI.c ****         SPI_IntrTxMask = LO16(SPI_GetTxInterruptMode() & SPI_INTR_SPIM_TX_RESTORE);
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 10
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 10
 
 
   89              		.loc 1 425 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  451:Generated_Source\PSoC4/SPI_SPI.c ****     *  \param slaveSelect: slave select line which will be active while the following
  452:Generated_Source\PSoC4/SPI_SPI.c ****     *   transfer.
  453:Generated_Source\PSoC4/SPI_SPI.c ****     *   - SPI_SPI_SLAVE_SELECT0 - Slave select 0.
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 11
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 11
 
 
  454:Generated_Source\PSoC4/SPI_SPI.c ****     *   - SPI_SPI_SLAVE_SELECT1 - Slave select 1.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  156              		.code	16
  157              		.thumb_func
  158              		.type	SPI_SpiInit, %function
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 12
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 12
 
 
  159              	SPI_SpiInit:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  202 0030 124A     		ldr	r2, .L11+48
  203 0032 1360     		str	r3, [r2]
  198:Generated_Source\PSoC4/SPI_SPI.c ****         SPI_INTR_TX_MASK_REG     = SPI_SPI_DEFAULT_INTR_TX_MASK;
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 13
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 13
 
 
  204              		.loc 1 198 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  473:Generated_Source\PSoC4/SPI_SPI.c **** #if !(SPI_CY_SCBIP_V0 || SPI_CY_SCBIP_V1)
  474:Generated_Source\PSoC4/SPI_SPI.c ****     /*******************************************************************************
  475:Generated_Source\PSoC4/SPI_SPI.c ****     * Function Name: SPI_SpiSetSlaveSelectPolarity
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 14
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 14
 
 
  476:Generated_Source\PSoC4/SPI_SPI.c ****     ****************************************************************************//**
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  274 0016 0B60     		str	r3, [r1]
  275 0018 03E0     		b	.L13
  276              	.LVL11:
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 15
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 15
 
 
  277              	.L14:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  325 0035 05       		.byte	0x5
  326 0036 02010000 		.4byte	.LASF2
  327 003a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 16
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 16
 
 
  328 003b 02       		.byte	0x2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  382 00a4 05       		.uleb128 0x5
  383 00a5 77000000 		.4byte	0x77
  384 00a9 02       		.uleb128 0x2
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 17
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 17
 
 
  385 00aa 08       		.byte	0x8
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  439 0126 00000000 		.4byte	.LFB1
  440 012a 8C000000 		.4byte	.LFE1-.LFB1
  441 012e 01       		.uleb128 0x1
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 18
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 18
 
 
  442 012f 9C       		.byte	0x9c
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  496 0000 01       		.uleb128 0x1
  497 0001 11       		.uleb128 0x11
  498 0002 01       		.byte	0x1
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 19
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 19
 
 
  499 0003 25       		.uleb128 0x25
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  553 0039 49       		.uleb128 0x49
  554 003a 13       		.uleb128 0x13
  555 003b 00       		.byte	0
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 20
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 20
 
 
  556 003c 00       		.byte	0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  610 0076 31       		.uleb128 0x31
  611 0077 13       		.uleb128 0x13
  612 0078 00       		.byte	0
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 21
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 21
 
 
  613 0079 00       		.byte	0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  667 00b0 00       		.byte	0
  668 00b1 00       		.byte	0
  669 00b2 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 22
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 22
 
 
  670 00b3 898201   		.uleb128 0x4109
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  724 00ee 3C       		.uleb128 0x3c
  725 00ef 19       		.uleb128 0x19
  726 00f0 6E       		.uleb128 0x6e
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 23
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 23
 
 
  727 00f1 0E       		.uleb128 0xe
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  781 0067 28000000 		.4byte	.LFE5
  782 006b 0400     		.2byte	0x4
  783 006d F3       		.byte	0xf3
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 24
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 24
 
 
  784 006e 01       		.uleb128 0x1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  838 0020 00000000 		.4byte	.LFB4
  839 0024 20000000 		.4byte	.LFE4-.LFB4
  840 0028 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 25
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 25
 
 
  841 002c 8C000000 		.4byte	.LFE1-.LFB1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  876 0066 666C6F61 		.ascii	"float\000"
  876      7400
  877              	.LASF1:
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 26
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 26
 
 
  878 006c 756E7369 		.ascii	"unsigned char\000"
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  900              	.LASF8:
  901 012f 756E7369 		.ascii	"unsigned int\000"
  901      676E6564 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 27
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 27
 
 
  901      20696E74 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 1
  924 01fd 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
  924      20726576 
  924      6973696F 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccA75lC2.s 			page 28
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccVilKoN.s 			page 28
 
 
  924      6E203233 

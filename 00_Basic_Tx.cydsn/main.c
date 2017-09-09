@@ -1,26 +1,26 @@
 /*
- * 01_Echo_Tx
+ * 01_Basic_Tx
  * 
- * The nrf24 radio is configured to transmit 1 byte and receive the same byte via
- * ACK + payload from the Rx radio.
- * The data sent is the char received with the UART Rx, when the receiver
- * radio send reply with payload, the transmitter radio will print it on the UART.
+ * The nrf24 radio is configured to transmit 1 byte payload.
+ *
+ * nRF24 Setup:
+ * POWER_ON_RESET delay
+ * EN_AA = Enable auto-ack (RX_ADDR0_P0 == TX_ADDR)
+ * EN_RXADDR = Enable data pipes
+ * SETUP_AW = Width of address
+ * RF_CH = Channel
+ * RF_SETUP = Power mode and data speed
+ * RX_ADDR_P0 = set receiver address
+ * TX_ADDR = Tx address
+ * RX_PW_P0 = payload width setup
+ * CONFIG = Set up the radio, pwr_up, rx or tx and interrupts
+ * delay to reach standby mode
  */
 #include "project.h"
 #include <stdbool.h>
 
 volatile bool irq_flag = false;
 volatile bool uart_flag = false;
-
-volatile char data;
-
-// We got a byte via UART
-CY_ISR(UART_Handler)
-{
-    uart_flag = true;
-    data = UART_GetChar();
-    isr_UART_ClearPending();
-}
 
 // the IRQ pin triggered an interrupt
 CY_ISR(IRQ_Handler)
@@ -33,20 +33,36 @@ int main(void)
 {
     CyGlobalIntEnable;
     
+    const unsigned char *mesg= "Hola nRF24!";
+    uint8_t i = 0;
+    
     const uint8_t TX_ADDR[5]= {0xBA, 0xAD, 0xC0, 0xFF, 0xEE};
     
     // Set the interrupts handlers
     isr_IRQ_StartEx(IRQ_Handler);
-    isr_UART_StartEx(UART_Handler);
     
     UART_Start();
     UART_PutChar(0x0C);
     UART_PutString("Basic project: Tx\r\n");
     
     nRF24_start();
+    
+    // set pipe0 addr to get the ACK from the receiver
+    nRF24_setRxPipe0Address(TX_ADDR, 5);
+    // set tx pipe address to match the receiver address
     nRF24_setTxAddress(TX_ADDR, 5);
 
     while (1) {
+        
+        CyDelay(250);
+        UART_PutString("Sending ");
+        UART_PutChar(mesg[i]);
+        UART_PutString("\r\n");
+        nRF24_PTX_Transmit(&mesg[i], 1);
+        i++;
+        if (i == 12) {
+            i = 0;
+        }
         
         if (true == irq_flag) {
             
@@ -58,7 +74,7 @@ int main(void)
             
             LED_Write(~LED_Read());
             
-            UART_PutChar(0x0C);
+            //UART_PutChar(0x0C);
             switch (flag) {
             case NRF_TX_DS_IRQ:
                 UART_PutString("Data sent!");
@@ -83,14 +99,6 @@ int main(void)
             } else if (flag)
             
             irq_flag = false;
-        }
-        
-        if (true == uart_flag) {
-            
-            // Transmit the data from UART RX to nrf24 Rx
-            nRF24_PTX_Transmit(&data, 1);
-            
-            uart_flag = false;
         }
         
     }

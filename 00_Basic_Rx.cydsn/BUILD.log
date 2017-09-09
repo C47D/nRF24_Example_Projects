@@ -1,8 +1,8 @@
---------------- Build Started: 09/07/2017 23:15:12 Project: 00_Basic_Rx, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 09/09/2017 15:20:08 Project: 00_Basic_Rx, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0p\ARM_GCC_541\Debug\main.o
 main.c: In function 'main':
-main.c:57:32: warning: pointer targets in passing argument 1 of 'nRF24_getRxPayload' differ in signedness [-Wpointer-sign]
+main.c:56:32: warning: pointer targets in passing argument 1 of 'nRF24_getRxPayload' differ in signedness [-Wpointer-sign]
              nRF24_getRxPayload(&data, payload_size);
                                 ^
 In file included from Generated_Source\PSoC4/project.h:22:0,
@@ -15,6 +15,6 @@ arm-none-eabi-ar.exe: creating .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\00_Basic_Rx.cydsn\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.elf .\CortexM0p\ARM_GCC_541\Debug\main.o .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a -mcpu=cortex-m0plus -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0p\ARM_GCC_541\Debug/00_Basic_Rx.map -T Generated_Source\PSoC4\cm0plusgcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
 cyelftool.exe -C C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\00_Basic_Rx.cydsn\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.elf --flash_row_size 128 --flash_size 32768 --flash_offset 0x00000000
 cyelftool.exe -S C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\00_Basic_Rx.cydsn\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.elf
-Flash used: 3670 of 32768 bytes (11.2 %).
+Flash used: 3702 of 32768 bytes (11.3 %).
 SRAM used: 2488 of 4096 bytes (60.7 %). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 09/07/2017 23:15:20 ---------------
+--------------- Build Succeeded: 09/09/2017 15:21:00 ---------------

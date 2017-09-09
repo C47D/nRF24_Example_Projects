@@ -3499,37 +3499,37 @@ ARM GAS  Generated_Source\PSoC4\UART_AsmGnu.s 			page 1
  3285              	.set CYREG_SCB1_EZ_DATA031, CYREG_SCB1_EZ_DATA31
   20              	
   21              	/* CE */
-  22              	.set CE__0__DR, CYREG_GPIO_PRT2_DR
-  23              	.set CE__0__DR_CLR, CYREG_GPIO_PRT2_DR_CLR
-  24              	.set CE__0__DR_INV, CYREG_GPIO_PRT2_DR_INV
-  25              	.set CE__0__DR_SET, CYREG_GPIO_PRT2_DR_SET
-  26              	.set CE__0__HSIOM, CYREG_HSIOM_PORT_SEL2
-  27              	.set CE__0__HSIOM_MASK, 0x000F0000
-  28              	.set CE__0__HSIOM_SHIFT, 16
-  29              	.set CE__0__INTCFG, CYREG_GPIO_PRT2_INTR_CFG
-  30              	.set CE__0__INTR, CYREG_GPIO_PRT2_INTR
-  31              	.set CE__0__INTR_CFG, CYREG_GPIO_PRT2_INTR_CFG
-  32              	.set CE__0__INTSTAT, CYREG_GPIO_PRT2_INTR
-  33              	.set CE__0__MASK, 0x10
-  34              	.set CE__0__PC, CYREG_GPIO_PRT2_PC
-  35              	.set CE__0__PC2, CYREG_GPIO_PRT2_PC2
-  36              	.set CE__0__PORT, 2
-  37              	.set CE__0__PS, CYREG_GPIO_PRT2_PS
-  38              	.set CE__0__SHIFT, 4
-  39              	.set CE__DR, CYREG_GPIO_PRT2_DR
-  40              	.set CE__DR_CLR, CYREG_GPIO_PRT2_DR_CLR
-  41              	.set CE__DR_INV, CYREG_GPIO_PRT2_DR_INV
-  42              	.set CE__DR_SET, CYREG_GPIO_PRT2_DR_SET
-  43              	.set CE__INTCFG, CYREG_GPIO_PRT2_INTR_CFG
-  44              	.set CE__INTR, CYREG_GPIO_PRT2_INTR
-  45              	.set CE__INTR_CFG, CYREG_GPIO_PRT2_INTR_CFG
-  46              	.set CE__INTSTAT, CYREG_GPIO_PRT2_INTR
-  47              	.set CE__MASK, 0x10
-  48              	.set CE__PC, CYREG_GPIO_PRT2_PC
-  49              	.set CE__PC2, CYREG_GPIO_PRT2_PC2
-  50              	.set CE__PORT, 2
-  51              	.set CE__PS, CYREG_GPIO_PRT2_PS
-  52              	.set CE__SHIFT, 4
+  22              	.set CE__0__DR, CYREG_GPIO_PRT0_DR
+  23              	.set CE__0__DR_CLR, CYREG_GPIO_PRT0_DR_CLR
+  24              	.set CE__0__DR_INV, CYREG_GPIO_PRT0_DR_INV
+  25              	.set CE__0__DR_SET, CYREG_GPIO_PRT0_DR_SET
+  26              	.set CE__0__HSIOM, CYREG_HSIOM_PORT_SEL0
+  27              	.set CE__0__HSIOM_MASK, 0x0F000000
+  28              	.set CE__0__HSIOM_SHIFT, 24
+  29              	.set CE__0__INTCFG, CYREG_GPIO_PRT0_INTR_CFG
+  30              	.set CE__0__INTR, CYREG_GPIO_PRT0_INTR
+  31              	.set CE__0__INTR_CFG, CYREG_GPIO_PRT0_INTR_CFG
+  32              	.set CE__0__INTSTAT, CYREG_GPIO_PRT0_INTR
+  33              	.set CE__0__MASK, 0x40
+  34              	.set CE__0__PC, CYREG_GPIO_PRT0_PC
+  35              	.set CE__0__PC2, CYREG_GPIO_PRT0_PC2
+  36              	.set CE__0__PORT, 0
+  37              	.set CE__0__PS, CYREG_GPIO_PRT0_PS
+  38              	.set CE__0__SHIFT, 6
+  39              	.set CE__DR, CYREG_GPIO_PRT0_DR
+  40              	.set CE__DR_CLR, CYREG_GPIO_PRT0_DR_CLR
+  41              	.set CE__DR_INV, CYREG_GPIO_PRT0_DR_INV
+  42              	.set CE__DR_SET, CYREG_GPIO_PRT0_DR_SET
+  43              	.set CE__INTCFG, CYREG_GPIO_PRT0_INTR_CFG
+  44              	.set CE__INTR, CYREG_GPIO_PRT0_INTR
+  45              	.set CE__INTR_CFG, CYREG_GPIO_PRT0_INTR_CFG
+  46              	.set CE__INTSTAT, CYREG_GPIO_PRT0_INTR
+  47              	.set CE__MASK, 0x40
+  48              	.set CE__PC, CYREG_GPIO_PRT0_PC
+  49              	.set CE__PC2, CYREG_GPIO_PRT0_PC2
+  50              	.set CE__PORT, 0
+  51              	.set CE__PS, CYREG_GPIO_PRT0_PS
+  52              	.set CE__SHIFT, 6
   53              	
   54              	/* IRQ */
   55              	.set IRQ__0__DR, CYREG_GPIO_PRT1_DR

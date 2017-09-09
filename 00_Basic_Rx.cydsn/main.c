@@ -34,9 +34,8 @@ int main(void)
     
     nRF24_start();
     nRF24_setRxPipe0Address(RX_ADDR, 5);
+    nRF24_setTxAddress(RX_ADDR, 5);
     nRF24_startListening();
-
-    LED_Write(~LED_Read());
     
     while (1) {
         

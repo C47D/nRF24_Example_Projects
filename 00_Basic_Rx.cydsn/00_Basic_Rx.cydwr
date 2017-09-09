@@ -256,7 +256,7 @@
       <Data key="8c8734ef-3644-4eed-bc55-360072b94fff/ed092b9b-d398-4703-be89-cebf998501f6" value="SPI_mosi_m" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="IRQ" />
       <Data key="83b2fde2-60ad-45b6-9e5c-cb3baa6e3f9a" value="SCLK" />
-      <Data key="87a36c09-26b6-4807-95af-24ac1e3f4fc4" value="CE_1" />
+      <Data key="87a36c09-26b6-4807-95af-24ac1e3f4fc4" value="LED" />
       <Data key="600e7b82-f0c1-41b2-bcd9-a86b07f8fae6" value="CE" />
       <Data key="818af0c6-a121-481d-98b0-2110f41f9bbd/52f31aa9-2f0a-497d-9a1f-1424095e13e6" value="UART_tx" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="MISO" />
@@ -3380,7 +3380,7 @@
     </Group>
     <Group key="600e7b82-f0c1-41b2-bcd9-a86b07f8fae6">
       <Group key="0">
-        <Data key="Port Format" value="2,4" />
+        <Data key="Port Format" value="0,6" />
       </Group>
     </Group>
     <Group key="818af0c6-a121-481d-98b0-2110f41f9bbd/52f31aa9-2f0a-497d-9a1f-1424095e13e6">
