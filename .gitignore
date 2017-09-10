@@ -6,8 +6,6 @@ Backup/*
 Archive/
 Backup/
 
-nRF24_Component/*
-
 # Projects optional files
 *.cydsn/codegentemp/
 *.cydsn/Generated_Source/
