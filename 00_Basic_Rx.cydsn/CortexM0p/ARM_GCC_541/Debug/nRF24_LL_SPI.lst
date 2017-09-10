@@ -1,0 +1,2784 @@
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"nRF24_LL_SPI.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.nRF24_readRegister,"ax",%progbits
+  20              		.align	2
+  21              		.global	nRF24_readRegister
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	nRF24_readRegister, %function
+  25              	nRF24_readRegister:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC4\\nRF24_LL_SPI.c"
+   1:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /****************************************************************************
+   2:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * This file is part of the nRF24 Custom Component for PSoC Devices.
+   3:Generated_Source\PSoC4/nRF24_LL_SPI.c **** *
+   4:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * Copyright (C) 2017 Carlos Diaz <carlos.santiago.diaz@gmail.com>
+   5:Generated_Source\PSoC4/nRF24_LL_SPI.c **** *
+   6:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * Permission to use, copy, modify, and/or distribute this software for any
+   7:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * purpose with or without fee is hereby granted, provided that the above
+   8:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * copyright notice and this permission notice appear in all copies.
+   9:Generated_Source\PSoC4/nRF24_LL_SPI.c **** *
+  10:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+  11:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+  12:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+  13:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+  14:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+  15:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+  16:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  17:Generated_Source\PSoC4/nRF24_LL_SPI.c **** ****************************************************************************/
+  18:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  19:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+  20:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * @file nRF24_LL_SPI.c
+  21:Generated_Source\PSoC4/nRF24_LL_SPI.c **** *
+  22:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * @brief The nRF24 radio is controlled via SPI, this file have all the SPI
+  23:Generated_Source\PSoC4/nRF24_LL_SPI.c **** * communication between the PSoC and the nRF24 radio.
+  24:Generated_Source\PSoC4/nRF24_LL_SPI.c **** */
+  25:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  26:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #include <CE.h>
+  27:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #include <SPI.h>
+  28:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #include <SS.h>
+  29:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  30:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #if defined(CY_SCB_SPI_H)
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 2
+
+
+  31:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #include <SPI_SPI_UART.h>
+  32:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #endif
+  33:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  34:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #include "nRF24_LL_SPI.h"
+  35:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  36:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+  37:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * Read 1byte of an nRF24 register.
+  38:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+  39:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const NrfRegister reg: Register to be read.
+  40:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+  41:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @return uint8_t: Content of the register.
+  42:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  */
+  43:Generated_Source\PSoC4/nRF24_LL_SPI.c **** uint8_t nRF24_readRegister(const NrfRegister reg)
+  44:Generated_Source\PSoC4/nRF24_LL_SPI.c **** {
+  28              		.loc 1 44 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 0400     		movs	r4, r0
+  45:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+  46:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  47:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearRxBuffer();
+  38              		.loc 1 47 0
+  39 0004 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+  40              	.LVL1:
+  48:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearTxBuffer();
+  41              		.loc 1 48 0
+  42 0008 FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+  43              	.LVL2:
+  49:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  50:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+  44              		.loc 1 50 0
+  45 000c 0020     		movs	r0, #0
+  46 000e FFF7FEFF 		bl	SS_Write
+  47              	.LVL3:
+  51:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartWriteTxData(NRF_R_REGISTER_CMD | reg);
+  48              		.loc 1 51 0
+  49 0012 2000     		movs	r0, r4
+  50 0014 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+  51              	.LVL4:
+  52:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+  52              		.loc 1 52 0
+  53 0018 FF20     		movs	r0, #255
+  54 001a FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+  55              	.LVL5:
+  56              	.L2:
+  53:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  54:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (SPI_SpiUartGetRxBufferSize() != 2) {
+  57              		.loc 1 54 0 discriminator 1
+  58 001e FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+  59              	.LVL6:
+  60 0022 0228     		cmp	r0, #2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 3
+
+
+  61 0024 FBD1     		bne	.L2
+  55:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+  56:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+  62              		.loc 1 56 0
+  63 0026 0138     		subs	r0, r0, #1
+  64 0028 FFF7FEFF 		bl	SS_Write
+  65              	.LVL7:
+  57:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  58:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // This is the STATUS Register
+  59:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     (void)SPI_SpiUartReadRxData();
+  66              		.loc 1 59 0
+  67 002c FFF7FEFF 		bl	SPI_SpiUartReadRxData
+  68              	.LVL8:
+  60:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // This is the data we want
+  61:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     return SPI_SpiUartReadRxData();
+  69              		.loc 1 61 0
+  70 0030 FFF7FEFF 		bl	SPI_SpiUartReadRxData
+  71              	.LVL9:
+  72 0034 C0B2     		uxtb	r0, r0
+  62:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  63:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #else // UDB Block
+  64:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  65:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearRxBuffer();
+  66:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearTxBuffer();
+  67:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  68:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+  69:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_WriteTxData(NRF_R_REGISTER_CMD | reg);
+  70:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_WriteTxData(NRF_NOP_CMD);
+  71:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  72:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_SPI_IDLE)) {
+  73:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+  74:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+  75:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  76:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // This is the STATUS Register
+  77:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     (void)SPI_ReadRxData();
+  78:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // This is the data we want
+  79:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     return SPI_ReadRxData();
+  80:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  81:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #endif
+  82:Generated_Source\PSoC4/nRF24_LL_SPI.c **** }
+  73              		.loc 1 82 0
+  74              		@ sp needed
+  75 0036 10BD     		pop	{r4, pc}
+  76              		.cfi_endproc
+  77              	.LFE1:
+  78              		.size	nRF24_readRegister, .-nRF24_readRegister
+  79              		.section	.text.nRF24_readLongRegister,"ax",%progbits
+  80              		.align	2
+  81              		.global	nRF24_readLongRegister
+  82              		.code	16
+  83              		.thumb_func
+  84              		.type	nRF24_readLongRegister, %function
+  85              	nRF24_readLongRegister:
+  86              	.LFB2:
+  83:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  84:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+  85:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * Read more than 1byte of a nRF24 register.
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 4
+
+
+  86:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+  87:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const NrfRegister reg: Register to be read.
+  88:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param uint8_t* data: Pointer to where the content of the register
+  89:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * will be stored.
+  90:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param size_t size: Size of the register, larger register hold 5 bytes of
+  91:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * data.
+  92:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  */
+  93:Generated_Source\PSoC4/nRF24_LL_SPI.c **** void nRF24_readLongRegister(const NrfRegister reg,
+  94:Generated_Source\PSoC4/nRF24_LL_SPI.c ****                                         uint8_t* data,
+  95:Generated_Source\PSoC4/nRF24_LL_SPI.c ****                                        const size_t size)
+  96:Generated_Source\PSoC4/nRF24_LL_SPI.c **** {
+  87              		.loc 1 96 0
+  88              		.cfi_startproc
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91              	.LVL10:
+  92 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  93              		.cfi_def_cfa_offset 24
+  94              		.cfi_offset 3, -24
+  95              		.cfi_offset 4, -20
+  96              		.cfi_offset 5, -16
+  97              		.cfi_offset 6, -12
+  98              		.cfi_offset 7, -8
+  99              		.cfi_offset 14, -4
+ 100 0002 0F00     		movs	r7, r1
+ 101 0004 1600     		movs	r6, r2
+  97:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+  98:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+  99:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     #if 0
+ 100:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearRxBuffer();
+ 101:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearTxBuffer();
+ 102:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 103:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+ 104:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartWriteTxData(NRF_R_REGISTER_CMD | reg);
+ 105:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 106:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     for (size_t i = 0; i < size; i++) {
+ 107:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 108:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 109:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 110:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (SPI_SpiUartGetRxBufferSize() != (1 + size)) {
+ 111:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 112:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+ 113:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 114:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // This is the STATUS Register
+ 115:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     (void)SPI_SpiUartReadRxData();
+ 116:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // This is the data we want
+ 117:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     for (size_t j = 0; j < size; j++) {
+ 118:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         data[j] = SPI_SpiUartReadRxData();
+ 119:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 120:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     
+ 121:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     #else
+ 122:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         
+ 123:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearRxBuffer();
+ 102              		.loc 1 123 0
+ 103 0006 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 104              	.LVL11:
+ 124:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearTxBuffer();
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 5
+
+
+ 105              		.loc 1 124 0
+ 106 000a FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 107              	.LVL12:
+ 125:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     
+ 126:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+ 108              		.loc 1 126 0
+ 109 000e 0020     		movs	r0, #0
+ 110 0010 FFF7FEFF 		bl	SS_Write
+ 111              	.LVL13:
+ 127:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     
+ 128:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartWriteTxData(NRF_R_REGISTER_CMD | NRF_RX_ADDR_P4_REG);
+ 112              		.loc 1 128 0
+ 113 0014 0E20     		movs	r0, #14
+ 114 0016 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 115              	.LVL14:
+ 116              	.L4:
+ 129:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (SPI_SpiUartGetRxBufferSize() == 0){}
+ 117              		.loc 1 129 0 discriminator 1
+ 118 001a FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 119              	.LVL15:
+ 120 001e 0028     		cmp	r0, #0
+ 121 0020 FBD0     		beq	.L4
+ 130:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     
+ 131:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // Read the status register, just to clear the rx fifo
+ 132:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartReadRxData();
+ 122              		.loc 1 132 0
+ 123 0022 FFF7FEFF 		bl	SPI_SpiUartReadRxData
+ 124              	.LVL16:
+ 125              	.LBB2:
+ 133:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     //SPI_SpiUartClearRxBuffer();
+ 134:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     
+ 135:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     for (size_t i = 0; i < size; i++) {
+ 126              		.loc 1 135 0
+ 127 0026 0024     		movs	r4, #0
+ 128 0028 0BE0     		b	.L5
+ 129              	.LVL17:
+ 130              	.L7:
+ 136:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 131              		.loc 1 136 0
+ 132 002a FF20     		movs	r0, #255
+ 133 002c FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 134              	.LVL18:
+ 135              	.L6:
+ 137:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         while (SPI_SpiUartGetRxBufferSize() == 0){}
+ 136              		.loc 1 137 0 discriminator 1
+ 137 0030 FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 138              	.LVL19:
+ 139 0034 0028     		cmp	r0, #0
+ 140 0036 FBD0     		beq	.L6
+ 138:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         data[i] = SPI_SpiUartReadRxData();
+ 141              		.loc 1 138 0 discriminator 2
+ 142 0038 3D19     		adds	r5, r7, r4
+ 143 003a FFF7FEFF 		bl	SPI_SpiUartReadRxData
+ 144              	.LVL20:
+ 145 003e 2870     		strb	r0, [r5]
+ 135:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 146              		.loc 1 135 0 discriminator 2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 6
+
+
+ 147 0040 0134     		adds	r4, r4, #1
+ 148              	.LVL21:
+ 149              	.L5:
+ 135:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 150              		.loc 1 135 0 is_stmt 0 discriminator 1
+ 151 0042 B442     		cmp	r4, r6
+ 152 0044 F1D3     		bcc	.L7
+ 153              	.LBE2:
+ 139:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 140:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 141:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+ 154              		.loc 1 141 0 is_stmt 1
+ 155 0046 0120     		movs	r0, #1
+ 156 0048 FFF7FEFF 		bl	SS_Write
+ 157              	.LVL22:
+ 142:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         
+ 143:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     #endif
+ 144:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 145:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #else // UDB Block
+ 146:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     
+ 147:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     #if 0
+ 148:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 149:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearRxBuffer();
+ 150:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearTxBuffer();
+ 151:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 152:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+ 153:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_WriteTxData(NRF_R_REGISTER_CMD | reg);
+ 154:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 155:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     for (size_t i = 0; i < size; i++) {
+ 156:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         SPI_WriteTxData(NRF_NOP_CMD);
+ 157:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 158:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 159:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_SPI_IDLE)) {
+ 160:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 161:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+ 162:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 163:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // This is the STATUS Register
+ 164:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     (void)SPI_ReadRxData();
+ 165:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // This is the data we want
+ 166:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     for (size_t j = 0; j < size; j++) {
+ 167:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         data[j] = SPI_ReadRxData();
+ 168:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 169:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     
+ 170:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     #else
+ 171:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 172:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearFIFO();
+ 173:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 174:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+ 175:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_WriteTxData(NRF_R_REGISTER_CMD | reg);
+ 176:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 177:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // Wait for the byte to be sent
+ 178:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {}
+ 179:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 180:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // Read the status register, just to clear the rx fifo
+ 181:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ReadRxData();
+ 182:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     
+ 183:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     for (size_t i = 0; i < size; i++) {
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 7
+
+
+ 184:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         SPI_WriteTxData(NRF_NOP_CMD);
+ 185:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {}
+ 186:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         data[i] = SPI_ReadRxData();
+ 187:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 188:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 189:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+ 190:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 191:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     #endif
+ 192:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 193:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #endif
+ 194:Generated_Source\PSoC4/nRF24_LL_SPI.c **** }
+ 158              		.loc 1 194 0
+ 159              		@ sp needed
+ 160              	.LVL23:
+ 161              	.LVL24:
+ 162              	.LVL25:
+ 163 004c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 164              		.cfi_endproc
+ 165              	.LFE2:
+ 166              		.size	nRF24_readLongRegister, .-nRF24_readLongRegister
+ 167 004e C046     		.section	.text.nRF24_writeRegister,"ax",%progbits
+ 168              		.align	2
+ 169              		.global	nRF24_writeRegister
+ 170              		.code	16
+ 171              		.thumb_func
+ 172              		.type	nRF24_writeRegister, %function
+ 173              	nRF24_writeRegister:
+ 174              	.LFB3:
+ 195:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 196:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+ 197:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * Write 1byte to a nRF24 Register.
+ 198:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+ 199:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const NrfRegister reg: Register to be written.
+ 200:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const uint8_t data: Data to be written into the register.
+ 201:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  */
+ 202:Generated_Source\PSoC4/nRF24_LL_SPI.c **** void nRF24_writeRegister(const NrfRegister reg, const uint8_t data)
+ 203:Generated_Source\PSoC4/nRF24_LL_SPI.c **** {
+ 175              		.loc 1 203 0
+ 176              		.cfi_startproc
+ 177              		@ args = 0, pretend = 0, frame = 0
+ 178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 179              	.LVL26:
+ 180 0000 70B5     		push	{r4, r5, r6, lr}
+ 181              		.cfi_def_cfa_offset 16
+ 182              		.cfi_offset 4, -16
+ 183              		.cfi_offset 5, -12
+ 184              		.cfi_offset 6, -8
+ 185              		.cfi_offset 14, -4
+ 186 0002 0500     		movs	r5, r0
+ 187 0004 0C00     		movs	r4, r1
+ 204:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+ 205:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 206:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearRxBuffer();
+ 188              		.loc 1 206 0
+ 189 0006 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 190              	.LVL27:
+ 207:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearTxBuffer();
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 8
+
+
+ 191              		.loc 1 207 0
+ 192 000a FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 193              	.LVL28:
+ 208:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 209:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+ 194              		.loc 1 209 0
+ 195 000e 0020     		movs	r0, #0
+ 196 0010 FFF7FEFF 		bl	SS_Write
+ 197              	.LVL29:
+ 210:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartWriteTxData(NRF_W_REGISTER_CMD | reg);
+ 198              		.loc 1 210 0
+ 199 0014 2020     		movs	r0, #32
+ 200 0016 2843     		orrs	r0, r5
+ 201 0018 C0B2     		uxtb	r0, r0
+ 202 001a FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 203              	.LVL30:
+ 211:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartWriteTxData(data);
+ 204              		.loc 1 211 0
+ 205 001e 2000     		movs	r0, r4
+ 206 0020 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 207              	.LVL31:
+ 208              	.L9:
+ 212:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 213:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (SPI_SpiUartGetRxBufferSize() != 2) {
+ 209              		.loc 1 213 0 discriminator 1
+ 210 0024 FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 211              	.LVL32:
+ 212 0028 0228     		cmp	r0, #2
+ 213 002a FBD1     		bne	.L9
+ 214:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 215:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+ 214              		.loc 1 215 0
+ 215 002c 0138     		subs	r0, r0, #1
+ 216 002e FFF7FEFF 		bl	SS_Write
+ 217              	.LVL33:
+ 216:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 217:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #else // UDB Block
+ 218:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 219:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearRxBuffer();
+ 220:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearTxBuffer();
+ 221:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 222:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+ 223:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_WriteTxData(NRF_W_REGISTER_CMD | reg);
+ 224:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_WriteTxData(data);
+ 225:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 226:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_SPI_IDLE)) {
+ 227:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 228:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+ 229:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 230:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #endif
+ 231:Generated_Source\PSoC4/nRF24_LL_SPI.c **** }
+ 218              		.loc 1 231 0
+ 219              		@ sp needed
+ 220 0032 70BD     		pop	{r4, r5, r6, pc}
+ 221              		.cfi_endproc
+ 222              	.LFE3:
+ 223              		.size	nRF24_writeRegister, .-nRF24_writeRegister
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 9
+
+
+ 224              		.section	.text.nRF24_writeLongRegister,"ax",%progbits
+ 225              		.align	2
+ 226              		.global	nRF24_writeLongRegister
+ 227              		.code	16
+ 228              		.thumb_func
+ 229              		.type	nRF24_writeLongRegister, %function
+ 230              	nRF24_writeLongRegister:
+ 231              	.LFB4:
+ 232:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 233:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+ 234:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * Write more than 1byte to a nRF24 Register, larger register is 5 bytes.
+ 235:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+ 236:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const NrfRegister reg: Register to be written.
+ 237:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const uint8_t* data: Data to write into the register.
+ 238:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param size_t size: Size (in bytes) of the data to be written.
+ 239:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  */
+ 240:Generated_Source\PSoC4/nRF24_LL_SPI.c **** void nRF24_writeLongRegister(const NrfRegister reg,
+ 241:Generated_Source\PSoC4/nRF24_LL_SPI.c ****                                         const uint8_t* data,
+ 242:Generated_Source\PSoC4/nRF24_LL_SPI.c ****                                         const size_t size)
+ 243:Generated_Source\PSoC4/nRF24_LL_SPI.c **** {
+ 232              		.loc 1 243 0
+ 233              		.cfi_startproc
+ 234              		@ args = 0, pretend = 0, frame = 0
+ 235              		@ frame_needed = 0, uses_anonymous_args = 0
+ 236              	.LVL34:
+ 237 0000 70B5     		push	{r4, r5, r6, lr}
+ 238              		.cfi_def_cfa_offset 16
+ 239              		.cfi_offset 4, -16
+ 240              		.cfi_offset 5, -12
+ 241              		.cfi_offset 6, -8
+ 242              		.cfi_offset 14, -4
+ 243 0002 0600     		movs	r6, r0
+ 244 0004 0D00     		movs	r5, r1
+ 245 0006 1400     		movs	r4, r2
+ 244:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+ 245:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 246:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearRxBuffer();
+ 246              		.loc 1 246 0
+ 247 0008 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 248              	.LVL35:
+ 247:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartClearTxBuffer();
+ 249              		.loc 1 247 0
+ 250 000c FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 251              	.LVL36:
+ 248:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 249:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+ 252              		.loc 1 249 0
+ 253 0010 0020     		movs	r0, #0
+ 254 0012 FFF7FEFF 		bl	SS_Write
+ 255              	.LVL37:
+ 250:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 251:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartWriteTxData(NRF_W_REGISTER_CMD | reg);
+ 256              		.loc 1 251 0
+ 257 0016 2020     		movs	r0, #32
+ 258 0018 3043     		orrs	r0, r6
+ 259 001a C0B2     		uxtb	r0, r0
+ 260 001c FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 10
+
+
+ 261              	.LVL38:
+ 252:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_SpiUartPutArray(data, size);
+ 262              		.loc 1 252 0
+ 263 0020 2100     		movs	r1, r4
+ 264 0022 2800     		movs	r0, r5
+ 265 0024 FFF7FEFF 		bl	SPI_SpiUartPutArray
+ 266              	.LVL39:
+ 267              	.L11:
+ 253:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 254:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // Wait for the RxBuffer to have dataSize + 1 bytes,
+ 255:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // dataSize + 1 because we need to count the Command + Register
+ 256:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // byte at the beginning of the transaction.
+ 257:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (SPI_SpiUartGetRxBufferSize() != (1 + size)) {
+ 268              		.loc 1 257 0 discriminator 1
+ 269 0028 FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 270              	.LVL40:
+ 271 002c 631C     		adds	r3, r4, #1
+ 272 002e 9842     		cmp	r0, r3
+ 273 0030 FAD1     		bne	.L11
+ 258:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 259:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+ 274              		.loc 1 259 0
+ 275 0032 0120     		movs	r0, #1
+ 276 0034 FFF7FEFF 		bl	SS_Write
+ 277              	.LVL41:
+ 260:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 261:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #else // UDB Block
+ 262:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 263:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearRxBuffer();
+ 264:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_ClearTxBuffer();
+ 265:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 266:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(0);
+ 267:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_WriteTxData(NRF_W_REGISTER_CMD | reg);
+ 268:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SPI_PutArray(data, size);
+ 269:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 270:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_SPI_IDLE)){
+ 271:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 272:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     SS_Write(1);
+ 273:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 274:Generated_Source\PSoC4/nRF24_LL_SPI.c **** #endif
+ 275:Generated_Source\PSoC4/nRF24_LL_SPI.c **** }
+ 278              		.loc 1 275 0
+ 279              		@ sp needed
+ 280              	.LVL42:
+ 281              	.LVL43:
+ 282 0038 70BD     		pop	{r4, r5, r6, pc}
+ 283              		.cfi_endproc
+ 284              	.LFE4:
+ 285              		.size	nRF24_writeLongRegister, .-nRF24_writeLongRegister
+ 286 003a C046     		.section	.text.nRF24_readBit,"ax",%progbits
+ 287              		.align	2
+ 288              		.global	nRF24_readBit
+ 289              		.code	16
+ 290              		.thumb_func
+ 291              		.type	nRF24_readBit, %function
+ 292              	nRF24_readBit:
+ 293              	.LFB5:
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 11
+
+
+ 276:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 277:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+ 278:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * Read the bit state of a NrfRegister.
+ 279:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+ 280:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const NrfRegister reg: Register to be read.
+ 281:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param uint8_t bit: Bit to be read.
+ 282:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+ 283:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @return bool: Return 1 if bit is set (logic 1), return 0 if the bit
+ 284:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * is clear (logic 0).
+ 285:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  */
+ 286:Generated_Source\PSoC4/nRF24_LL_SPI.c **** bool nRF24_readBit(const NrfRegister reg, const uint8_t bit)
+ 287:Generated_Source\PSoC4/nRF24_LL_SPI.c **** {
+ 294              		.loc 1 287 0
+ 295              		.cfi_startproc
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              	.LVL44:
+ 299 0000 10B5     		push	{r4, lr}
+ 300              		.cfi_def_cfa_offset 8
+ 301              		.cfi_offset 4, -8
+ 302              		.cfi_offset 14, -4
+ 303 0002 0C00     		movs	r4, r1
+ 288:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     return (nRF24_readRegister(reg) & (1 << bit)) != 0;
+ 304              		.loc 1 288 0
+ 305 0004 FFF7FEFF 		bl	nRF24_readRegister
+ 306              	.LVL45:
+ 307 0008 2041     		asrs	r0, r0, r4
+ 308 000a 0123     		movs	r3, #1
+ 309 000c 1840     		ands	r0, r3
+ 289:Generated_Source\PSoC4/nRF24_LL_SPI.c **** }
+ 310              		.loc 1 289 0
+ 311              		@ sp needed
+ 312 000e 10BD     		pop	{r4, pc}
+ 313              		.cfi_endproc
+ 314              	.LFE5:
+ 315              		.size	nRF24_readBit, .-nRF24_readBit
+ 316              		.section	.text.nRF24_writeBit,"ax",%progbits
+ 317              		.align	2
+ 318              		.global	nRF24_writeBit
+ 319              		.code	16
+ 320              		.thumb_func
+ 321              		.type	nRF24_writeBit, %function
+ 322              	nRF24_writeBit:
+ 323              	.LFB6:
+ 290:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 291:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+ 292:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * Set (logic 1) or clear (logic 0) a given bit of a given nRF24 register.
+ 293:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+ 294:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const NrfRegister reg: Register to be written.
+ 295:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const uint8_t bit: Bit to be written.
+ 296:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const bool value: Logic 1 or 0 to write into the bit.
+ 297:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  */
+ 298:Generated_Source\PSoC4/nRF24_LL_SPI.c **** void nRF24_writeBit(const NrfRegister reg,
+ 299:Generated_Source\PSoC4/nRF24_LL_SPI.c ****                                 const uint8_t bit,
+ 300:Generated_Source\PSoC4/nRF24_LL_SPI.c ****                                const bool value)
+ 301:Generated_Source\PSoC4/nRF24_LL_SPI.c **** {
+ 324              		.loc 1 301 0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 12
+
+
+ 325              		.cfi_startproc
+ 326              		@ args = 0, pretend = 0, frame = 0
+ 327              		@ frame_needed = 0, uses_anonymous_args = 0
+ 328              	.LVL46:
+ 329 0000 70B5     		push	{r4, r5, r6, lr}
+ 330              		.cfi_def_cfa_offset 16
+ 331              		.cfi_offset 4, -16
+ 332              		.cfi_offset 5, -12
+ 333              		.cfi_offset 6, -8
+ 334              		.cfi_offset 14, -4
+ 335 0002 0400     		movs	r4, r0
+ 336 0004 0D00     		movs	r5, r1
+ 337 0006 1600     		movs	r6, r2
+ 302:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // Get the NrfRegister
+ 303:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     uint8_t temp = nRF24_readRegister(reg);
+ 338              		.loc 1 303 0
+ 339 0008 FFF7FEFF 		bl	nRF24_readRegister
+ 340              	.LVL47:
+ 304:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 305:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // Check if the bit of interest is set (logic 1)
+ 306:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     if ((temp & (1 << bit)) != 0) {
+ 341              		.loc 1 306 0
+ 342 000c 0300     		movs	r3, r0
+ 343 000e 2B41     		asrs	r3, r3, r5
+ 344 0010 DB07     		lsls	r3, r3, #31
+ 345 0012 01D5     		bpl	.L14
+ 307:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         // If we wanted to set it and it's already set we return early,
+ 308:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         // continue if we wanted to clear it.
+ 309:Generated_Source\PSoC4/nRF24_LL_SPI.c ****         if (value)
+ 346              		.loc 1 309 0
+ 347 0014 002E     		cmp	r6, #0
+ 348 0016 0DD1     		bne	.L13
+ 349              	.L14:
+ 310:Generated_Source\PSoC4/nRF24_LL_SPI.c ****             return;
+ 311:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     }
+ 312:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 313:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // Calculate the new value of the NrfRegister, if @value is != 0, then
+ 314:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // we set the bit, if @value == 0, then we clear the bit
+ 315:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     temp = value ? temp | (1 << bit) : temp & ~(1 << bit);
+ 350              		.loc 1 315 0
+ 351 0018 002E     		cmp	r6, #0
+ 352 001a 04D0     		beq	.L16
+ 353              		.loc 1 315 0 is_stmt 0 discriminator 1
+ 354 001c 0121     		movs	r1, #1
+ 355 001e A940     		lsls	r1, r1, r5
+ 356 0020 0843     		orrs	r0, r1
+ 357              	.LVL48:
+ 358 0022 C1B2     		uxtb	r1, r0
+ 359 0024 03E0     		b	.L17
+ 360              	.LVL49:
+ 361              	.L16:
+ 362              		.loc 1 315 0 discriminator 2
+ 363 0026 0123     		movs	r3, #1
+ 364 0028 AB40     		lsls	r3, r3, r5
+ 365 002a 9843     		bics	r0, r3
+ 366              	.LVL50:
+ 367 002c C1B2     		uxtb	r1, r0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 13
+
+
+ 368              	.L17:
+ 369              	.LVL51:
+ 316:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 317:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     // Write the new value to NrfRegister
+ 318:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     nRF24_writeRegister(reg, temp);
+ 370              		.loc 1 318 0 is_stmt 1 discriminator 4
+ 371 002e 2000     		movs	r0, r4
+ 372 0030 FFF7FEFF 		bl	nRF24_writeRegister
+ 373              	.LVL52:
+ 374              	.L13:
+ 319:Generated_Source\PSoC4/nRF24_LL_SPI.c **** }
+ 375              		.loc 1 319 0
+ 376              		@ sp needed
+ 377 0034 70BD     		pop	{r4, r5, r6, pc}
+ 378              		.cfi_endproc
+ 379              	.LFE6:
+ 380              		.size	nRF24_writeBit, .-nRF24_writeBit
+ 381 0036 C046     		.section	.text.nRF24_clearBit,"ax",%progbits
+ 382              		.align	2
+ 383              		.global	nRF24_clearBit
+ 384              		.code	16
+ 385              		.thumb_func
+ 386              		.type	nRF24_clearBit, %function
+ 387              	nRF24_clearBit:
+ 388              	.LFB7:
+ 320:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 321:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+ 322:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * Set a given bit of a given nRF24 register to logic 0.
+ 323:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+ 324:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const NrfRegister reg: Register to be written.
+ 325:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const uint8_t bit: Bit to be written.
+ 326:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  */
+ 327:Generated_Source\PSoC4/nRF24_LL_SPI.c **** void nRF24_clearBit(const NrfRegister reg, const uint8_t bit)
+ 328:Generated_Source\PSoC4/nRF24_LL_SPI.c **** {
+ 389              		.loc 1 328 0
+ 390              		.cfi_startproc
+ 391              		@ args = 0, pretend = 0, frame = 0
+ 392              		@ frame_needed = 0, uses_anonymous_args = 0
+ 393              	.LVL53:
+ 394 0000 10B5     		push	{r4, lr}
+ 395              		.cfi_def_cfa_offset 8
+ 396              		.cfi_offset 4, -8
+ 397              		.cfi_offset 14, -4
+ 329:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     nRF24_writeBit(reg, bit, 0);
+ 398              		.loc 1 329 0
+ 399 0002 0022     		movs	r2, #0
+ 400 0004 FFF7FEFF 		bl	nRF24_writeBit
+ 401              	.LVL54:
+ 330:Generated_Source\PSoC4/nRF24_LL_SPI.c **** }
+ 402              		.loc 1 330 0
+ 403              		@ sp needed
+ 404 0008 10BD     		pop	{r4, pc}
+ 405              		.cfi_endproc
+ 406              	.LFE7:
+ 407              		.size	nRF24_clearBit, .-nRF24_clearBit
+ 408 000a C046     		.section	.text.nRF24_setBit,"ax",%progbits
+ 409              		.align	2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 14
+
+
+ 410              		.global	nRF24_setBit
+ 411              		.code	16
+ 412              		.thumb_func
+ 413              		.type	nRF24_setBit, %function
+ 414              	nRF24_setBit:
+ 415              	.LFB8:
+ 331:Generated_Source\PSoC4/nRF24_LL_SPI.c **** 
+ 332:Generated_Source\PSoC4/nRF24_LL_SPI.c **** /**
+ 333:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * Set a given bit of a given nRF24 register to logic 1.
+ 334:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  *
+ 335:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const NrfRegister reg: Register to be written.
+ 336:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  * @param const uint8_t bit: Bit to be written.
+ 337:Generated_Source\PSoC4/nRF24_LL_SPI.c ****  */
+ 338:Generated_Source\PSoC4/nRF24_LL_SPI.c **** void nRF24_setBit(const NrfRegister reg, const uint8_t bit)
+ 339:Generated_Source\PSoC4/nRF24_LL_SPI.c **** {
+ 416              		.loc 1 339 0
+ 417              		.cfi_startproc
+ 418              		@ args = 0, pretend = 0, frame = 0
+ 419              		@ frame_needed = 0, uses_anonymous_args = 0
+ 420              	.LVL55:
+ 421 0000 10B5     		push	{r4, lr}
+ 422              		.cfi_def_cfa_offset 8
+ 423              		.cfi_offset 4, -8
+ 424              		.cfi_offset 14, -4
+ 340:Generated_Source\PSoC4/nRF24_LL_SPI.c ****     nRF24_writeBit(reg, bit, 1);
+ 425              		.loc 1 340 0
+ 426 0002 0122     		movs	r2, #1
+ 427 0004 FFF7FEFF 		bl	nRF24_writeBit
+ 428              	.LVL56:
+ 341:Generated_Source\PSoC4/nRF24_LL_SPI.c **** }
+ 429              		.loc 1 341 0
+ 430              		@ sp needed
+ 431 0008 10BD     		pop	{r4, pc}
+ 432              		.cfi_endproc
+ 433              	.LFE8:
+ 434              		.size	nRF24_setBit, .-nRF24_setBit
+ 435 000a C046     		.text
+ 436              	.Letext0:
+ 437              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+ 438              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+ 439              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+ 440              		.file 5 "Generated_Source\\PSoC4\\nRF24_NRF_REGS.h"
+ 441              		.file 6 "Generated_Source\\PSoC4/SPI_SPI_UART.h"
+ 442              		.file 7 "Generated_Source\\PSoC4/SS.h"
+ 443              		.section	.debug_info,"",%progbits
+ 444              	.Ldebug_info0:
+ 445 0000 16060000 		.4byte	0x616
+ 446 0004 0400     		.2byte	0x4
+ 447 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 448 000a 04       		.byte	0x4
+ 449 000b 01       		.uleb128 0x1
+ 450 000c C1000000 		.4byte	.LASF75
+ 451 0010 0C       		.byte	0xc
+ 452 0011 81000000 		.4byte	.LASF76
+ 453 0015 92020000 		.4byte	.LASF77
+ 454 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 455 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 15
+
+
+ 456 0021 00000000 		.4byte	.Ldebug_line0
+ 457 0025 02       		.uleb128 0x2
+ 458 0026 01       		.byte	0x1
+ 459 0027 06       		.byte	0x6
+ 460 0028 43030000 		.4byte	.LASF0
+ 461 002c 03       		.uleb128 0x3
+ 462 002d 63020000 		.4byte	.LASF9
+ 463 0031 02       		.byte	0x2
+ 464 0032 1D       		.byte	0x1d
+ 465 0033 37000000 		.4byte	0x37
+ 466 0037 02       		.uleb128 0x2
+ 467 0038 01       		.byte	0x1
+ 468 0039 08       		.byte	0x8
+ 469 003a 1F030000 		.4byte	.LASF1
+ 470 003e 02       		.uleb128 0x2
+ 471 003f 02       		.byte	0x2
+ 472 0040 05       		.byte	0x5
+ 473 0041 70000000 		.4byte	.LASF2
+ 474 0045 02       		.uleb128 0x2
+ 475 0046 02       		.byte	0x2
+ 476 0047 07       		.byte	0x7
+ 477 0048 A6030000 		.4byte	.LASF3
+ 478 004c 02       		.uleb128 0x2
+ 479 004d 04       		.byte	0x4
+ 480 004e 05       		.byte	0x5
+ 481 004f 47020000 		.4byte	.LASF4
+ 482 0053 02       		.uleb128 0x2
+ 483 0054 04       		.byte	0x4
+ 484 0055 07       		.byte	0x7
+ 485 0056 84040000 		.4byte	.LASF5
+ 486 005a 02       		.uleb128 0x2
+ 487 005b 08       		.byte	0x8
+ 488 005c 05       		.byte	0x5
+ 489 005d 7D010000 		.4byte	.LASF6
+ 490 0061 02       		.uleb128 0x2
+ 491 0062 08       		.byte	0x8
+ 492 0063 07       		.byte	0x7
+ 493 0064 4F030000 		.4byte	.LASF7
+ 494 0068 04       		.uleb128 0x4
+ 495 0069 04       		.byte	0x4
+ 496 006a 05       		.byte	0x5
+ 497 006b 696E7400 		.ascii	"int\000"
+ 498 006f 02       		.uleb128 0x2
+ 499 0070 04       		.byte	0x4
+ 500 0071 07       		.byte	0x7
+ 501 0072 66030000 		.4byte	.LASF8
+ 502 0076 03       		.uleb128 0x3
+ 503 0077 D4010000 		.4byte	.LASF10
+ 504 007b 03       		.byte	0x3
+ 505 007c 18       		.byte	0x18
+ 506 007d 2C000000 		.4byte	0x2c
+ 507 0081 02       		.uleb128 0x2
+ 508 0082 04       		.byte	0x4
+ 509 0083 04       		.byte	0x4
+ 510 0084 05020000 		.4byte	.LASF11
+ 511 0088 02       		.uleb128 0x2
+ 512 0089 08       		.byte	0x8
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 16
+
+
+ 513 008a 04       		.byte	0x4
+ 514 008b B1040000 		.4byte	.LASF12
+ 515 008f 02       		.uleb128 0x2
+ 516 0090 01       		.byte	0x1
+ 517 0091 08       		.byte	0x8
+ 518 0092 CA030000 		.4byte	.LASF13
+ 519 0096 03       		.uleb128 0x3
+ 520 0097 7A000000 		.4byte	.LASF14
+ 521 009b 04       		.byte	0x4
+ 522 009c D8       		.byte	0xd8
+ 523 009d 6F000000 		.4byte	0x6f
+ 524 00a1 02       		.uleb128 0x2
+ 525 00a2 08       		.byte	0x8
+ 526 00a3 04       		.byte	0x4
+ 527 00a4 F5020000 		.4byte	.LASF15
+ 528 00a8 02       		.uleb128 0x2
+ 529 00a9 04       		.byte	0x4
+ 530 00aa 07       		.byte	0x7
+ 531 00ab A7000000 		.4byte	.LASF16
+ 532 00af 05       		.uleb128 0x5
+ 533 00b0 01       		.byte	0x1
+ 534 00b1 37000000 		.4byte	0x37
+ 535 00b5 05       		.byte	0x5
+ 536 00b6 1F       		.byte	0x1f
+ 537 00b7 58010000 		.4byte	0x158
+ 538 00bb 06       		.uleb128 0x6
+ 539 00bc 19040000 		.4byte	.LASF17
+ 540 00c0 00       		.byte	0
+ 541 00c1 06       		.uleb128 0x6
+ 542 00c2 90010000 		.4byte	.LASF18
+ 543 00c6 01       		.byte	0x1
+ 544 00c7 06       		.uleb128 0x6
+ 545 00c8 0B020000 		.4byte	.LASF19
+ 546 00cc 02       		.byte	0x2
+ 547 00cd 06       		.uleb128 0x6
+ 548 00ce 95030000 		.4byte	.LASF20
+ 549 00d2 03       		.byte	0x3
+ 550 00d3 06       		.uleb128 0x6
+ 551 00d4 28040000 		.4byte	.LASF21
+ 552 00d8 04       		.byte	0x4
+ 553 00d9 06       		.uleb128 0x6
+ 554 00da 1D020000 		.4byte	.LASF22
+ 555 00de 05       		.byte	0x5
+ 556 00df 06       		.uleb128 0x6
+ 557 00e0 F4010000 		.4byte	.LASF23
+ 558 00e4 06       		.byte	0x6
+ 559 00e5 06       		.uleb128 0x6
+ 560 00e6 82050000 		.4byte	.LASF24
+ 561 00ea 07       		.byte	0x7
+ 562 00eb 06       		.uleb128 0x6
+ 563 00ec 40040000 		.4byte	.LASF25
+ 564 00f0 08       		.byte	0x8
+ 565 00f1 06       		.uleb128 0x6
+ 566 00f2 1A050000 		.4byte	.LASF26
+ 567 00f6 09       		.byte	0x9
+ 568 00f7 06       		.uleb128 0x6
+ 569 00f8 CF030000 		.4byte	.LASF27
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 17
+
+
+ 570 00fc 0A       		.byte	0xa
+ 571 00fd 06       		.uleb128 0x6
+ 572 00fe 91050000 		.4byte	.LASF28
+ 573 0102 0B       		.byte	0xb
+ 574 0103 06       		.uleb128 0x6
+ 575 0104 2B020000 		.4byte	.LASF29
+ 576 0108 0C       		.byte	0xc
+ 577 0109 06       		.uleb128 0x6
+ 578 010a 06040000 		.4byte	.LASF30
+ 579 010e 0D       		.byte	0xd
+ 580 010f 06       		.uleb128 0x6
+ 581 0110 28000000 		.4byte	.LASF31
+ 582 0114 0E       		.byte	0xe
+ 583 0115 06       		.uleb128 0x6
+ 584 0116 50020000 		.4byte	.LASF32
+ 585 011a 0F       		.byte	0xf
+ 586 011b 06       		.uleb128 0x6
+ 587 011c F0030000 		.4byte	.LASF33
+ 588 0120 10       		.byte	0x10
+ 589 0121 06       		.uleb128 0x6
+ 590 0122 4C000000 		.4byte	.LASF34
+ 591 0126 11       		.byte	0x11
+ 592 0127 06       		.uleb128 0x6
+ 593 0128 81020000 		.4byte	.LASF35
+ 594 012c 12       		.byte	0x12
+ 595 012d 06       		.uleb128 0x6
+ 596 012e 3B000000 		.4byte	.LASF36
+ 597 0132 13       		.byte	0x13
+ 598 0133 06       		.uleb128 0x6
+ 599 0134 B0000000 		.4byte	.LASF37
+ 600 0138 14       		.byte	0x14
+ 601 0139 06       		.uleb128 0x6
+ 602 013a 01030000 		.4byte	.LASF38
+ 603 013e 15       		.byte	0x15
+ 604 013f 06       		.uleb128 0x6
+ 605 0140 09050000 		.4byte	.LASF39
+ 606 0144 16       		.byte	0x16
+ 607 0145 06       		.uleb128 0x6
+ 608 0146 14000000 		.4byte	.LASF40
+ 609 014a 17       		.byte	0x17
+ 610 014b 06       		.uleb128 0x6
+ 611 014c E2030000 		.4byte	.LASF41
+ 612 0150 1C       		.byte	0x1c
+ 613 0151 06       		.uleb128 0x6
+ 614 0152 3B050000 		.4byte	.LASF42
+ 615 0156 1D       		.byte	0x1d
+ 616 0157 00       		.byte	0
+ 617 0158 03       		.uleb128 0x3
+ 618 0159 62050000 		.4byte	.LASF43
+ 619 015d 05       		.byte	0x5
+ 620 015e 3A       		.byte	0x3a
+ 621 015f AF000000 		.4byte	0xaf
+ 622 0163 05       		.uleb128 0x5
+ 623 0164 01       		.byte	0x1
+ 624 0165 37000000 		.4byte	0x37
+ 625 0169 05       		.byte	0x5
+ 626 016a 3D       		.byte	0x3d
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 18
+
+
+ 627 016b B2010000 		.4byte	0x1b2
+ 628 016f 06       		.uleb128 0x6
+ 629 0170 E2040000 		.4byte	.LASF44
+ 630 0174 00       		.byte	0
+ 631 0175 06       		.uleb128 0x6
+ 632 0176 73030000 		.4byte	.LASF45
+ 633 017a 20       		.byte	0x20
+ 634 017b 06       		.uleb128 0x6
+ 635 017c BF010000 		.4byte	.LASF46
+ 636 0180 61       		.byte	0x61
+ 637 0181 06       		.uleb128 0x6
+ 638 0182 26050000 		.4byte	.LASF47
+ 639 0186 A0       		.byte	0xa0
+ 640 0187 06       		.uleb128 0x6
+ 641 0188 B9030000 		.4byte	.LASF48
+ 642 018c E1       		.byte	0xe1
+ 643 018d 06       		.uleb128 0x6
+ 644 018e 53010000 		.4byte	.LASF49
+ 645 0192 E2       		.byte	0xe2
+ 646 0193 06       		.uleb128 0x6
+ 647 0194 6D020000 		.4byte	.LASF50
+ 648 0198 E3       		.byte	0xe3
+ 649 0199 06       		.uleb128 0x6
+ 650 019a 00000000 		.4byte	.LASF51
+ 651 019e 60       		.byte	0x60
+ 652 019f 06       		.uleb128 0x6
+ 653 01a0 53040000 		.4byte	.LASF52
+ 654 01a4 A8       		.byte	0xa8
+ 655 01a5 06       		.uleb128 0x6
+ 656 01a6 96040000 		.4byte	.LASF53
+ 657 01aa B0       		.byte	0xb0
+ 658 01ab 06       		.uleb128 0x6
+ 659 01ac 69040000 		.4byte	.LASF54
+ 660 01b0 FF       		.byte	0xff
+ 661 01b1 00       		.byte	0
+ 662 01b2 07       		.uleb128 0x7
+ 663 01b3 B8040000 		.4byte	.LASF60
+ 664 01b7 01       		.byte	0x1
+ 665 01b8 2B       		.byte	0x2b
+ 666 01b9 76000000 		.4byte	0x76
+ 667 01bd 00000000 		.4byte	.LFB1
+ 668 01c1 38000000 		.4byte	.LFE1-.LFB1
+ 669 01c5 01       		.uleb128 0x1
+ 670 01c6 9C       		.byte	0x9c
+ 671 01c7 4C020000 		.4byte	0x24c
+ 672 01cb 08       		.uleb128 0x8
+ 673 01cc 72656700 		.ascii	"reg\000"
+ 674 01d0 01       		.byte	0x1
+ 675 01d1 2B       		.byte	0x2b
+ 676 01d2 4C020000 		.4byte	0x24c
+ 677 01d6 00000000 		.4byte	.LLST0
+ 678 01da 09       		.uleb128 0x9
+ 679 01db 08000000 		.4byte	.LVL1
+ 680 01df C6050000 		.4byte	0x5c6
+ 681 01e3 09       		.uleb128 0x9
+ 682 01e4 0C000000 		.4byte	.LVL2
+ 683 01e8 D2050000 		.4byte	0x5d2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 19
+
+
+ 684 01ec 0A       		.uleb128 0xa
+ 685 01ed 12000000 		.4byte	.LVL3
+ 686 01f1 DE050000 		.4byte	0x5de
+ 687 01f5 FF010000 		.4byte	0x1ff
+ 688 01f9 0B       		.uleb128 0xb
+ 689 01fa 01       		.uleb128 0x1
+ 690 01fb 50       		.byte	0x50
+ 691 01fc 01       		.uleb128 0x1
+ 692 01fd 30       		.byte	0x30
+ 693 01fe 00       		.byte	0
+ 694 01ff 0A       		.uleb128 0xa
+ 695 0200 18000000 		.4byte	.LVL4
+ 696 0204 E9050000 		.4byte	0x5e9
+ 697 0208 13020000 		.4byte	0x213
+ 698 020c 0B       		.uleb128 0xb
+ 699 020d 01       		.uleb128 0x1
+ 700 020e 50       		.byte	0x50
+ 701 020f 02       		.uleb128 0x2
+ 702 0210 74       		.byte	0x74
+ 703 0211 00       		.sleb128 0
+ 704 0212 00       		.byte	0
+ 705 0213 0A       		.uleb128 0xa
+ 706 0214 1E000000 		.4byte	.LVL5
+ 707 0218 E9050000 		.4byte	0x5e9
+ 708 021c 27020000 		.4byte	0x227
+ 709 0220 0B       		.uleb128 0xb
+ 710 0221 01       		.uleb128 0x1
+ 711 0222 50       		.byte	0x50
+ 712 0223 02       		.uleb128 0x2
+ 713 0224 08       		.byte	0x8
+ 714 0225 FF       		.byte	0xff
+ 715 0226 00       		.byte	0
+ 716 0227 09       		.uleb128 0x9
+ 717 0228 22000000 		.4byte	.LVL6
+ 718 022c F5050000 		.4byte	0x5f5
+ 719 0230 09       		.uleb128 0x9
+ 720 0231 2C000000 		.4byte	.LVL7
+ 721 0235 DE050000 		.4byte	0x5de
+ 722 0239 09       		.uleb128 0x9
+ 723 023a 30000000 		.4byte	.LVL8
+ 724 023e 01060000 		.4byte	0x601
+ 725 0242 09       		.uleb128 0x9
+ 726 0243 34000000 		.4byte	.LVL9
+ 727 0247 01060000 		.4byte	0x601
+ 728 024b 00       		.byte	0
+ 729 024c 0C       		.uleb128 0xc
+ 730 024d 58010000 		.4byte	0x158
+ 731 0251 0D       		.uleb128 0xd
+ 732 0252 4B050000 		.4byte	.LASF57
+ 733 0256 01       		.byte	0x1
+ 734 0257 5D       		.byte	0x5d
+ 735 0258 00000000 		.4byte	.LFB2
+ 736 025c 4E000000 		.4byte	.LFE2-.LFB2
+ 737 0260 01       		.uleb128 0x1
+ 738 0261 9C       		.byte	0x9c
+ 739 0262 2E030000 		.4byte	0x32e
+ 740 0266 08       		.uleb128 0x8
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 20
+
+
+ 741 0267 72656700 		.ascii	"reg\000"
+ 742 026b 01       		.byte	0x1
+ 743 026c 5D       		.byte	0x5d
+ 744 026d 4C020000 		.4byte	0x24c
+ 745 0271 21000000 		.4byte	.LLST1
+ 746 0275 0E       		.uleb128 0xe
+ 747 0276 8B010000 		.4byte	.LASF55
+ 748 027a 01       		.byte	0x1
+ 749 027b 5E       		.byte	0x5e
+ 750 027c 2E030000 		.4byte	0x32e
+ 751 0280 42000000 		.4byte	.LLST2
+ 752 0284 0E       		.uleb128 0xe
+ 753 0285 3B040000 		.4byte	.LASF56
+ 754 0289 01       		.byte	0x1
+ 755 028a 5F       		.byte	0x5f
+ 756 028b 34030000 		.4byte	0x334
+ 757 028f 6E000000 		.4byte	.LLST3
+ 758 0293 0F       		.uleb128 0xf
+ 759 0294 26000000 		.4byte	.LBB2
+ 760 0298 20000000 		.4byte	.LBE2-.LBB2
+ 761 029c D4020000 		.4byte	0x2d4
+ 762 02a0 10       		.uleb128 0x10
+ 763 02a1 6900     		.ascii	"i\000"
+ 764 02a3 01       		.byte	0x1
+ 765 02a4 87       		.byte	0x87
+ 766 02a5 96000000 		.4byte	0x96
+ 767 02a9 9A000000 		.4byte	.LLST4
+ 768 02ad 0A       		.uleb128 0xa
+ 769 02ae 30000000 		.4byte	.LVL18
+ 770 02b2 E9050000 		.4byte	0x5e9
+ 771 02b6 C1020000 		.4byte	0x2c1
+ 772 02ba 0B       		.uleb128 0xb
+ 773 02bb 01       		.uleb128 0x1
+ 774 02bc 50       		.byte	0x50
+ 775 02bd 02       		.uleb128 0x2
+ 776 02be 08       		.byte	0x8
+ 777 02bf FF       		.byte	0xff
+ 778 02c0 00       		.byte	0
+ 779 02c1 09       		.uleb128 0x9
+ 780 02c2 34000000 		.4byte	.LVL19
+ 781 02c6 F5050000 		.4byte	0x5f5
+ 782 02ca 09       		.uleb128 0x9
+ 783 02cb 3E000000 		.4byte	.LVL20
+ 784 02cf 01060000 		.4byte	0x601
+ 785 02d3 00       		.byte	0
+ 786 02d4 09       		.uleb128 0x9
+ 787 02d5 0A000000 		.4byte	.LVL11
+ 788 02d9 C6050000 		.4byte	0x5c6
+ 789 02dd 09       		.uleb128 0x9
+ 790 02de 0E000000 		.4byte	.LVL12
+ 791 02e2 D2050000 		.4byte	0x5d2
+ 792 02e6 0A       		.uleb128 0xa
+ 793 02e7 14000000 		.4byte	.LVL13
+ 794 02eb DE050000 		.4byte	0x5de
+ 795 02ef F9020000 		.4byte	0x2f9
+ 796 02f3 0B       		.uleb128 0xb
+ 797 02f4 01       		.uleb128 0x1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 21
+
+
+ 798 02f5 50       		.byte	0x50
+ 799 02f6 01       		.uleb128 0x1
+ 800 02f7 30       		.byte	0x30
+ 801 02f8 00       		.byte	0
+ 802 02f9 0A       		.uleb128 0xa
+ 803 02fa 1A000000 		.4byte	.LVL14
+ 804 02fe E9050000 		.4byte	0x5e9
+ 805 0302 0C030000 		.4byte	0x30c
+ 806 0306 0B       		.uleb128 0xb
+ 807 0307 01       		.uleb128 0x1
+ 808 0308 50       		.byte	0x50
+ 809 0309 01       		.uleb128 0x1
+ 810 030a 3E       		.byte	0x3e
+ 811 030b 00       		.byte	0
+ 812 030c 09       		.uleb128 0x9
+ 813 030d 1E000000 		.4byte	.LVL15
+ 814 0311 F5050000 		.4byte	0x5f5
+ 815 0315 09       		.uleb128 0x9
+ 816 0316 26000000 		.4byte	.LVL16
+ 817 031a 01060000 		.4byte	0x601
+ 818 031e 11       		.uleb128 0x11
+ 819 031f 4C000000 		.4byte	.LVL22
+ 820 0323 DE050000 		.4byte	0x5de
+ 821 0327 0B       		.uleb128 0xb
+ 822 0328 01       		.uleb128 0x1
+ 823 0329 50       		.byte	0x50
+ 824 032a 01       		.uleb128 0x1
+ 825 032b 31       		.byte	0x31
+ 826 032c 00       		.byte	0
+ 827 032d 00       		.byte	0
+ 828 032e 12       		.uleb128 0x12
+ 829 032f 04       		.byte	0x4
+ 830 0330 76000000 		.4byte	0x76
+ 831 0334 0C       		.uleb128 0xc
+ 832 0335 96000000 		.4byte	0x96
+ 833 0339 0D       		.uleb128 0xd
+ 834 033a 6E050000 		.4byte	.LASF58
+ 835 033e 01       		.byte	0x1
+ 836 033f CA       		.byte	0xca
+ 837 0340 00000000 		.4byte	.LFB3
+ 838 0344 34000000 		.4byte	.LFE3-.LFB3
+ 839 0348 01       		.uleb128 0x1
+ 840 0349 9C       		.byte	0x9c
+ 841 034a C1030000 		.4byte	0x3c1
+ 842 034e 08       		.uleb128 0x8
+ 843 034f 72656700 		.ascii	"reg\000"
+ 844 0353 01       		.byte	0x1
+ 845 0354 CA       		.byte	0xca
+ 846 0355 4C020000 		.4byte	0x24c
+ 847 0359 B9000000 		.4byte	.LLST5
+ 848 035d 0E       		.uleb128 0xe
+ 849 035e 8B010000 		.4byte	.LASF55
+ 850 0362 01       		.byte	0x1
+ 851 0363 CA       		.byte	0xca
+ 852 0364 C1030000 		.4byte	0x3c1
+ 853 0368 DA000000 		.4byte	.LLST6
+ 854 036c 09       		.uleb128 0x9
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 22
+
+
+ 855 036d 0A000000 		.4byte	.LVL27
+ 856 0371 C6050000 		.4byte	0x5c6
+ 857 0375 09       		.uleb128 0x9
+ 858 0376 0E000000 		.4byte	.LVL28
+ 859 037a D2050000 		.4byte	0x5d2
+ 860 037e 0A       		.uleb128 0xa
+ 861 037f 14000000 		.4byte	.LVL29
+ 862 0383 DE050000 		.4byte	0x5de
+ 863 0387 91030000 		.4byte	0x391
+ 864 038b 0B       		.uleb128 0xb
+ 865 038c 01       		.uleb128 0x1
+ 866 038d 50       		.byte	0x50
+ 867 038e 01       		.uleb128 0x1
+ 868 038f 30       		.byte	0x30
+ 869 0390 00       		.byte	0
+ 870 0391 09       		.uleb128 0x9
+ 871 0392 1E000000 		.4byte	.LVL30
+ 872 0396 E9050000 		.4byte	0x5e9
+ 873 039a 0A       		.uleb128 0xa
+ 874 039b 24000000 		.4byte	.LVL31
+ 875 039f E9050000 		.4byte	0x5e9
+ 876 03a3 AE030000 		.4byte	0x3ae
+ 877 03a7 0B       		.uleb128 0xb
+ 878 03a8 01       		.uleb128 0x1
+ 879 03a9 50       		.byte	0x50
+ 880 03aa 02       		.uleb128 0x2
+ 881 03ab 74       		.byte	0x74
+ 882 03ac 00       		.sleb128 0
+ 883 03ad 00       		.byte	0
+ 884 03ae 09       		.uleb128 0x9
+ 885 03af 28000000 		.4byte	.LVL32
+ 886 03b3 F5050000 		.4byte	0x5f5
+ 887 03b7 09       		.uleb128 0x9
+ 888 03b8 32000000 		.4byte	.LVL33
+ 889 03bc DE050000 		.4byte	0x5de
+ 890 03c0 00       		.byte	0
+ 891 03c1 0C       		.uleb128 0xc
+ 892 03c2 76000000 		.4byte	0x76
+ 893 03c6 0D       		.uleb128 0xd
+ 894 03c7 DC010000 		.4byte	.LASF59
+ 895 03cb 01       		.byte	0x1
+ 896 03cc F0       		.byte	0xf0
+ 897 03cd 00000000 		.4byte	.LFB4
+ 898 03d1 3A000000 		.4byte	.LFE4-.LFB4
+ 899 03d5 01       		.uleb128 0x1
+ 900 03d6 9C       		.byte	0x9c
+ 901 03d7 69040000 		.4byte	0x469
+ 902 03db 08       		.uleb128 0x8
+ 903 03dc 72656700 		.ascii	"reg\000"
+ 904 03e0 01       		.byte	0x1
+ 905 03e1 F0       		.byte	0xf0
+ 906 03e2 4C020000 		.4byte	0x24c
+ 907 03e6 FB000000 		.4byte	.LLST7
+ 908 03ea 0E       		.uleb128 0xe
+ 909 03eb 8B010000 		.4byte	.LASF55
+ 910 03ef 01       		.byte	0x1
+ 911 03f0 F1       		.byte	0xf1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 23
+
+
+ 912 03f1 69040000 		.4byte	0x469
+ 913 03f5 1C010000 		.4byte	.LLST8
+ 914 03f9 0E       		.uleb128 0xe
+ 915 03fa 3B040000 		.4byte	.LASF56
+ 916 03fe 01       		.byte	0x1
+ 917 03ff F2       		.byte	0xf2
+ 918 0400 34030000 		.4byte	0x334
+ 919 0404 48010000 		.4byte	.LLST9
+ 920 0408 09       		.uleb128 0x9
+ 921 0409 0C000000 		.4byte	.LVL35
+ 922 040d C6050000 		.4byte	0x5c6
+ 923 0411 09       		.uleb128 0x9
+ 924 0412 10000000 		.4byte	.LVL36
+ 925 0416 D2050000 		.4byte	0x5d2
+ 926 041a 0A       		.uleb128 0xa
+ 927 041b 16000000 		.4byte	.LVL37
+ 928 041f DE050000 		.4byte	0x5de
+ 929 0423 2D040000 		.4byte	0x42d
+ 930 0427 0B       		.uleb128 0xb
+ 931 0428 01       		.uleb128 0x1
+ 932 0429 50       		.byte	0x50
+ 933 042a 01       		.uleb128 0x1
+ 934 042b 30       		.byte	0x30
+ 935 042c 00       		.byte	0
+ 936 042d 09       		.uleb128 0x9
+ 937 042e 20000000 		.4byte	.LVL38
+ 938 0432 E9050000 		.4byte	0x5e9
+ 939 0436 0A       		.uleb128 0xa
+ 940 0437 28000000 		.4byte	.LVL39
+ 941 043b 0D060000 		.4byte	0x60d
+ 942 043f 50040000 		.4byte	0x450
+ 943 0443 0B       		.uleb128 0xb
+ 944 0444 01       		.uleb128 0x1
+ 945 0445 50       		.byte	0x50
+ 946 0446 02       		.uleb128 0x2
+ 947 0447 75       		.byte	0x75
+ 948 0448 00       		.sleb128 0
+ 949 0449 0B       		.uleb128 0xb
+ 950 044a 01       		.uleb128 0x1
+ 951 044b 51       		.byte	0x51
+ 952 044c 02       		.uleb128 0x2
+ 953 044d 74       		.byte	0x74
+ 954 044e 00       		.sleb128 0
+ 955 044f 00       		.byte	0
+ 956 0450 09       		.uleb128 0x9
+ 957 0451 2C000000 		.4byte	.LVL40
+ 958 0455 F5050000 		.4byte	0x5f5
+ 959 0459 11       		.uleb128 0x11
+ 960 045a 38000000 		.4byte	.LVL41
+ 961 045e DE050000 		.4byte	0x5de
+ 962 0462 0B       		.uleb128 0xb
+ 963 0463 01       		.uleb128 0x1
+ 964 0464 50       		.byte	0x50
+ 965 0465 01       		.uleb128 0x1
+ 966 0466 31       		.byte	0x31
+ 967 0467 00       		.byte	0
+ 968 0468 00       		.byte	0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 24
+
+
+ 969 0469 12       		.uleb128 0x12
+ 970 046a 04       		.byte	0x4
+ 971 046b C1030000 		.4byte	0x3c1
+ 972 046f 13       		.uleb128 0x13
+ 973 0470 5D000000 		.4byte	.LASF61
+ 974 0474 01       		.byte	0x1
+ 975 0475 1E01     		.2byte	0x11e
+ 976 0477 B3040000 		.4byte	0x4b3
+ 977 047b 00000000 		.4byte	.LFB5
+ 978 047f 10000000 		.4byte	.LFE5-.LFB5
+ 979 0483 01       		.uleb128 0x1
+ 980 0484 9C       		.byte	0x9c
+ 981 0485 B3040000 		.4byte	0x4b3
+ 982 0489 14       		.uleb128 0x14
+ 983 048a 72656700 		.ascii	"reg\000"
+ 984 048e 01       		.byte	0x1
+ 985 048f 1E01     		.2byte	0x11e
+ 986 0491 4C020000 		.4byte	0x24c
+ 987 0495 74010000 		.4byte	.LLST10
+ 988 0499 14       		.uleb128 0x14
+ 989 049a 62697400 		.ascii	"bit\000"
+ 990 049e 01       		.byte	0x1
+ 991 049f 1E01     		.2byte	0x11e
+ 992 04a1 C1030000 		.4byte	0x3c1
+ 993 04a5 95010000 		.4byte	.LLST11
+ 994 04a9 09       		.uleb128 0x9
+ 995 04aa 08000000 		.4byte	.LVL45
+ 996 04ae B2010000 		.4byte	0x1b2
+ 997 04b2 00       		.byte	0
+ 998 04b3 02       		.uleb128 0x2
+ 999 04b4 01       		.byte	0x1
+ 1000 04b5 02       		.byte	0x2
+ 1001 04b6 00040000 		.4byte	.LASF62
+ 1002 04ba 15       		.uleb128 0x15
+ 1003 04bb 86030000 		.4byte	.LASF63
+ 1004 04bf 01       		.byte	0x1
+ 1005 04c0 2A01     		.2byte	0x12a
+ 1006 04c2 00000000 		.4byte	.LFB6
+ 1007 04c6 36000000 		.4byte	.LFE6-.LFB6
+ 1008 04ca 01       		.uleb128 0x1
+ 1009 04cb 9C       		.byte	0x9c
+ 1010 04cc 35050000 		.4byte	0x535
+ 1011 04d0 14       		.uleb128 0x14
+ 1012 04d1 72656700 		.ascii	"reg\000"
+ 1013 04d5 01       		.byte	0x1
+ 1014 04d6 2A01     		.2byte	0x12a
+ 1015 04d8 4C020000 		.4byte	0x24c
+ 1016 04dc B6010000 		.4byte	.LLST12
+ 1017 04e0 14       		.uleb128 0x14
+ 1018 04e1 62697400 		.ascii	"bit\000"
+ 1019 04e5 01       		.byte	0x1
+ 1020 04e6 2B01     		.2byte	0x12b
+ 1021 04e8 C1030000 		.4byte	0x3c1
+ 1022 04ec D7010000 		.4byte	.LLST13
+ 1023 04f0 16       		.uleb128 0x16
+ 1024 04f1 B9010000 		.4byte	.LASF64
+ 1025 04f5 01       		.byte	0x1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 25
+
+
+ 1026 04f6 2C01     		.2byte	0x12c
+ 1027 04f8 35050000 		.4byte	0x535
+ 1028 04fc F8010000 		.4byte	.LLST14
+ 1029 0500 17       		.uleb128 0x17
+ 1030 0501 6B000000 		.4byte	.LASF65
+ 1031 0505 01       		.byte	0x1
+ 1032 0506 2F01     		.2byte	0x12f
+ 1033 0508 76000000 		.4byte	0x76
+ 1034 050c 19020000 		.4byte	.LLST15
+ 1035 0510 0A       		.uleb128 0xa
+ 1036 0511 0C000000 		.4byte	.LVL47
+ 1037 0515 B2010000 		.4byte	0x1b2
+ 1038 0519 24050000 		.4byte	0x524
+ 1039 051d 0B       		.uleb128 0xb
+ 1040 051e 01       		.uleb128 0x1
+ 1041 051f 50       		.byte	0x50
+ 1042 0520 02       		.uleb128 0x2
+ 1043 0521 74       		.byte	0x74
+ 1044 0522 00       		.sleb128 0
+ 1045 0523 00       		.byte	0
+ 1046 0524 11       		.uleb128 0x11
+ 1047 0525 34000000 		.4byte	.LVL52
+ 1048 0529 39030000 		.4byte	0x339
+ 1049 052d 0B       		.uleb128 0xb
+ 1050 052e 01       		.uleb128 0x1
+ 1051 052f 50       		.byte	0x50
+ 1052 0530 02       		.uleb128 0x2
+ 1053 0531 74       		.byte	0x74
+ 1054 0532 00       		.sleb128 0
+ 1055 0533 00       		.byte	0
+ 1056 0534 00       		.byte	0
+ 1057 0535 0C       		.uleb128 0xc
+ 1058 0536 B3040000 		.4byte	0x4b3
+ 1059 053a 15       		.uleb128 0x15
+ 1060 053b 75040000 		.4byte	.LASF66
+ 1061 053f 01       		.byte	0x1
+ 1062 0540 4701     		.2byte	0x147
+ 1063 0542 00000000 		.4byte	.LFB7
+ 1064 0546 0A000000 		.4byte	.LFE7-.LFB7
+ 1065 054a 01       		.uleb128 0x1
+ 1066 054b 9C       		.byte	0x9c
+ 1067 054c 80050000 		.4byte	0x580
+ 1068 0550 14       		.uleb128 0x14
+ 1069 0551 72656700 		.ascii	"reg\000"
+ 1070 0555 01       		.byte	0x1
+ 1071 0556 4701     		.2byte	0x147
+ 1072 0558 4C020000 		.4byte	0x24c
+ 1073 055c 42020000 		.4byte	.LLST16
+ 1074 0560 14       		.uleb128 0x14
+ 1075 0561 62697400 		.ascii	"bit\000"
+ 1076 0565 01       		.byte	0x1
+ 1077 0566 4701     		.2byte	0x147
+ 1078 0568 C1030000 		.4byte	0x3c1
+ 1079 056c 63020000 		.4byte	.LLST17
+ 1080 0570 11       		.uleb128 0x11
+ 1081 0571 08000000 		.4byte	.LVL54
+ 1082 0575 BA040000 		.4byte	0x4ba
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 26
+
+
+ 1083 0579 0B       		.uleb128 0xb
+ 1084 057a 01       		.uleb128 0x1
+ 1085 057b 52       		.byte	0x52
+ 1086 057c 01       		.uleb128 0x1
+ 1087 057d 30       		.byte	0x30
+ 1088 057e 00       		.byte	0
+ 1089 057f 00       		.byte	0
+ 1090 0580 15       		.uleb128 0x15
+ 1091 0581 12030000 		.4byte	.LASF67
+ 1092 0585 01       		.byte	0x1
+ 1093 0586 5201     		.2byte	0x152
+ 1094 0588 00000000 		.4byte	.LFB8
+ 1095 058c 0A000000 		.4byte	.LFE8-.LFB8
+ 1096 0590 01       		.uleb128 0x1
+ 1097 0591 9C       		.byte	0x9c
+ 1098 0592 C6050000 		.4byte	0x5c6
+ 1099 0596 14       		.uleb128 0x14
+ 1100 0597 72656700 		.ascii	"reg\000"
+ 1101 059b 01       		.byte	0x1
+ 1102 059c 5201     		.2byte	0x152
+ 1103 059e 4C020000 		.4byte	0x24c
+ 1104 05a2 84020000 		.4byte	.LLST18
+ 1105 05a6 14       		.uleb128 0x14
+ 1106 05a7 62697400 		.ascii	"bit\000"
+ 1107 05ab 01       		.byte	0x1
+ 1108 05ac 5201     		.2byte	0x152
+ 1109 05ae C1030000 		.4byte	0x3c1
+ 1110 05b2 A5020000 		.4byte	.LLST19
+ 1111 05b6 11       		.uleb128 0x11
+ 1112 05b7 08000000 		.4byte	.LVL56
+ 1113 05bb BA040000 		.4byte	0x4ba
+ 1114 05bf 0B       		.uleb128 0xb
+ 1115 05c0 01       		.uleb128 0x1
+ 1116 05c1 52       		.byte	0x52
+ 1117 05c2 01       		.uleb128 0x1
+ 1118 05c3 31       		.byte	0x31
+ 1119 05c4 00       		.byte	0
+ 1120 05c5 00       		.byte	0
+ 1121 05c6 18       		.uleb128 0x18
+ 1122 05c7 DC020000 		.4byte	.LASF68
+ 1123 05cb DC020000 		.4byte	.LASF68
+ 1124 05cf 06       		.byte	0x6
+ 1125 05d0 3503     		.2byte	0x335
+ 1126 05d2 18       		.uleb128 0x18
+ 1127 05d3 64010000 		.4byte	.LASF69
+ 1128 05d7 64010000 		.4byte	.LASF69
+ 1129 05db 06       		.byte	0x6
+ 1130 05dc 3D03     		.2byte	0x33d
+ 1131 05de 19       		.uleb128 0x19
+ 1132 05df 3E020000 		.4byte	.LASF70
+ 1133 05e3 3E020000 		.4byte	.LASF70
+ 1134 05e7 07       		.byte	0x7
+ 1135 05e8 33       		.byte	0x33
+ 1136 05e9 18       		.uleb128 0x18
+ 1137 05ea CB040000 		.4byte	.LASF71
+ 1138 05ee CB040000 		.4byte	.LASF71
+ 1139 05f2 06       		.byte	0x6
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 27
+
+
+ 1140 05f3 3A03     		.2byte	0x33a
+ 1141 05f5 18       		.uleb128 0x18
+ 1142 05f6 9E010000 		.4byte	.LASF72
+ 1143 05fa 9E010000 		.4byte	.LASF72
+ 1144 05fe 06       		.byte	0x6
+ 1145 05ff 3403     		.2byte	0x334
+ 1146 0601 18       		.uleb128 0x18
+ 1147 0602 2D030000 		.4byte	.LASF73
+ 1148 0606 2D030000 		.4byte	.LASF73
+ 1149 060a 06       		.byte	0x6
+ 1150 060b 3303     		.2byte	0x333
+ 1151 060d 18       		.uleb128 0x18
+ 1152 060e F5040000 		.4byte	.LASF74
+ 1153 0612 F5040000 		.4byte	.LASF74
+ 1154 0616 06       		.byte	0x6
+ 1155 0617 3B03     		.2byte	0x33b
+ 1156 0619 00       		.byte	0
+ 1157              		.section	.debug_abbrev,"",%progbits
+ 1158              	.Ldebug_abbrev0:
+ 1159 0000 01       		.uleb128 0x1
+ 1160 0001 11       		.uleb128 0x11
+ 1161 0002 01       		.byte	0x1
+ 1162 0003 25       		.uleb128 0x25
+ 1163 0004 0E       		.uleb128 0xe
+ 1164 0005 13       		.uleb128 0x13
+ 1165 0006 0B       		.uleb128 0xb
+ 1166 0007 03       		.uleb128 0x3
+ 1167 0008 0E       		.uleb128 0xe
+ 1168 0009 1B       		.uleb128 0x1b
+ 1169 000a 0E       		.uleb128 0xe
+ 1170 000b 55       		.uleb128 0x55
+ 1171 000c 17       		.uleb128 0x17
+ 1172 000d 11       		.uleb128 0x11
+ 1173 000e 01       		.uleb128 0x1
+ 1174 000f 10       		.uleb128 0x10
+ 1175 0010 17       		.uleb128 0x17
+ 1176 0011 00       		.byte	0
+ 1177 0012 00       		.byte	0
+ 1178 0013 02       		.uleb128 0x2
+ 1179 0014 24       		.uleb128 0x24
+ 1180 0015 00       		.byte	0
+ 1181 0016 0B       		.uleb128 0xb
+ 1182 0017 0B       		.uleb128 0xb
+ 1183 0018 3E       		.uleb128 0x3e
+ 1184 0019 0B       		.uleb128 0xb
+ 1185 001a 03       		.uleb128 0x3
+ 1186 001b 0E       		.uleb128 0xe
+ 1187 001c 00       		.byte	0
+ 1188 001d 00       		.byte	0
+ 1189 001e 03       		.uleb128 0x3
+ 1190 001f 16       		.uleb128 0x16
+ 1191 0020 00       		.byte	0
+ 1192 0021 03       		.uleb128 0x3
+ 1193 0022 0E       		.uleb128 0xe
+ 1194 0023 3A       		.uleb128 0x3a
+ 1195 0024 0B       		.uleb128 0xb
+ 1196 0025 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 28
+
+
+ 1197 0026 0B       		.uleb128 0xb
+ 1198 0027 49       		.uleb128 0x49
+ 1199 0028 13       		.uleb128 0x13
+ 1200 0029 00       		.byte	0
+ 1201 002a 00       		.byte	0
+ 1202 002b 04       		.uleb128 0x4
+ 1203 002c 24       		.uleb128 0x24
+ 1204 002d 00       		.byte	0
+ 1205 002e 0B       		.uleb128 0xb
+ 1206 002f 0B       		.uleb128 0xb
+ 1207 0030 3E       		.uleb128 0x3e
+ 1208 0031 0B       		.uleb128 0xb
+ 1209 0032 03       		.uleb128 0x3
+ 1210 0033 08       		.uleb128 0x8
+ 1211 0034 00       		.byte	0
+ 1212 0035 00       		.byte	0
+ 1213 0036 05       		.uleb128 0x5
+ 1214 0037 04       		.uleb128 0x4
+ 1215 0038 01       		.byte	0x1
+ 1216 0039 0B       		.uleb128 0xb
+ 1217 003a 0B       		.uleb128 0xb
+ 1218 003b 49       		.uleb128 0x49
+ 1219 003c 13       		.uleb128 0x13
+ 1220 003d 3A       		.uleb128 0x3a
+ 1221 003e 0B       		.uleb128 0xb
+ 1222 003f 3B       		.uleb128 0x3b
+ 1223 0040 0B       		.uleb128 0xb
+ 1224 0041 01       		.uleb128 0x1
+ 1225 0042 13       		.uleb128 0x13
+ 1226 0043 00       		.byte	0
+ 1227 0044 00       		.byte	0
+ 1228 0045 06       		.uleb128 0x6
+ 1229 0046 28       		.uleb128 0x28
+ 1230 0047 00       		.byte	0
+ 1231 0048 03       		.uleb128 0x3
+ 1232 0049 0E       		.uleb128 0xe
+ 1233 004a 1C       		.uleb128 0x1c
+ 1234 004b 0B       		.uleb128 0xb
+ 1235 004c 00       		.byte	0
+ 1236 004d 00       		.byte	0
+ 1237 004e 07       		.uleb128 0x7
+ 1238 004f 2E       		.uleb128 0x2e
+ 1239 0050 01       		.byte	0x1
+ 1240 0051 3F       		.uleb128 0x3f
+ 1241 0052 19       		.uleb128 0x19
+ 1242 0053 03       		.uleb128 0x3
+ 1243 0054 0E       		.uleb128 0xe
+ 1244 0055 3A       		.uleb128 0x3a
+ 1245 0056 0B       		.uleb128 0xb
+ 1246 0057 3B       		.uleb128 0x3b
+ 1247 0058 0B       		.uleb128 0xb
+ 1248 0059 27       		.uleb128 0x27
+ 1249 005a 19       		.uleb128 0x19
+ 1250 005b 49       		.uleb128 0x49
+ 1251 005c 13       		.uleb128 0x13
+ 1252 005d 11       		.uleb128 0x11
+ 1253 005e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 29
+
+
+ 1254 005f 12       		.uleb128 0x12
+ 1255 0060 06       		.uleb128 0x6
+ 1256 0061 40       		.uleb128 0x40
+ 1257 0062 18       		.uleb128 0x18
+ 1258 0063 9742     		.uleb128 0x2117
+ 1259 0065 19       		.uleb128 0x19
+ 1260 0066 01       		.uleb128 0x1
+ 1261 0067 13       		.uleb128 0x13
+ 1262 0068 00       		.byte	0
+ 1263 0069 00       		.byte	0
+ 1264 006a 08       		.uleb128 0x8
+ 1265 006b 05       		.uleb128 0x5
+ 1266 006c 00       		.byte	0
+ 1267 006d 03       		.uleb128 0x3
+ 1268 006e 08       		.uleb128 0x8
+ 1269 006f 3A       		.uleb128 0x3a
+ 1270 0070 0B       		.uleb128 0xb
+ 1271 0071 3B       		.uleb128 0x3b
+ 1272 0072 0B       		.uleb128 0xb
+ 1273 0073 49       		.uleb128 0x49
+ 1274 0074 13       		.uleb128 0x13
+ 1275 0075 02       		.uleb128 0x2
+ 1276 0076 17       		.uleb128 0x17
+ 1277 0077 00       		.byte	0
+ 1278 0078 00       		.byte	0
+ 1279 0079 09       		.uleb128 0x9
+ 1280 007a 898201   		.uleb128 0x4109
+ 1281 007d 00       		.byte	0
+ 1282 007e 11       		.uleb128 0x11
+ 1283 007f 01       		.uleb128 0x1
+ 1284 0080 31       		.uleb128 0x31
+ 1285 0081 13       		.uleb128 0x13
+ 1286 0082 00       		.byte	0
+ 1287 0083 00       		.byte	0
+ 1288 0084 0A       		.uleb128 0xa
+ 1289 0085 898201   		.uleb128 0x4109
+ 1290 0088 01       		.byte	0x1
+ 1291 0089 11       		.uleb128 0x11
+ 1292 008a 01       		.uleb128 0x1
+ 1293 008b 31       		.uleb128 0x31
+ 1294 008c 13       		.uleb128 0x13
+ 1295 008d 01       		.uleb128 0x1
+ 1296 008e 13       		.uleb128 0x13
+ 1297 008f 00       		.byte	0
+ 1298 0090 00       		.byte	0
+ 1299 0091 0B       		.uleb128 0xb
+ 1300 0092 8A8201   		.uleb128 0x410a
+ 1301 0095 00       		.byte	0
+ 1302 0096 02       		.uleb128 0x2
+ 1303 0097 18       		.uleb128 0x18
+ 1304 0098 9142     		.uleb128 0x2111
+ 1305 009a 18       		.uleb128 0x18
+ 1306 009b 00       		.byte	0
+ 1307 009c 00       		.byte	0
+ 1308 009d 0C       		.uleb128 0xc
+ 1309 009e 26       		.uleb128 0x26
+ 1310 009f 00       		.byte	0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 30
+
+
+ 1311 00a0 49       		.uleb128 0x49
+ 1312 00a1 13       		.uleb128 0x13
+ 1313 00a2 00       		.byte	0
+ 1314 00a3 00       		.byte	0
+ 1315 00a4 0D       		.uleb128 0xd
+ 1316 00a5 2E       		.uleb128 0x2e
+ 1317 00a6 01       		.byte	0x1
+ 1318 00a7 3F       		.uleb128 0x3f
+ 1319 00a8 19       		.uleb128 0x19
+ 1320 00a9 03       		.uleb128 0x3
+ 1321 00aa 0E       		.uleb128 0xe
+ 1322 00ab 3A       		.uleb128 0x3a
+ 1323 00ac 0B       		.uleb128 0xb
+ 1324 00ad 3B       		.uleb128 0x3b
+ 1325 00ae 0B       		.uleb128 0xb
+ 1326 00af 27       		.uleb128 0x27
+ 1327 00b0 19       		.uleb128 0x19
+ 1328 00b1 11       		.uleb128 0x11
+ 1329 00b2 01       		.uleb128 0x1
+ 1330 00b3 12       		.uleb128 0x12
+ 1331 00b4 06       		.uleb128 0x6
+ 1332 00b5 40       		.uleb128 0x40
+ 1333 00b6 18       		.uleb128 0x18
+ 1334 00b7 9742     		.uleb128 0x2117
+ 1335 00b9 19       		.uleb128 0x19
+ 1336 00ba 01       		.uleb128 0x1
+ 1337 00bb 13       		.uleb128 0x13
+ 1338 00bc 00       		.byte	0
+ 1339 00bd 00       		.byte	0
+ 1340 00be 0E       		.uleb128 0xe
+ 1341 00bf 05       		.uleb128 0x5
+ 1342 00c0 00       		.byte	0
+ 1343 00c1 03       		.uleb128 0x3
+ 1344 00c2 0E       		.uleb128 0xe
+ 1345 00c3 3A       		.uleb128 0x3a
+ 1346 00c4 0B       		.uleb128 0xb
+ 1347 00c5 3B       		.uleb128 0x3b
+ 1348 00c6 0B       		.uleb128 0xb
+ 1349 00c7 49       		.uleb128 0x49
+ 1350 00c8 13       		.uleb128 0x13
+ 1351 00c9 02       		.uleb128 0x2
+ 1352 00ca 17       		.uleb128 0x17
+ 1353 00cb 00       		.byte	0
+ 1354 00cc 00       		.byte	0
+ 1355 00cd 0F       		.uleb128 0xf
+ 1356 00ce 0B       		.uleb128 0xb
+ 1357 00cf 01       		.byte	0x1
+ 1358 00d0 11       		.uleb128 0x11
+ 1359 00d1 01       		.uleb128 0x1
+ 1360 00d2 12       		.uleb128 0x12
+ 1361 00d3 06       		.uleb128 0x6
+ 1362 00d4 01       		.uleb128 0x1
+ 1363 00d5 13       		.uleb128 0x13
+ 1364 00d6 00       		.byte	0
+ 1365 00d7 00       		.byte	0
+ 1366 00d8 10       		.uleb128 0x10
+ 1367 00d9 34       		.uleb128 0x34
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 31
+
+
+ 1368 00da 00       		.byte	0
+ 1369 00db 03       		.uleb128 0x3
+ 1370 00dc 08       		.uleb128 0x8
+ 1371 00dd 3A       		.uleb128 0x3a
+ 1372 00de 0B       		.uleb128 0xb
+ 1373 00df 3B       		.uleb128 0x3b
+ 1374 00e0 0B       		.uleb128 0xb
+ 1375 00e1 49       		.uleb128 0x49
+ 1376 00e2 13       		.uleb128 0x13
+ 1377 00e3 02       		.uleb128 0x2
+ 1378 00e4 17       		.uleb128 0x17
+ 1379 00e5 00       		.byte	0
+ 1380 00e6 00       		.byte	0
+ 1381 00e7 11       		.uleb128 0x11
+ 1382 00e8 898201   		.uleb128 0x4109
+ 1383 00eb 01       		.byte	0x1
+ 1384 00ec 11       		.uleb128 0x11
+ 1385 00ed 01       		.uleb128 0x1
+ 1386 00ee 31       		.uleb128 0x31
+ 1387 00ef 13       		.uleb128 0x13
+ 1388 00f0 00       		.byte	0
+ 1389 00f1 00       		.byte	0
+ 1390 00f2 12       		.uleb128 0x12
+ 1391 00f3 0F       		.uleb128 0xf
+ 1392 00f4 00       		.byte	0
+ 1393 00f5 0B       		.uleb128 0xb
+ 1394 00f6 0B       		.uleb128 0xb
+ 1395 00f7 49       		.uleb128 0x49
+ 1396 00f8 13       		.uleb128 0x13
+ 1397 00f9 00       		.byte	0
+ 1398 00fa 00       		.byte	0
+ 1399 00fb 13       		.uleb128 0x13
+ 1400 00fc 2E       		.uleb128 0x2e
+ 1401 00fd 01       		.byte	0x1
+ 1402 00fe 3F       		.uleb128 0x3f
+ 1403 00ff 19       		.uleb128 0x19
+ 1404 0100 03       		.uleb128 0x3
+ 1405 0101 0E       		.uleb128 0xe
+ 1406 0102 3A       		.uleb128 0x3a
+ 1407 0103 0B       		.uleb128 0xb
+ 1408 0104 3B       		.uleb128 0x3b
+ 1409 0105 05       		.uleb128 0x5
+ 1410 0106 27       		.uleb128 0x27
+ 1411 0107 19       		.uleb128 0x19
+ 1412 0108 49       		.uleb128 0x49
+ 1413 0109 13       		.uleb128 0x13
+ 1414 010a 11       		.uleb128 0x11
+ 1415 010b 01       		.uleb128 0x1
+ 1416 010c 12       		.uleb128 0x12
+ 1417 010d 06       		.uleb128 0x6
+ 1418 010e 40       		.uleb128 0x40
+ 1419 010f 18       		.uleb128 0x18
+ 1420 0110 9742     		.uleb128 0x2117
+ 1421 0112 19       		.uleb128 0x19
+ 1422 0113 01       		.uleb128 0x1
+ 1423 0114 13       		.uleb128 0x13
+ 1424 0115 00       		.byte	0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 32
+
+
+ 1425 0116 00       		.byte	0
+ 1426 0117 14       		.uleb128 0x14
+ 1427 0118 05       		.uleb128 0x5
+ 1428 0119 00       		.byte	0
+ 1429 011a 03       		.uleb128 0x3
+ 1430 011b 08       		.uleb128 0x8
+ 1431 011c 3A       		.uleb128 0x3a
+ 1432 011d 0B       		.uleb128 0xb
+ 1433 011e 3B       		.uleb128 0x3b
+ 1434 011f 05       		.uleb128 0x5
+ 1435 0120 49       		.uleb128 0x49
+ 1436 0121 13       		.uleb128 0x13
+ 1437 0122 02       		.uleb128 0x2
+ 1438 0123 17       		.uleb128 0x17
+ 1439 0124 00       		.byte	0
+ 1440 0125 00       		.byte	0
+ 1441 0126 15       		.uleb128 0x15
+ 1442 0127 2E       		.uleb128 0x2e
+ 1443 0128 01       		.byte	0x1
+ 1444 0129 3F       		.uleb128 0x3f
+ 1445 012a 19       		.uleb128 0x19
+ 1446 012b 03       		.uleb128 0x3
+ 1447 012c 0E       		.uleb128 0xe
+ 1448 012d 3A       		.uleb128 0x3a
+ 1449 012e 0B       		.uleb128 0xb
+ 1450 012f 3B       		.uleb128 0x3b
+ 1451 0130 05       		.uleb128 0x5
+ 1452 0131 27       		.uleb128 0x27
+ 1453 0132 19       		.uleb128 0x19
+ 1454 0133 11       		.uleb128 0x11
+ 1455 0134 01       		.uleb128 0x1
+ 1456 0135 12       		.uleb128 0x12
+ 1457 0136 06       		.uleb128 0x6
+ 1458 0137 40       		.uleb128 0x40
+ 1459 0138 18       		.uleb128 0x18
+ 1460 0139 9742     		.uleb128 0x2117
+ 1461 013b 19       		.uleb128 0x19
+ 1462 013c 01       		.uleb128 0x1
+ 1463 013d 13       		.uleb128 0x13
+ 1464 013e 00       		.byte	0
+ 1465 013f 00       		.byte	0
+ 1466 0140 16       		.uleb128 0x16
+ 1467 0141 05       		.uleb128 0x5
+ 1468 0142 00       		.byte	0
+ 1469 0143 03       		.uleb128 0x3
+ 1470 0144 0E       		.uleb128 0xe
+ 1471 0145 3A       		.uleb128 0x3a
+ 1472 0146 0B       		.uleb128 0xb
+ 1473 0147 3B       		.uleb128 0x3b
+ 1474 0148 05       		.uleb128 0x5
+ 1475 0149 49       		.uleb128 0x49
+ 1476 014a 13       		.uleb128 0x13
+ 1477 014b 02       		.uleb128 0x2
+ 1478 014c 17       		.uleb128 0x17
+ 1479 014d 00       		.byte	0
+ 1480 014e 00       		.byte	0
+ 1481 014f 17       		.uleb128 0x17
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 33
+
+
+ 1482 0150 34       		.uleb128 0x34
+ 1483 0151 00       		.byte	0
+ 1484 0152 03       		.uleb128 0x3
+ 1485 0153 0E       		.uleb128 0xe
+ 1486 0154 3A       		.uleb128 0x3a
+ 1487 0155 0B       		.uleb128 0xb
+ 1488 0156 3B       		.uleb128 0x3b
+ 1489 0157 05       		.uleb128 0x5
+ 1490 0158 49       		.uleb128 0x49
+ 1491 0159 13       		.uleb128 0x13
+ 1492 015a 02       		.uleb128 0x2
+ 1493 015b 17       		.uleb128 0x17
+ 1494 015c 00       		.byte	0
+ 1495 015d 00       		.byte	0
+ 1496 015e 18       		.uleb128 0x18
+ 1497 015f 2E       		.uleb128 0x2e
+ 1498 0160 00       		.byte	0
+ 1499 0161 3F       		.uleb128 0x3f
+ 1500 0162 19       		.uleb128 0x19
+ 1501 0163 3C       		.uleb128 0x3c
+ 1502 0164 19       		.uleb128 0x19
+ 1503 0165 6E       		.uleb128 0x6e
+ 1504 0166 0E       		.uleb128 0xe
+ 1505 0167 03       		.uleb128 0x3
+ 1506 0168 0E       		.uleb128 0xe
+ 1507 0169 3A       		.uleb128 0x3a
+ 1508 016a 0B       		.uleb128 0xb
+ 1509 016b 3B       		.uleb128 0x3b
+ 1510 016c 05       		.uleb128 0x5
+ 1511 016d 00       		.byte	0
+ 1512 016e 00       		.byte	0
+ 1513 016f 19       		.uleb128 0x19
+ 1514 0170 2E       		.uleb128 0x2e
+ 1515 0171 00       		.byte	0
+ 1516 0172 3F       		.uleb128 0x3f
+ 1517 0173 19       		.uleb128 0x19
+ 1518 0174 3C       		.uleb128 0x3c
+ 1519 0175 19       		.uleb128 0x19
+ 1520 0176 6E       		.uleb128 0x6e
+ 1521 0177 0E       		.uleb128 0xe
+ 1522 0178 03       		.uleb128 0x3
+ 1523 0179 0E       		.uleb128 0xe
+ 1524 017a 3A       		.uleb128 0x3a
+ 1525 017b 0B       		.uleb128 0xb
+ 1526 017c 3B       		.uleb128 0x3b
+ 1527 017d 0B       		.uleb128 0xb
+ 1528 017e 00       		.byte	0
+ 1529 017f 00       		.byte	0
+ 1530 0180 00       		.byte	0
+ 1531              		.section	.debug_loc,"",%progbits
+ 1532              	.Ldebug_loc0:
+ 1533              	.LLST0:
+ 1534 0000 00000000 		.4byte	.LVL0
+ 1535 0004 07000000 		.4byte	.LVL1-1
+ 1536 0008 0100     		.2byte	0x1
+ 1537 000a 50       		.byte	0x50
+ 1538 000b 07000000 		.4byte	.LVL1-1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 34
+
+
+ 1539 000f 38000000 		.4byte	.LFE1
+ 1540 0013 0400     		.2byte	0x4
+ 1541 0015 F3       		.byte	0xf3
+ 1542 0016 01       		.uleb128 0x1
+ 1543 0017 50       		.byte	0x50
+ 1544 0018 9F       		.byte	0x9f
+ 1545 0019 00000000 		.4byte	0
+ 1546 001d 00000000 		.4byte	0
+ 1547              	.LLST1:
+ 1548 0021 00000000 		.4byte	.LVL10
+ 1549 0025 09000000 		.4byte	.LVL11-1
+ 1550 0029 0100     		.2byte	0x1
+ 1551 002b 50       		.byte	0x50
+ 1552 002c 09000000 		.4byte	.LVL11-1
+ 1553 0030 4E000000 		.4byte	.LFE2
+ 1554 0034 0400     		.2byte	0x4
+ 1555 0036 F3       		.byte	0xf3
+ 1556 0037 01       		.uleb128 0x1
+ 1557 0038 50       		.byte	0x50
+ 1558 0039 9F       		.byte	0x9f
+ 1559 003a 00000000 		.4byte	0
+ 1560 003e 00000000 		.4byte	0
+ 1561              	.LLST2:
+ 1562 0042 00000000 		.4byte	.LVL10
+ 1563 0046 09000000 		.4byte	.LVL11-1
+ 1564 004a 0100     		.2byte	0x1
+ 1565 004c 51       		.byte	0x51
+ 1566 004d 09000000 		.4byte	.LVL11-1
+ 1567 0051 4C000000 		.4byte	.LVL25
+ 1568 0055 0100     		.2byte	0x1
+ 1569 0057 57       		.byte	0x57
+ 1570 0058 4C000000 		.4byte	.LVL25
+ 1571 005c 4E000000 		.4byte	.LFE2
+ 1572 0060 0400     		.2byte	0x4
+ 1573 0062 F3       		.byte	0xf3
+ 1574 0063 01       		.uleb128 0x1
+ 1575 0064 51       		.byte	0x51
+ 1576 0065 9F       		.byte	0x9f
+ 1577 0066 00000000 		.4byte	0
+ 1578 006a 00000000 		.4byte	0
+ 1579              	.LLST3:
+ 1580 006e 00000000 		.4byte	.LVL10
+ 1581 0072 09000000 		.4byte	.LVL11-1
+ 1582 0076 0100     		.2byte	0x1
+ 1583 0078 52       		.byte	0x52
+ 1584 0079 09000000 		.4byte	.LVL11-1
+ 1585 007d 4C000000 		.4byte	.LVL24
+ 1586 0081 0100     		.2byte	0x1
+ 1587 0083 56       		.byte	0x56
+ 1588 0084 4C000000 		.4byte	.LVL24
+ 1589 0088 4E000000 		.4byte	.LFE2
+ 1590 008c 0400     		.2byte	0x4
+ 1591 008e F3       		.byte	0xf3
+ 1592 008f 01       		.uleb128 0x1
+ 1593 0090 52       		.byte	0x52
+ 1594 0091 9F       		.byte	0x9f
+ 1595 0092 00000000 		.4byte	0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 35
+
+
+ 1596 0096 00000000 		.4byte	0
+ 1597              	.LLST4:
+ 1598 009a 26000000 		.4byte	.LVL16
+ 1599 009e 2A000000 		.4byte	.LVL17
+ 1600 00a2 0200     		.2byte	0x2
+ 1601 00a4 30       		.byte	0x30
+ 1602 00a5 9F       		.byte	0x9f
+ 1603 00a6 2A000000 		.4byte	.LVL17
+ 1604 00aa 4C000000 		.4byte	.LVL23
+ 1605 00ae 0100     		.2byte	0x1
+ 1606 00b0 54       		.byte	0x54
+ 1607 00b1 00000000 		.4byte	0
+ 1608 00b5 00000000 		.4byte	0
+ 1609              	.LLST5:
+ 1610 00b9 00000000 		.4byte	.LVL26
+ 1611 00bd 09000000 		.4byte	.LVL27-1
+ 1612 00c1 0100     		.2byte	0x1
+ 1613 00c3 50       		.byte	0x50
+ 1614 00c4 09000000 		.4byte	.LVL27-1
+ 1615 00c8 34000000 		.4byte	.LFE3
+ 1616 00cc 0400     		.2byte	0x4
+ 1617 00ce F3       		.byte	0xf3
+ 1618 00cf 01       		.uleb128 0x1
+ 1619 00d0 50       		.byte	0x50
+ 1620 00d1 9F       		.byte	0x9f
+ 1621 00d2 00000000 		.4byte	0
+ 1622 00d6 00000000 		.4byte	0
+ 1623              	.LLST6:
+ 1624 00da 00000000 		.4byte	.LVL26
+ 1625 00de 09000000 		.4byte	.LVL27-1
+ 1626 00e2 0100     		.2byte	0x1
+ 1627 00e4 51       		.byte	0x51
+ 1628 00e5 09000000 		.4byte	.LVL27-1
+ 1629 00e9 34000000 		.4byte	.LFE3
+ 1630 00ed 0400     		.2byte	0x4
+ 1631 00ef F3       		.byte	0xf3
+ 1632 00f0 01       		.uleb128 0x1
+ 1633 00f1 51       		.byte	0x51
+ 1634 00f2 9F       		.byte	0x9f
+ 1635 00f3 00000000 		.4byte	0
+ 1636 00f7 00000000 		.4byte	0
+ 1637              	.LLST7:
+ 1638 00fb 00000000 		.4byte	.LVL34
+ 1639 00ff 0B000000 		.4byte	.LVL35-1
+ 1640 0103 0100     		.2byte	0x1
+ 1641 0105 50       		.byte	0x50
+ 1642 0106 0B000000 		.4byte	.LVL35-1
+ 1643 010a 3A000000 		.4byte	.LFE4
+ 1644 010e 0400     		.2byte	0x4
+ 1645 0110 F3       		.byte	0xf3
+ 1646 0111 01       		.uleb128 0x1
+ 1647 0112 50       		.byte	0x50
+ 1648 0113 9F       		.byte	0x9f
+ 1649 0114 00000000 		.4byte	0
+ 1650 0118 00000000 		.4byte	0
+ 1651              	.LLST8:
+ 1652 011c 00000000 		.4byte	.LVL34
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 36
+
+
+ 1653 0120 0B000000 		.4byte	.LVL35-1
+ 1654 0124 0100     		.2byte	0x1
+ 1655 0126 51       		.byte	0x51
+ 1656 0127 0B000000 		.4byte	.LVL35-1
+ 1657 012b 38000000 		.4byte	.LVL43
+ 1658 012f 0100     		.2byte	0x1
+ 1659 0131 55       		.byte	0x55
+ 1660 0132 38000000 		.4byte	.LVL43
+ 1661 0136 3A000000 		.4byte	.LFE4
+ 1662 013a 0400     		.2byte	0x4
+ 1663 013c F3       		.byte	0xf3
+ 1664 013d 01       		.uleb128 0x1
+ 1665 013e 51       		.byte	0x51
+ 1666 013f 9F       		.byte	0x9f
+ 1667 0140 00000000 		.4byte	0
+ 1668 0144 00000000 		.4byte	0
+ 1669              	.LLST9:
+ 1670 0148 00000000 		.4byte	.LVL34
+ 1671 014c 0B000000 		.4byte	.LVL35-1
+ 1672 0150 0100     		.2byte	0x1
+ 1673 0152 52       		.byte	0x52
+ 1674 0153 0B000000 		.4byte	.LVL35-1
+ 1675 0157 38000000 		.4byte	.LVL42
+ 1676 015b 0100     		.2byte	0x1
+ 1677 015d 54       		.byte	0x54
+ 1678 015e 38000000 		.4byte	.LVL42
+ 1679 0162 3A000000 		.4byte	.LFE4
+ 1680 0166 0400     		.2byte	0x4
+ 1681 0168 F3       		.byte	0xf3
+ 1682 0169 01       		.uleb128 0x1
+ 1683 016a 52       		.byte	0x52
+ 1684 016b 9F       		.byte	0x9f
+ 1685 016c 00000000 		.4byte	0
+ 1686 0170 00000000 		.4byte	0
+ 1687              	.LLST10:
+ 1688 0174 00000000 		.4byte	.LVL44
+ 1689 0178 07000000 		.4byte	.LVL45-1
+ 1690 017c 0100     		.2byte	0x1
+ 1691 017e 50       		.byte	0x50
+ 1692 017f 07000000 		.4byte	.LVL45-1
+ 1693 0183 10000000 		.4byte	.LFE5
+ 1694 0187 0400     		.2byte	0x4
+ 1695 0189 F3       		.byte	0xf3
+ 1696 018a 01       		.uleb128 0x1
+ 1697 018b 50       		.byte	0x50
+ 1698 018c 9F       		.byte	0x9f
+ 1699 018d 00000000 		.4byte	0
+ 1700 0191 00000000 		.4byte	0
+ 1701              	.LLST11:
+ 1702 0195 00000000 		.4byte	.LVL44
+ 1703 0199 07000000 		.4byte	.LVL45-1
+ 1704 019d 0100     		.2byte	0x1
+ 1705 019f 51       		.byte	0x51
+ 1706 01a0 07000000 		.4byte	.LVL45-1
+ 1707 01a4 10000000 		.4byte	.LFE5
+ 1708 01a8 0400     		.2byte	0x4
+ 1709 01aa F3       		.byte	0xf3
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 37
+
+
+ 1710 01ab 01       		.uleb128 0x1
+ 1711 01ac 51       		.byte	0x51
+ 1712 01ad 9F       		.byte	0x9f
+ 1713 01ae 00000000 		.4byte	0
+ 1714 01b2 00000000 		.4byte	0
+ 1715              	.LLST12:
+ 1716 01b6 00000000 		.4byte	.LVL46
+ 1717 01ba 0B000000 		.4byte	.LVL47-1
+ 1718 01be 0100     		.2byte	0x1
+ 1719 01c0 50       		.byte	0x50
+ 1720 01c1 0B000000 		.4byte	.LVL47-1
+ 1721 01c5 36000000 		.4byte	.LFE6
+ 1722 01c9 0400     		.2byte	0x4
+ 1723 01cb F3       		.byte	0xf3
+ 1724 01cc 01       		.uleb128 0x1
+ 1725 01cd 50       		.byte	0x50
+ 1726 01ce 9F       		.byte	0x9f
+ 1727 01cf 00000000 		.4byte	0
+ 1728 01d3 00000000 		.4byte	0
+ 1729              	.LLST13:
+ 1730 01d7 00000000 		.4byte	.LVL46
+ 1731 01db 0B000000 		.4byte	.LVL47-1
+ 1732 01df 0100     		.2byte	0x1
+ 1733 01e1 51       		.byte	0x51
+ 1734 01e2 0B000000 		.4byte	.LVL47-1
+ 1735 01e6 36000000 		.4byte	.LFE6
+ 1736 01ea 0400     		.2byte	0x4
+ 1737 01ec F3       		.byte	0xf3
+ 1738 01ed 01       		.uleb128 0x1
+ 1739 01ee 51       		.byte	0x51
+ 1740 01ef 9F       		.byte	0x9f
+ 1741 01f0 00000000 		.4byte	0
+ 1742 01f4 00000000 		.4byte	0
+ 1743              	.LLST14:
+ 1744 01f8 00000000 		.4byte	.LVL46
+ 1745 01fc 0B000000 		.4byte	.LVL47-1
+ 1746 0200 0100     		.2byte	0x1
+ 1747 0202 52       		.byte	0x52
+ 1748 0203 0B000000 		.4byte	.LVL47-1
+ 1749 0207 36000000 		.4byte	.LFE6
+ 1750 020b 0400     		.2byte	0x4
+ 1751 020d F3       		.byte	0xf3
+ 1752 020e 01       		.uleb128 0x1
+ 1753 020f 52       		.byte	0x52
+ 1754 0210 9F       		.byte	0x9f
+ 1755 0211 00000000 		.4byte	0
+ 1756 0215 00000000 		.4byte	0
+ 1757              	.LLST15:
+ 1758 0219 0C000000 		.4byte	.LVL47
+ 1759 021d 22000000 		.4byte	.LVL48
+ 1760 0221 0100     		.2byte	0x1
+ 1761 0223 50       		.byte	0x50
+ 1762 0224 26000000 		.4byte	.LVL49
+ 1763 0228 2C000000 		.4byte	.LVL50
+ 1764 022c 0100     		.2byte	0x1
+ 1765 022e 50       		.byte	0x50
+ 1766 022f 2E000000 		.4byte	.LVL51
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 38
+
+
+ 1767 0233 33000000 		.4byte	.LVL52-1
+ 1768 0237 0100     		.2byte	0x1
+ 1769 0239 51       		.byte	0x51
+ 1770 023a 00000000 		.4byte	0
+ 1771 023e 00000000 		.4byte	0
+ 1772              	.LLST16:
+ 1773 0242 00000000 		.4byte	.LVL53
+ 1774 0246 07000000 		.4byte	.LVL54-1
+ 1775 024a 0100     		.2byte	0x1
+ 1776 024c 50       		.byte	0x50
+ 1777 024d 07000000 		.4byte	.LVL54-1
+ 1778 0251 0A000000 		.4byte	.LFE7
+ 1779 0255 0400     		.2byte	0x4
+ 1780 0257 F3       		.byte	0xf3
+ 1781 0258 01       		.uleb128 0x1
+ 1782 0259 50       		.byte	0x50
+ 1783 025a 9F       		.byte	0x9f
+ 1784 025b 00000000 		.4byte	0
+ 1785 025f 00000000 		.4byte	0
+ 1786              	.LLST17:
+ 1787 0263 00000000 		.4byte	.LVL53
+ 1788 0267 07000000 		.4byte	.LVL54-1
+ 1789 026b 0100     		.2byte	0x1
+ 1790 026d 51       		.byte	0x51
+ 1791 026e 07000000 		.4byte	.LVL54-1
+ 1792 0272 0A000000 		.4byte	.LFE7
+ 1793 0276 0400     		.2byte	0x4
+ 1794 0278 F3       		.byte	0xf3
+ 1795 0279 01       		.uleb128 0x1
+ 1796 027a 51       		.byte	0x51
+ 1797 027b 9F       		.byte	0x9f
+ 1798 027c 00000000 		.4byte	0
+ 1799 0280 00000000 		.4byte	0
+ 1800              	.LLST18:
+ 1801 0284 00000000 		.4byte	.LVL55
+ 1802 0288 07000000 		.4byte	.LVL56-1
+ 1803 028c 0100     		.2byte	0x1
+ 1804 028e 50       		.byte	0x50
+ 1805 028f 07000000 		.4byte	.LVL56-1
+ 1806 0293 0A000000 		.4byte	.LFE8
+ 1807 0297 0400     		.2byte	0x4
+ 1808 0299 F3       		.byte	0xf3
+ 1809 029a 01       		.uleb128 0x1
+ 1810 029b 50       		.byte	0x50
+ 1811 029c 9F       		.byte	0x9f
+ 1812 029d 00000000 		.4byte	0
+ 1813 02a1 00000000 		.4byte	0
+ 1814              	.LLST19:
+ 1815 02a5 00000000 		.4byte	.LVL55
+ 1816 02a9 07000000 		.4byte	.LVL56-1
+ 1817 02ad 0100     		.2byte	0x1
+ 1818 02af 51       		.byte	0x51
+ 1819 02b0 07000000 		.4byte	.LVL56-1
+ 1820 02b4 0A000000 		.4byte	.LFE8
+ 1821 02b8 0400     		.2byte	0x4
+ 1822 02ba F3       		.byte	0xf3
+ 1823 02bb 01       		.uleb128 0x1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 39
+
+
+ 1824 02bc 51       		.byte	0x51
+ 1825 02bd 9F       		.byte	0x9f
+ 1826 02be 00000000 		.4byte	0
+ 1827 02c2 00000000 		.4byte	0
+ 1828              		.section	.debug_aranges,"",%progbits
+ 1829 0000 54000000 		.4byte	0x54
+ 1830 0004 0200     		.2byte	0x2
+ 1831 0006 00000000 		.4byte	.Ldebug_info0
+ 1832 000a 04       		.byte	0x4
+ 1833 000b 00       		.byte	0
+ 1834 000c 0000     		.2byte	0
+ 1835 000e 0000     		.2byte	0
+ 1836 0010 00000000 		.4byte	.LFB1
+ 1837 0014 38000000 		.4byte	.LFE1-.LFB1
+ 1838 0018 00000000 		.4byte	.LFB2
+ 1839 001c 4E000000 		.4byte	.LFE2-.LFB2
+ 1840 0020 00000000 		.4byte	.LFB3
+ 1841 0024 34000000 		.4byte	.LFE3-.LFB3
+ 1842 0028 00000000 		.4byte	.LFB4
+ 1843 002c 3A000000 		.4byte	.LFE4-.LFB4
+ 1844 0030 00000000 		.4byte	.LFB5
+ 1845 0034 10000000 		.4byte	.LFE5-.LFB5
+ 1846 0038 00000000 		.4byte	.LFB6
+ 1847 003c 36000000 		.4byte	.LFE6-.LFB6
+ 1848 0040 00000000 		.4byte	.LFB7
+ 1849 0044 0A000000 		.4byte	.LFE7-.LFB7
+ 1850 0048 00000000 		.4byte	.LFB8
+ 1851 004c 0A000000 		.4byte	.LFE8-.LFB8
+ 1852 0050 00000000 		.4byte	0
+ 1853 0054 00000000 		.4byte	0
+ 1854              		.section	.debug_ranges,"",%progbits
+ 1855              	.Ldebug_ranges0:
+ 1856 0000 00000000 		.4byte	.LFB1
+ 1857 0004 38000000 		.4byte	.LFE1
+ 1858 0008 00000000 		.4byte	.LFB2
+ 1859 000c 4E000000 		.4byte	.LFE2
+ 1860 0010 00000000 		.4byte	.LFB3
+ 1861 0014 34000000 		.4byte	.LFE3
+ 1862 0018 00000000 		.4byte	.LFB4
+ 1863 001c 3A000000 		.4byte	.LFE4
+ 1864 0020 00000000 		.4byte	.LFB5
+ 1865 0024 10000000 		.4byte	.LFE5
+ 1866 0028 00000000 		.4byte	.LFB6
+ 1867 002c 36000000 		.4byte	.LFE6
+ 1868 0030 00000000 		.4byte	.LFB7
+ 1869 0034 0A000000 		.4byte	.LFE7
+ 1870 0038 00000000 		.4byte	.LFB8
+ 1871 003c 0A000000 		.4byte	.LFE8
+ 1872 0040 00000000 		.4byte	0
+ 1873 0044 00000000 		.4byte	0
+ 1874              		.section	.debug_line,"",%progbits
+ 1875              	.Ldebug_line0:
+ 1876 0000 DE020000 		.section	.debug_str,"MS",%progbits,1
+ 1876      0200E901 
+ 1876      00000201 
+ 1876      FB0E0D00 
+ 1876      01010101 
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 40
+
+
+ 1877              	.LASF51:
+ 1878 0000 4E52465F 		.ascii	"NRF_R_RX_PL_WID_CMD\000"
+ 1878      525F5258 
+ 1878      5F504C5F 
+ 1878      5749445F 
+ 1878      434D4400 
+ 1879              	.LASF40:
+ 1880 0014 4E52465F 		.ascii	"NRF_FIFO_STATUS_REG\000"
+ 1880      4649464F 
+ 1880      5F535441 
+ 1880      5455535F 
+ 1880      52454700 
+ 1881              	.LASF31:
+ 1882 0028 4E52465F 		.ascii	"NRF_RX_ADDR_P4_REG\000"
+ 1882      52585F41 
+ 1882      4444525F 
+ 1882      50345F52 
+ 1882      454700
+ 1883              	.LASF36:
+ 1884 003b 4E52465F 		.ascii	"NRF_RX_PW_P2_REG\000"
+ 1884      52585F50 
+ 1884      575F5032 
+ 1884      5F524547 
+ 1884      00
+ 1885              	.LASF34:
+ 1886 004c 4E52465F 		.ascii	"NRF_RX_PW_P0_REG\000"
+ 1886      52585F50 
+ 1886      575F5030 
+ 1886      5F524547 
+ 1886      00
+ 1887              	.LASF61:
+ 1888 005d 6E524632 		.ascii	"nRF24_readBit\000"
+ 1888      345F7265 
+ 1888      61644269 
+ 1888      7400
+ 1889              	.LASF65:
+ 1890 006b 74656D70 		.ascii	"temp\000"
+ 1890      00
+ 1891              	.LASF2:
+ 1892 0070 73686F72 		.ascii	"short int\000"
+ 1892      7420696E 
+ 1892      7400
+ 1893              	.LASF14:
+ 1894 007a 73697A65 		.ascii	"size_t\000"
+ 1894      5F7400
+ 1895              	.LASF76:
+ 1896 0081 47656E65 		.ascii	"Generated_Source\\PSoC4\\nRF24_LL_SPI.c\000"
+ 1896      72617465 
+ 1896      645F536F 
+ 1896      75726365 
+ 1896      5C50536F 
+ 1897              	.LASF16:
+ 1898 00a7 73697A65 		.ascii	"sizetype\000"
+ 1898      74797065 
+ 1898      00
+ 1899              	.LASF37:
+ 1900 00b0 4E52465F 		.ascii	"NRF_RX_PW_P3_REG\000"
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 41
+
+
+ 1900      52585F50 
+ 1900      575F5033 
+ 1900      5F524547 
+ 1900      00
+ 1901              	.LASF75:
+ 1902 00c1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1902      43313120 
+ 1902      352E342E 
+ 1902      31203230 
+ 1902      31363036 
+ 1903 00f4 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1903      20726576 
+ 1903      6973696F 
+ 1903      6E203233 
+ 1903      37373135 
+ 1904 0127 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1904      67202D66 
+ 1904      66756E63 
+ 1904      74696F6E 
+ 1904      2D736563 
+ 1905              	.LASF49:
+ 1906 0153 4E52465F 		.ascii	"NRF_FLUSH_RX_CMD\000"
+ 1906      464C5553 
+ 1906      485F5258 
+ 1906      5F434D44 
+ 1906      00
+ 1907              	.LASF69:
+ 1908 0164 5350495F 		.ascii	"SPI_SpiUartClearTxBuffer\000"
+ 1908      53706955 
+ 1908      61727443 
+ 1908      6C656172 
+ 1908      54784275 
+ 1909              	.LASF6:
+ 1910 017d 6C6F6E67 		.ascii	"long long int\000"
+ 1910      206C6F6E 
+ 1910      6720696E 
+ 1910      7400
+ 1911              	.LASF55:
+ 1912 018b 64617461 		.ascii	"data\000"
+ 1912      00
+ 1913              	.LASF18:
+ 1914 0190 4E52465F 		.ascii	"NRF_EN_AA_REG\000"
+ 1914      454E5F41 
+ 1914      415F5245 
+ 1914      4700
+ 1915              	.LASF72:
+ 1916 019e 5350495F 		.ascii	"SPI_SpiUartGetRxBufferSize\000"
+ 1916      53706955 
+ 1916      61727447 
+ 1916      65745278 
+ 1916      42756666 
+ 1917              	.LASF64:
+ 1918 01b9 76616C75 		.ascii	"value\000"
+ 1918      6500
+ 1919              	.LASF46:
+ 1920 01bf 4E52465F 		.ascii	"NRF_R_RX_PAYLOAD_CMD\000"
+ 1920      525F5258 
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 42
+
+
+ 1920      5F504159 
+ 1920      4C4F4144 
+ 1920      5F434D44 
+ 1921              	.LASF10:
+ 1922 01d4 75696E74 		.ascii	"uint8_t\000"
+ 1922      385F7400 
+ 1923              	.LASF59:
+ 1924 01dc 6E524632 		.ascii	"nRF24_writeLongRegister\000"
+ 1924      345F7772 
+ 1924      6974654C 
+ 1924      6F6E6752 
+ 1924      65676973 
+ 1925              	.LASF23:
+ 1926 01f4 4E52465F 		.ascii	"NRF_RF_SETUP_REG\000"
+ 1926      52465F53 
+ 1926      45545550 
+ 1926      5F524547 
+ 1926      00
+ 1927              	.LASF11:
+ 1928 0205 666C6F61 		.ascii	"float\000"
+ 1928      7400
+ 1929              	.LASF19:
+ 1930 020b 4E52465F 		.ascii	"NRF_EN_RXADDR_REG\000"
+ 1930      454E5F52 
+ 1930      58414444 
+ 1930      525F5245 
+ 1930      4700
+ 1931              	.LASF22:
+ 1932 021d 4E52465F 		.ascii	"NRF_RF_CH_REG\000"
+ 1932      52465F43 
+ 1932      485F5245 
+ 1932      4700
+ 1933              	.LASF29:
+ 1934 022b 4E52465F 		.ascii	"NRF_RX_ADDR_P2_REG\000"
+ 1934      52585F41 
+ 1934      4444525F 
+ 1934      50325F52 
+ 1934      454700
+ 1935              	.LASF70:
+ 1936 023e 53535F57 		.ascii	"SS_Write\000"
+ 1936      72697465 
+ 1936      00
+ 1937              	.LASF4:
+ 1938 0247 6C6F6E67 		.ascii	"long int\000"
+ 1938      20696E74 
+ 1938      00
+ 1939              	.LASF32:
+ 1940 0250 4E52465F 		.ascii	"NRF_RX_ADDR_P5_REG\000"
+ 1940      52585F41 
+ 1940      4444525F 
+ 1940      50355F52 
+ 1940      454700
+ 1941              	.LASF9:
+ 1942 0263 5F5F7569 		.ascii	"__uint8_t\000"
+ 1942      6E74385F 
+ 1942      7400
+ 1943              	.LASF50:
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 43
+
+
+ 1944 026d 4E52465F 		.ascii	"NRF_REUSE_TX_PL_CMD\000"
+ 1944      52455553 
+ 1944      455F5458 
+ 1944      5F504C5F 
+ 1944      434D4400 
+ 1945              	.LASF35:
+ 1946 0281 4E52465F 		.ascii	"NRF_RX_PW_P1_REG\000"
+ 1946      52585F50 
+ 1946      575F5031 
+ 1946      5F524547 
+ 1946      00
+ 1947              	.LASF77:
+ 1948 0292 433A5C55 		.ascii	"C:\\Users\\Xwx47\\Documents\\Creator\\nRF24_Example"
+ 1948      73657273 
+ 1948      5C587778 
+ 1948      34375C44 
+ 1948      6F63756D 
+ 1949 02c0 5F50726F 		.ascii	"_Projects\\00_Basic_Rx.cydsn\000"
+ 1949      6A656374 
+ 1949      735C3030 
+ 1949      5F426173 
+ 1949      69635F52 
+ 1950              	.LASF68:
+ 1951 02dc 5350495F 		.ascii	"SPI_SpiUartClearRxBuffer\000"
+ 1951      53706955 
+ 1951      61727443 
+ 1951      6C656172 
+ 1951      52784275 
+ 1952              	.LASF15:
+ 1953 02f5 6C6F6E67 		.ascii	"long double\000"
+ 1953      20646F75 
+ 1953      626C6500 
+ 1954              	.LASF38:
+ 1955 0301 4E52465F 		.ascii	"NRF_RX_PW_P4_REG\000"
+ 1955      52585F50 
+ 1955      575F5034 
+ 1955      5F524547 
+ 1955      00
+ 1956              	.LASF67:
+ 1957 0312 6E524632 		.ascii	"nRF24_setBit\000"
+ 1957      345F7365 
+ 1957      74426974 
+ 1957      00
+ 1958              	.LASF1:
+ 1959 031f 756E7369 		.ascii	"unsigned char\000"
+ 1959      676E6564 
+ 1959      20636861 
+ 1959      7200
+ 1960              	.LASF73:
+ 1961 032d 5350495F 		.ascii	"SPI_SpiUartReadRxData\000"
+ 1961      53706955 
+ 1961      61727452 
+ 1961      65616452 
+ 1961      78446174 
+ 1962              	.LASF0:
+ 1963 0343 7369676E 		.ascii	"signed char\000"
+ 1963      65642063 
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 44
+
+
+ 1963      68617200 
+ 1964              	.LASF7:
+ 1965 034f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1965      206C6F6E 
+ 1965      6720756E 
+ 1965      7369676E 
+ 1965      65642069 
+ 1966              	.LASF8:
+ 1967 0366 756E7369 		.ascii	"unsigned int\000"
+ 1967      676E6564 
+ 1967      20696E74 
+ 1967      00
+ 1968              	.LASF45:
+ 1969 0373 4E52465F 		.ascii	"NRF_W_REGISTER_CMD\000"
+ 1969      575F5245 
+ 1969      47495354 
+ 1969      45525F43 
+ 1969      4D4400
+ 1970              	.LASF63:
+ 1971 0386 6E524632 		.ascii	"nRF24_writeBit\000"
+ 1971      345F7772 
+ 1971      69746542 
+ 1971      697400
+ 1972              	.LASF20:
+ 1973 0395 4E52465F 		.ascii	"NRF_SETUP_AW_REG\000"
+ 1973      53455455 
+ 1973      505F4157 
+ 1973      5F524547 
+ 1973      00
+ 1974              	.LASF3:
+ 1975 03a6 73686F72 		.ascii	"short unsigned int\000"
+ 1975      7420756E 
+ 1975      7369676E 
+ 1975      65642069 
+ 1975      6E7400
+ 1976              	.LASF48:
+ 1977 03b9 4E52465F 		.ascii	"NRF_FLUSH_TX_CMD\000"
+ 1977      464C5553 
+ 1977      485F5458 
+ 1977      5F434D44 
+ 1977      00
+ 1978              	.LASF13:
+ 1979 03ca 63686172 		.ascii	"char\000"
+ 1979      00
+ 1980              	.LASF27:
+ 1981 03cf 4E52465F 		.ascii	"NRF_RX_ADDR_P0_REG\000"
+ 1981      52585F41 
+ 1981      4444525F 
+ 1981      50305F52 
+ 1981      454700
+ 1982              	.LASF41:
+ 1983 03e2 4E52465F 		.ascii	"NRF_DYNPD_REG\000"
+ 1983      44594E50 
+ 1983      445F5245 
+ 1983      4700
+ 1984              	.LASF33:
+ 1985 03f0 4E52465F 		.ascii	"NRF_TX_ADDR_REG\000"
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 45
+
+
+ 1985      54585F41 
+ 1985      4444525F 
+ 1985      52454700 
+ 1986              	.LASF62:
+ 1987 0400 5F426F6F 		.ascii	"_Bool\000"
+ 1987      6C00
+ 1988              	.LASF30:
+ 1989 0406 4E52465F 		.ascii	"NRF_RX_ADDR_P3_REG\000"
+ 1989      52585F41 
+ 1989      4444525F 
+ 1989      50335F52 
+ 1989      454700
+ 1990              	.LASF17:
+ 1991 0419 4E52465F 		.ascii	"NRF_CONFIG_REG\000"
+ 1991      434F4E46 
+ 1991      49475F52 
+ 1991      454700
+ 1992              	.LASF21:
+ 1993 0428 4E52465F 		.ascii	"NRF_SETUP_RETR_REG\000"
+ 1993      53455455 
+ 1993      505F5245 
+ 1993      54525F52 
+ 1993      454700
+ 1994              	.LASF56:
+ 1995 043b 73697A65 		.ascii	"size\000"
+ 1995      00
+ 1996              	.LASF25:
+ 1997 0440 4E52465F 		.ascii	"NRF_OBSERVE_TX_REG\000"
+ 1997      4F425345 
+ 1997      5256455F 
+ 1997      54585F52 
+ 1997      454700
+ 1998              	.LASF52:
+ 1999 0453 4E52465F 		.ascii	"NRF_W_ACK_PAYLOAD_CMD\000"
+ 1999      575F4143 
+ 1999      4B5F5041 
+ 1999      594C4F41 
+ 1999      445F434D 
+ 2000              	.LASF54:
+ 2001 0469 4E52465F 		.ascii	"NRF_NOP_CMD\000"
+ 2001      4E4F505F 
+ 2001      434D4400 
+ 2002              	.LASF66:
+ 2003 0475 6E524632 		.ascii	"nRF24_clearBit\000"
+ 2003      345F636C 
+ 2003      65617242 
+ 2003      697400
+ 2004              	.LASF5:
+ 2005 0484 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2005      20756E73 
+ 2005      69676E65 
+ 2005      6420696E 
+ 2005      7400
+ 2006              	.LASF53:
+ 2007 0496 4E52465F 		.ascii	"NRF_W_TX_PAYLOAD_NOACK_CMD\000"
+ 2007      575F5458 
+ 2007      5F504159 
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 46
+
+
+ 2007      4C4F4144 
+ 2007      5F4E4F41 
+ 2008              	.LASF12:
+ 2009 04b1 646F7562 		.ascii	"double\000"
+ 2009      6C6500
+ 2010              	.LASF60:
+ 2011 04b8 6E524632 		.ascii	"nRF24_readRegister\000"
+ 2011      345F7265 
+ 2011      61645265 
+ 2011      67697374 
+ 2011      657200
+ 2012              	.LASF71:
+ 2013 04cb 5350495F 		.ascii	"SPI_SpiUartWriteTxData\000"
+ 2013      53706955 
+ 2013      61727457 
+ 2013      72697465 
+ 2013      54784461 
+ 2014              	.LASF44:
+ 2015 04e2 4E52465F 		.ascii	"NRF_R_REGISTER_CMD\000"
+ 2015      525F5245 
+ 2015      47495354 
+ 2015      45525F43 
+ 2015      4D4400
+ 2016              	.LASF74:
+ 2017 04f5 5350495F 		.ascii	"SPI_SpiUartPutArray\000"
+ 2017      53706955 
+ 2017      61727450 
+ 2017      75744172 
+ 2017      72617900 
+ 2018              	.LASF39:
+ 2019 0509 4E52465F 		.ascii	"NRF_RX_PW_P5_REG\000"
+ 2019      52585F50 
+ 2019      575F5035 
+ 2019      5F524547 
+ 2019      00
+ 2020              	.LASF26:
+ 2021 051a 4E52465F 		.ascii	"NRF_RPD_REG\000"
+ 2021      5250445F 
+ 2021      52454700 
+ 2022              	.LASF47:
+ 2023 0526 4E52465F 		.ascii	"NRF_W_TX_PAYLOAD_CMD\000"
+ 2023      575F5458 
+ 2023      5F504159 
+ 2023      4C4F4144 
+ 2023      5F434D44 
+ 2024              	.LASF42:
+ 2025 053b 4E52465F 		.ascii	"NRF_FEATURE_REG\000"
+ 2025      46454154 
+ 2025      5552455F 
+ 2025      52454700 
+ 2026              	.LASF57:
+ 2027 054b 6E524632 		.ascii	"nRF24_readLongRegister\000"
+ 2027      345F7265 
+ 2027      61644C6F 
+ 2027      6E675265 
+ 2027      67697374 
+ 2028              	.LASF43:
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccYRwhps.s 			page 47
+
+
+ 2029 0562 4E726652 		.ascii	"NrfRegister\000"
+ 2029      65676973 
+ 2029      74657200 
+ 2030              	.LASF58:
+ 2031 056e 6E524632 		.ascii	"nRF24_writeRegister\000"
+ 2031      345F7772 
+ 2031      69746552 
+ 2031      65676973 
+ 2031      74657200 
+ 2032              	.LASF24:
+ 2033 0582 4E52465F 		.ascii	"NRF_STATUS_REG\000"
+ 2033      53544154 
+ 2033      55535F52 
+ 2033      454700
+ 2034              	.LASF28:
+ 2035 0591 4E52465F 		.ascii	"NRF_RX_ADDR_P1_REG\000"
+ 2035      52585F41 
+ 2035      4444525F 
+ 2035      50315F52 
+ 2035      454700
+ 2036              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
