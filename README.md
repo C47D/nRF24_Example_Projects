@@ -1,6 +1,23 @@
-# nRF24 Component Example Projects
+# nRF24 Example Projects
 
-Add the nRF24 Component to the projects dependencies.
+To clone this repo:
+```
+$ git clone https://github.com/C47D/nRF24_Example_Projects
+$ cd nRF24_Example_Projects
+nRF24_Example_Projects $ git submodule init
+nRF24_Example_Projects $ git submodule update
+```
+
+or
+
+```
+$ git clone --recursive https://github.com/C47D/nRF24_Example_Projects
+```
+
+To update the submodule:
+```
+nRF24_Example_Projects $ git submodule update --remote nRF24_Component
+```
 
 # Projects
 
