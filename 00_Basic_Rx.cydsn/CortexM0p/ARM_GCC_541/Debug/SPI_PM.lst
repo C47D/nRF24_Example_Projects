@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 1
 
 
    1              		.syntax unified
@@ -30,7 +30,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
   27              		.file 1 "Generated_Source\\PSoC4\\SPI_PM.c"
    1:Generated_Source\PSoC4/SPI_PM.c **** /***************************************************************************//**
    2:Generated_Source\PSoC4/SPI_PM.c **** * \file SPI_PM.c
-   3:Generated_Source\PSoC4/SPI_PM.c **** * \version 3.20
+   3:Generated_Source\PSoC4/SPI_PM.c **** * \version 4.0
    4:Generated_Source\PSoC4/SPI_PM.c **** *
    5:Generated_Source\PSoC4/SPI_PM.c **** * \brief
    6:Generated_Source\PSoC4/SPI_PM.c **** *  This file provides the source code to the Power Management support for
@@ -40,7 +40,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
   10:Generated_Source\PSoC4/SPI_PM.c **** *
   11:Generated_Source\PSoC4/SPI_PM.c **** ********************************************************************************
   12:Generated_Source\PSoC4/SPI_PM.c **** * \copyright
-  13:Generated_Source\PSoC4/SPI_PM.c **** * Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC4/SPI_PM.c **** * Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
   14:Generated_Source\PSoC4/SPI_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
   15:Generated_Source\PSoC4/SPI_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
   16:Generated_Source\PSoC4/SPI_PM.c **** * the software package with which this file was provided.
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
   28:Generated_Source\PSoC4/SPI_PM.c **** #endif /* (SPI_SCB_MODE_EZI2C_INC) */
   29:Generated_Source\PSoC4/SPI_PM.c **** 
   30:Generated_Source\PSoC4/SPI_PM.c **** #if(SPI_SCB_MODE_SPI_INC || SPI_SCB_MODE_UART_INC)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 2
 
 
   31:Generated_Source\PSoC4/SPI_PM.c ****     #include "SPI_SPI_UART_PVT.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
   77:Generated_Source\PSoC4/SPI_PM.c ****     if(SPI_SCB_WAKE_ENABLE_CHECK)
   78:Generated_Source\PSoC4/SPI_PM.c ****     {
   79:Generated_Source\PSoC4/SPI_PM.c ****         if(SPI_SCB_MODE_I2C_RUNTM_CFG)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 3
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 3
 
 
   80:Generated_Source\PSoC4/SPI_PM.c ****         {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
   41 000a 1370     		strb	r3, [r2]
  129:Generated_Source\PSoC4/SPI_PM.c **** 
  130:Generated_Source\PSoC4/SPI_PM.c ****         if(0u != SPI_backup.enableState)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 4
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 4
 
 
   42              		.loc 1 130 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  160:Generated_Source\PSoC4/SPI_PM.c **** {
   67              		.loc 1 160 0
   68              		.cfi_startproc
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 5
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 5
 
 
   69              		@ args = 0, pretend = 0, frame = 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  209:Generated_Source\PSoC4/SPI_PM.c **** 
  210:Generated_Source\PSoC4/SPI_PM.c ****     #else
  211:Generated_Source\PSoC4/SPI_PM.c **** 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 6
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 6
 
 
  212:Generated_Source\PSoC4/SPI_PM.c ****         if(0u != SPI_backup.enableState)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  120 0025 02       		.uleb128 0x2
  121 0026 01       		.byte	0x1
  122 0027 06       		.byte	0x6
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 7
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 7
 
 
  123 0028 BF010000 		.4byte	.LASF0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  177 008d 7F010000 		.4byte	.LASF12
  178 0091 02       		.uleb128 0x2
  179 0092 01       		.byte	0x1
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 8
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 8
 
 
  180 0093 08       		.byte	0x8
@@ -441,19 +441,19 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  197 00b7 06       		.uleb128 0x6
  198 00b8 01       		.byte	0x1
  199 00b9 03       		.byte	0x3
- 200 00ba 5C       		.byte	0x5c
+ 200 00ba 60       		.byte	0x60
  201 00bb CC000000 		.4byte	0xcc
  202 00bf 07       		.uleb128 0x7
  203 00c0 15000000 		.4byte	.LASF25
  204 00c4 03       		.byte	0x3
- 205 00c5 5E       		.byte	0x5e
+ 205 00c5 62       		.byte	0x62
  206 00c6 6B000000 		.4byte	0x6b
  207 00ca 00       		.byte	0
  208 00cb 00       		.byte	0
  209 00cc 08       		.uleb128 0x8
  210 00cd E6010000 		.4byte	.LASF17
  211 00d1 03       		.byte	0x3
- 212 00d2 5F       		.byte	0x5f
+ 212 00d2 63       		.byte	0x63
  213 00d3 B7000000 		.4byte	0xb7
  214 00d7 09       		.uleb128 0x9
  215 00d8 39000000 		.4byte	.LASF18
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  234 0106 9C       		.byte	0x9c
  235 0107 15010000 		.4byte	0x115
  236 010b 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 9
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 9
 
 
  237 010c 0E000000 		.4byte	.LVL1
@@ -496,12 +496,12 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  249 0127 DD010000 		.4byte	.LASF20
  250 012b DD010000 		.4byte	.LASF20
  251 012f 03       		.byte	0x3
- 252 0130 6F       		.byte	0x6f
+ 252 0130 73       		.byte	0x73
  253 0131 0C       		.uleb128 0xc
  254 0132 F8010000 		.4byte	.LASF21
  255 0136 F8010000 		.4byte	.LASF21
  256 013a 03       		.byte	0x3
- 257 013b 6D       		.byte	0x6d
+ 257 013b 71       		.byte	0x71
  258 013c 00       		.byte	0
  259              		.section	.debug_abbrev,"",%progbits
  260              	.Ldebug_abbrev0:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  291 001e 03       		.uleb128 0x3
  292 001f 24       		.uleb128 0x24
  293 0020 00       		.byte	0
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 10
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 10
 
 
  294 0021 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  348 0057 00       		.byte	0
  349 0058 00       		.byte	0
  350 0059 08       		.uleb128 0x8
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 11
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 11
 
 
  351 005a 16       		.uleb128 0x16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  405 0093 0B       		.uleb128 0xb
  406 0094 49       		.uleb128 0x49
  407 0095 13       		.uleb128 0x13
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 12
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 12
 
 
  408 0096 3F       		.uleb128 0x3f
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  458 0000 6C6F6E67 		.ascii	"long long int\000"
  458      206C6F6E 
  458      6720696E 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 13
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 13
 
 
  458      7400
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  480      73657273 
  480      5C587778 
  480      34375C44 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 14
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 14
 
 
  480      6F63756D 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 1
  505      7400
  506              	.LASF20:
  507 01dd 5350495F 		.ascii	"SPI_Stop\000"
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc87Q6vY.s 			page 15
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccT8Do1z.s 			page 15
 
 
  507      53746F70 

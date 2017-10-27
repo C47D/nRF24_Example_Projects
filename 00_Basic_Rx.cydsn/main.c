@@ -10,58 +10,56 @@
 volatile bool irq_flag = false;
 
 // here we will store the received data
-char data;
+unsigned char data;
 
 // Executed when the IRQ pin triggers an interrupt
-CY_ISR(IRQ_Handler)
-{
-    irq_flag = true;
-    IRQ_ClearInterrupt();
-}
+CY_ISR_PROTO(IRQ_Handler);
 
 int main(void)
 {
-    CyGlobalIntEnable;
-    
     const uint8_t RX_ADDR[5]= {0xBA, 0xAD, 0xC0, 0xFF, 0xEE};
     
     // Set the Handler for the IRQ interrupt
     isr_IRQ_StartEx(IRQ_Handler);
     
+    CyGlobalIntEnable;
+    
     UART_Start();
-    UART_PutChar(0x0c);
+    UART_PutChar(0x0C);
     UART_PutString("Basic project, Rx\r\n");
     
     nRF24_start();
     nRF24_setRxPipe0Address(RX_ADDR, 5);
-    nRF24_setTxAddress(RX_ADDR, 5);
     nRF24_startListening();
     
     while (1) {
         
-        if (true == irq_flag) {
-            
-            // Get and clear the flag that caused the IRQ interrupt,
-            // in this project the only IRQ cause is the caused by
-            // receiving data (NRF_STATUS_RX_DR_MASK)
-            NrfIRQ flag = nRF24_getIRQFlag();
-            nRF24_clearIRQFlag(flag);
-            
-            LED_Write(~LED_Read());
-            
-            // How many bytes are in the pipe0 (data received)?
-            uint8_t payload_size = nRF24_getPayloadSize(NRF_DATA_PIPE0);
-            
-            // get the data from the transmitter
-            nRF24_getRxPayload(&data, payload_size);
-            
-            // send data via UART
-            UART_PutChar(data);
-            
-            irq_flag = false;
-        }
+        UART_PutString("Waiting for data...\r\n");
         
+        while(false == irq_flag);
+            
+        // Get and clear the flag that caused the IRQ interrupt,
+        NrfIRQ flag = nRF24_getIRQFlag();
+        nRF24_clearIRQFlag(flag);
+            
+        LED_Write(~LED_Read());
+            
+        // get the data from the transmitter
+        nRF24_getRxPayload(&data, 1);
+            
+        // send data via UART
+        UART_PutString("Received: ");
+        UART_PutChar(data);
+        UART_PutCRLF();
+            
+        irq_flag = false;
     }
+}
+
+CY_ISR(IRQ_Handler)
+{
+    irq_flag = true;
+    IRQ_ClearInterrupt();
 }
 
 /* [] END OF FILE */

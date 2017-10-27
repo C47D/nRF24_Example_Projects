@@ -5,6 +5,12 @@
  * ACK + payload from the Rx radio.
  * The data sent is the char received with the UART Rx, when the receiver
  * radio send reply with payload, the transmitter radio will print it on the UART.
+ * Note that acknowledgement payloads must be preloaded; it is not possible for
+ * a transmitter to send a command and receive a direct response to that command
+ * in the acknowledgement. Instead, the response would have to be preloaded so it
+ * could be sent as the acknowledgement for the next command that is received.
+ * Preloaded acknowledgement payloads are required in order to guarantee that 
+ * acknowledgement timing is deterministic.
  */
 #include "project.h"
 #include <stdbool.h>

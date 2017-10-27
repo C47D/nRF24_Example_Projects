@@ -1,0 +1,2788 @@
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"nRF24_NRF_COMMANDS.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.nRF24_sendCommand,"ax",%progbits
+  20              		.align	2
+  21              		.global	nRF24_sendCommand
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	nRF24_sendCommand, %function
+  25              	nRF24_sendCommand:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC4\\nRF24_NRF_COMMANDS.c"
+   1:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /****************************************************************************
+   2:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * This file is part of the nRF24 Custom Component for PSoC Devices.
+   3:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** *
+   4:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * Copyright (C) 2017 Carlos Diaz <carlos.santiago.diaz@gmail.com>
+   5:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** *
+   6:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * Permission to use, copy, modify, and/or distribute this software for any
+   7:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * purpose with or without fee is hereby granted, provided that the above
+   8:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * copyright notice and this permission notice appear in all copies.
+   9:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** *
+  10:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+  11:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+  12:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+  13:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+  14:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+  15:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+  16:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  17:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** ****************************************************************************/
+  18:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  19:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+  20:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * @file nRF24_NRF_COMMANDS.c
+  21:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** *
+  22:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * @brief The nRF24 radio is controlled via commands, this file implement all
+  23:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * the available commands.
+  24:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** * 
+  25:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** */
+  26:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  27:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #include <CE.h>
+  28:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #include <SPI.h>
+  29:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #include <SS.h>
+  30:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 2
+
+
+  31:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #if defined(CY_SCB_SPI_H)
+  32:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #include <SPI_SPI_UART.h>
+  33:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #endif
+  34:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  35:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #include "nRF24_LL_SPI.h"
+  36:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #include "nRF24_NRF_COMMANDS.h"
+  37:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #include "nRF24_NRF_FUNCS.h"
+  38:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #include "nRF24_NRF_REGS.h"
+  39:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  40:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+  41:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Send a command to the nRF24 radio.
+  42:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+  43:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const NrfCmd cmd: Command to send to the nRF24 radio.
+  44:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+  45:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** void nRF24_sendCommand(const NrfCmd cmd)
+  46:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+  28              		.loc 1 46 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 0400     		movs	r4, r0
+  47:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+  48:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  49:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearRxBuffer();
+  38              		.loc 1 49 0
+  39 0004 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+  40              	.LVL1:
+  50:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearTxBuffer();
+  41              		.loc 1 50 0
+  42 0008 FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+  43              	.LVL2:
+  51:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  52:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+  44              		.loc 1 52 0
+  45 000c 0020     		movs	r0, #0
+  46 000e FFF7FEFF 		bl	SS_Write
+  47              	.LVL3:
+  53:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartWriteTxData(cmd);
+  48              		.loc 1 53 0
+  49 0012 2000     		movs	r0, r4
+  50 0014 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+  51              	.LVL4:
+  52              	.L2:
+  54:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  55:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (SPI_SpiUartGetRxBufferSize() != 1) {
+  53              		.loc 1 55 0 discriminator 1
+  54 0018 FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+  55              	.LVL5:
+  56 001c 0128     		cmp	r0, #1
+  57 001e FBD1     		bne	.L2
+  56:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+  57:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 3
+
+
+  58              		.loc 1 57 0
+  59 0020 FFF7FEFF 		bl	SS_Write
+  60              	.LVL6:
+  58:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  59:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #else // UDB Block
+  60:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  61:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearRxBuffer();
+  62:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearTxBuffer();
+  63:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  64:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+  65:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_WriteTxData(cmd);
+  66:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  67:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {
+  68:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+  69:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+  70:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  71:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #endif
+  72:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+  61              		.loc 1 72 0
+  62              		@ sp needed
+  63 0024 10BD     		pop	{r4, pc}
+  64              		.cfi_endproc
+  65              	.LFE1:
+  66              		.size	nRF24_sendCommand, .-nRF24_sendCommand
+  67 0026 C046     		.section	.text.nRF24_reuseTxPayloadCmd,"ax",%progbits
+  68              		.align	2
+  69              		.global	nRF24_reuseTxPayloadCmd
+  70              		.code	16
+  71              		.thumb_func
+  72              		.type	nRF24_reuseTxPayloadCmd, %function
+  73              	nRF24_reuseTxPayloadCmd:
+  74              	.LFB2:
+  73:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  74:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+  75:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @brief Reuse last transmitted payload.
+  76:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+  77:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Used for a PTX device.
+  78:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Reuse last transmitted payload. TX payload reuse is active until
+  79:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * W_TX_PAYLOAD or FLUSH_TX is executed.
+  80:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * TX payload reuse must not be activated or deactivated during package
+  81:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * transmission.
+  82:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+  83:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** void nRF24_reuseTxPayloadCmd(void)
+  84:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+  75              		.loc 1 84 0
+  76              		.cfi_startproc
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79 0000 10B5     		push	{r4, lr}
+  80              		.cfi_def_cfa_offset 8
+  81              		.cfi_offset 4, -8
+  82              		.cfi_offset 14, -4
+  85:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     nRF24_sendCommand(NRF_REUSE_TX_PL_CMD);
+  83              		.loc 1 85 0
+  84 0002 E320     		movs	r0, #227
+  85 0004 FFF7FEFF 		bl	nRF24_sendCommand
+  86              	.LVL7:
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 4
+
+
+  86:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+  87              		.loc 1 86 0
+  88              		@ sp needed
+  89 0008 10BD     		pop	{r4, pc}
+  90              		.cfi_endproc
+  91              	.LFE2:
+  92              		.size	nRF24_reuseTxPayloadCmd, .-nRF24_reuseTxPayloadCmd
+  93 000a C046     		.section	.text.nRF24_flushRxCmd,"ax",%progbits
+  94              		.align	2
+  95              		.global	nRF24_flushRxCmd
+  96              		.code	16
+  97              		.thumb_func
+  98              		.type	nRF24_flushRxCmd, %function
+  99              	nRF24_flushRxCmd:
+ 100              	.LFB3:
+  87:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+  88:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+  89:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @brief Flush RX FIFO.
+  90:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+  91:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Used in RX mode.
+  92:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Flush RX FIFO. Should be not executed during transmission of acknowledge,
+  93:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * that is, acknowledge package will not be completed.
+  94:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+  95:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** void nRF24_flushRxCmd(void)
+  96:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+ 101              		.loc 1 96 0
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0000 10B5     		push	{r4, lr}
+ 106              		.cfi_def_cfa_offset 8
+ 107              		.cfi_offset 4, -8
+ 108              		.cfi_offset 14, -4
+  97:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     nRF24_sendCommand(NRF_FLUSH_RX_CMD);
+ 109              		.loc 1 97 0
+ 110 0002 E220     		movs	r0, #226
+ 111 0004 FFF7FEFF 		bl	nRF24_sendCommand
+ 112              	.LVL8:
+  98:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+ 113              		.loc 1 98 0
+ 114              		@ sp needed
+ 115 0008 10BD     		pop	{r4, pc}
+ 116              		.cfi_endproc
+ 117              	.LFE3:
+ 118              		.size	nRF24_flushRxCmd, .-nRF24_flushRxCmd
+ 119 000a C046     		.section	.text.nRF24_flushTxCmd,"ax",%progbits
+ 120              		.align	2
+ 121              		.global	nRF24_flushTxCmd
+ 122              		.code	16
+ 123              		.thumb_func
+ 124              		.type	nRF24_flushTxCmd, %function
+ 125              	nRF24_flushTxCmd:
+ 126              	.LFB4:
+  99:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 100:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+ 101:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Used in TX mode.
+ 102:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Flush TX FIFO.
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 5
+
+
+ 103:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+ 104:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** void nRF24_flushTxCmd(void)
+ 105:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+ 127              		.loc 1 105 0
+ 128              		.cfi_startproc
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131 0000 10B5     		push	{r4, lr}
+ 132              		.cfi_def_cfa_offset 8
+ 133              		.cfi_offset 4, -8
+ 134              		.cfi_offset 14, -4
+ 106:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     nRF24_sendCommand(NRF_FLUSH_TX_CMD);
+ 135              		.loc 1 106 0
+ 136 0002 E120     		movs	r0, #225
+ 137 0004 FFF7FEFF 		bl	nRF24_sendCommand
+ 138              	.LVL9:
+ 107:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+ 139              		.loc 1 107 0
+ 140              		@ sp needed
+ 141 0008 10BD     		pop	{r4, pc}
+ 142              		.cfi_endproc
+ 143              	.LFE4:
+ 144              		.size	nRF24_flushTxCmd, .-nRF24_flushTxCmd
+ 145 000a C046     		.section	.text.nRF24_readRXPayloadCmd,"ax",%progbits
+ 146              		.align	2
+ 147              		.global	nRF24_readRXPayloadCmd
+ 148              		.code	16
+ 149              		.thumb_func
+ 150              		.type	nRF24_readRXPayloadCmd, %function
+ 151              	nRF24_readRXPayloadCmd:
+ 152              	.LFB5:
+ 108:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 109:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+ 110:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Used in RX mode.
+ 111:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Read RX payload: 1 - 32 bytes. A read operation always starts at byte 0.
+ 112:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Payload is deleted from FIFO after it is read.
+ 113:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+ 114:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param uint8_t* data:
+ 115:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const size_t size:
+ 116:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+ 117:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** void nRF24_readRXPayloadCmd(uint8_t* data, const size_t size)
+ 118:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+ 153              		.loc 1 118 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              	.LVL10:
+ 158 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 159              		.cfi_def_cfa_offset 24
+ 160              		.cfi_offset 3, -24
+ 161              		.cfi_offset 4, -20
+ 162              		.cfi_offset 5, -16
+ 163              		.cfi_offset 6, -12
+ 164              		.cfi_offset 7, -8
+ 165              		.cfi_offset 14, -4
+ 166 0002 0700     		movs	r7, r0
+ 167 0004 0E00     		movs	r6, r1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 6
+
+
+ 119:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+ 120:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 121:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearRxBuffer();
+ 168              		.loc 1 121 0
+ 169 0006 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 170              	.LVL11:
+ 122:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearTxBuffer();
+ 171              		.loc 1 122 0
+ 172 000a FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 173              	.LVL12:
+ 123:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 124:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 174              		.loc 1 124 0
+ 175 000e 0020     		movs	r0, #0
+ 176 0010 FFF7FEFF 		bl	SS_Write
+ 177              	.LVL13:
+ 125:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartWriteTxData(NRF_R_RX_PAYLOAD_CMD);
+ 178              		.loc 1 125 0
+ 179 0014 6120     		movs	r0, #97
+ 180 0016 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 181              	.LVL14:
+ 182              	.L7:
+ 126:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (SPI_SpiUartGetRxBufferSize() == 0){
+ 183              		.loc 1 126 0 discriminator 1
+ 184 001a FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 185              	.LVL15:
+ 186 001e 0028     		cmp	r0, #0
+ 187 0020 FBD0     		beq	.L7
+ 127:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 128:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     // Read the status register, just to clear the rx fifo
+ 129:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartReadRxData();
+ 188              		.loc 1 129 0
+ 189 0022 FFF7FEFF 		bl	SPI_SpiUartReadRxData
+ 190              	.LVL16:
+ 191              	.LBB2:
+ 130:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 131:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     for (size_t i = 0; i < size; i++) {
+ 192              		.loc 1 131 0
+ 193 0026 0024     		movs	r4, #0
+ 194 0028 0BE0     		b	.L8
+ 195              	.LVL17:
+ 196              	.L10:
+ 132:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 197              		.loc 1 132 0
+ 198 002a FF20     		movs	r0, #255
+ 199 002c FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 200              	.LVL18:
+ 201              	.L9:
+ 133:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         while (SPI_SpiUartGetRxBufferSize() == 0){
+ 202              		.loc 1 133 0 discriminator 1
+ 203 0030 FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 204              	.LVL19:
+ 205 0034 0028     		cmp	r0, #0
+ 206 0036 FBD0     		beq	.L9
+ 134:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         }
+ 135:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         data[i] = SPI_SpiUartReadRxData();
+ 207              		.loc 1 135 0 discriminator 2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 7
+
+
+ 208 0038 3D19     		adds	r5, r7, r4
+ 209 003a FFF7FEFF 		bl	SPI_SpiUartReadRxData
+ 210              	.LVL20:
+ 211 003e 2870     		strb	r0, [r5]
+ 131:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 212              		.loc 1 131 0 discriminator 2
+ 213 0040 0134     		adds	r4, r4, #1
+ 214              	.LVL21:
+ 215              	.L8:
+ 131:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 216              		.loc 1 131 0 is_stmt 0 discriminator 1
+ 217 0042 B442     		cmp	r4, r6
+ 218 0044 F1D3     		bcc	.L10
+ 219              	.LBE2:
+ 136:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 137:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 220              		.loc 1 137 0 is_stmt 1
+ 221 0046 0120     		movs	r0, #1
+ 222 0048 FFF7FEFF 		bl	SS_Write
+ 223              	.LVL22:
+ 138:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 139:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #else // UDB Block
+ 140:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 141:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearRxBuffer();
+ 142:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearTxBuffer();
+ 143:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 144:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 145:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_WriteTxData(NRF_R_RX_PAYLOAD_CMD);
+ 146:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 147:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     // Wait for the byte to be sent
+ 148:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {
+ 149:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 150:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 151:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     // Read the status register, just to clear the rx fifo
+ 152:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ReadRxData();
+ 153:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     
+ 154:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     for (size_t i = 0; i < size; i++) {
+ 155:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         SPI_WriteTxData(NRF_NOP_CMD);
+ 156:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {
+ 157:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         }
+ 158:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         data[i] = SPI_ReadRxData();
+ 159:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 160:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 161:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 162:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #endif
+ 163:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+ 224              		.loc 1 163 0
+ 225              		@ sp needed
+ 226              	.LVL23:
+ 227              	.LVL24:
+ 228              	.LVL25:
+ 229 004c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 230              		.cfi_endproc
+ 231              	.LFE5:
+ 232              		.size	nRF24_readRXPayloadCmd, .-nRF24_readRXPayloadCmd
+ 233 004e C046     		.section	.text.nRF24_writeTXPayloadCmd,"ax",%progbits
+ 234              		.align	2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 8
+
+
+ 235              		.global	nRF24_writeTXPayloadCmd
+ 236              		.code	16
+ 237              		.thumb_func
+ 238              		.type	nRF24_writeTXPayloadCmd, %function
+ 239              	nRF24_writeTXPayloadCmd:
+ 240              	.LFB6:
+ 164:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 165:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+ 166:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Write TX payload: 1 - 32 bytes.
+ 167:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * A write operation always starts at byte 0 used in TX payload.
+ 168:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+ 169:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const uint8_t* data:
+ 170:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const size_t size:
+ 171:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+ 172:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** void nRF24_writeTXPayloadCmd(const uint8_t* data, const size_t size)
+ 173:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+ 241              		.loc 1 173 0
+ 242              		.cfi_startproc
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245              	.LVL26:
+ 246 0000 70B5     		push	{r4, r5, r6, lr}
+ 247              		.cfi_def_cfa_offset 16
+ 248              		.cfi_offset 4, -16
+ 249              		.cfi_offset 5, -12
+ 250              		.cfi_offset 6, -8
+ 251              		.cfi_offset 14, -4
+ 252 0002 0500     		movs	r5, r0
+ 253 0004 0C00     		movs	r4, r1
+ 174:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+ 175:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 176:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearRxBuffer();
+ 254              		.loc 1 176 0
+ 255 0006 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 256              	.LVL27:
+ 177:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearTxBuffer();
+ 257              		.loc 1 177 0
+ 258 000a FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 259              	.LVL28:
+ 178:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 179:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 260              		.loc 1 179 0
+ 261 000e 0020     		movs	r0, #0
+ 262 0010 FFF7FEFF 		bl	SS_Write
+ 263              	.LVL29:
+ 180:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartWriteTxData(NRF_W_TX_PAYLOAD_CMD);
+ 264              		.loc 1 180 0
+ 265 0014 A020     		movs	r0, #160
+ 266 0016 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 267              	.LVL30:
+ 181:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartPutArray(data, size);
+ 268              		.loc 1 181 0
+ 269 001a 2100     		movs	r1, r4
+ 270 001c 2800     		movs	r0, r5
+ 271 001e FFF7FEFF 		bl	SPI_SpiUartPutArray
+ 272              	.LVL31:
+ 273              	.L12:
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 9
+
+
+ 182:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 183:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (SPI_SpiUartGetRxBufferSize() != (1 + size)) {
+ 274              		.loc 1 183 0 discriminator 1
+ 275 0022 FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 276              	.LVL32:
+ 277 0026 631C     		adds	r3, r4, #1
+ 278 0028 9842     		cmp	r0, r3
+ 279 002a FAD1     		bne	.L12
+ 184:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 185:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 280              		.loc 1 185 0
+ 281 002c 0120     		movs	r0, #1
+ 282 002e FFF7FEFF 		bl	SS_Write
+ 283              	.LVL33:
+ 186:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 187:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #else // UDB Block
+ 188:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 189:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearRxBuffer();
+ 190:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearTxBuffer();
+ 191:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 192:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 193:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_WriteTxData(NRF_W_TX_PAYLOAD_CMD);
+ 194:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 195:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     for (size_t i = 0; i < size; i++) {
+ 196:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         SPI_WriteTxData(data[i]);
+ 197:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {
+ 198:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         }
+ 199:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 200:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 201:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 202:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #endif
+ 203:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+ 284              		.loc 1 203 0
+ 285              		@ sp needed
+ 286              	.LVL34:
+ 287              	.LVL35:
+ 288 0032 70BD     		pop	{r4, r5, r6, pc}
+ 289              		.cfi_endproc
+ 290              	.LFE6:
+ 291              		.size	nRF24_writeTXPayloadCmd, .-nRF24_writeTXPayloadCmd
+ 292              		.section	.text.nRF24_readPayloadWidthCmd,"ax",%progbits
+ 293              		.align	2
+ 294              		.global	nRF24_readPayloadWidthCmd
+ 295              		.code	16
+ 296              		.thumb_func
+ 297              		.type	nRF24_readPayloadWidthCmd, %function
+ 298              	nRF24_readPayloadWidthCmd:
+ 299              	.LFB7:
+ 204:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 205:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+ 206:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Read RX payload width for the top R_RX_PAYLOAD in the RX FIFO.
+ 207:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Note: Flush RX FIFO if the read value is larger than 32 bytes.
+ 208:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+ 209:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @return uint8_t: width of the payload on the top of the RX FIFO.
+ 210:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+ 211:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** uint8_t nRF24_readPayloadWidthCmd(void)
+ 212:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 10
+
+
+ 300              		.loc 1 212 0
+ 301              		.cfi_startproc
+ 302              		@ args = 0, pretend = 0, frame = 0
+ 303              		@ frame_needed = 0, uses_anonymous_args = 0
+ 304 0000 10B5     		push	{r4, lr}
+ 305              		.cfi_def_cfa_offset 8
+ 306              		.cfi_offset 4, -8
+ 307              		.cfi_offset 14, -4
+ 308              	.LVL36:
+ 213:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     uint8_t width = 0;
+ 214:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 215:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+ 216:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 217:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearRxBuffer();
+ 309              		.loc 1 217 0
+ 310 0002 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 311              	.LVL37:
+ 218:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearTxBuffer();
+ 312              		.loc 1 218 0
+ 313 0006 FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 314              	.LVL38:
+ 219:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 220:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 315              		.loc 1 220 0
+ 316 000a 0020     		movs	r0, #0
+ 317 000c FFF7FEFF 		bl	SS_Write
+ 318              	.LVL39:
+ 221:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartWriteTxData(NRF_R_RX_PL_WID_CMD);
+ 319              		.loc 1 221 0
+ 320 0010 6020     		movs	r0, #96
+ 321 0012 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 322              	.LVL40:
+ 222:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 323              		.loc 1 222 0
+ 324 0016 FF20     		movs	r0, #255
+ 325 0018 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 326              	.LVL41:
+ 327              	.L14:
+ 223:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 224:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (SPI_SpiUartGetRxBufferSize() != 2) {
+ 328              		.loc 1 224 0 discriminator 1
+ 329 001c FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 330              	.LVL42:
+ 331 0020 0228     		cmp	r0, #2
+ 332 0022 FBD1     		bne	.L14
+ 225:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 226:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 333              		.loc 1 226 0
+ 334 0024 0138     		subs	r0, r0, #1
+ 335 0026 FFF7FEFF 		bl	SS_Write
+ 336              	.LVL43:
+ 227:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 228:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     // This is the STATUS Register
+ 229:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     (void)SPI_SpiUartReadRxData();
+ 337              		.loc 1 229 0
+ 338 002a FFF7FEFF 		bl	SPI_SpiUartReadRxData
+ 339              	.LVL44:
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 11
+
+
+ 230:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     // This is the data we want
+ 231:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     width = SPI_SpiUartReadRxData();
+ 340              		.loc 1 231 0
+ 341 002e FFF7FEFF 		bl	SPI_SpiUartReadRxData
+ 342              	.LVL45:
+ 343 0032 C4B2     		uxtb	r4, r0
+ 344              	.LVL46:
+ 232:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 233:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #else // UDB Block
+ 234:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 235:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearRxBuffer();
+ 236:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearTxBuffer();
+ 237:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 238:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 239:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_WriteTxData(NRF_R_RX_PL_WID_CMD);
+ 240:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_WriteTxData(NRF_NOP_CMD);
+ 241:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 242:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {
+ 243:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 244:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 245:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 246:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     // This is the STATUS Register
+ 247:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     (void)SPI_ReadRxData();
+ 248:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     // This is the data we want
+ 249:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     width = SPI_ReadRxData();
+ 250:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 251:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #endif
+ 252:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 253:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     // If width is greater than 32 then is garbage, we must flush the RX FIFO
+ 254:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     if (32 < width) {
+ 345              		.loc 1 254 0
+ 346 0034 202C     		cmp	r4, #32
+ 347 0036 01D9     		bls	.L15
+ 255:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         nRF24_flushRxCmd();
+ 348              		.loc 1 255 0
+ 349 0038 FFF7FEFF 		bl	nRF24_flushRxCmd
+ 350              	.LVL47:
+ 351              	.L15:
+ 256:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 257:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 258:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     return width;
+ 259:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+ 352              		.loc 1 259 0
+ 353 003c 2000     		movs	r0, r4
+ 354              		@ sp needed
+ 355              	.LVL48:
+ 356 003e 10BD     		pop	{r4, pc}
+ 357              		.cfi_endproc
+ 358              	.LFE7:
+ 359              		.size	nRF24_readPayloadWidthCmd, .-nRF24_readPayloadWidthCmd
+ 360              		.section	.text.nRF24_writeACKPayloadCmd,"ax",%progbits
+ 361              		.align	2
+ 362              		.global	nRF24_writeACKPayloadCmd
+ 363              		.code	16
+ 364              		.thumb_func
+ 365              		.type	nRF24_writeACKPayloadCmd, %function
+ 366              	nRF24_writeACKPayloadCmd:
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 12
+
+
+ 367              	.LFB8:
+ 260:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 261:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+ 262:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @brief Write Payload to be transmitted together with ACK packet.
+ 263:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+ 264:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Used in RX mode.
+ 265:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Write Payload to be transmitted together with ACK packet on PIPE PPP
+ 266:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * (PPP valid in the range from 000 to 101). Maximum three ACK  packet
+ 267:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * payloads can be pending. Payloads with same PPP are handled using
+ 268:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * first in - first out principle.
+ 269:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Write payload: 1 - 32 bytes.
+ 270:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * A write operation always starts at byte 0.
+ 271:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+ 272:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const NrfDataPipe pipe:
+ 273:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const uint8_t* data:
+ 274:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const size_t size:
+ 275:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+ 276:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** void nRF24_writeACKPayloadCmd(const NrfDataPipe pipe,
+ 277:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****                                              const uint8_t* data,
+ 278:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****                                              const size_t size)
+ 279:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+ 368              		.loc 1 279 0
+ 369              		.cfi_startproc
+ 370              		@ args = 0, pretend = 0, frame = 0
+ 371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 372              	.LVL49:
+ 373 0000 70B5     		push	{r4, r5, r6, lr}
+ 374              		.cfi_def_cfa_offset 16
+ 375              		.cfi_offset 4, -16
+ 376              		.cfi_offset 5, -12
+ 377              		.cfi_offset 6, -8
+ 378              		.cfi_offset 14, -4
+ 379 0002 0500     		movs	r5, r0
+ 380 0004 0E00     		movs	r6, r1
+ 381 0006 1400     		movs	r4, r2
+ 280:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+ 281:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 282:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearRxBuffer();
+ 382              		.loc 1 282 0
+ 383 0008 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 384              	.LVL50:
+ 283:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearTxBuffer();
+ 385              		.loc 1 283 0
+ 386 000c FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 387              	.LVL51:
+ 284:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 285:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 388              		.loc 1 285 0
+ 389 0010 0020     		movs	r0, #0
+ 390 0012 FFF7FEFF 		bl	SS_Write
+ 391              	.LVL52:
+ 286:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 287:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartWriteTxData(NRF_W_ACK_PAYLOAD_CMD | pipe);
+ 392              		.loc 1 287 0
+ 393 0016 5820     		movs	r0, #88
+ 394 0018 4042     		rsbs	r0, r0, #0
+ 395 001a 0543     		orrs	r5, r0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 13
+
+
+ 396 001c E8B2     		uxtb	r0, r5
+ 397 001e FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 398              	.LVL53:
+ 288:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartPutArray(data, size);
+ 399              		.loc 1 288 0
+ 400 0022 2100     		movs	r1, r4
+ 401 0024 3000     		movs	r0, r6
+ 402 0026 FFF7FEFF 		bl	SPI_SpiUartPutArray
+ 403              	.LVL54:
+ 404              	.L17:
+ 289:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 290:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (SPI_SpiUartGetRxBufferSize() != (1 + size)) {
+ 405              		.loc 1 290 0 discriminator 1
+ 406 002a FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 407              	.LVL55:
+ 408 002e 631C     		adds	r3, r4, #1
+ 409 0030 9842     		cmp	r0, r3
+ 410 0032 FAD1     		bne	.L17
+ 291:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 292:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 411              		.loc 1 292 0
+ 412 0034 0120     		movs	r0, #1
+ 413 0036 FFF7FEFF 		bl	SS_Write
+ 414              	.LVL56:
+ 293:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 294:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #else // UDB Block
+ 295:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 296:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearRxBuffer();
+ 297:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearTxBuffer();
+ 298:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 299:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 300:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 301:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_WriteTxData(NRF_W_ACK_PAYLOAD_CMD | pipe);
+ 302:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 303:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     for (size_t i = 0; i < size; i++) {
+ 304:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         SPI_WriteTxData(data[i]);
+ 305:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {
+ 306:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         }
+ 307:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 308:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 309:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 310:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #endif
+ 311:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+ 415              		.loc 1 311 0
+ 416              		@ sp needed
+ 417              	.LVL57:
+ 418              	.LVL58:
+ 419 003a 70BD     		pop	{r4, r5, r6, pc}
+ 420              		.cfi_endproc
+ 421              	.LFE8:
+ 422              		.size	nRF24_writeACKPayloadCmd, .-nRF24_writeACKPayloadCmd
+ 423              		.section	.text.nRF24_noACKPayloadCmd,"ax",%progbits
+ 424              		.align	2
+ 425              		.global	nRF24_noACKPayloadCmd
+ 426              		.code	16
+ 427              		.thumb_func
+ 428              		.type	nRF24_noACKPayloadCmd, %function
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 14
+
+
+ 429              	nRF24_noACKPayloadCmd:
+ 430              	.LFB9:
+ 312:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 313:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+ 314:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Used in TX mode.
+ 315:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Disable AUTOACK on this packet.
+ 316:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+ 317:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const uint8_t* data:
+ 318:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @param const size_t size:
+ 319:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+ 320:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** void nRF24_noACKPayloadCmd(const uint8_t* data,
+ 321:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****                                           const size_t size)
+ 322:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+ 431              		.loc 1 322 0
+ 432              		.cfi_startproc
+ 433              		@ args = 0, pretend = 0, frame = 0
+ 434              		@ frame_needed = 0, uses_anonymous_args = 0
+ 435              	.LVL59:
+ 436 0000 70B5     		push	{r4, r5, r6, lr}
+ 437              		.cfi_def_cfa_offset 16
+ 438              		.cfi_offset 4, -16
+ 439              		.cfi_offset 5, -12
+ 440              		.cfi_offset 6, -8
+ 441              		.cfi_offset 14, -4
+ 442 0002 0500     		movs	r5, r0
+ 443 0004 0C00     		movs	r4, r1
+ 323:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+ 324:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 325:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearRxBuffer();
+ 444              		.loc 1 325 0
+ 445 0006 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 446              	.LVL60:
+ 326:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearTxBuffer();
+ 447              		.loc 1 326 0
+ 448 000a FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 449              	.LVL61:
+ 327:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 328:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 450              		.loc 1 328 0
+ 451 000e 0020     		movs	r0, #0
+ 452 0010 FFF7FEFF 		bl	SS_Write
+ 453              	.LVL62:
+ 329:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 330:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartWriteTxData(NRF_W_TX_PAYLOAD_NOACK_CMD);
+ 454              		.loc 1 330 0
+ 455 0014 B020     		movs	r0, #176
+ 456 0016 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 457              	.LVL63:
+ 331:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartPutArray(data, size);
+ 458              		.loc 1 331 0
+ 459 001a 2100     		movs	r1, r4
+ 460 001c 2800     		movs	r0, r5
+ 461 001e FFF7FEFF 		bl	SPI_SpiUartPutArray
+ 462              	.LVL64:
+ 463              	.L19:
+ 332:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 333:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (SPI_SpiUartGetRxBufferSize() != (1 + size)) {
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 15
+
+
+ 464              		.loc 1 333 0 discriminator 1
+ 465 0022 FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 466              	.LVL65:
+ 467 0026 631C     		adds	r3, r4, #1
+ 468 0028 9842     		cmp	r0, r3
+ 469 002a FAD1     		bne	.L19
+ 334:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 335:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 470              		.loc 1 335 0
+ 471 002c 0120     		movs	r0, #1
+ 472 002e FFF7FEFF 		bl	SS_Write
+ 473              	.LVL66:
+ 336:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 337:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #else // UDB Block
+ 338:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 339:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearRxBuffer();
+ 340:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearTxBuffer();
+ 341:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 342:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 343:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 344:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_WriteTxData(NRF_W_TX_PAYLOAD_NOACK_CMD);
+ 345:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 346:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     for (size_t i = 0; i < size; i++) {
+ 347:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         SPI_WriteTxData(data[i]);
+ 348:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {
+ 349:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****         }
+ 350:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 351:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 352:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 353:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #endif
+ 354:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+ 474              		.loc 1 354 0
+ 475              		@ sp needed
+ 476              	.LVL67:
+ 477              	.LVL68:
+ 478 0032 70BD     		pop	{r4, r5, r6, pc}
+ 479              		.cfi_endproc
+ 480              	.LFE9:
+ 481              		.size	nRF24_noACKPayloadCmd, .-nRF24_noACKPayloadCmd
+ 482              		.section	.text.nRF24_NOPCmd,"ax",%progbits
+ 483              		.align	2
+ 484              		.global	nRF24_NOPCmd
+ 485              		.code	16
+ 486              		.thumb_func
+ 487              		.type	nRF24_NOPCmd, %function
+ 488              	nRF24_NOPCmd:
+ 489              	.LFB10:
+ 355:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 356:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** /**
+ 357:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * Send NOP (No OPeration) Command. Might be used to read the STATUS register.
+ 358:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  *
+ 359:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  * @return uint8_t: STATUS register.
+ 360:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****  */
+ 361:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** uint8_t nRF24_NOPCmd(void)
+ 362:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** {
+ 490              		.loc 1 362 0
+ 491              		.cfi_startproc
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 16
+
+
+ 492              		@ args = 0, pretend = 0, frame = 0
+ 493              		@ frame_needed = 0, uses_anonymous_args = 0
+ 494 0000 10B5     		push	{r4, lr}
+ 495              		.cfi_def_cfa_offset 8
+ 496              		.cfi_offset 4, -8
+ 497              		.cfi_offset 14, -4
+ 363:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #if defined(CY_SCB_SPI_H) // SCB Block
+ 364:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 365:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearRxBuffer();
+ 498              		.loc 1 365 0
+ 499 0002 FFF7FEFF 		bl	SPI_SpiUartClearRxBuffer
+ 500              	.LVL69:
+ 366:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartClearTxBuffer();
+ 501              		.loc 1 366 0
+ 502 0006 FFF7FEFF 		bl	SPI_SpiUartClearTxBuffer
+ 503              	.LVL70:
+ 367:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 368:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 504              		.loc 1 368 0
+ 505 000a 0020     		movs	r0, #0
+ 506 000c FFF7FEFF 		bl	SS_Write
+ 507              	.LVL71:
+ 369:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_SpiUartWriteTxData(NRF_NOP_CMD);
+ 508              		.loc 1 369 0
+ 509 0010 FF20     		movs	r0, #255
+ 510 0012 FFF7FEFF 		bl	SPI_SpiUartWriteTxData
+ 511              	.LVL72:
+ 512              	.L21:
+ 370:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 371:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (SPI_SpiUartGetRxBufferSize() != 1) {
+ 513              		.loc 1 371 0 discriminator 1
+ 514 0016 FFF7FEFF 		bl	SPI_SpiUartGetRxBufferSize
+ 515              	.LVL73:
+ 516 001a 0128     		cmp	r0, #1
+ 517 001c FBD1     		bne	.L21
+ 372:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ 373:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 518              		.loc 1 373 0
+ 519 001e FFF7FEFF 		bl	SS_Write
+ 520              	.LVL74:
+ 374:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 375:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     return SPI_SpiUartReadRxData();
+ 521              		.loc 1 375 0
+ 522 0022 FFF7FEFF 		bl	SPI_SpiUartReadRxData
+ 523              	.LVL75:
+ 524 0026 C0B2     		uxtb	r0, r0
+ 376:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 377:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #else // UDB Block
+ 378:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 379:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearRxBuffer();
+ 380:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_ClearTxBuffer();
+ 381:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 382:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(0);
+ 383:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SPI_WriteTxData(NRF_NOP_CMD);
+ 384:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 385:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     while (!(SPI_ReadTxStatus() & SPI_STS_BYTE_COMPLETE)) {
+ 386:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     }
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 17
+
+
+ 387:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     SS_Write(1);
+ 388:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 389:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c ****     return SPI_ReadRxData();
+ 390:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** 
+ 391:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** #endif
+ 392:Generated_Source\PSoC4/nRF24_NRF_COMMANDS.c **** }
+ 525              		.loc 1 392 0
+ 526              		@ sp needed
+ 527 0028 10BD     		pop	{r4, pc}
+ 528              		.cfi_endproc
+ 529              	.LFE10:
+ 530              		.size	nRF24_NOPCmd, .-nRF24_NOPCmd
+ 531 002a C046     		.text
+ 532              	.Letext0:
+ 533              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+ 534              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+ 535              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+ 536              		.file 5 "Generated_Source\\PSoC4\\nRF24_NRF_REGS.h"
+ 537              		.file 6 "Generated_Source\\PSoC4/SPI_SPI_UART.h"
+ 538              		.file 7 "Generated_Source\\PSoC4/SS.h"
+ 539              		.section	.debug_info,"",%progbits
+ 540              	.Ldebug_info0:
+ 541 0000 6E060000 		.4byte	0x66e
+ 542 0004 0400     		.2byte	0x4
+ 543 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 544 000a 04       		.byte	0x4
+ 545 000b 01       		.uleb128 0x1
+ 546 000c D1030000 		.4byte	.LASF57
+ 547 0010 0C       		.byte	0xc
+ 548 0011 19000000 		.4byte	.LASF58
+ 549 0015 A3020000 		.4byte	.LASF59
+ 550 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 551 001d 00000000 		.4byte	0
+ 552 0021 00000000 		.4byte	.Ldebug_line0
+ 553 0025 02       		.uleb128 0x2
+ 554 0026 01       		.byte	0x1
+ 555 0027 06       		.byte	0x6
+ 556 0028 63040000 		.4byte	.LASF0
+ 557 002c 03       		.uleb128 0x3
+ 558 002d 45000000 		.4byte	.LASF9
+ 559 0031 02       		.byte	0x2
+ 560 0032 1D       		.byte	0x1d
+ 561 0033 37000000 		.4byte	0x37
+ 562 0037 02       		.uleb128 0x2
+ 563 0038 01       		.byte	0x1
+ 564 0039 08       		.byte	0x8
+ 565 003a 37020000 		.4byte	.LASF1
+ 566 003e 02       		.uleb128 0x2
+ 567 003f 02       		.byte	0x2
+ 568 0040 05       		.byte	0x5
+ 569 0041 66030000 		.4byte	.LASF2
+ 570 0045 02       		.uleb128 0x2
+ 571 0046 02       		.byte	0x2
+ 572 0047 07       		.byte	0x7
+ 573 0048 DC000000 		.4byte	.LASF3
+ 574 004c 02       		.uleb128 0x2
+ 575 004d 04       		.byte	0x4
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 18
+
+
+ 576 004e 05       		.byte	0x5
+ 577 004f AF030000 		.4byte	.LASF4
+ 578 0053 02       		.uleb128 0x2
+ 579 0054 04       		.byte	0x4
+ 580 0055 07       		.byte	0x7
+ 581 0056 B9010000 		.4byte	.LASF5
+ 582 005a 02       		.uleb128 0x2
+ 583 005b 08       		.byte	0x8
+ 584 005c 05       		.byte	0x5
+ 585 005d 4D030000 		.4byte	.LASF6
+ 586 0061 02       		.uleb128 0x2
+ 587 0062 08       		.byte	0x8
+ 588 0063 07       		.byte	0x7
+ 589 0064 50010000 		.4byte	.LASF7
+ 590 0068 04       		.uleb128 0x4
+ 591 0069 04       		.byte	0x4
+ 592 006a 05       		.byte	0x5
+ 593 006b 696E7400 		.ascii	"int\000"
+ 594 006f 02       		.uleb128 0x2
+ 595 0070 04       		.byte	0x4
+ 596 0071 07       		.byte	0x7
+ 597 0072 96020000 		.4byte	.LASF8
+ 598 0076 03       		.uleb128 0x3
+ 599 0077 FA020000 		.4byte	.LASF10
+ 600 007b 03       		.byte	0x3
+ 601 007c 18       		.byte	0x18
+ 602 007d 2C000000 		.4byte	0x2c
+ 603 0081 02       		.uleb128 0x2
+ 604 0082 04       		.byte	0x4
+ 605 0083 04       		.byte	0x4
+ 606 0084 45010000 		.4byte	.LASF11
+ 607 0088 02       		.uleb128 0x2
+ 608 0089 08       		.byte	0x8
+ 609 008a 04       		.byte	0x4
+ 610 008b 4C020000 		.4byte	.LASF12
+ 611 008f 02       		.uleb128 0x2
+ 612 0090 01       		.byte	0x1
+ 613 0091 08       		.byte	0x8
+ 614 0092 5B030000 		.4byte	.LASF13
+ 615 0096 03       		.uleb128 0x3
+ 616 0097 4F000000 		.4byte	.LASF14
+ 617 009b 04       		.byte	0x4
+ 618 009c D8       		.byte	0xd8
+ 619 009d 6F000000 		.4byte	0x6f
+ 620 00a1 02       		.uleb128 0x2
+ 621 00a2 08       		.byte	0x8
+ 622 00a3 04       		.byte	0x4
+ 623 00a4 1B030000 		.4byte	.LASF15
+ 624 00a8 02       		.uleb128 0x2
+ 625 00a9 04       		.byte	0x4
+ 626 00aa 07       		.byte	0x7
+ 627 00ab 44030000 		.4byte	.LASF16
+ 628 00af 05       		.uleb128 0x5
+ 629 00b0 01       		.byte	0x1
+ 630 00b1 37000000 		.4byte	0x37
+ 631 00b5 05       		.byte	0x5
+ 632 00b6 3D       		.byte	0x3d
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 19
+
+
+ 633 00b7 FE000000 		.4byte	0xfe
+ 634 00bb 06       		.uleb128 0x6
+ 635 00bc 9C030000 		.4byte	.LASF17
+ 636 00c0 00       		.byte	0
+ 637 00c1 06       		.uleb128 0x6
+ 638 00c2 76000000 		.4byte	.LASF18
+ 639 00c6 20       		.byte	0x20
+ 640 00c7 06       		.uleb128 0x6
+ 641 00c8 6F040000 		.4byte	.LASF19
+ 642 00cc 61       		.byte	0x61
+ 643 00cd 06       		.uleb128 0x6
+ 644 00ce C7000000 		.4byte	.LASF20
+ 645 00d2 A0       		.byte	0xa0
+ 646 00d3 06       		.uleb128 0x6
+ 647 00d4 33030000 		.4byte	.LASF21
+ 648 00d8 E1       		.byte	0xe1
+ 649 00d9 06       		.uleb128 0x6
+ 650 00da 1C010000 		.4byte	.LASF22
+ 651 00de E2       		.byte	0xe2
+ 652 00df 06       		.uleb128 0x6
+ 653 00e0 69020000 		.4byte	.LASF23
+ 654 00e4 E3       		.byte	0xe3
+ 655 00e5 06       		.uleb128 0x6
+ 656 00e6 7D020000 		.4byte	.LASF24
+ 657 00ea 60       		.byte	0x60
+ 658 00eb 06       		.uleb128 0x6
+ 659 00ec 06010000 		.4byte	.LASF25
+ 660 00f0 A8       		.byte	0xa8
+ 661 00f1 06       		.uleb128 0x6
+ 662 00f2 81030000 		.4byte	.LASF26
+ 663 00f6 B0       		.byte	0xb0
+ 664 00f7 06       		.uleb128 0x6
+ 665 00f8 27030000 		.4byte	.LASF27
+ 666 00fc FF       		.byte	0xff
+ 667 00fd 00       		.byte	0
+ 668 00fe 03       		.uleb128 0x3
+ 669 00ff 45020000 		.4byte	.LASF28
+ 670 0103 05       		.byte	0x5
+ 671 0104 49       		.byte	0x49
+ 672 0105 AF000000 		.4byte	0xaf
+ 673 0109 05       		.uleb128 0x5
+ 674 010a 01       		.byte	0x1
+ 675 010b 37000000 		.4byte	0x37
+ 676 010f 05       		.byte	0x5
+ 677 0110 4C       		.byte	0x4c
+ 678 0111 3A010000 		.4byte	0x13a
+ 679 0115 06       		.uleb128 0x6
+ 680 0116 CB010000 		.4byte	.LASF29
+ 681 011a 00       		.byte	0
+ 682 011b 06       		.uleb128 0x6
+ 683 011c DA010000 		.4byte	.LASF30
+ 684 0120 01       		.byte	0x1
+ 685 0121 06       		.uleb128 0x6
+ 686 0122 E9010000 		.4byte	.LASF31
+ 687 0126 02       		.byte	0x2
+ 688 0127 06       		.uleb128 0x6
+ 689 0128 F8010000 		.4byte	.LASF32
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 20
+
+
+ 690 012c 03       		.byte	0x3
+ 691 012d 06       		.uleb128 0x6
+ 692 012e 07020000 		.4byte	.LASF33
+ 693 0132 04       		.byte	0x4
+ 694 0133 06       		.uleb128 0x6
+ 695 0134 16020000 		.4byte	.LASF34
+ 696 0138 05       		.byte	0x5
+ 697 0139 00       		.byte	0
+ 698 013a 03       		.uleb128 0x3
+ 699 013b BB000000 		.4byte	.LASF35
+ 700 013f 05       		.byte	0x5
+ 701 0140 53       		.byte	0x53
+ 702 0141 09010000 		.4byte	0x109
+ 703 0145 07       		.uleb128 0x7
+ 704 0146 25020000 		.4byte	.LASF36
+ 705 014a 01       		.byte	0x1
+ 706 014b 2D       		.byte	0x2d
+ 707 014c 00000000 		.4byte	.LFB1
+ 708 0150 26000000 		.4byte	.LFE1-.LFB1
+ 709 0154 01       		.uleb128 0x1
+ 710 0155 9C       		.byte	0x9c
+ 711 0156 B5010000 		.4byte	0x1b5
+ 712 015a 08       		.uleb128 0x8
+ 713 015b 636D6400 		.ascii	"cmd\000"
+ 714 015f 01       		.byte	0x1
+ 715 0160 2D       		.byte	0x2d
+ 716 0161 B5010000 		.4byte	0x1b5
+ 717 0165 00000000 		.4byte	.LLST0
+ 718 0169 09       		.uleb128 0x9
+ 719 016a 08000000 		.4byte	.LVL1
+ 720 016e 1E060000 		.4byte	0x61e
+ 721 0172 09       		.uleb128 0x9
+ 722 0173 0C000000 		.4byte	.LVL2
+ 723 0177 2A060000 		.4byte	0x62a
+ 724 017b 0A       		.uleb128 0xa
+ 725 017c 12000000 		.4byte	.LVL3
+ 726 0180 36060000 		.4byte	0x636
+ 727 0184 8E010000 		.4byte	0x18e
+ 728 0188 0B       		.uleb128 0xb
+ 729 0189 01       		.uleb128 0x1
+ 730 018a 50       		.byte	0x50
+ 731 018b 01       		.uleb128 0x1
+ 732 018c 30       		.byte	0x30
+ 733 018d 00       		.byte	0
+ 734 018e 0A       		.uleb128 0xa
+ 735 018f 18000000 		.4byte	.LVL4
+ 736 0193 41060000 		.4byte	0x641
+ 737 0197 A2010000 		.4byte	0x1a2
+ 738 019b 0B       		.uleb128 0xb
+ 739 019c 01       		.uleb128 0x1
+ 740 019d 50       		.byte	0x50
+ 741 019e 02       		.uleb128 0x2
+ 742 019f 74       		.byte	0x74
+ 743 01a0 00       		.sleb128 0
+ 744 01a1 00       		.byte	0
+ 745 01a2 09       		.uleb128 0x9
+ 746 01a3 1C000000 		.4byte	.LVL5
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 21
+
+
+ 747 01a7 4D060000 		.4byte	0x64d
+ 748 01ab 09       		.uleb128 0x9
+ 749 01ac 24000000 		.4byte	.LVL6
+ 750 01b0 36060000 		.4byte	0x636
+ 751 01b4 00       		.byte	0
+ 752 01b5 0C       		.uleb128 0xc
+ 753 01b6 FE000000 		.4byte	0xfe
+ 754 01ba 07       		.uleb128 0x7
+ 755 01bb A3000000 		.4byte	.LASF37
+ 756 01bf 01       		.byte	0x1
+ 757 01c0 53       		.byte	0x53
+ 758 01c1 00000000 		.4byte	.LFB2
+ 759 01c5 0A000000 		.4byte	.LFE2-.LFB2
+ 760 01c9 01       		.uleb128 0x1
+ 761 01ca 9C       		.byte	0x9c
+ 762 01cb E0010000 		.4byte	0x1e0
+ 763 01cf 0D       		.uleb128 0xd
+ 764 01d0 08000000 		.4byte	.LVL7
+ 765 01d4 45010000 		.4byte	0x145
+ 766 01d8 0B       		.uleb128 0xb
+ 767 01d9 01       		.uleb128 0x1
+ 768 01da 50       		.byte	0x50
+ 769 01db 02       		.uleb128 0x2
+ 770 01dc 09       		.byte	0x9
+ 771 01dd E3       		.byte	0xe3
+ 772 01de 00       		.byte	0
+ 773 01df 00       		.byte	0
+ 774 01e0 07       		.uleb128 0x7
+ 775 01e1 70030000 		.4byte	.LASF38
+ 776 01e5 01       		.byte	0x1
+ 777 01e6 5F       		.byte	0x5f
+ 778 01e7 00000000 		.4byte	.LFB3
+ 779 01eb 0A000000 		.4byte	.LFE3-.LFB3
+ 780 01ef 01       		.uleb128 0x1
+ 781 01f0 9C       		.byte	0x9c
+ 782 01f1 06020000 		.4byte	0x206
+ 783 01f5 0D       		.uleb128 0xd
+ 784 01f6 08000000 		.4byte	.LVL8
+ 785 01fa 45010000 		.4byte	0x145
+ 786 01fe 0B       		.uleb128 0xb
+ 787 01ff 01       		.uleb128 0x1
+ 788 0200 50       		.byte	0x50
+ 789 0201 02       		.uleb128 0x2
+ 790 0202 09       		.byte	0x9
+ 791 0203 E2       		.byte	0xe2
+ 792 0204 00       		.byte	0
+ 793 0205 00       		.byte	0
+ 794 0206 07       		.uleb128 0x7
+ 795 0207 6C010000 		.4byte	.LASF39
+ 796 020b 01       		.byte	0x1
+ 797 020c 68       		.byte	0x68
+ 798 020d 00000000 		.4byte	.LFB4
+ 799 0211 0A000000 		.4byte	.LFE4-.LFB4
+ 800 0215 01       		.uleb128 0x1
+ 801 0216 9C       		.byte	0x9c
+ 802 0217 2C020000 		.4byte	0x22c
+ 803 021b 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 22
+
+
+ 804 021c 08000000 		.4byte	.LVL9
+ 805 0220 45010000 		.4byte	0x145
+ 806 0224 0B       		.uleb128 0xb
+ 807 0225 01       		.uleb128 0x1
+ 808 0226 50       		.byte	0x50
+ 809 0227 02       		.uleb128 0x2
+ 810 0228 09       		.byte	0x9
+ 811 0229 E1       		.byte	0xe1
+ 812 022a 00       		.byte	0
+ 813 022b 00       		.byte	0
+ 814 022c 07       		.uleb128 0x7
+ 815 022d 56000000 		.4byte	.LASF40
+ 816 0231 01       		.byte	0x1
+ 817 0232 75       		.byte	0x75
+ 818 0233 00000000 		.4byte	.LFB5
+ 819 0237 4E000000 		.4byte	.LFE5-.LFB5
+ 820 023b 01       		.uleb128 0x1
+ 821 023c 9C       		.byte	0x9c
+ 822 023d FB020000 		.4byte	0x2fb
+ 823 0241 0E       		.uleb128 0xe
+ 824 0242 4B010000 		.4byte	.LASF41
+ 825 0246 01       		.byte	0x1
+ 826 0247 75       		.byte	0x75
+ 827 0248 FB020000 		.4byte	0x2fb
+ 828 024c 21000000 		.4byte	.LLST1
+ 829 0250 0E       		.uleb128 0xe
+ 830 0251 67010000 		.4byte	.LASF42
+ 831 0255 01       		.byte	0x1
+ 832 0256 75       		.byte	0x75
+ 833 0257 01030000 		.4byte	0x301
+ 834 025b 4D000000 		.4byte	.LLST2
+ 835 025f 0F       		.uleb128 0xf
+ 836 0260 26000000 		.4byte	.LBB2
+ 837 0264 20000000 		.4byte	.LBE2-.LBB2
+ 838 0268 A0020000 		.4byte	0x2a0
+ 839 026c 10       		.uleb128 0x10
+ 840 026d 6900     		.ascii	"i\000"
+ 841 026f 01       		.byte	0x1
+ 842 0270 83       		.byte	0x83
+ 843 0271 96000000 		.4byte	0x96
+ 844 0275 79000000 		.4byte	.LLST3
+ 845 0279 0A       		.uleb128 0xa
+ 846 027a 30000000 		.4byte	.LVL18
+ 847 027e 41060000 		.4byte	0x641
+ 848 0282 8D020000 		.4byte	0x28d
+ 849 0286 0B       		.uleb128 0xb
+ 850 0287 01       		.uleb128 0x1
+ 851 0288 50       		.byte	0x50
+ 852 0289 02       		.uleb128 0x2
+ 853 028a 08       		.byte	0x8
+ 854 028b FF       		.byte	0xff
+ 855 028c 00       		.byte	0
+ 856 028d 09       		.uleb128 0x9
+ 857 028e 34000000 		.4byte	.LVL19
+ 858 0292 4D060000 		.4byte	0x64d
+ 859 0296 09       		.uleb128 0x9
+ 860 0297 3E000000 		.4byte	.LVL20
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 23
+
+
+ 861 029b 59060000 		.4byte	0x659
+ 862 029f 00       		.byte	0
+ 863 02a0 09       		.uleb128 0x9
+ 864 02a1 0A000000 		.4byte	.LVL11
+ 865 02a5 1E060000 		.4byte	0x61e
+ 866 02a9 09       		.uleb128 0x9
+ 867 02aa 0E000000 		.4byte	.LVL12
+ 868 02ae 2A060000 		.4byte	0x62a
+ 869 02b2 0A       		.uleb128 0xa
+ 870 02b3 14000000 		.4byte	.LVL13
+ 871 02b7 36060000 		.4byte	0x636
+ 872 02bb C5020000 		.4byte	0x2c5
+ 873 02bf 0B       		.uleb128 0xb
+ 874 02c0 01       		.uleb128 0x1
+ 875 02c1 50       		.byte	0x50
+ 876 02c2 01       		.uleb128 0x1
+ 877 02c3 30       		.byte	0x30
+ 878 02c4 00       		.byte	0
+ 879 02c5 0A       		.uleb128 0xa
+ 880 02c6 1A000000 		.4byte	.LVL14
+ 881 02ca 41060000 		.4byte	0x641
+ 882 02ce D9020000 		.4byte	0x2d9
+ 883 02d2 0B       		.uleb128 0xb
+ 884 02d3 01       		.uleb128 0x1
+ 885 02d4 50       		.byte	0x50
+ 886 02d5 02       		.uleb128 0x2
+ 887 02d6 08       		.byte	0x8
+ 888 02d7 61       		.byte	0x61
+ 889 02d8 00       		.byte	0
+ 890 02d9 09       		.uleb128 0x9
+ 891 02da 1E000000 		.4byte	.LVL15
+ 892 02de 4D060000 		.4byte	0x64d
+ 893 02e2 09       		.uleb128 0x9
+ 894 02e3 26000000 		.4byte	.LVL16
+ 895 02e7 59060000 		.4byte	0x659
+ 896 02eb 0D       		.uleb128 0xd
+ 897 02ec 4C000000 		.4byte	.LVL22
+ 898 02f0 36060000 		.4byte	0x636
+ 899 02f4 0B       		.uleb128 0xb
+ 900 02f5 01       		.uleb128 0x1
+ 901 02f6 50       		.byte	0x50
+ 902 02f7 01       		.uleb128 0x1
+ 903 02f8 31       		.byte	0x31
+ 904 02f9 00       		.byte	0
+ 905 02fa 00       		.byte	0
+ 906 02fb 11       		.uleb128 0x11
+ 907 02fc 04       		.byte	0x4
+ 908 02fd 76000000 		.4byte	0x76
+ 909 0301 0C       		.uleb128 0xc
+ 910 0302 96000000 		.4byte	0x96
+ 911 0306 07       		.uleb128 0x7
+ 912 0307 2D010000 		.4byte	.LASF43
+ 913 030b 01       		.byte	0x1
+ 914 030c AC       		.byte	0xac
+ 915 030d 00000000 		.4byte	.LFB6
+ 916 0311 34000000 		.4byte	.LFE6-.LFB6
+ 917 0315 01       		.uleb128 0x1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 24
+
+
+ 918 0316 9C       		.byte	0x9c
+ 919 0317 A5030000 		.4byte	0x3a5
+ 920 031b 0E       		.uleb128 0xe
+ 921 031c 4B010000 		.4byte	.LASF41
+ 922 0320 01       		.byte	0x1
+ 923 0321 AC       		.byte	0xac
+ 924 0322 A5030000 		.4byte	0x3a5
+ 925 0326 98000000 		.4byte	.LLST4
+ 926 032a 0E       		.uleb128 0xe
+ 927 032b 67010000 		.4byte	.LASF42
+ 928 032f 01       		.byte	0x1
+ 929 0330 AC       		.byte	0xac
+ 930 0331 01030000 		.4byte	0x301
+ 931 0335 C4000000 		.4byte	.LLST5
+ 932 0339 09       		.uleb128 0x9
+ 933 033a 0A000000 		.4byte	.LVL27
+ 934 033e 1E060000 		.4byte	0x61e
+ 935 0342 09       		.uleb128 0x9
+ 936 0343 0E000000 		.4byte	.LVL28
+ 937 0347 2A060000 		.4byte	0x62a
+ 938 034b 0A       		.uleb128 0xa
+ 939 034c 14000000 		.4byte	.LVL29
+ 940 0350 36060000 		.4byte	0x636
+ 941 0354 5E030000 		.4byte	0x35e
+ 942 0358 0B       		.uleb128 0xb
+ 943 0359 01       		.uleb128 0x1
+ 944 035a 50       		.byte	0x50
+ 945 035b 01       		.uleb128 0x1
+ 946 035c 30       		.byte	0x30
+ 947 035d 00       		.byte	0
+ 948 035e 0A       		.uleb128 0xa
+ 949 035f 1A000000 		.4byte	.LVL30
+ 950 0363 41060000 		.4byte	0x641
+ 951 0367 72030000 		.4byte	0x372
+ 952 036b 0B       		.uleb128 0xb
+ 953 036c 01       		.uleb128 0x1
+ 954 036d 50       		.byte	0x50
+ 955 036e 02       		.uleb128 0x2
+ 956 036f 08       		.byte	0x8
+ 957 0370 A0       		.byte	0xa0
+ 958 0371 00       		.byte	0
+ 959 0372 0A       		.uleb128 0xa
+ 960 0373 22000000 		.4byte	.LVL31
+ 961 0377 65060000 		.4byte	0x665
+ 962 037b 8C030000 		.4byte	0x38c
+ 963 037f 0B       		.uleb128 0xb
+ 964 0380 01       		.uleb128 0x1
+ 965 0381 50       		.byte	0x50
+ 966 0382 02       		.uleb128 0x2
+ 967 0383 75       		.byte	0x75
+ 968 0384 00       		.sleb128 0
+ 969 0385 0B       		.uleb128 0xb
+ 970 0386 01       		.uleb128 0x1
+ 971 0387 51       		.byte	0x51
+ 972 0388 02       		.uleb128 0x2
+ 973 0389 74       		.byte	0x74
+ 974 038a 00       		.sleb128 0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 25
+
+
+ 975 038b 00       		.byte	0
+ 976 038c 09       		.uleb128 0x9
+ 977 038d 26000000 		.4byte	.LVL32
+ 978 0391 4D060000 		.4byte	0x64d
+ 979 0395 0D       		.uleb128 0xd
+ 980 0396 32000000 		.4byte	.LVL33
+ 981 039a 36060000 		.4byte	0x636
+ 982 039e 0B       		.uleb128 0xb
+ 983 039f 01       		.uleb128 0x1
+ 984 03a0 50       		.byte	0x50
+ 985 03a1 01       		.uleb128 0x1
+ 986 03a2 31       		.byte	0x31
+ 987 03a3 00       		.byte	0
+ 988 03a4 00       		.byte	0
+ 989 03a5 11       		.uleb128 0x11
+ 990 03a6 04       		.byte	0x4
+ 991 03a7 AB030000 		.4byte	0x3ab
+ 992 03ab 0C       		.uleb128 0xc
+ 993 03ac 76000000 		.4byte	0x76
+ 994 03b0 12       		.uleb128 0x12
+ 995 03b1 89000000 		.4byte	.LASF48
+ 996 03b5 01       		.byte	0x1
+ 997 03b6 D3       		.byte	0xd3
+ 998 03b7 76000000 		.4byte	0x76
+ 999 03bb 00000000 		.4byte	.LFB7
+ 1000 03bf 40000000 		.4byte	.LFE7-.LFB7
+ 1001 03c3 01       		.uleb128 0x1
+ 1002 03c4 9C       		.byte	0x9c
+ 1003 03c5 53040000 		.4byte	0x453
+ 1004 03c9 13       		.uleb128 0x13
+ 1005 03ca 60030000 		.4byte	.LASF44
+ 1006 03ce 01       		.byte	0x1
+ 1007 03cf D5       		.byte	0xd5
+ 1008 03d0 76000000 		.4byte	0x76
+ 1009 03d4 F0000000 		.4byte	.LLST6
+ 1010 03d8 09       		.uleb128 0x9
+ 1011 03d9 06000000 		.4byte	.LVL37
+ 1012 03dd 1E060000 		.4byte	0x61e
+ 1013 03e1 09       		.uleb128 0x9
+ 1014 03e2 0A000000 		.4byte	.LVL38
+ 1015 03e6 2A060000 		.4byte	0x62a
+ 1016 03ea 0A       		.uleb128 0xa
+ 1017 03eb 10000000 		.4byte	.LVL39
+ 1018 03ef 36060000 		.4byte	0x636
+ 1019 03f3 FD030000 		.4byte	0x3fd
+ 1020 03f7 0B       		.uleb128 0xb
+ 1021 03f8 01       		.uleb128 0x1
+ 1022 03f9 50       		.byte	0x50
+ 1023 03fa 01       		.uleb128 0x1
+ 1024 03fb 30       		.byte	0x30
+ 1025 03fc 00       		.byte	0
+ 1026 03fd 0A       		.uleb128 0xa
+ 1027 03fe 16000000 		.4byte	.LVL40
+ 1028 0402 41060000 		.4byte	0x641
+ 1029 0406 11040000 		.4byte	0x411
+ 1030 040a 0B       		.uleb128 0xb
+ 1031 040b 01       		.uleb128 0x1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 26
+
+
+ 1032 040c 50       		.byte	0x50
+ 1033 040d 02       		.uleb128 0x2
+ 1034 040e 08       		.byte	0x8
+ 1035 040f 60       		.byte	0x60
+ 1036 0410 00       		.byte	0
+ 1037 0411 0A       		.uleb128 0xa
+ 1038 0412 1C000000 		.4byte	.LVL41
+ 1039 0416 41060000 		.4byte	0x641
+ 1040 041a 25040000 		.4byte	0x425
+ 1041 041e 0B       		.uleb128 0xb
+ 1042 041f 01       		.uleb128 0x1
+ 1043 0420 50       		.byte	0x50
+ 1044 0421 02       		.uleb128 0x2
+ 1045 0422 08       		.byte	0x8
+ 1046 0423 FF       		.byte	0xff
+ 1047 0424 00       		.byte	0
+ 1048 0425 09       		.uleb128 0x9
+ 1049 0426 20000000 		.4byte	.LVL42
+ 1050 042a 4D060000 		.4byte	0x64d
+ 1051 042e 09       		.uleb128 0x9
+ 1052 042f 2A000000 		.4byte	.LVL43
+ 1053 0433 36060000 		.4byte	0x636
+ 1054 0437 09       		.uleb128 0x9
+ 1055 0438 2E000000 		.4byte	.LVL44
+ 1056 043c 59060000 		.4byte	0x659
+ 1057 0440 09       		.uleb128 0x9
+ 1058 0441 32000000 		.4byte	.LVL45
+ 1059 0445 59060000 		.4byte	0x659
+ 1060 0449 09       		.uleb128 0x9
+ 1061 044a 3C000000 		.4byte	.LVL47
+ 1062 044e E0010000 		.4byte	0x1e0
+ 1063 0452 00       		.byte	0
+ 1064 0453 14       		.uleb128 0x14
+ 1065 0454 02030000 		.4byte	.LASF45
+ 1066 0458 01       		.byte	0x1
+ 1067 0459 1401     		.2byte	0x114
+ 1068 045b 00000000 		.4byte	.LFB8
+ 1069 045f 3C000000 		.4byte	.LFE8-.LFB8
+ 1070 0463 01       		.uleb128 0x1
+ 1071 0464 9C       		.byte	0x9c
+ 1072 0465 08050000 		.4byte	0x508
+ 1073 0469 15       		.uleb128 0x15
+ 1074 046a 91020000 		.4byte	.LASF46
+ 1075 046e 01       		.byte	0x1
+ 1076 046f 1401     		.2byte	0x114
+ 1077 0471 08050000 		.4byte	0x508
+ 1078 0475 1A010000 		.4byte	.LLST7
+ 1079 0479 15       		.uleb128 0x15
+ 1080 047a 4B010000 		.4byte	.LASF41
+ 1081 047e 01       		.byte	0x1
+ 1082 047f 1501     		.2byte	0x115
+ 1083 0481 A5030000 		.4byte	0x3a5
+ 1084 0485 3B010000 		.4byte	.LLST8
+ 1085 0489 15       		.uleb128 0x15
+ 1086 048a 67010000 		.4byte	.LASF42
+ 1087 048e 01       		.byte	0x1
+ 1088 048f 1601     		.2byte	0x116
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 27
+
+
+ 1089 0491 01030000 		.4byte	0x301
+ 1090 0495 67010000 		.4byte	.LLST9
+ 1091 0499 09       		.uleb128 0x9
+ 1092 049a 0C000000 		.4byte	.LVL50
+ 1093 049e 1E060000 		.4byte	0x61e
+ 1094 04a2 09       		.uleb128 0x9
+ 1095 04a3 10000000 		.4byte	.LVL51
+ 1096 04a7 2A060000 		.4byte	0x62a
+ 1097 04ab 0A       		.uleb128 0xa
+ 1098 04ac 16000000 		.4byte	.LVL52
+ 1099 04b0 36060000 		.4byte	0x636
+ 1100 04b4 BE040000 		.4byte	0x4be
+ 1101 04b8 0B       		.uleb128 0xb
+ 1102 04b9 01       		.uleb128 0x1
+ 1103 04ba 50       		.byte	0x50
+ 1104 04bb 01       		.uleb128 0x1
+ 1105 04bc 30       		.byte	0x30
+ 1106 04bd 00       		.byte	0
+ 1107 04be 0A       		.uleb128 0xa
+ 1108 04bf 22000000 		.4byte	.LVL53
+ 1109 04c3 41060000 		.4byte	0x641
+ 1110 04c7 D5040000 		.4byte	0x4d5
+ 1111 04cb 0B       		.uleb128 0xb
+ 1112 04cc 01       		.uleb128 0x1
+ 1113 04cd 50       		.byte	0x50
+ 1114 04ce 05       		.uleb128 0x5
+ 1115 04cf 75       		.byte	0x75
+ 1116 04d0 00       		.sleb128 0
+ 1117 04d1 08       		.byte	0x8
+ 1118 04d2 FF       		.byte	0xff
+ 1119 04d3 1A       		.byte	0x1a
+ 1120 04d4 00       		.byte	0
+ 1121 04d5 0A       		.uleb128 0xa
+ 1122 04d6 2A000000 		.4byte	.LVL54
+ 1123 04da 65060000 		.4byte	0x665
+ 1124 04de EF040000 		.4byte	0x4ef
+ 1125 04e2 0B       		.uleb128 0xb
+ 1126 04e3 01       		.uleb128 0x1
+ 1127 04e4 50       		.byte	0x50
+ 1128 04e5 02       		.uleb128 0x2
+ 1129 04e6 76       		.byte	0x76
+ 1130 04e7 00       		.sleb128 0
+ 1131 04e8 0B       		.uleb128 0xb
+ 1132 04e9 01       		.uleb128 0x1
+ 1133 04ea 51       		.byte	0x51
+ 1134 04eb 02       		.uleb128 0x2
+ 1135 04ec 74       		.byte	0x74
+ 1136 04ed 00       		.sleb128 0
+ 1137 04ee 00       		.byte	0
+ 1138 04ef 09       		.uleb128 0x9
+ 1139 04f0 2E000000 		.4byte	.LVL55
+ 1140 04f4 4D060000 		.4byte	0x64d
+ 1141 04f8 0D       		.uleb128 0xd
+ 1142 04f9 3A000000 		.4byte	.LVL56
+ 1143 04fd 36060000 		.4byte	0x636
+ 1144 0501 0B       		.uleb128 0xb
+ 1145 0502 01       		.uleb128 0x1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 28
+
+
+ 1146 0503 50       		.byte	0x50
+ 1147 0504 01       		.uleb128 0x1
+ 1148 0505 31       		.byte	0x31
+ 1149 0506 00       		.byte	0
+ 1150 0507 00       		.byte	0
+ 1151 0508 0C       		.uleb128 0xc
+ 1152 0509 3A010000 		.4byte	0x13a
+ 1153 050d 14       		.uleb128 0x14
+ 1154 050e 84040000 		.4byte	.LASF47
+ 1155 0512 01       		.byte	0x1
+ 1156 0513 4001     		.2byte	0x140
+ 1157 0515 00000000 		.4byte	.LFB9
+ 1158 0519 34000000 		.4byte	.LFE9-.LFB9
+ 1159 051d 01       		.uleb128 0x1
+ 1160 051e 9C       		.byte	0x9c
+ 1161 051f AF050000 		.4byte	0x5af
+ 1162 0523 15       		.uleb128 0x15
+ 1163 0524 4B010000 		.4byte	.LASF41
+ 1164 0528 01       		.byte	0x1
+ 1165 0529 4001     		.2byte	0x140
+ 1166 052b A5030000 		.4byte	0x3a5
+ 1167 052f 93010000 		.4byte	.LLST10
+ 1168 0533 15       		.uleb128 0x15
+ 1169 0534 67010000 		.4byte	.LASF42
+ 1170 0538 01       		.byte	0x1
+ 1171 0539 4101     		.2byte	0x141
+ 1172 053b 01030000 		.4byte	0x301
+ 1173 053f BF010000 		.4byte	.LLST11
+ 1174 0543 09       		.uleb128 0x9
+ 1175 0544 0A000000 		.4byte	.LVL60
+ 1176 0548 1E060000 		.4byte	0x61e
+ 1177 054c 09       		.uleb128 0x9
+ 1178 054d 0E000000 		.4byte	.LVL61
+ 1179 0551 2A060000 		.4byte	0x62a
+ 1180 0555 0A       		.uleb128 0xa
+ 1181 0556 14000000 		.4byte	.LVL62
+ 1182 055a 36060000 		.4byte	0x636
+ 1183 055e 68050000 		.4byte	0x568
+ 1184 0562 0B       		.uleb128 0xb
+ 1185 0563 01       		.uleb128 0x1
+ 1186 0564 50       		.byte	0x50
+ 1187 0565 01       		.uleb128 0x1
+ 1188 0566 30       		.byte	0x30
+ 1189 0567 00       		.byte	0
+ 1190 0568 0A       		.uleb128 0xa
+ 1191 0569 1A000000 		.4byte	.LVL63
+ 1192 056d 41060000 		.4byte	0x641
+ 1193 0571 7C050000 		.4byte	0x57c
+ 1194 0575 0B       		.uleb128 0xb
+ 1195 0576 01       		.uleb128 0x1
+ 1196 0577 50       		.byte	0x50
+ 1197 0578 02       		.uleb128 0x2
+ 1198 0579 08       		.byte	0x8
+ 1199 057a B0       		.byte	0xb0
+ 1200 057b 00       		.byte	0
+ 1201 057c 0A       		.uleb128 0xa
+ 1202 057d 22000000 		.4byte	.LVL64
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 29
+
+
+ 1203 0581 65060000 		.4byte	0x665
+ 1204 0585 96050000 		.4byte	0x596
+ 1205 0589 0B       		.uleb128 0xb
+ 1206 058a 01       		.uleb128 0x1
+ 1207 058b 50       		.byte	0x50
+ 1208 058c 02       		.uleb128 0x2
+ 1209 058d 75       		.byte	0x75
+ 1210 058e 00       		.sleb128 0
+ 1211 058f 0B       		.uleb128 0xb
+ 1212 0590 01       		.uleb128 0x1
+ 1213 0591 51       		.byte	0x51
+ 1214 0592 02       		.uleb128 0x2
+ 1215 0593 74       		.byte	0x74
+ 1216 0594 00       		.sleb128 0
+ 1217 0595 00       		.byte	0
+ 1218 0596 09       		.uleb128 0x9
+ 1219 0597 26000000 		.4byte	.LVL65
+ 1220 059b 4D060000 		.4byte	0x64d
+ 1221 059f 0D       		.uleb128 0xd
+ 1222 05a0 32000000 		.4byte	.LVL66
+ 1223 05a4 36060000 		.4byte	0x636
+ 1224 05a8 0B       		.uleb128 0xb
+ 1225 05a9 01       		.uleb128 0x1
+ 1226 05aa 50       		.byte	0x50
+ 1227 05ab 01       		.uleb128 0x1
+ 1228 05ac 31       		.byte	0x31
+ 1229 05ad 00       		.byte	0
+ 1230 05ae 00       		.byte	0
+ 1231 05af 16       		.uleb128 0x16
+ 1232 05b0 7D010000 		.4byte	.LASF49
+ 1233 05b4 01       		.byte	0x1
+ 1234 05b5 6901     		.2byte	0x169
+ 1235 05b7 76000000 		.4byte	0x76
+ 1236 05bb 00000000 		.4byte	.LFB10
+ 1237 05bf 2A000000 		.4byte	.LFE10-.LFB10
+ 1238 05c3 01       		.uleb128 0x1
+ 1239 05c4 9C       		.byte	0x9c
+ 1240 05c5 1E060000 		.4byte	0x61e
+ 1241 05c9 09       		.uleb128 0x9
+ 1242 05ca 06000000 		.4byte	.LVL69
+ 1243 05ce 1E060000 		.4byte	0x61e
+ 1244 05d2 09       		.uleb128 0x9
+ 1245 05d3 0A000000 		.4byte	.LVL70
+ 1246 05d7 2A060000 		.4byte	0x62a
+ 1247 05db 0A       		.uleb128 0xa
+ 1248 05dc 10000000 		.4byte	.LVL71
+ 1249 05e0 36060000 		.4byte	0x636
+ 1250 05e4 EE050000 		.4byte	0x5ee
+ 1251 05e8 0B       		.uleb128 0xb
+ 1252 05e9 01       		.uleb128 0x1
+ 1253 05ea 50       		.byte	0x50
+ 1254 05eb 01       		.uleb128 0x1
+ 1255 05ec 30       		.byte	0x30
+ 1256 05ed 00       		.byte	0
+ 1257 05ee 0A       		.uleb128 0xa
+ 1258 05ef 16000000 		.4byte	.LVL72
+ 1259 05f3 41060000 		.4byte	0x641
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 30
+
+
+ 1260 05f7 02060000 		.4byte	0x602
+ 1261 05fb 0B       		.uleb128 0xb
+ 1262 05fc 01       		.uleb128 0x1
+ 1263 05fd 50       		.byte	0x50
+ 1264 05fe 02       		.uleb128 0x2
+ 1265 05ff 08       		.byte	0x8
+ 1266 0600 FF       		.byte	0xff
+ 1267 0601 00       		.byte	0
+ 1268 0602 09       		.uleb128 0x9
+ 1269 0603 1A000000 		.4byte	.LVL73
+ 1270 0607 4D060000 		.4byte	0x64d
+ 1271 060b 09       		.uleb128 0x9
+ 1272 060c 22000000 		.4byte	.LVL74
+ 1273 0610 36060000 		.4byte	0x636
+ 1274 0614 09       		.uleb128 0x9
+ 1275 0615 26000000 		.4byte	.LVL75
+ 1276 0619 59060000 		.4byte	0x659
+ 1277 061d 00       		.byte	0
+ 1278 061e 17       		.uleb128 0x17
+ 1279 061f 00000000 		.4byte	.LASF50
+ 1280 0623 00000000 		.4byte	.LASF50
+ 1281 0627 06       		.byte	0x6
+ 1282 0628 3F03     		.2byte	0x33f
+ 1283 062a 17       		.uleb128 0x17
+ 1284 062b B8030000 		.4byte	.LASF51
+ 1285 062f B8030000 		.4byte	.LASF51
+ 1286 0633 06       		.byte	0x6
+ 1287 0634 4703     		.2byte	0x347
+ 1288 0636 18       		.uleb128 0x18
+ 1289 0637 6D000000 		.4byte	.LASF52
+ 1290 063b 6D000000 		.4byte	.LASF52
+ 1291 063f 07       		.byte	0x7
+ 1292 0640 33       		.byte	0x33
+ 1293 0641 17       		.uleb128 0x17
+ 1294 0642 EF000000 		.4byte	.LASF53
+ 1295 0646 EF000000 		.4byte	.LASF53
+ 1296 064a 06       		.byte	0x6
+ 1297 064b 4403     		.2byte	0x344
+ 1298 064d 17       		.uleb128 0x17
+ 1299 064e 8A010000 		.4byte	.LASF54
+ 1300 0652 8A010000 		.4byte	.LASF54
+ 1301 0656 06       		.byte	0x6
+ 1302 0657 3E03     		.2byte	0x33e
+ 1303 0659 17       		.uleb128 0x17
+ 1304 065a 53020000 		.4byte	.LASF55
+ 1305 065e 53020000 		.4byte	.LASF55
+ 1306 0662 06       		.byte	0x6
+ 1307 0663 3D03     		.2byte	0x33d
+ 1308 0665 17       		.uleb128 0x17
+ 1309 0666 A5010000 		.4byte	.LASF56
+ 1310 066a A5010000 		.4byte	.LASF56
+ 1311 066e 06       		.byte	0x6
+ 1312 066f 4503     		.2byte	0x345
+ 1313 0671 00       		.byte	0
+ 1314              		.section	.debug_abbrev,"",%progbits
+ 1315              	.Ldebug_abbrev0:
+ 1316 0000 01       		.uleb128 0x1
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 31
+
+
+ 1317 0001 11       		.uleb128 0x11
+ 1318 0002 01       		.byte	0x1
+ 1319 0003 25       		.uleb128 0x25
+ 1320 0004 0E       		.uleb128 0xe
+ 1321 0005 13       		.uleb128 0x13
+ 1322 0006 0B       		.uleb128 0xb
+ 1323 0007 03       		.uleb128 0x3
+ 1324 0008 0E       		.uleb128 0xe
+ 1325 0009 1B       		.uleb128 0x1b
+ 1326 000a 0E       		.uleb128 0xe
+ 1327 000b 55       		.uleb128 0x55
+ 1328 000c 17       		.uleb128 0x17
+ 1329 000d 11       		.uleb128 0x11
+ 1330 000e 01       		.uleb128 0x1
+ 1331 000f 10       		.uleb128 0x10
+ 1332 0010 17       		.uleb128 0x17
+ 1333 0011 00       		.byte	0
+ 1334 0012 00       		.byte	0
+ 1335 0013 02       		.uleb128 0x2
+ 1336 0014 24       		.uleb128 0x24
+ 1337 0015 00       		.byte	0
+ 1338 0016 0B       		.uleb128 0xb
+ 1339 0017 0B       		.uleb128 0xb
+ 1340 0018 3E       		.uleb128 0x3e
+ 1341 0019 0B       		.uleb128 0xb
+ 1342 001a 03       		.uleb128 0x3
+ 1343 001b 0E       		.uleb128 0xe
+ 1344 001c 00       		.byte	0
+ 1345 001d 00       		.byte	0
+ 1346 001e 03       		.uleb128 0x3
+ 1347 001f 16       		.uleb128 0x16
+ 1348 0020 00       		.byte	0
+ 1349 0021 03       		.uleb128 0x3
+ 1350 0022 0E       		.uleb128 0xe
+ 1351 0023 3A       		.uleb128 0x3a
+ 1352 0024 0B       		.uleb128 0xb
+ 1353 0025 3B       		.uleb128 0x3b
+ 1354 0026 0B       		.uleb128 0xb
+ 1355 0027 49       		.uleb128 0x49
+ 1356 0028 13       		.uleb128 0x13
+ 1357 0029 00       		.byte	0
+ 1358 002a 00       		.byte	0
+ 1359 002b 04       		.uleb128 0x4
+ 1360 002c 24       		.uleb128 0x24
+ 1361 002d 00       		.byte	0
+ 1362 002e 0B       		.uleb128 0xb
+ 1363 002f 0B       		.uleb128 0xb
+ 1364 0030 3E       		.uleb128 0x3e
+ 1365 0031 0B       		.uleb128 0xb
+ 1366 0032 03       		.uleb128 0x3
+ 1367 0033 08       		.uleb128 0x8
+ 1368 0034 00       		.byte	0
+ 1369 0035 00       		.byte	0
+ 1370 0036 05       		.uleb128 0x5
+ 1371 0037 04       		.uleb128 0x4
+ 1372 0038 01       		.byte	0x1
+ 1373 0039 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 32
+
+
+ 1374 003a 0B       		.uleb128 0xb
+ 1375 003b 49       		.uleb128 0x49
+ 1376 003c 13       		.uleb128 0x13
+ 1377 003d 3A       		.uleb128 0x3a
+ 1378 003e 0B       		.uleb128 0xb
+ 1379 003f 3B       		.uleb128 0x3b
+ 1380 0040 0B       		.uleb128 0xb
+ 1381 0041 01       		.uleb128 0x1
+ 1382 0042 13       		.uleb128 0x13
+ 1383 0043 00       		.byte	0
+ 1384 0044 00       		.byte	0
+ 1385 0045 06       		.uleb128 0x6
+ 1386 0046 28       		.uleb128 0x28
+ 1387 0047 00       		.byte	0
+ 1388 0048 03       		.uleb128 0x3
+ 1389 0049 0E       		.uleb128 0xe
+ 1390 004a 1C       		.uleb128 0x1c
+ 1391 004b 0B       		.uleb128 0xb
+ 1392 004c 00       		.byte	0
+ 1393 004d 00       		.byte	0
+ 1394 004e 07       		.uleb128 0x7
+ 1395 004f 2E       		.uleb128 0x2e
+ 1396 0050 01       		.byte	0x1
+ 1397 0051 3F       		.uleb128 0x3f
+ 1398 0052 19       		.uleb128 0x19
+ 1399 0053 03       		.uleb128 0x3
+ 1400 0054 0E       		.uleb128 0xe
+ 1401 0055 3A       		.uleb128 0x3a
+ 1402 0056 0B       		.uleb128 0xb
+ 1403 0057 3B       		.uleb128 0x3b
+ 1404 0058 0B       		.uleb128 0xb
+ 1405 0059 27       		.uleb128 0x27
+ 1406 005a 19       		.uleb128 0x19
+ 1407 005b 11       		.uleb128 0x11
+ 1408 005c 01       		.uleb128 0x1
+ 1409 005d 12       		.uleb128 0x12
+ 1410 005e 06       		.uleb128 0x6
+ 1411 005f 40       		.uleb128 0x40
+ 1412 0060 18       		.uleb128 0x18
+ 1413 0061 9742     		.uleb128 0x2117
+ 1414 0063 19       		.uleb128 0x19
+ 1415 0064 01       		.uleb128 0x1
+ 1416 0065 13       		.uleb128 0x13
+ 1417 0066 00       		.byte	0
+ 1418 0067 00       		.byte	0
+ 1419 0068 08       		.uleb128 0x8
+ 1420 0069 05       		.uleb128 0x5
+ 1421 006a 00       		.byte	0
+ 1422 006b 03       		.uleb128 0x3
+ 1423 006c 08       		.uleb128 0x8
+ 1424 006d 3A       		.uleb128 0x3a
+ 1425 006e 0B       		.uleb128 0xb
+ 1426 006f 3B       		.uleb128 0x3b
+ 1427 0070 0B       		.uleb128 0xb
+ 1428 0071 49       		.uleb128 0x49
+ 1429 0072 13       		.uleb128 0x13
+ 1430 0073 02       		.uleb128 0x2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 33
+
+
+ 1431 0074 17       		.uleb128 0x17
+ 1432 0075 00       		.byte	0
+ 1433 0076 00       		.byte	0
+ 1434 0077 09       		.uleb128 0x9
+ 1435 0078 898201   		.uleb128 0x4109
+ 1436 007b 00       		.byte	0
+ 1437 007c 11       		.uleb128 0x11
+ 1438 007d 01       		.uleb128 0x1
+ 1439 007e 31       		.uleb128 0x31
+ 1440 007f 13       		.uleb128 0x13
+ 1441 0080 00       		.byte	0
+ 1442 0081 00       		.byte	0
+ 1443 0082 0A       		.uleb128 0xa
+ 1444 0083 898201   		.uleb128 0x4109
+ 1445 0086 01       		.byte	0x1
+ 1446 0087 11       		.uleb128 0x11
+ 1447 0088 01       		.uleb128 0x1
+ 1448 0089 31       		.uleb128 0x31
+ 1449 008a 13       		.uleb128 0x13
+ 1450 008b 01       		.uleb128 0x1
+ 1451 008c 13       		.uleb128 0x13
+ 1452 008d 00       		.byte	0
+ 1453 008e 00       		.byte	0
+ 1454 008f 0B       		.uleb128 0xb
+ 1455 0090 8A8201   		.uleb128 0x410a
+ 1456 0093 00       		.byte	0
+ 1457 0094 02       		.uleb128 0x2
+ 1458 0095 18       		.uleb128 0x18
+ 1459 0096 9142     		.uleb128 0x2111
+ 1460 0098 18       		.uleb128 0x18
+ 1461 0099 00       		.byte	0
+ 1462 009a 00       		.byte	0
+ 1463 009b 0C       		.uleb128 0xc
+ 1464 009c 26       		.uleb128 0x26
+ 1465 009d 00       		.byte	0
+ 1466 009e 49       		.uleb128 0x49
+ 1467 009f 13       		.uleb128 0x13
+ 1468 00a0 00       		.byte	0
+ 1469 00a1 00       		.byte	0
+ 1470 00a2 0D       		.uleb128 0xd
+ 1471 00a3 898201   		.uleb128 0x4109
+ 1472 00a6 01       		.byte	0x1
+ 1473 00a7 11       		.uleb128 0x11
+ 1474 00a8 01       		.uleb128 0x1
+ 1475 00a9 31       		.uleb128 0x31
+ 1476 00aa 13       		.uleb128 0x13
+ 1477 00ab 00       		.byte	0
+ 1478 00ac 00       		.byte	0
+ 1479 00ad 0E       		.uleb128 0xe
+ 1480 00ae 05       		.uleb128 0x5
+ 1481 00af 00       		.byte	0
+ 1482 00b0 03       		.uleb128 0x3
+ 1483 00b1 0E       		.uleb128 0xe
+ 1484 00b2 3A       		.uleb128 0x3a
+ 1485 00b3 0B       		.uleb128 0xb
+ 1486 00b4 3B       		.uleb128 0x3b
+ 1487 00b5 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 34
+
+
+ 1488 00b6 49       		.uleb128 0x49
+ 1489 00b7 13       		.uleb128 0x13
+ 1490 00b8 02       		.uleb128 0x2
+ 1491 00b9 17       		.uleb128 0x17
+ 1492 00ba 00       		.byte	0
+ 1493 00bb 00       		.byte	0
+ 1494 00bc 0F       		.uleb128 0xf
+ 1495 00bd 0B       		.uleb128 0xb
+ 1496 00be 01       		.byte	0x1
+ 1497 00bf 11       		.uleb128 0x11
+ 1498 00c0 01       		.uleb128 0x1
+ 1499 00c1 12       		.uleb128 0x12
+ 1500 00c2 06       		.uleb128 0x6
+ 1501 00c3 01       		.uleb128 0x1
+ 1502 00c4 13       		.uleb128 0x13
+ 1503 00c5 00       		.byte	0
+ 1504 00c6 00       		.byte	0
+ 1505 00c7 10       		.uleb128 0x10
+ 1506 00c8 34       		.uleb128 0x34
+ 1507 00c9 00       		.byte	0
+ 1508 00ca 03       		.uleb128 0x3
+ 1509 00cb 08       		.uleb128 0x8
+ 1510 00cc 3A       		.uleb128 0x3a
+ 1511 00cd 0B       		.uleb128 0xb
+ 1512 00ce 3B       		.uleb128 0x3b
+ 1513 00cf 0B       		.uleb128 0xb
+ 1514 00d0 49       		.uleb128 0x49
+ 1515 00d1 13       		.uleb128 0x13
+ 1516 00d2 02       		.uleb128 0x2
+ 1517 00d3 17       		.uleb128 0x17
+ 1518 00d4 00       		.byte	0
+ 1519 00d5 00       		.byte	0
+ 1520 00d6 11       		.uleb128 0x11
+ 1521 00d7 0F       		.uleb128 0xf
+ 1522 00d8 00       		.byte	0
+ 1523 00d9 0B       		.uleb128 0xb
+ 1524 00da 0B       		.uleb128 0xb
+ 1525 00db 49       		.uleb128 0x49
+ 1526 00dc 13       		.uleb128 0x13
+ 1527 00dd 00       		.byte	0
+ 1528 00de 00       		.byte	0
+ 1529 00df 12       		.uleb128 0x12
+ 1530 00e0 2E       		.uleb128 0x2e
+ 1531 00e1 01       		.byte	0x1
+ 1532 00e2 3F       		.uleb128 0x3f
+ 1533 00e3 19       		.uleb128 0x19
+ 1534 00e4 03       		.uleb128 0x3
+ 1535 00e5 0E       		.uleb128 0xe
+ 1536 00e6 3A       		.uleb128 0x3a
+ 1537 00e7 0B       		.uleb128 0xb
+ 1538 00e8 3B       		.uleb128 0x3b
+ 1539 00e9 0B       		.uleb128 0xb
+ 1540 00ea 27       		.uleb128 0x27
+ 1541 00eb 19       		.uleb128 0x19
+ 1542 00ec 49       		.uleb128 0x49
+ 1543 00ed 13       		.uleb128 0x13
+ 1544 00ee 11       		.uleb128 0x11
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 35
+
+
+ 1545 00ef 01       		.uleb128 0x1
+ 1546 00f0 12       		.uleb128 0x12
+ 1547 00f1 06       		.uleb128 0x6
+ 1548 00f2 40       		.uleb128 0x40
+ 1549 00f3 18       		.uleb128 0x18
+ 1550 00f4 9742     		.uleb128 0x2117
+ 1551 00f6 19       		.uleb128 0x19
+ 1552 00f7 01       		.uleb128 0x1
+ 1553 00f8 13       		.uleb128 0x13
+ 1554 00f9 00       		.byte	0
+ 1555 00fa 00       		.byte	0
+ 1556 00fb 13       		.uleb128 0x13
+ 1557 00fc 34       		.uleb128 0x34
+ 1558 00fd 00       		.byte	0
+ 1559 00fe 03       		.uleb128 0x3
+ 1560 00ff 0E       		.uleb128 0xe
+ 1561 0100 3A       		.uleb128 0x3a
+ 1562 0101 0B       		.uleb128 0xb
+ 1563 0102 3B       		.uleb128 0x3b
+ 1564 0103 0B       		.uleb128 0xb
+ 1565 0104 49       		.uleb128 0x49
+ 1566 0105 13       		.uleb128 0x13
+ 1567 0106 02       		.uleb128 0x2
+ 1568 0107 17       		.uleb128 0x17
+ 1569 0108 00       		.byte	0
+ 1570 0109 00       		.byte	0
+ 1571 010a 14       		.uleb128 0x14
+ 1572 010b 2E       		.uleb128 0x2e
+ 1573 010c 01       		.byte	0x1
+ 1574 010d 3F       		.uleb128 0x3f
+ 1575 010e 19       		.uleb128 0x19
+ 1576 010f 03       		.uleb128 0x3
+ 1577 0110 0E       		.uleb128 0xe
+ 1578 0111 3A       		.uleb128 0x3a
+ 1579 0112 0B       		.uleb128 0xb
+ 1580 0113 3B       		.uleb128 0x3b
+ 1581 0114 05       		.uleb128 0x5
+ 1582 0115 27       		.uleb128 0x27
+ 1583 0116 19       		.uleb128 0x19
+ 1584 0117 11       		.uleb128 0x11
+ 1585 0118 01       		.uleb128 0x1
+ 1586 0119 12       		.uleb128 0x12
+ 1587 011a 06       		.uleb128 0x6
+ 1588 011b 40       		.uleb128 0x40
+ 1589 011c 18       		.uleb128 0x18
+ 1590 011d 9742     		.uleb128 0x2117
+ 1591 011f 19       		.uleb128 0x19
+ 1592 0120 01       		.uleb128 0x1
+ 1593 0121 13       		.uleb128 0x13
+ 1594 0122 00       		.byte	0
+ 1595 0123 00       		.byte	0
+ 1596 0124 15       		.uleb128 0x15
+ 1597 0125 05       		.uleb128 0x5
+ 1598 0126 00       		.byte	0
+ 1599 0127 03       		.uleb128 0x3
+ 1600 0128 0E       		.uleb128 0xe
+ 1601 0129 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 36
+
+
+ 1602 012a 0B       		.uleb128 0xb
+ 1603 012b 3B       		.uleb128 0x3b
+ 1604 012c 05       		.uleb128 0x5
+ 1605 012d 49       		.uleb128 0x49
+ 1606 012e 13       		.uleb128 0x13
+ 1607 012f 02       		.uleb128 0x2
+ 1608 0130 17       		.uleb128 0x17
+ 1609 0131 00       		.byte	0
+ 1610 0132 00       		.byte	0
+ 1611 0133 16       		.uleb128 0x16
+ 1612 0134 2E       		.uleb128 0x2e
+ 1613 0135 01       		.byte	0x1
+ 1614 0136 3F       		.uleb128 0x3f
+ 1615 0137 19       		.uleb128 0x19
+ 1616 0138 03       		.uleb128 0x3
+ 1617 0139 0E       		.uleb128 0xe
+ 1618 013a 3A       		.uleb128 0x3a
+ 1619 013b 0B       		.uleb128 0xb
+ 1620 013c 3B       		.uleb128 0x3b
+ 1621 013d 05       		.uleb128 0x5
+ 1622 013e 27       		.uleb128 0x27
+ 1623 013f 19       		.uleb128 0x19
+ 1624 0140 49       		.uleb128 0x49
+ 1625 0141 13       		.uleb128 0x13
+ 1626 0142 11       		.uleb128 0x11
+ 1627 0143 01       		.uleb128 0x1
+ 1628 0144 12       		.uleb128 0x12
+ 1629 0145 06       		.uleb128 0x6
+ 1630 0146 40       		.uleb128 0x40
+ 1631 0147 18       		.uleb128 0x18
+ 1632 0148 9742     		.uleb128 0x2117
+ 1633 014a 19       		.uleb128 0x19
+ 1634 014b 01       		.uleb128 0x1
+ 1635 014c 13       		.uleb128 0x13
+ 1636 014d 00       		.byte	0
+ 1637 014e 00       		.byte	0
+ 1638 014f 17       		.uleb128 0x17
+ 1639 0150 2E       		.uleb128 0x2e
+ 1640 0151 00       		.byte	0
+ 1641 0152 3F       		.uleb128 0x3f
+ 1642 0153 19       		.uleb128 0x19
+ 1643 0154 3C       		.uleb128 0x3c
+ 1644 0155 19       		.uleb128 0x19
+ 1645 0156 6E       		.uleb128 0x6e
+ 1646 0157 0E       		.uleb128 0xe
+ 1647 0158 03       		.uleb128 0x3
+ 1648 0159 0E       		.uleb128 0xe
+ 1649 015a 3A       		.uleb128 0x3a
+ 1650 015b 0B       		.uleb128 0xb
+ 1651 015c 3B       		.uleb128 0x3b
+ 1652 015d 05       		.uleb128 0x5
+ 1653 015e 00       		.byte	0
+ 1654 015f 00       		.byte	0
+ 1655 0160 18       		.uleb128 0x18
+ 1656 0161 2E       		.uleb128 0x2e
+ 1657 0162 00       		.byte	0
+ 1658 0163 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 37
+
+
+ 1659 0164 19       		.uleb128 0x19
+ 1660 0165 3C       		.uleb128 0x3c
+ 1661 0166 19       		.uleb128 0x19
+ 1662 0167 6E       		.uleb128 0x6e
+ 1663 0168 0E       		.uleb128 0xe
+ 1664 0169 03       		.uleb128 0x3
+ 1665 016a 0E       		.uleb128 0xe
+ 1666 016b 3A       		.uleb128 0x3a
+ 1667 016c 0B       		.uleb128 0xb
+ 1668 016d 3B       		.uleb128 0x3b
+ 1669 016e 0B       		.uleb128 0xb
+ 1670 016f 00       		.byte	0
+ 1671 0170 00       		.byte	0
+ 1672 0171 00       		.byte	0
+ 1673              		.section	.debug_loc,"",%progbits
+ 1674              	.Ldebug_loc0:
+ 1675              	.LLST0:
+ 1676 0000 00000000 		.4byte	.LVL0
+ 1677 0004 07000000 		.4byte	.LVL1-1
+ 1678 0008 0100     		.2byte	0x1
+ 1679 000a 50       		.byte	0x50
+ 1680 000b 07000000 		.4byte	.LVL1-1
+ 1681 000f 26000000 		.4byte	.LFE1
+ 1682 0013 0400     		.2byte	0x4
+ 1683 0015 F3       		.byte	0xf3
+ 1684 0016 01       		.uleb128 0x1
+ 1685 0017 50       		.byte	0x50
+ 1686 0018 9F       		.byte	0x9f
+ 1687 0019 00000000 		.4byte	0
+ 1688 001d 00000000 		.4byte	0
+ 1689              	.LLST1:
+ 1690 0021 00000000 		.4byte	.LVL10
+ 1691 0025 09000000 		.4byte	.LVL11-1
+ 1692 0029 0100     		.2byte	0x1
+ 1693 002b 50       		.byte	0x50
+ 1694 002c 09000000 		.4byte	.LVL11-1
+ 1695 0030 4C000000 		.4byte	.LVL25
+ 1696 0034 0100     		.2byte	0x1
+ 1697 0036 57       		.byte	0x57
+ 1698 0037 4C000000 		.4byte	.LVL25
+ 1699 003b 4E000000 		.4byte	.LFE5
+ 1700 003f 0400     		.2byte	0x4
+ 1701 0041 F3       		.byte	0xf3
+ 1702 0042 01       		.uleb128 0x1
+ 1703 0043 50       		.byte	0x50
+ 1704 0044 9F       		.byte	0x9f
+ 1705 0045 00000000 		.4byte	0
+ 1706 0049 00000000 		.4byte	0
+ 1707              	.LLST2:
+ 1708 004d 00000000 		.4byte	.LVL10
+ 1709 0051 09000000 		.4byte	.LVL11-1
+ 1710 0055 0100     		.2byte	0x1
+ 1711 0057 51       		.byte	0x51
+ 1712 0058 09000000 		.4byte	.LVL11-1
+ 1713 005c 4C000000 		.4byte	.LVL24
+ 1714 0060 0100     		.2byte	0x1
+ 1715 0062 56       		.byte	0x56
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 38
+
+
+ 1716 0063 4C000000 		.4byte	.LVL24
+ 1717 0067 4E000000 		.4byte	.LFE5
+ 1718 006b 0400     		.2byte	0x4
+ 1719 006d F3       		.byte	0xf3
+ 1720 006e 01       		.uleb128 0x1
+ 1721 006f 51       		.byte	0x51
+ 1722 0070 9F       		.byte	0x9f
+ 1723 0071 00000000 		.4byte	0
+ 1724 0075 00000000 		.4byte	0
+ 1725              	.LLST3:
+ 1726 0079 26000000 		.4byte	.LVL16
+ 1727 007d 2A000000 		.4byte	.LVL17
+ 1728 0081 0200     		.2byte	0x2
+ 1729 0083 30       		.byte	0x30
+ 1730 0084 9F       		.byte	0x9f
+ 1731 0085 2A000000 		.4byte	.LVL17
+ 1732 0089 4C000000 		.4byte	.LVL23
+ 1733 008d 0100     		.2byte	0x1
+ 1734 008f 54       		.byte	0x54
+ 1735 0090 00000000 		.4byte	0
+ 1736 0094 00000000 		.4byte	0
+ 1737              	.LLST4:
+ 1738 0098 00000000 		.4byte	.LVL26
+ 1739 009c 09000000 		.4byte	.LVL27-1
+ 1740 00a0 0100     		.2byte	0x1
+ 1741 00a2 50       		.byte	0x50
+ 1742 00a3 09000000 		.4byte	.LVL27-1
+ 1743 00a7 32000000 		.4byte	.LVL35
+ 1744 00ab 0100     		.2byte	0x1
+ 1745 00ad 55       		.byte	0x55
+ 1746 00ae 32000000 		.4byte	.LVL35
+ 1747 00b2 34000000 		.4byte	.LFE6
+ 1748 00b6 0400     		.2byte	0x4
+ 1749 00b8 F3       		.byte	0xf3
+ 1750 00b9 01       		.uleb128 0x1
+ 1751 00ba 50       		.byte	0x50
+ 1752 00bb 9F       		.byte	0x9f
+ 1753 00bc 00000000 		.4byte	0
+ 1754 00c0 00000000 		.4byte	0
+ 1755              	.LLST5:
+ 1756 00c4 00000000 		.4byte	.LVL26
+ 1757 00c8 09000000 		.4byte	.LVL27-1
+ 1758 00cc 0100     		.2byte	0x1
+ 1759 00ce 51       		.byte	0x51
+ 1760 00cf 09000000 		.4byte	.LVL27-1
+ 1761 00d3 32000000 		.4byte	.LVL34
+ 1762 00d7 0100     		.2byte	0x1
+ 1763 00d9 54       		.byte	0x54
+ 1764 00da 32000000 		.4byte	.LVL34
+ 1765 00de 34000000 		.4byte	.LFE6
+ 1766 00e2 0400     		.2byte	0x4
+ 1767 00e4 F3       		.byte	0xf3
+ 1768 00e5 01       		.uleb128 0x1
+ 1769 00e6 51       		.byte	0x51
+ 1770 00e7 9F       		.byte	0x9f
+ 1771 00e8 00000000 		.4byte	0
+ 1772 00ec 00000000 		.4byte	0
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 39
+
+
+ 1773              	.LLST6:
+ 1774 00f0 02000000 		.4byte	.LVL36
+ 1775 00f4 34000000 		.4byte	.LVL46
+ 1776 00f8 0200     		.2byte	0x2
+ 1777 00fa 30       		.byte	0x30
+ 1778 00fb 9F       		.byte	0x9f
+ 1779 00fc 34000000 		.4byte	.LVL46
+ 1780 0100 3E000000 		.4byte	.LVL48
+ 1781 0104 0100     		.2byte	0x1
+ 1782 0106 54       		.byte	0x54
+ 1783 0107 3E000000 		.4byte	.LVL48
+ 1784 010b 40000000 		.4byte	.LFE7
+ 1785 010f 0100     		.2byte	0x1
+ 1786 0111 50       		.byte	0x50
+ 1787 0112 00000000 		.4byte	0
+ 1788 0116 00000000 		.4byte	0
+ 1789              	.LLST7:
+ 1790 011a 00000000 		.4byte	.LVL49
+ 1791 011e 0B000000 		.4byte	.LVL50-1
+ 1792 0122 0100     		.2byte	0x1
+ 1793 0124 50       		.byte	0x50
+ 1794 0125 0B000000 		.4byte	.LVL50-1
+ 1795 0129 3C000000 		.4byte	.LFE8
+ 1796 012d 0400     		.2byte	0x4
+ 1797 012f F3       		.byte	0xf3
+ 1798 0130 01       		.uleb128 0x1
+ 1799 0131 50       		.byte	0x50
+ 1800 0132 9F       		.byte	0x9f
+ 1801 0133 00000000 		.4byte	0
+ 1802 0137 00000000 		.4byte	0
+ 1803              	.LLST8:
+ 1804 013b 00000000 		.4byte	.LVL49
+ 1805 013f 0B000000 		.4byte	.LVL50-1
+ 1806 0143 0100     		.2byte	0x1
+ 1807 0145 51       		.byte	0x51
+ 1808 0146 0B000000 		.4byte	.LVL50-1
+ 1809 014a 3A000000 		.4byte	.LVL58
+ 1810 014e 0100     		.2byte	0x1
+ 1811 0150 56       		.byte	0x56
+ 1812 0151 3A000000 		.4byte	.LVL58
+ 1813 0155 3C000000 		.4byte	.LFE8
+ 1814 0159 0400     		.2byte	0x4
+ 1815 015b F3       		.byte	0xf3
+ 1816 015c 01       		.uleb128 0x1
+ 1817 015d 51       		.byte	0x51
+ 1818 015e 9F       		.byte	0x9f
+ 1819 015f 00000000 		.4byte	0
+ 1820 0163 00000000 		.4byte	0
+ 1821              	.LLST9:
+ 1822 0167 00000000 		.4byte	.LVL49
+ 1823 016b 0B000000 		.4byte	.LVL50-1
+ 1824 016f 0100     		.2byte	0x1
+ 1825 0171 52       		.byte	0x52
+ 1826 0172 0B000000 		.4byte	.LVL50-1
+ 1827 0176 3A000000 		.4byte	.LVL57
+ 1828 017a 0100     		.2byte	0x1
+ 1829 017c 54       		.byte	0x54
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 40
+
+
+ 1830 017d 3A000000 		.4byte	.LVL57
+ 1831 0181 3C000000 		.4byte	.LFE8
+ 1832 0185 0400     		.2byte	0x4
+ 1833 0187 F3       		.byte	0xf3
+ 1834 0188 01       		.uleb128 0x1
+ 1835 0189 52       		.byte	0x52
+ 1836 018a 9F       		.byte	0x9f
+ 1837 018b 00000000 		.4byte	0
+ 1838 018f 00000000 		.4byte	0
+ 1839              	.LLST10:
+ 1840 0193 00000000 		.4byte	.LVL59
+ 1841 0197 09000000 		.4byte	.LVL60-1
+ 1842 019b 0100     		.2byte	0x1
+ 1843 019d 50       		.byte	0x50
+ 1844 019e 09000000 		.4byte	.LVL60-1
+ 1845 01a2 32000000 		.4byte	.LVL68
+ 1846 01a6 0100     		.2byte	0x1
+ 1847 01a8 55       		.byte	0x55
+ 1848 01a9 32000000 		.4byte	.LVL68
+ 1849 01ad 34000000 		.4byte	.LFE9
+ 1850 01b1 0400     		.2byte	0x4
+ 1851 01b3 F3       		.byte	0xf3
+ 1852 01b4 01       		.uleb128 0x1
+ 1853 01b5 50       		.byte	0x50
+ 1854 01b6 9F       		.byte	0x9f
+ 1855 01b7 00000000 		.4byte	0
+ 1856 01bb 00000000 		.4byte	0
+ 1857              	.LLST11:
+ 1858 01bf 00000000 		.4byte	.LVL59
+ 1859 01c3 09000000 		.4byte	.LVL60-1
+ 1860 01c7 0100     		.2byte	0x1
+ 1861 01c9 51       		.byte	0x51
+ 1862 01ca 09000000 		.4byte	.LVL60-1
+ 1863 01ce 32000000 		.4byte	.LVL67
+ 1864 01d2 0100     		.2byte	0x1
+ 1865 01d4 54       		.byte	0x54
+ 1866 01d5 32000000 		.4byte	.LVL67
+ 1867 01d9 34000000 		.4byte	.LFE9
+ 1868 01dd 0400     		.2byte	0x4
+ 1869 01df F3       		.byte	0xf3
+ 1870 01e0 01       		.uleb128 0x1
+ 1871 01e1 51       		.byte	0x51
+ 1872 01e2 9F       		.byte	0x9f
+ 1873 01e3 00000000 		.4byte	0
+ 1874 01e7 00000000 		.4byte	0
+ 1875              		.section	.debug_aranges,"",%progbits
+ 1876 0000 64000000 		.4byte	0x64
+ 1877 0004 0200     		.2byte	0x2
+ 1878 0006 00000000 		.4byte	.Ldebug_info0
+ 1879 000a 04       		.byte	0x4
+ 1880 000b 00       		.byte	0
+ 1881 000c 0000     		.2byte	0
+ 1882 000e 0000     		.2byte	0
+ 1883 0010 00000000 		.4byte	.LFB1
+ 1884 0014 26000000 		.4byte	.LFE1-.LFB1
+ 1885 0018 00000000 		.4byte	.LFB2
+ 1886 001c 0A000000 		.4byte	.LFE2-.LFB2
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 41
+
+
+ 1887 0020 00000000 		.4byte	.LFB3
+ 1888 0024 0A000000 		.4byte	.LFE3-.LFB3
+ 1889 0028 00000000 		.4byte	.LFB4
+ 1890 002c 0A000000 		.4byte	.LFE4-.LFB4
+ 1891 0030 00000000 		.4byte	.LFB5
+ 1892 0034 4E000000 		.4byte	.LFE5-.LFB5
+ 1893 0038 00000000 		.4byte	.LFB6
+ 1894 003c 34000000 		.4byte	.LFE6-.LFB6
+ 1895 0040 00000000 		.4byte	.LFB7
+ 1896 0044 40000000 		.4byte	.LFE7-.LFB7
+ 1897 0048 00000000 		.4byte	.LFB8
+ 1898 004c 3C000000 		.4byte	.LFE8-.LFB8
+ 1899 0050 00000000 		.4byte	.LFB9
+ 1900 0054 34000000 		.4byte	.LFE9-.LFB9
+ 1901 0058 00000000 		.4byte	.LFB10
+ 1902 005c 2A000000 		.4byte	.LFE10-.LFB10
+ 1903 0060 00000000 		.4byte	0
+ 1904 0064 00000000 		.4byte	0
+ 1905              		.section	.debug_ranges,"",%progbits
+ 1906              	.Ldebug_ranges0:
+ 1907 0000 00000000 		.4byte	.LFB1
+ 1908 0004 26000000 		.4byte	.LFE1
+ 1909 0008 00000000 		.4byte	.LFB2
+ 1910 000c 0A000000 		.4byte	.LFE2
+ 1911 0010 00000000 		.4byte	.LFB3
+ 1912 0014 0A000000 		.4byte	.LFE3
+ 1913 0018 00000000 		.4byte	.LFB4
+ 1914 001c 0A000000 		.4byte	.LFE4
+ 1915 0020 00000000 		.4byte	.LFB5
+ 1916 0024 4E000000 		.4byte	.LFE5
+ 1917 0028 00000000 		.4byte	.LFB6
+ 1918 002c 34000000 		.4byte	.LFE6
+ 1919 0030 00000000 		.4byte	.LFB7
+ 1920 0034 40000000 		.4byte	.LFE7
+ 1921 0038 00000000 		.4byte	.LFB8
+ 1922 003c 3C000000 		.4byte	.LFE8
+ 1923 0040 00000000 		.4byte	.LFB9
+ 1924 0044 34000000 		.4byte	.LFE9
+ 1925 0048 00000000 		.4byte	.LFB10
+ 1926 004c 2A000000 		.4byte	.LFE10
+ 1927 0050 00000000 		.4byte	0
+ 1928 0054 00000000 		.4byte	0
+ 1929              		.section	.debug_line,"",%progbits
+ 1930              	.Ldebug_line0:
+ 1931 0000 17030000 		.section	.debug_str,"MS",%progbits,1
+ 1931      0200EF01 
+ 1931      00000201 
+ 1931      FB0E0D00 
+ 1931      01010101 
+ 1932              	.LASF50:
+ 1933 0000 5350495F 		.ascii	"SPI_SpiUartClearRxBuffer\000"
+ 1933      53706955 
+ 1933      61727443 
+ 1933      6C656172 
+ 1933      52784275 
+ 1934              	.LASF58:
+ 1935 0019 47656E65 		.ascii	"Generated_Source\\PSoC4\\nRF24_NRF_COMMANDS.c\000"
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 42
+
+
+ 1935      72617465 
+ 1935      645F536F 
+ 1935      75726365 
+ 1935      5C50536F 
+ 1936              	.LASF9:
+ 1937 0045 5F5F7569 		.ascii	"__uint8_t\000"
+ 1937      6E74385F 
+ 1937      7400
+ 1938              	.LASF14:
+ 1939 004f 73697A65 		.ascii	"size_t\000"
+ 1939      5F7400
+ 1940              	.LASF40:
+ 1941 0056 6E524632 		.ascii	"nRF24_readRXPayloadCmd\000"
+ 1941      345F7265 
+ 1941      61645258 
+ 1941      5061796C 
+ 1941      6F616443 
+ 1942              	.LASF52:
+ 1943 006d 53535F57 		.ascii	"SS_Write\000"
+ 1943      72697465 
+ 1943      00
+ 1944              	.LASF18:
+ 1945 0076 4E52465F 		.ascii	"NRF_W_REGISTER_CMD\000"
+ 1945      575F5245 
+ 1945      47495354 
+ 1945      45525F43 
+ 1945      4D4400
+ 1946              	.LASF48:
+ 1947 0089 6E524632 		.ascii	"nRF24_readPayloadWidthCmd\000"
+ 1947      345F7265 
+ 1947      61645061 
+ 1947      796C6F61 
+ 1947      64576964 
+ 1948              	.LASF37:
+ 1949 00a3 6E524632 		.ascii	"nRF24_reuseTxPayloadCmd\000"
+ 1949      345F7265 
+ 1949      75736554 
+ 1949      78506179 
+ 1949      6C6F6164 
+ 1950              	.LASF35:
+ 1951 00bb 4E726644 		.ascii	"NrfDataPipe\000"
+ 1951      61746150 
+ 1951      69706500 
+ 1952              	.LASF20:
+ 1953 00c7 4E52465F 		.ascii	"NRF_W_TX_PAYLOAD_CMD\000"
+ 1953      575F5458 
+ 1953      5F504159 
+ 1953      4C4F4144 
+ 1953      5F434D44 
+ 1954              	.LASF3:
+ 1955 00dc 73686F72 		.ascii	"short unsigned int\000"
+ 1955      7420756E 
+ 1955      7369676E 
+ 1955      65642069 
+ 1955      6E7400
+ 1956              	.LASF53:
+ 1957 00ef 5350495F 		.ascii	"SPI_SpiUartWriteTxData\000"
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 43
+
+
+ 1957      53706955 
+ 1957      61727457 
+ 1957      72697465 
+ 1957      54784461 
+ 1958              	.LASF25:
+ 1959 0106 4E52465F 		.ascii	"NRF_W_ACK_PAYLOAD_CMD\000"
+ 1959      575F4143 
+ 1959      4B5F5041 
+ 1959      594C4F41 
+ 1959      445F434D 
+ 1960              	.LASF22:
+ 1961 011c 4E52465F 		.ascii	"NRF_FLUSH_RX_CMD\000"
+ 1961      464C5553 
+ 1961      485F5258 
+ 1961      5F434D44 
+ 1961      00
+ 1962              	.LASF43:
+ 1963 012d 6E524632 		.ascii	"nRF24_writeTXPayloadCmd\000"
+ 1963      345F7772 
+ 1963      69746554 
+ 1963      58506179 
+ 1963      6C6F6164 
+ 1964              	.LASF11:
+ 1965 0145 666C6F61 		.ascii	"float\000"
+ 1965      7400
+ 1966              	.LASF41:
+ 1967 014b 64617461 		.ascii	"data\000"
+ 1967      00
+ 1968              	.LASF7:
+ 1969 0150 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1969      206C6F6E 
+ 1969      6720756E 
+ 1969      7369676E 
+ 1969      65642069 
+ 1970              	.LASF42:
+ 1971 0167 73697A65 		.ascii	"size\000"
+ 1971      00
+ 1972              	.LASF39:
+ 1973 016c 6E524632 		.ascii	"nRF24_flushTxCmd\000"
+ 1973      345F666C 
+ 1973      75736854 
+ 1973      78436D64 
+ 1973      00
+ 1974              	.LASF49:
+ 1975 017d 6E524632 		.ascii	"nRF24_NOPCmd\000"
+ 1975      345F4E4F 
+ 1975      50436D64 
+ 1975      00
+ 1976              	.LASF54:
+ 1977 018a 5350495F 		.ascii	"SPI_SpiUartGetRxBufferSize\000"
+ 1977      53706955 
+ 1977      61727447 
+ 1977      65745278 
+ 1977      42756666 
+ 1978              	.LASF56:
+ 1979 01a5 5350495F 		.ascii	"SPI_SpiUartPutArray\000"
+ 1979      53706955 
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 44
+
+
+ 1979      61727450 
+ 1979      75744172 
+ 1979      72617900 
+ 1980              	.LASF5:
+ 1981 01b9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1981      20756E73 
+ 1981      69676E65 
+ 1981      6420696E 
+ 1981      7400
+ 1982              	.LASF29:
+ 1983 01cb 4E52465F 		.ascii	"NRF_DATA_PIPE0\000"
+ 1983      44415441 
+ 1983      5F504950 
+ 1983      453000
+ 1984              	.LASF30:
+ 1985 01da 4E52465F 		.ascii	"NRF_DATA_PIPE1\000"
+ 1985      44415441 
+ 1985      5F504950 
+ 1985      453100
+ 1986              	.LASF31:
+ 1987 01e9 4E52465F 		.ascii	"NRF_DATA_PIPE2\000"
+ 1987      44415441 
+ 1987      5F504950 
+ 1987      453200
+ 1988              	.LASF32:
+ 1989 01f8 4E52465F 		.ascii	"NRF_DATA_PIPE3\000"
+ 1989      44415441 
+ 1989      5F504950 
+ 1989      453300
+ 1990              	.LASF33:
+ 1991 0207 4E52465F 		.ascii	"NRF_DATA_PIPE4\000"
+ 1991      44415441 
+ 1991      5F504950 
+ 1991      453400
+ 1992              	.LASF34:
+ 1993 0216 4E52465F 		.ascii	"NRF_DATA_PIPE5\000"
+ 1993      44415441 
+ 1993      5F504950 
+ 1993      453500
+ 1994              	.LASF36:
+ 1995 0225 6E524632 		.ascii	"nRF24_sendCommand\000"
+ 1995      345F7365 
+ 1995      6E64436F 
+ 1995      6D6D616E 
+ 1995      6400
+ 1996              	.LASF1:
+ 1997 0237 756E7369 		.ascii	"unsigned char\000"
+ 1997      676E6564 
+ 1997      20636861 
+ 1997      7200
+ 1998              	.LASF28:
+ 1999 0245 4E726643 		.ascii	"NrfCmd\000"
+ 1999      6D6400
+ 2000              	.LASF12:
+ 2001 024c 646F7562 		.ascii	"double\000"
+ 2001      6C6500
+ 2002              	.LASF55:
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 45
+
+
+ 2003 0253 5350495F 		.ascii	"SPI_SpiUartReadRxData\000"
+ 2003      53706955 
+ 2003      61727452 
+ 2003      65616452 
+ 2003      78446174 
+ 2004              	.LASF23:
+ 2005 0269 4E52465F 		.ascii	"NRF_REUSE_TX_PL_CMD\000"
+ 2005      52455553 
+ 2005      455F5458 
+ 2005      5F504C5F 
+ 2005      434D4400 
+ 2006              	.LASF24:
+ 2007 027d 4E52465F 		.ascii	"NRF_R_RX_PL_WID_CMD\000"
+ 2007      525F5258 
+ 2007      5F504C5F 
+ 2007      5749445F 
+ 2007      434D4400 
+ 2008              	.LASF46:
+ 2009 0291 70697065 		.ascii	"pipe\000"
+ 2009      00
+ 2010              	.LASF8:
+ 2011 0296 756E7369 		.ascii	"unsigned int\000"
+ 2011      676E6564 
+ 2011      20696E74 
+ 2011      00
+ 2012              	.LASF59:
+ 2013 02a3 433A5C55 		.ascii	"C:\\Users\\Xwx47\\Documents\\Creator\\nRF24_Example"
+ 2013      73657273 
+ 2013      5C587778 
+ 2013      34375C44 
+ 2013      6F63756D 
+ 2014 02d1 5F50726F 		.ascii	"_Projects\\02_EnhancedShockBurst_Rx.cydsn\000"
+ 2014      6A656374 
+ 2014      735C3032 
+ 2014      5F456E68 
+ 2014      616E6365 
+ 2015              	.LASF10:
+ 2016 02fa 75696E74 		.ascii	"uint8_t\000"
+ 2016      385F7400 
+ 2017              	.LASF45:
+ 2018 0302 6E524632 		.ascii	"nRF24_writeACKPayloadCmd\000"
+ 2018      345F7772 
+ 2018      69746541 
+ 2018      434B5061 
+ 2018      796C6F61 
+ 2019              	.LASF15:
+ 2020 031b 6C6F6E67 		.ascii	"long double\000"
+ 2020      20646F75 
+ 2020      626C6500 
+ 2021              	.LASF27:
+ 2022 0327 4E52465F 		.ascii	"NRF_NOP_CMD\000"
+ 2022      4E4F505F 
+ 2022      434D4400 
+ 2023              	.LASF21:
+ 2024 0333 4E52465F 		.ascii	"NRF_FLUSH_TX_CMD\000"
+ 2024      464C5553 
+ 2024      485F5458 
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 46
+
+
+ 2024      5F434D44 
+ 2024      00
+ 2025              	.LASF16:
+ 2026 0344 73697A65 		.ascii	"sizetype\000"
+ 2026      74797065 
+ 2026      00
+ 2027              	.LASF6:
+ 2028 034d 6C6F6E67 		.ascii	"long long int\000"
+ 2028      206C6F6E 
+ 2028      6720696E 
+ 2028      7400
+ 2029              	.LASF13:
+ 2030 035b 63686172 		.ascii	"char\000"
+ 2030      00
+ 2031              	.LASF44:
+ 2032 0360 77696474 		.ascii	"width\000"
+ 2032      6800
+ 2033              	.LASF2:
+ 2034 0366 73686F72 		.ascii	"short int\000"
+ 2034      7420696E 
+ 2034      7400
+ 2035              	.LASF38:
+ 2036 0370 6E524632 		.ascii	"nRF24_flushRxCmd\000"
+ 2036      345F666C 
+ 2036      75736852 
+ 2036      78436D64 
+ 2036      00
+ 2037              	.LASF26:
+ 2038 0381 4E52465F 		.ascii	"NRF_W_TX_PAYLOAD_NOACK_CMD\000"
+ 2038      575F5458 
+ 2038      5F504159 
+ 2038      4C4F4144 
+ 2038      5F4E4F41 
+ 2039              	.LASF17:
+ 2040 039c 4E52465F 		.ascii	"NRF_R_REGISTER_CMD\000"
+ 2040      525F5245 
+ 2040      47495354 
+ 2040      45525F43 
+ 2040      4D4400
+ 2041              	.LASF4:
+ 2042 03af 6C6F6E67 		.ascii	"long int\000"
+ 2042      20696E74 
+ 2042      00
+ 2043              	.LASF51:
+ 2044 03b8 5350495F 		.ascii	"SPI_SpiUartClearTxBuffer\000"
+ 2044      53706955 
+ 2044      61727443 
+ 2044      6C656172 
+ 2044      54784275 
+ 2045              	.LASF57:
+ 2046 03d1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2046      43313120 
+ 2046      352E342E 
+ 2046      31203230 
+ 2046      31363036 
+ 2047 0404 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 2047      20726576 
+ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cciUAYmh.s 			page 47
+
+
+ 2047      6973696F 
+ 2047      6E203233 
+ 2047      37373135 
+ 2048 0437 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 2048      67202D66 
+ 2048      66756E63 
+ 2048      74696F6E 
+ 2048      2D736563 
+ 2049              	.LASF0:
+ 2050 0463 7369676E 		.ascii	"signed char\000"
+ 2050      65642063 
+ 2050      68617200 
+ 2051              	.LASF19:
+ 2052 046f 4E52465F 		.ascii	"NRF_R_RX_PAYLOAD_CMD\000"
+ 2052      525F5258 
+ 2052      5F504159 
+ 2052      4C4F4144 
+ 2052      5F434D44 
+ 2053              	.LASF47:
+ 2054 0484 6E524632 		.ascii	"nRF24_noACKPayloadCmd\000"
+ 2054      345F6E6F 
+ 2054      41434B50 
+ 2054      61796C6F 
+ 2054      6164436D 
+ 2055              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

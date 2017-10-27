@@ -11,6 +11,8 @@
 <v>.\01_Echo_Tx.cydsn\01_Echo_Tx.cyprj</v>
 <v>.\00_Basic_Tx.cydsn\00_Basic_Tx.cyprj</v>
 <v>.\00_Basic_Rx.cydsn\00_Basic_Rx.cyprj</v>
+<v>.\02_EnhancedShockBurst_Tx.cydsn\02_EnhancedShockBurst_Tx.cyprj</v>
+<v>.\02_EnhancedShockBurst_Rx.cydsn\02_EnhancedShockBurst_Rx.cyprj</v>
 </projects>
 <workspace_id v="f968dd57-2101-4315-84bf-3811ec50e4c7" />
 <WriteAppVersionLastSavedWith v="4.1.0.3210" />

@@ -3532,41 +3532,41 @@ ARM GAS  Generated_Source\PSoC4\UART_AsmGnu.s 			page 1
   52              	.set CE__SHIFT, 6
   53              	
   54              	/* IRQ */
-  55              	.set IRQ__0__DR, CYREG_GPIO_PRT1_DR
-  56              	.set IRQ__0__DR_CLR, CYREG_GPIO_PRT1_DR_CLR
-  57              	.set IRQ__0__DR_INV, CYREG_GPIO_PRT1_DR_INV
-  58              	.set IRQ__0__DR_SET, CYREG_GPIO_PRT1_DR_SET
-  59              	.set IRQ__0__HSIOM, CYREG_HSIOM_PORT_SEL1
-  60              	.set IRQ__0__HSIOM_MASK, 0x0F000000
+  55              	.set IRQ__0__DR, CYREG_GPIO_PRT0_DR
+  56              	.set IRQ__0__DR_CLR, CYREG_GPIO_PRT0_DR_CLR
+  57              	.set IRQ__0__DR_INV, CYREG_GPIO_PRT0_DR_INV
+  58              	.set IRQ__0__DR_SET, CYREG_GPIO_PRT0_DR_SET
+  59              	.set IRQ__0__HSIOM, CYREG_HSIOM_PORT_SEL0
+  60              	.set IRQ__0__HSIOM_MASK, 0x000000F0
 ARM GAS  Generated_Source\PSoC4\UART_AsmGnu.s 			page 60
 
 
-  61              	.set IRQ__0__HSIOM_SHIFT, 24
-  62              	.set IRQ__0__INTCFG, CYREG_GPIO_PRT1_INTR_CFG
-  63              	.set IRQ__0__INTR, CYREG_GPIO_PRT1_INTR
-  64              	.set IRQ__0__INTR_CFG, CYREG_GPIO_PRT1_INTR_CFG
-  65              	.set IRQ__0__INTSTAT, CYREG_GPIO_PRT1_INTR
-  66              	.set IRQ__0__MASK, 0x40
-  67              	.set IRQ__0__PC, CYREG_GPIO_PRT1_PC
-  68              	.set IRQ__0__PC2, CYREG_GPIO_PRT1_PC2
-  69              	.set IRQ__0__PORT, 1
-  70              	.set IRQ__0__PS, CYREG_GPIO_PRT1_PS
-  71              	.set IRQ__0__SHIFT, 6
-  72              	.set IRQ__DR, CYREG_GPIO_PRT1_DR
-  73              	.set IRQ__DR_CLR, CYREG_GPIO_PRT1_DR_CLR
-  74              	.set IRQ__DR_INV, CYREG_GPIO_PRT1_DR_INV
-  75              	.set IRQ__DR_SET, CYREG_GPIO_PRT1_DR_SET
-  76              	.set IRQ__INTCFG, CYREG_GPIO_PRT1_INTR_CFG
-  77              	.set IRQ__INTR, CYREG_GPIO_PRT1_INTR
-  78              	.set IRQ__INTR_CFG, CYREG_GPIO_PRT1_INTR_CFG
-  79              	.set IRQ__INTSTAT, CYREG_GPIO_PRT1_INTR
-  80              	.set IRQ__MASK, 0x40
-  81              	.set IRQ__PC, CYREG_GPIO_PRT1_PC
-  82              	.set IRQ__PC2, CYREG_GPIO_PRT1_PC2
-  83              	.set IRQ__PORT, 1
-  84              	.set IRQ__PS, CYREG_GPIO_PRT1_PS
-  85              	.set IRQ__SHIFT, 6
-  86              	.set IRQ__SNAP, CYREG_GPIO_PRT1_INTR
+  61              	.set IRQ__0__HSIOM_SHIFT, 4
+  62              	.set IRQ__0__INTCFG, CYREG_GPIO_PRT0_INTR_CFG
+  63              	.set IRQ__0__INTR, CYREG_GPIO_PRT0_INTR
+  64              	.set IRQ__0__INTR_CFG, CYREG_GPIO_PRT0_INTR_CFG
+  65              	.set IRQ__0__INTSTAT, CYREG_GPIO_PRT0_INTR
+  66              	.set IRQ__0__MASK, 0x02
+  67              	.set IRQ__0__PC, CYREG_GPIO_PRT0_PC
+  68              	.set IRQ__0__PC2, CYREG_GPIO_PRT0_PC2
+  69              	.set IRQ__0__PORT, 0
+  70              	.set IRQ__0__PS, CYREG_GPIO_PRT0_PS
+  71              	.set IRQ__0__SHIFT, 1
+  72              	.set IRQ__DR, CYREG_GPIO_PRT0_DR
+  73              	.set IRQ__DR_CLR, CYREG_GPIO_PRT0_DR_CLR
+  74              	.set IRQ__DR_INV, CYREG_GPIO_PRT0_DR_INV
+  75              	.set IRQ__DR_SET, CYREG_GPIO_PRT0_DR_SET
+  76              	.set IRQ__INTCFG, CYREG_GPIO_PRT0_INTR_CFG
+  77              	.set IRQ__INTR, CYREG_GPIO_PRT0_INTR
+  78              	.set IRQ__INTR_CFG, CYREG_GPIO_PRT0_INTR_CFG
+  79              	.set IRQ__INTSTAT, CYREG_GPIO_PRT0_INTR
+  80              	.set IRQ__MASK, 0x02
+  81              	.set IRQ__PC, CYREG_GPIO_PRT0_PC
+  82              	.set IRQ__PC2, CYREG_GPIO_PRT0_PC2
+  83              	.set IRQ__PORT, 0
+  84              	.set IRQ__PS, CYREG_GPIO_PRT0_PS
+  85              	.set IRQ__SHIFT, 1
+  86              	.set IRQ__SNAP, CYREG_GPIO_PRT0_INTR
   87              	
   88              	/* LED */
   89              	.set LED__0__DR, CYREG_GPIO_PRT2_DR
@@ -3880,9 +3880,9 @@ ARM GAS  Generated_Source\PSoC4\UART_AsmGnu.s 			page 1
  382              	/* isr_IRQ */
  383              	.set isr_IRQ__INTC_CLR_EN_REG, CYREG_CM0P_ICER
  384              	.set isr_IRQ__INTC_CLR_PD_REG, CYREG_CM0P_ICPR
- 385              	.set isr_IRQ__INTC_MASK, 0x02
- 386              	.set isr_IRQ__INTC_NUMBER, 1
- 387              	.set isr_IRQ__INTC_PRIOR_MASK, 0xC000
+ 385              	.set isr_IRQ__INTC_MASK, 0x01
+ 386              	.set isr_IRQ__INTC_NUMBER, 0
+ 387              	.set isr_IRQ__INTC_PRIOR_MASK, 0xC0
  388              	.set isr_IRQ__INTC_PRIOR_NUM, 3
  389              	.set isr_IRQ__INTC_PRIOR_REG, CYREG_CM0P_IPR0
  390              	.set isr_IRQ__INTC_SET_EN_REG, CYREG_CM0P_ISER
