@@ -21,16 +21,16 @@ nRF24_Example_Projects $ git submodule update --remote nRF24_Component
 
 # Projects
 
-## 00 Basic (Rx/Tx)
+## 00 Basic (Working)
 In this project the Tx radio will get 1 char from the UART and send it to the Rx radio.
 
-The Rx radio will get the data and print it via UART. also will ACK the packet.
+The Rx radio will get the data and print it via UART.
 
 Rx radio: CY8CKIT-041-40xx (PSoC4000S)
 
 Tx radio: CY8CKIT-042 (PSoC4200)
 
-## 01 Echo (Rx/Tx)
+## 01 Echo (Work in progress)
 In this project the Tx radio will send 1 byte to the Rx radio, the sent byte
 is a char received via UART Rx.
 
