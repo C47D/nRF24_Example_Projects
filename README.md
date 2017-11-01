@@ -1,5 +1,10 @@
 # nRF24 Example Projects
 
+This repoitory contain multiple example projects using the nRF24 component developed for PSoC devices.
+The nRF24 component is developed in a separated repository, you can see it here: ![nRF24_Component](https://github.com/C47D/nRF24_Component).
+This projects are developed using PSoC Creator 4.1.
+
+
 To clone this repo:
 ```
 $ git clone https://github.com/C47D/nRF24_Example_Projects

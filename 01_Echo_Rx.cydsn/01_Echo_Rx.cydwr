@@ -253,7 +253,9 @@
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="IRQ" />
       <Data key="83b2fde2-60ad-45b6-9e5c-cb3baa6e3f9a" value="SCLK" />
       <Data key="600e7b82-f0c1-41b2-bcd9-a86b07f8fae6" value="CE" />
+      <Data key="7093e0c2-15c2-483b-be8b-cb126fced470" value="SW" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="MISO" />
+      <Data key="e8e6b777-c0c8-45a5-b8bb-e32fe7d14d12" value="LED" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="SS" />
       <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="MOSI" />
     </Group>
@@ -3357,9 +3359,19 @@
         <Data key="Port Format" value="12,0" />
       </Group>
     </Group>
+    <Group key="7093e0c2-15c2-483b-be8b-cb126fced470">
+      <Group key="0">
+        <Data key="Port Format" value="2,2" />
+      </Group>
+    </Group>
     <Group key="1425177d-0d0e-4468-8bcc-e638e5509a9b">
       <Group key="0">
         <Data key="Port Format" value="12,2" />
+      </Group>
+    </Group>
+    <Group key="e8e6b777-c0c8-45a5-b8bb-e32fe7d14d12">
+      <Group key="0">
+        <Data key="Port Format" value="2,1" />
       </Group>
     </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">

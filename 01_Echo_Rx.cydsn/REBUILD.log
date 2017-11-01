@@ -1,0 +1,11 @@
+--------------- Rebuild Started: 10/31/2017 16:45:58 Project: main.c, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
+main.c: In function 'main':
+main.c:25:5: warning: implicit declaration of function 'isr_SW_StartEx' [-Wimplicit-function-declaration]
+     isr_SW_StartEx(SW_Handler);
+     ^
+main.c: In function 'SW_Handler':
+main.c:72:5: warning: implicit declaration of function 'SW_ClearInterrupt' [-Wimplicit-function-declaration]
+     SW_ClearInterrupt();
+     ^
+--------------- Rebuild Succeeded: 10/31/2017 16:46:03 ---------------

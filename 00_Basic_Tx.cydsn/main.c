@@ -2,27 +2,14 @@
  * 01_Basic_Tx
  * 
  * The nrf24 radio is configured to transmit 1 byte payload.
- *
- * nRF24 Setup:
- * POWER_ON_RESET delay
- * EN_AA = Enable auto-ack (RX_ADDR0_P0 == TX_ADDR)
- * EN_RXADDR = Enable data pipes
- * SETUP_AW = Width of address
- * RF_CH = Channel
- * RF_SETUP = Power mode and data speed
- * RX_ADDR_P0 = set receiver address
- * TX_ADDR = Tx address
- * RX_PW_P0 = payload width setup
- * CONFIG = Set up the radio, pwr_up, rx or tx and interrupts
- * delay to reach standby mode
  */
+
 #include "project.h"
+
 #include <stdbool.h>
 #include <stdio.h>
 
 volatile bool irq_flag = false;
-
-volatile char data;
 
 // the IRQ pin triggered an interrupt
 CY_ISR_PROTO(IRQ_Handler);
@@ -31,6 +18,7 @@ void print_status(void);
 int main(void)
 {
     const uint8_t TX_ADDR[5]= {0xBA, 0xAD, 0xC0, 0xFF, 0xEE};
+    unsigned char data = ' ';
     
     // Set the interrupts handlers
     isr_IRQ_StartEx(IRQ_Handler);
@@ -54,12 +42,9 @@ int main(void)
         while(0 == UART_GetRxBufferSize());
         // get the letter
         data = UART_GetChar();
-        UART_PutString("\r\n");
         
-        // transmitting the letter
-        UART_PutString("\nSending letter ");
-        UART_PutChar(data);
-        UART_PutString("\r\n");
+        UART_PutString("\r\nSending letter ");
+        UART_PutCRLF(data);
         nRF24_PTX_Transmit(&data, 1);
         
         while(false == irq_flag);
@@ -71,9 +56,11 @@ int main(void)
         
         switch (flag) {
         case NRF_TX_DS_IRQ:
+            // turn on the Green LED if the transmit was successfull
             LED_Write(0);
             break;
         case NRF_MAX_RT_IRQ:
+            // turn off the Green LED if the transmit was not successfull
             LED_Write(1);
             break;
         default:
@@ -81,9 +68,6 @@ int main(void)
         }
         
         nRF24_clearIRQFlag(flag);
-        
-        // flush the tx fifo
-        nRF24_flushTxCmd();
         
         irq_flag = false;
         
