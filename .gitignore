@@ -1,6 +1,7 @@
 # Ignore PSoC Creator temp and user specific files
 
 # Ignore Archive directory, project bundles there
+opt_table.cydsn/*
 Archive/*
 Backup/*
 Archive/

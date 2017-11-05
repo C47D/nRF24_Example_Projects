@@ -14,11 +14,13 @@
  */
 #include "project.h"
 #include <stdbool.h>
+#include <stdio.h>
 
 volatile bool irq_flag = false;
 
 // the IRQ pin triggered an interrupt
 CY_ISR_PROTO(IRQ_Handler);
+void print_status(void);
 
 int main(void)
 {
@@ -41,7 +43,6 @@ int main(void)
 
     while (1) {
         
-        UART_PutChar(0x0C);
         UART_PutString("Type a letter...");
         // wait until we get a letter to send
         while(0 == UART_GetRxBufferSize());
@@ -55,25 +56,36 @@ int main(void)
         nRF24_PTX_Transmit(&data, 1);
         
         while(false == irq_flag);
-
-        LED_Write(~LED_Read());
         
-        // TX_DT interrupt is triggered when receiving the ACK + payload
-        NrfIRQ flag = nRF24_getIRQFlag();
-        nRF24_clearIRQFlag(flag);
-
+        // TX_DT IRQ is asserted when the ACK packet is received by the PTX.
+        nRF24_clearAllIRQs();
+        
+        // wait until we get the ACK+payload
+        while(nRF24_isRXFIFOEmpty());
+        
         UART_PutString("\r\nData received: ");
         // Get the data sent from the Rx
         nRF24_getRxPayload(&received, 1);
-        // print the received char
-        UART_PutChar(received);
-        UART_PutString("\r\n");
         
-        CyDelay(2500);
+        // print the received char
+        char received_str[10];
+        sprintf(received_str, "%d\r\n", received);
+        UART_PutString(received_str);
+        
+        CyDelay(500);
             
         irq_flag = false;
         
     }
+}
+
+void print_status(void)
+{
+    char array[10];
+    uint8_t sts = nRF24_getStatus();
+    UART_PutString("Status: 0x");
+    sprintf(array, "%02X\r\n", sts);
+    UART_PutString(array);
 }
 
 CY_ISR(IRQ_Handler)

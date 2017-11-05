@@ -35,7 +35,7 @@ Rx radio: CY8CKIT-041-40xx (PSoC4000S)
 
 Tx radio: CY8CKIT-042 (PSoC4200)
 
-## 01 Echo (Work in progress)
+## 01 Echo (Working)
 In this project the Tx radio will send 1 byte to the Rx radio, the sent byte
 is a char received via UART Rx.
 

@@ -1,0 +1,94 @@
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/CortexM0p/ARM_GCC_541/Debug/main.o : C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CE.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CE_aliases.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyFlash.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyLFClk.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/IRQ.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/IRQ_aliases.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/LED.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/LED_aliases.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_BOOT.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_PINS.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_PVT.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_SCBCLK.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_SPI_UART.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_SPI_UART_PVT.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_miso_m.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_miso_m_aliases.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_mosi_m.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_mosi_m_aliases.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_sclk_m.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_sclk_m_aliases.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SS.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SS_aliases.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/UART.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/UART_PVT.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cmsis_armcc.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cmsis_compiler.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cmsis_gcc.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/core_cm0plus.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/core_cm0plus_psoc4.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyPm.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydisabledsheets.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cypins.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/isr_IRQ.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_LL_SPI.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_NRF_COMMANDS.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_NRF_CONFIG.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_NRF_FUNCS.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_NRF_REGS.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/project.h C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/main.c 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CE.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CE_aliases.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/IRQ.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/IRQ_aliases.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/LED.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/LED_aliases.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_BOOT.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_PINS.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_PVT.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_SCBCLK.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_SPI_UART.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_SPI_UART_PVT.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_miso_m.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_miso_m_aliases.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_mosi_m.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_mosi_m_aliases.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_sclk_m.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SPI_sclk_m_aliases.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SS.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/SS_aliases.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/UART.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/UART_PVT.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/core_cm0plus.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/core_cm0plus_psoc4.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/isr_IRQ.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_LL_SPI.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_NRF_COMMANDS.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_NRF_CONFIG.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_NRF_FUNCS.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/nRF24_NRF_REGS.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/project.h : 
+
+C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/main.c : 
+

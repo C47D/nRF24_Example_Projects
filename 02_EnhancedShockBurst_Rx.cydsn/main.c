@@ -65,7 +65,7 @@ int main(void)
             LED_Write(~LED_Read());
             
             // How many bytes are in the pipe0 (data received)?
-            uint8_t payload_size = nRF24_getPayloadSize(NRF_DATA_PIPE0);
+            uint8_t payload_size = nRF24_getPayloadSize(NRF_PIPE0);
             
             // get the data from the transmitter
             nRF24_getRxPayload(&data, payload_size);

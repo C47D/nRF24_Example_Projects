@@ -1,4 +1,4 @@
---------------- Build Started: 10/26/2017 19:27:16 Project: 02_EnhancedShockBurst_Tx, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 10/31/2017 23:59:20 Project: 02_EnhancedShockBurst_Tx, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 cydsfit.exe -.appdatapath "C:\Users\Xwx47\AppData\Local\Cypress Semiconductor\PSoC Creator\4.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\02_EnhancedShockBurst_Tx.cydsn\02_EnhancedShockBurst_Tx.cyprj -d CY8C4245AXI-483 -s C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\02_EnhancedShockBurst_Tx.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 HDL Generation...
@@ -24,6 +24,6 @@ arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Debug\02_EnhancedShockBurs
 arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\02_EnhancedShockBurst_Tx.cydsn\CortexM0\ARM_GCC_541\Debug\02_EnhancedShockBurst_Tx.elf .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\02_EnhancedShockBurst_Tx.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/02_EnhancedShockBurst_Tx.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
 cyelftool.exe -C C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\02_EnhancedShockBurst_Tx.cydsn\CortexM0\ARM_GCC_541\Debug\02_EnhancedShockBurst_Tx.elf --flash_row_size 128 --flash_size 32768 --flash_offset 0x00000000
 cyelftool.exe -S C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\02_EnhancedShockBurst_Tx.cydsn\CortexM0\ARM_GCC_541\Debug\02_EnhancedShockBurst_Tx.elf
-Flash used: 4526 of 32768 bytes (13.8 %).
+Flash used: 4558 of 32768 bytes (13.9 %).
 SRAM used: 1560 of 4096 bytes (38.1 %). Stack: 1024 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 10/26/2017 19:28:27 ---------------
+--------------- Build Succeeded: 11/01/2017 00:01:44 ---------------

@@ -27,10 +27,11 @@ int main(void)
     CyGlobalIntEnable;
     
     nRF24_start();
-    // Place 'count' in the TX FIFO to send it on the ACK packet
+    // Uploading Payload for ACK packet
     nRF24_rxWritePayload(NRF_PIPE0, &count, 1);
     
     nRF24_setRxPipe0Address(RX_ADDR, 5);
+    nRF24_setTxAddress(RX_ADDR, 5);
     nRF24_startListening();
 
     while (1) {
@@ -38,18 +39,13 @@ int main(void)
         // waiting to get data
         while(false == irq_flag);
         
-        // We got data, so we clear the interrupt flag
-        NrfIRQ flag = nRF24_getIRQFlag();
-        nRF24_clearIRQFlag(flag);
-                
-        // How many bytes did we received?
-        //uint8_t payload_size = nRF24_getPayloadSize(NRF_PIPE0_PAYLOAD_SIZE);
+        // The RX_DR IRQ is asserted after the packet is received by the PRX
+        nRF24_clearIRQFlag(NRF_RX_DR_IRQ);
         
-        // get the data and store it into 'data'
-        //nRF24_getRxPayload(&data, payload_size);
+        // Get the data
         nRF24_getRxPayload(&data, 1);
         
-        // increment 'count' and put it on the TX FIFO
+        // increment 'count' and put it on the TX FIFO for the next ACK packet
         count++;
         nRF24_rxWritePayload(NRF_PIPE0, &count, 1);
         

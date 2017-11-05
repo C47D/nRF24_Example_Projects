@@ -142,10 +142,9 @@ Discarded input sections
  .text.nRF24_getTxAddress
                 0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_setPayloadSize
-                0x00000000       0x48 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
- .rodata        0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_getPayloadSize
-                0x00000000       0x48 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
+                0x00000000        0x8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_enableDynamicPayload
                 0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_disableDynamicPayload
@@ -179,15 +178,15 @@ Discarded input sections
  .text.nRF24_getLostPacketsCount
                 0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_putInTXFIFO
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_PTX_Transmit
                 0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
+ .text.nRF24_PTX_Transmit
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_isDataReady
                 0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_txTransmitWaitNoACK
                 0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_rxWritePayload
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_getDataPipeWithPayload
                 0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
  .text.nRF24_PRX_receivedPowerDetector
@@ -1058,80 +1057,80 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x550c
+.debug_info     0x00000000     0x547a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x3e1 .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_info    0x000003e1       0xfb .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_info    0x000004dc       0xf8 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
  .debug_info    0x000005d4      0x3a5 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_info    0x00000979     0x15db .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_info    0x00001f54      0x618 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
- .debug_info    0x0000256c      0x672 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_info    0x00002bde      0x2c4 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
- .debug_info    0x00002ea2      0x23a .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
- .debug_info    0x000030dc      0x220 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
- .debug_info    0x000032fc      0x1a0 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
- .debug_info    0x0000349c      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
- .debug_info    0x00003639      0x305 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
- .debug_info    0x0000393e      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
- .debug_info    0x00003adb      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
- .debug_info    0x00003c78      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
- .debug_info    0x00003e15      0xbd0 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
- .debug_info    0x000049e5      0x444 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
- .debug_info    0x00004e29      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
- .debug_info    0x00004fc6       0x97 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART_AsmGnu.o)
- .debug_info    0x0000505d       0x98 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyBootAsmGnu.o)
- .debug_info    0x000050f5      0x417 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
+ .debug_info    0x00000979     0x154e .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
+ .debug_info    0x00001ec7      0x613 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
+ .debug_info    0x000024da      0x672 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
+ .debug_info    0x00002b4c      0x2c4 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
+ .debug_info    0x00002e10      0x23a .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
+ .debug_info    0x0000304a      0x220 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
+ .debug_info    0x0000326a      0x1a0 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
+ .debug_info    0x0000340a      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
+ .debug_info    0x000035a7      0x305 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
+ .debug_info    0x000038ac      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
+ .debug_info    0x00003a49      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
+ .debug_info    0x00003be6      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
+ .debug_info    0x00003d83      0xbd0 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
+ .debug_info    0x00004953      0x444 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
+ .debug_info    0x00004d97      0x19d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
+ .debug_info    0x00004f34       0x97 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART_AsmGnu.o)
+ .debug_info    0x00004fcb       0x98 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyBootAsmGnu.o)
+ .debug_info    0x00005063      0x417 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
 
-.debug_abbrev   0x00000000     0x1745
+.debug_abbrev   0x00000000     0x1736
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x124 .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_abbrev  0x00000124       0xa3 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_abbrev  0x000001c7       0x5d .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
  .debug_abbrev  0x00000224      0x1d0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
  .debug_abbrev  0x000003f4      0x152 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_abbrev  0x00000546      0x165 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
- .debug_abbrev  0x000006ab      0x172 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_abbrev  0x0000081d      0x109 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
- .debug_abbrev  0x00000926       0xd5 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
- .debug_abbrev  0x000009fb      0x14f .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
- .debug_abbrev  0x00000b4a       0xfb .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
- .debug_abbrev  0x00000c45       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
- .debug_abbrev  0x00000d0d      0x19a .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
- .debug_abbrev  0x00000ea7       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
- .debug_abbrev  0x00000f6f       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
- .debug_abbrev  0x00001037       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
- .debug_abbrev  0x000010ff      0x209 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
- .debug_abbrev  0x00001308      0x1af .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
- .debug_abbrev  0x000014b7       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
- .debug_abbrev  0x0000157f       0x14 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART_AsmGnu.o)
- .debug_abbrev  0x00001593       0x14 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyBootAsmGnu.o)
- .debug_abbrev  0x000015a7      0x19e .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
+ .debug_abbrev  0x00000546      0x156 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
+ .debug_abbrev  0x0000069c      0x172 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
+ .debug_abbrev  0x0000080e      0x109 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
+ .debug_abbrev  0x00000917       0xd5 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
+ .debug_abbrev  0x000009ec      0x14f .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
+ .debug_abbrev  0x00000b3b       0xfb .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
+ .debug_abbrev  0x00000c36       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
+ .debug_abbrev  0x00000cfe      0x19a .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
+ .debug_abbrev  0x00000e98       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
+ .debug_abbrev  0x00000f60       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
+ .debug_abbrev  0x00001028       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
+ .debug_abbrev  0x000010f0      0x209 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
+ .debug_abbrev  0x000012f9      0x1af .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
+ .debug_abbrev  0x000014a8       0xc8 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
+ .debug_abbrev  0x00001570       0x14 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART_AsmGnu.o)
+ .debug_abbrev  0x00001584       0x14 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00001598      0x19e .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
 
-.debug_line     0x00000000     0x261d
+.debug_line     0x00000000     0x2616
  *(.debug_line)
  .debug_line    0x00000000      0x1c6 .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_line    0x000001c6       0x85 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_line    0x0000024b      0x141 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
  .debug_line    0x0000038c      0x247 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_line    0x000005d3      0x730 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_line    0x00000d03      0x2e3 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
- .debug_line    0x00000fe6      0x31b .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_line    0x00001301       0xea .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
- .debug_line    0x000013eb      0x108 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
- .debug_line    0x000014f3      0x119 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
- .debug_line    0x0000160c       0xe7 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
- .debug_line    0x000016f3       0xbb .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
- .debug_line    0x000017ae      0x14f .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
- .debug_line    0x000018fd       0xba .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
- .debug_line    0x000019b7       0xba .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
- .debug_line    0x00001a71       0xc2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
- .debug_line    0x00001b33      0x4c5 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
- .debug_line    0x00001ff8      0x284 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
- .debug_line    0x0000227c       0xbb .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
- .debug_line    0x00002337       0x9d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART_AsmGnu.o)
- .debug_line    0x000023d4       0x68 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyBootAsmGnu.o)
- .debug_line    0x0000243c      0x1e1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
+ .debug_line    0x000005d3      0x72b .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
+ .debug_line    0x00000cfe      0x2e1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
+ .debug_line    0x00000fdf      0x31b .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
+ .debug_line    0x000012fa       0xea .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
+ .debug_line    0x000013e4      0x108 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
+ .debug_line    0x000014ec      0x119 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
+ .debug_line    0x00001605       0xe7 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
+ .debug_line    0x000016ec       0xbb .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
+ .debug_line    0x000017a7      0x14f .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
+ .debug_line    0x000018f6       0xba .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
+ .debug_line    0x000019b0       0xba .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
+ .debug_line    0x00001a6a       0xc2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
+ .debug_line    0x00001b2c      0x4c5 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
+ .debug_line    0x00001ff1      0x284 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
+ .debug_line    0x00002275       0xbb .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
+ .debug_line    0x00002330       0x9d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART_AsmGnu.o)
+ .debug_line    0x000023cd       0x68 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyBootAsmGnu.o)
+ .debug_line    0x00002435      0x1e1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
 
 .debug_frame    0x00000000     0x17ec
  *(.debug_frame)
@@ -1161,7 +1160,7 @@ END GROUP
  .debug_frame   0x000017a4       0x28 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
  .debug_frame   0x000017cc       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x238b
+.debug_str      0x00000000     0x24a4
  *(.debug_str)
  .debug_str     0x00000000      0x45a .\CortexM0p\ARM_GCC_541\Debug\main.o
                                 0x4ac (size before relaxing)
@@ -1171,59 +1170,59 @@ END GROUP
                                 0x1d4 (size before relaxing)
  .debug_str     0x00000513      0x15c .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
                                 0x31b (size before relaxing)
- .debug_str     0x0000066f      0xb83 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
-                                0xfb2 (size before relaxing)
- .debug_str     0x000011f2      0x1b1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
+ .debug_str     0x0000066f      0xc9c .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
+                               0x10cb (size before relaxing)
+ .debug_str     0x0000130b      0x1b1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
                                 0x5a4 (size before relaxing)
- .debug_str     0x000013a3       0x5f .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
-                                0x48d (size before relaxing)
- .debug_str     0x00001402       0xe1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
+ .debug_str     0x000014bc       0x5f .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
+                                0x46b (size before relaxing)
+ .debug_str     0x0000151b       0xe1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
                                 0x2a3 (size before relaxing)
- .debug_str     0x000014e3       0xe7 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
+ .debug_str     0x000015fc       0xe7 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
                                 0x292 (size before relaxing)
- .debug_str     0x000015ca       0x9d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
+ .debug_str     0x000016e3       0x9d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
                                 0x2d0 (size before relaxing)
- .debug_str     0x00001667       0x94 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
+ .debug_str     0x00001780       0x94 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
                                 0x268 (size before relaxing)
- .debug_str     0x000016fb       0x8a .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
+ .debug_str     0x00001814       0x8a .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
                                 0x234 (size before relaxing)
- .debug_str     0x00001785      0x146 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
+ .debug_str     0x0000189e      0x146 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
                                 0x312 (size before relaxing)
- .debug_str     0x000018cb       0x69 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
+ .debug_str     0x000019e4       0x69 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
                                 0x22d (size before relaxing)
- .debug_str     0x00001934       0x69 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
+ .debug_str     0x00001a4d       0x69 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
                                 0x22d (size before relaxing)
- .debug_str     0x0000199d       0x99 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
+ .debug_str     0x00001ab6       0x99 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
                                 0x265 (size before relaxing)
- .debug_str     0x00001a36      0x4f9 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
+ .debug_str     0x00001b4f      0x4f9 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
                                 0x72f (size before relaxing)
- .debug_str     0x00001f2f      0x2d9 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
+ .debug_str     0x00002048      0x2d9 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
                                 0x4c6 (size before relaxing)
- .debug_str     0x00002208       0x66 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
+ .debug_str     0x00002321       0x66 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
                                 0x234 (size before relaxing)
- .debug_str     0x0000226e      0x11d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
+ .debug_str     0x00002387      0x11d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
                                 0x32e (size before relaxing)
 
-.debug_loc      0x00000000     0x209c
+.debug_loc      0x00000000     0x2003
  *(.debug_loc)
  .debug_loc     0x00000000       0x13 .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_loc     0x00000013      0x14f .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_loc     0x00000162      0x8e7 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_loc     0x00000a49      0x2c6 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
- .debug_loc     0x00000d0f      0x1eb .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_loc     0x00000efa      0x12d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
- .debug_loc     0x00001027       0x7e .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
- .debug_loc     0x000010a5       0x96 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
- .debug_loc     0x0000113b       0xc1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
- .debug_loc     0x000011fc       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
- .debug_loc     0x0000129e       0x82 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
- .debug_loc     0x00001320       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
- .debug_loc     0x000013c2       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
- .debug_loc     0x00001464       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
- .debug_loc     0x00001506      0x5e3 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
- .debug_loc     0x00001ae9      0x354 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
- .debug_loc     0x00001e3d       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
- .debug_loc     0x00001edf      0x1bd .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
+ .debug_loc     0x00000162      0x84e .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_FUNCS.o)
+ .debug_loc     0x000009b0      0x2c6 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_LL_SPI.o)
+ .debug_loc     0x00000c76      0x1eb .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(nRF24_NRF_COMMANDS.o)
+ .debug_loc     0x00000e61      0x12d .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(UART.o)
+ .debug_loc     0x00000f8e       0x7e .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI.o)
+ .debug_loc     0x0000100c       0x96 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI_UART.o)
+ .debug_loc     0x000010a2       0xc1 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_SPI.o)
+ .debug_loc     0x00001163       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(IRQ.o)
+ .debug_loc     0x00001205       0x82 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(isr_IRQ.o)
+ .debug_loc     0x00001287       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SS.o)
+ .debug_loc     0x00001329       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CE.o)
+ .debug_loc     0x000013cb       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(SPI_sclk_m.o)
+ .debug_loc     0x0000146d      0x5e3 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLib.o)
+ .debug_loc     0x00001a50      0x354 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyLFClk.o)
+ .debug_loc     0x00001da4       0xa2 .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(LED.o)
+ .debug_loc     0x00001e46      0x1bd .\CortexM0p\ARM_GCC_541\Debug\00_Basic_Rx.a(CyFlash.o)
 
 .debug_macinfo
  *(.debug_macinfo)
