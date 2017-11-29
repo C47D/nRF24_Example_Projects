@@ -43,10 +43,12 @@ int main(void)
         // get the letter
         data = UART_GetChar();
         
+        print_status();
         UART_PutString("\r\nSending letter ");
         UART_PutCRLF(data);
         nRF24_PTX_Transmit(&data, 1);
         
+        print_status();
         while(false == irq_flag);
             
         // Get and clear the flag that caused the IRQ interrupt,

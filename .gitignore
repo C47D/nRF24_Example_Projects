@@ -2,6 +2,7 @@
 
 # Ignore Archive directory, project bundles there
 opt_table.cydsn/*
+tests_c11.cydsn/*
 Archive/*
 Backup/*
 Archive/

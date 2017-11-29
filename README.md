@@ -1,8 +1,9 @@
 # nRF24 Example Projects
 
-This repoitory contain multiple example projects using the nRF24 component developed for PSoC devices.
+This repoitory contain multiple example projects using the nRF24 component for PSoC devices.
 The nRF24 component is developed in a separated repository, you can see it here: ![nRF24_Component](https://github.com/C47D/nRF24_Component).
-This projects are developed using PSoC Creator 4.1.
+
+This projects are developed using PSoC Creator 4.1 and multiple PSoC kits, PSoC 4200 devices, PSoC 4S, PSoC 4M and PSoC 5LP devices.
 
 
 To clone this repo:
@@ -26,21 +27,18 @@ nRF24_Example_Projects $ git submodule update --remote nRF24_Component
 
 # Projects
 
+For details each project directory have it's own README, the following list is just an overview.
+
 ## 00 Basic (Working)
-In this project the Tx radio will get 1 char from the UART and send it to the Rx radio.
+In this project the Tx radio will get 1 char from the UART and send it to the Rx radio, the Rx radio will get the data and print it via UART.
 
-The Rx radio will get the data and print it via UART.
-
-Rx radio: CY8CKIT-041-40xx (PSoC4000S)
-
-Tx radio: CY8CKIT-042 (PSoC4200)
+Rx: CY8CKIT-041-40xx (PSoC4000S)
+Tx: CY8CKIT-042 (PSoC4200)
 
 ## 01 Echo (Working)
-In this project the Tx radio will send 1 byte to the Rx radio, the sent byte
-is a char received via UART Rx.
+In this project the Tx radio will get 1 byte from the UART and send it to the Rx radio, the Rx radio will print the received data via UART and reply back with an ACK packet containing the count of received packets, the Tx radio will receive the ACK packet from the Rx radio and print it via UART.
 
-The Rx radio will ACK + return the received byte (turned into CAPS), the Tx radio will receive the payload from the Rx radio and print it via UART.
+Rx: CY8CKIT-059 (PSoC5LP)
+Tx: CY8CKIT-042 (PSoC4200)
 
-Rx radio: CY8CKIT-059 (PSoC5LP)
-
-Tx radio: CY8CKIT-042 (PSoC4200)
+## More examples to come...
