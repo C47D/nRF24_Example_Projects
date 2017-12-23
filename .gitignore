@@ -3,6 +3,7 @@
 # Ignore Archive directory, project bundles there
 opt_table.cydsn/*
 tests_c11.cydsn/*
+cli_tx.cydsn/*
 Archive/*
 Backup/*
 Archive/
@@ -23,7 +24,6 @@ Backup/
 
 # PSoC 4 based projects
 *.cydsn/CortexM0/
-
 
 # User specific files
 ComponentUpdateLog.txt
