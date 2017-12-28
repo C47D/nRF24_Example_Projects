@@ -36,12 +36,12 @@ int main(void)
     
     nRF24_start();
     
-    nRF24_rxWritePayload(NRF_PIPE0, &count, 1);
+    nRF24_rx_write_payload(NRF_PIPE0, &count, 1);
     
-    nRF24_setRxPipe0Address(RX_ADDR, 5);
-    nRF24_setTxAddress(RX_ADDR, 5);
+    nRF24_set_rx_pipe_0_address(RX_ADDR, 5);
+    nRF24_set_tx_address(RX_ADDR, 5);
     
-    nRF24_startListening();
+    nRF24_start_listening();
     
     while (1) {
         
@@ -52,18 +52,18 @@ int main(void)
         irq_flag = false;
         
         // "Safe" zone
-        nRF24_stopListening();
+        nRF24_stop_listening();
 
-        nRF24_clearAllIRQs();
+        nRF24_clear_all_irqs();
         
         // get the data from the transmitter
-        nRF24_getRxPayload(&data, 1);
+        nRF24_get_rx_payload(&data, 1);
         // put count into the TX FIFO
         count++;
-        nRF24_rxWritePayload(NRF_PIPE0, &count, 1);
+        nRF24_rx_write_payload(NRF_PIPE0, &count, 1);
         
         // end of Safe zone
-        nRF24_startListening();
+        nRF24_start_listening();
         
         UART_PutString("Received: ");
         UART_PutChar(data);
@@ -75,7 +75,7 @@ int main(void)
 void print_status(void)
 {
     char array[10];
-    uint8_t sts = nRF24_getStatus();
+    uint8_t sts = nRF24_get_status();
     UART_PutString("Status: 0x");
     sprintf(array, "%02X\r\n", sts);
     UART_PutString(array);

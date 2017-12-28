@@ -1,17 +1,15 @@
 Archive member included to satisfy reference by file (symbol)
 
-.\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                              .\CortexM0p\ARM_GCC_541\Debug\main.o (nRF24_setRxPipe0Address)
-.\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
-                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o) (nRF24_readRegister)
-.\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
-                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o) (nRF24_reuseTxPayloadCmd)
+.\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\main.o (nRF24_set_rx_pipe_0_address)
+.\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o) (nRF24_reuse_tx_payload_cmd)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
                               .\CortexM0p\ARM_GCC_541\Debug\main.o (UART_Start)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
-                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o) (SPI_Start)
+                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o) (SPI_Start)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
-                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o) (SPI_SpiUartReadRxData)
+                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o) (SPI_SpiUartReadRxData)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
                               .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o) (SPI_SpiPostEnable)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
@@ -19,9 +17,9 @@ Archive member included to satisfy reference by file (symbol)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
                               .\CortexM0p\ARM_GCC_541\Debug\main.o (isr_IRQ_StartEx)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
-                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o) (SS_Write)
+                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o) (SS_Write)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
-                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o) (CE_Write)
+                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o) (CE_Write)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
                               .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o) (SPI_sclk_m_Write)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
@@ -34,6 +32,8 @@ Archive member included to satisfy reference by file (symbol)
                               .\CortexM0p\ARM_GCC_541\Debug\main.o (UART_PutChar)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
                               .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o) (CyDelayCycles)
+.\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o) (nRF24_read_register)
 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
                               .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o) (CySysFlashSetWaitCycles)
 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
@@ -82,139 +82,130 @@ Discarded input sections
  .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
  .text._exit    0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
  .text._sbrk    0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
  .text.nRF24_enable
-                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
+                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
  .text.nRF24_stop
-                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_sleep
-                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
+                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
  .text.nRF24_wakeup
-                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_saveConfig
-                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_restoreConfig
-                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setPowerDownMode
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setRxMode
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setTxMode
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setMode
-                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_enableAutoACK
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_disableAutoACK
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setChannel
-                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setAddressWidth
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getAddressWidth
-                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getRxPipe0Address
-                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setRxPipe1Address
-                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getRxPipe1Address
-                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setRxPipe2Address
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getRxPipe2Address
-                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setRxPipe3Address
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getRxPipe3Address
-                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setRxPipe4Address
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getRxPipe4Address
-                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setRxPipe5Address
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getRxPipe5Address
-                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getTxAddress
-                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_enableDynamicPayload
-                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_disableDynamicPayload
-                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_enableDynamicPayloadLength
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_disableDynamicPayloadLength
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_enablePayloadWithACK
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_disablePayloadWithACK
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_enablePayloadWithNoACKCmd
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_disablePayloadWithNoACKCmd
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setStandbyIMode
-                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_setStandbyIIMode
-                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_stopListening
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_transmitPulse
-                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_PTX_reuseLastTransmittedPayload
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getStatus
-                0x00000000        0x8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getRetransmissionsCount
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getLostPacketsCount
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_putInTXFIFO
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_PTX_Transmit
-                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_isDataReady
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_txTransmitWaitNoACK
-                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_rxWritePayload
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_getDataPipeWithPayload
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_PRX_receivedPowerDetector
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_isTXFIFOFull
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text.nRF24_isRXFIFOEmpty
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .text.nRF24_readLongRegister
-                0x00000000       0x50 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .text.nRF24_readBit
-                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .text.nRF24_writeBit
-                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .text.nRF24_clearBit
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .text.nRF24_setBit
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .text.nRF24_reuseTxPayloadCmd
-                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .text.nRF24_writeTXPayloadCmd
-                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .text.nRF24_readPayloadWidthCmd
-                0x00000000       0x40 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .text.nRF24_writeACKPayloadCmd
-                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .text.nRF24_noACKPayloadCmd
-                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_save_config
+                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_restore_config
+                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_power_down_mode
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_rx_mode
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_tx_mode
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_mode
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_enable_auto_ack
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_disable_auto_ack
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_channel
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_address_width
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_address_width
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_rx_pipe_0_address
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_rx_pipe_1_address
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_rx_pipe_1_address
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_rx_pipe_2_address
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_rx_pipe_2_address
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_rx_pipe_3_address
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_rx_pipe_3_address
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_rx_pipe_4_address
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_rx_pipe_4_address
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_rx_pipe_5_address
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_rx_pipe_5_address
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_tx_address
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_payload_size
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_enable_dynamic_payload
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_disable_dynamic_payload
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_enable_dynamic_payload_length
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_disable_dynamic_payload_length
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_enable_payload_with_ack
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_disable_payload_with_ack
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_enable_payload_with_no_ack_cmd
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_disable_payload_with_no_ack_cmd
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_standby_ii_mode
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_stop_listening
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_set_standby_i_mode
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_sleep
+                0x00000000        0x8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_transmit_pulse
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_reuse_last_transmitted_payload
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_status
+                0x00000000        0x8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_retransmissions_count
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_lost_packets_count
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_put_in_tx_fifo
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_transmit
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_is_data_ready
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_tx_transmit_wait_no_ack
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_rx_write_payload
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_get_data_pipe_with_payload
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_received_power_detector
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_is_tx_fifo_full
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_is_rx_fifo_empty
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text.nRF24_test_carrier
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .text.nRF24_reuse_tx_payload_cmd
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .text.nRF24_write_tx_payload_cmd
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .text.nRF24_read_payload_width_cmd
+                0x00000000       0x40 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .text.nRF24_write_ack_payload_cmd
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .text.nRF24_no_ack_payload_cmd
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
  .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
  .text.UART_Stop
                 0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
@@ -468,6 +459,19 @@ Discarded input sections
  .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
  .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
  .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .text.nRF24_read_long_register
+                0x00000000       0x50 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .text.nRF24_read_bit
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .text.nRF24_write_bit
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .text.nRF24_clear_bit
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .text.nRF24_set_bit
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
  .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
  .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
  .bss           0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
@@ -570,7 +574,7 @@ END GROUP
                 0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
                 0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
 
-.text           0x00000000      0xd6e
+.text           0x00000000      0xcd6
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -604,281 +608,274 @@ END GROUP
                 0x00000258       0x40 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
                 0x00000258                initialize_psoc
  .text.nRF24_init
-                0x00000298       0x54 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
+                0x00000298       0x5c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
                 0x00000298                nRF24_init
- .text.nRF24_setRxPipe0Address
-                0x000002ec       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x000002ec                nRF24_setRxPipe0Address
- .text.nRF24_setTxAddress
-                0x00000304       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x00000304                nRF24_setTxAddress
- .text.nRF24_setPayloadSize
-                0x0000031c       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x0000031c                nRF24_setPayloadSize
- .text.nRF24_getPayloadSize
-                0x00000364       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x00000364                nRF24_getPayloadSize
- .text.nRF24_listen
-                0x000003ac       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x000003ac                nRF24_listen
- .text.nRF24_startListening
-                0x000003c4        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x000003c4                nRF24_startListening
- .text.nRF24_getRxPayload
-                0x000003d0       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x000003d0                nRF24_getRxPayload
- .text.nRF24_clearAllIRQs
-                0x000003f0        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x000003f0                nRF24_clearAllIRQs
+ .text.nRF24_set_rx_pipe_0_address
+                0x000002f4       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x000002f4                nRF24_set_rx_pipe_0_address
+ .text.nRF24_set_tx_address
+                0x0000030c       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x0000030c                nRF24_set_tx_address
+ .text.nRF24_get_payload_size
+                0x00000324        0x8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x00000324                nRF24_get_payload_size
+ .text.nRF24_start_listening
+                0x0000032c        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x0000032c                nRF24_start_listening
+ .text.nRF24_get_rx_payload
+                0x00000338       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x00000338                nRF24_get_rx_payload
+ .text.nRF24_clear_all_irqs
+                0x00000358        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x00000358                nRF24_clear_all_irqs
  .text.nRF24_start
-                0x000003fc       0x30 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x000003fc                nRF24_start
- .text.nRF24_clearIRQFlag
-                0x0000042c       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x0000042c                nRF24_clearIRQFlag
- .text.nRF24_getIRQFlag
-                0x0000043c       0x28 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                0x0000043c                nRF24_getIRQFlag
- .text.nRF24_readRegister
-                0x00000464       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
-                0x00000464                nRF24_readRegister
- .text.nRF24_writeRegister
-                0x0000049c       0x34 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
-                0x0000049c                nRF24_writeRegister
- .text.nRF24_writeLongRegister
-                0x000004d0       0x3c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
-                0x000004d0                nRF24_writeLongRegister
- .text.nRF24_sendCommand
-                0x0000050c       0x28 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
-                0x0000050c                nRF24_sendCommand
- .text.nRF24_flushRxCmd
-                0x00000534        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
-                0x00000534                nRF24_flushRxCmd
- .text.nRF24_flushTxCmd
-                0x00000540        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
-                0x00000540                nRF24_flushTxCmd
- .text.nRF24_readRXPayloadCmd
-                0x0000054c       0x50 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
-                0x0000054c                nRF24_readRXPayloadCmd
- .text.nRF24_NOPCmd
-                0x0000059c       0x2c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
-                0x0000059c                nRF24_NOPCmd
+                0x00000364       0x30 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x00000364                nRF24_start
+ .text.nRF24_clear_irq_flag
+                0x00000394       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x00000394                nRF24_clear_irq_flag
+ .text.nRF24_get_irq_flag
+                0x000003a4       0x28 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                0x000003a4                nRF24_get_irq_flag
+ .text.nRF24_send_command
+                0x000003cc       0x28 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+                0x000003cc                nRF24_send_command
+ .text.nRF24_flush_rx_cmd
+                0x000003f4        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+                0x000003f4                nRF24_flush_rx_cmd
+ .text.nRF24_flush_tx_cmd
+                0x00000400        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+                0x00000400                nRF24_flush_tx_cmd
+ .text.nRF24_read_rx_payload_cmd
+                0x0000040c       0x50 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+                0x0000040c                nRF24_read_rx_payload_cmd
+ .text.nRF24_nop_cmd
+                0x0000045c       0x2c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+                0x0000045c                nRF24_nop_cmd
  .text.UART_Start
-                0x000005c8        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
-                0x000005c8                UART_Start
+                0x00000488        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+                0x00000488                UART_Start
  .text.UART_PutString
-                0x000005cc       0x1c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
-                0x000005cc                UART_PutString
+                0x0000048c       0x1c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+                0x0000048c                UART_PutString
  .text.SPI_ScbModePostEnable
-                0x000005e8        0x8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+                0x000004a8        0x8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
  .text.SPI_Init
-                0x000005f0        0x8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
-                0x000005f0                SPI_Init
+                0x000004b0        0x8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+                0x000004b0                SPI_Init
  .text.SPI_Enable
-                0x000005f8       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
-                0x000005f8                SPI_Enable
+                0x000004b8       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+                0x000004b8                SPI_Enable
  .text.SPI_Start
-                0x00000610       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
-                0x00000610                SPI_Start
+                0x000004d0       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+                0x000004d0                SPI_Start
  .text.SPI_SpiUartReadRxData
-                0x00000630        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
-                0x00000630                SPI_SpiUartReadRxData
+                0x000004f0        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+                0x000004f0                SPI_SpiUartReadRxData
  .text.SPI_SpiUartGetRxBufferSize
-                0x0000063c       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
-                0x0000063c                SPI_SpiUartGetRxBufferSize
+                0x000004fc       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+                0x000004fc                SPI_SpiUartGetRxBufferSize
  .text.SPI_SpiUartClearRxBuffer
-                0x0000064c       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
-                0x0000064c                SPI_SpiUartClearRxBuffer
+                0x0000050c       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+                0x0000050c                SPI_SpiUartClearRxBuffer
  .text.SPI_SpiUartWriteTxData
-                0x0000066c       0x1c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
-                0x0000066c                SPI_SpiUartWriteTxData
+                0x0000052c       0x1c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+                0x0000052c                SPI_SpiUartWriteTxData
  .text.SPI_SpiUartPutArray
-                0x00000688       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
-                0x00000688                SPI_SpiUartPutArray
+                0x00000548       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+                0x00000548                SPI_SpiUartPutArray
  .text.SPI_SpiUartClearTxBuffer
-                0x000006a0       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
-                0x000006a0                SPI_SpiUartClearTxBuffer
+                0x00000560       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+                0x00000560                SPI_SpiUartClearTxBuffer
  .text.SPI_SpiPostEnable
-                0x000006c0       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
-                0x000006c0                SPI_SpiPostEnable
+                0x00000580       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+                0x00000580                SPI_SpiPostEnable
  .text.SPI_SpiSetActiveSlaveSelect
-                0x000006e4       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
-                0x000006e4                SPI_SpiSetActiveSlaveSelect
+                0x000005a4       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+                0x000005a4                SPI_SpiSetActiveSlaveSelect
  .text.SPI_SpiInit
-                0x00000704       0x8c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
-                0x00000704                SPI_SpiInit
+                0x000005c4       0x8c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+                0x000005c4                SPI_SpiInit
  .text.IRQ_ClearInterrupt
-                0x00000790       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
-                0x00000790                IRQ_ClearInterrupt
+                0x00000650       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+                0x00000650                IRQ_ClearInterrupt
  .text.isr_IRQ_SetVector
-                0x000007a4        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
-                0x000007a4                isr_IRQ_SetVector
+                0x00000664        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+                0x00000664                isr_IRQ_SetVector
  .text.isr_IRQ_SetPriority
-                0x000007b0       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
-                0x000007b0                isr_IRQ_SetPriority
+                0x00000670       0x24 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+                0x00000670                isr_IRQ_SetPriority
  .text.isr_IRQ_Enable
-                0x000007d4        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
-                0x000007d4                isr_IRQ_Enable
+                0x00000694        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+                0x00000694                isr_IRQ_Enable
  .text.isr_IRQ_Disable
-                0x000007e0        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
-                0x000007e0                isr_IRQ_Disable
+                0x000006a0        0xc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+                0x000006a0                isr_IRQ_Disable
  .text.isr_IRQ_StartEx
-                0x000007ec       0x1c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
-                0x000007ec                isr_IRQ_StartEx
+                0x000006ac       0x1c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+                0x000006ac                isr_IRQ_StartEx
  .text.SS_Write
-                0x00000808       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
-                0x00000808                SS_Write
+                0x000006c8       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+                0x000006c8                SS_Write
  .text.CE_Write
-                0x00000820       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
-                0x00000820                CE_Write
+                0x000006e0       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+                0x000006e0                CE_Write
  .text.CySysClkImoDisableWcoLock
-                0x00000838       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
-                0x00000838                CySysClkImoDisableWcoLock
+                0x000006f8       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x000006f8                CySysClkImoDisableWcoLock
  .text.CySysClkImoGetWcoLock
-                0x0000084c       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
-                0x0000084c                CySysClkImoGetWcoLock
- .text.CyHalt   0x00000860        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
-                0x00000860                CyHalt
- .text.CyDelay  0x00000864       0x30 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
-                0x00000864                CyDelay
+                0x0000070c       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x0000070c                CySysClkImoGetWcoLock
+ .text.CyHalt   0x00000720        0x4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x00000720                CyHalt
+ .text.CyDelay  0x00000724       0x30 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x00000724                CyDelay
  .text.CySysClkImoEnableWcoLock
-                0x00000894       0xcc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
-                0x00000894                CySysClkImoEnableWcoLock
+                0x00000754       0xcc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x00000754                CySysClkImoEnableWcoLock
  .text.CySysClkWriteImoFreq
-                0x00000960       0xd8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
-                0x00000960                CySysClkWriteImoFreq
+                0x00000820       0xd8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x00000820                CySysClkWriteImoFreq
  .text.CyDelayUs
-                0x00000a38       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
-                0x00000a38                CyDelayUs
+                0x000008f8       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x000008f8                CyDelayUs
  .text.CySysClkWcoEnabled
-                0x00000a4c       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
-                0x00000a4c                CySysClkWcoEnabled
+                0x0000090c       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+                0x0000090c                CySysClkWcoEnabled
  .text.CySysWdtDisable
-                0x00000a60       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
-                0x00000a60                CySysWdtDisable
+                0x00000920       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+                0x00000920                CySysWdtDisable
  .text.LED_Write
-                0x00000a70       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
-                0x00000a70                LED_Write
+                0x00000930       0x18 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+                0x00000930                LED_Write
  .text.LED_Read
-                0x00000a88       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
-                0x00000a88                LED_Read
- *fill*         0x00000a98        0x8 
- .text          0x00000aa0       0xd4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
-                0x00000aa0                UART_PutChar
- *fill*         0x00000b74        0x4 
- .text          0x00000b78       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
-                0x00000b78                CyDelayCycles
-                0x00000b8a                CyEnterCriticalSection
-                0x00000b92                CyExitCriticalSection
+                0x00000948       0x10 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+                0x00000948                LED_Read
+ *fill*         0x00000958        0x8 
+ .text          0x00000960       0xd4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
+                0x00000960                UART_PutChar
+ *fill*         0x00000a34        0x4 
+ .text          0x00000a38       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
+                0x00000a38                CyDelayCycles
+                0x00000a4a                CyEnterCriticalSection
+                0x00000a52                CyExitCriticalSection
+ .text.nRF24_read_register
+                0x00000a58       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+                0x00000a58                nRF24_read_register
+ .text.nRF24_write_register
+                0x00000a90       0x34 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+                0x00000a90                nRF24_write_register
+ .text.nRF24_write_long_register
+                0x00000ac4       0x3c .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+                0x00000ac4                nRF24_write_long_register
  .text.CySysFlashSetWaitCycles
-                0x00000b98       0x54 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
-                0x00000b98                CySysFlashSetWaitCycles
- .text          0x00000bec      0x114 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
-                0x00000bec                __aeabi_uidiv
-                0x00000bec                __udivsi3
-                0x00000cf8                __aeabi_uidivmod
- .text          0x00000d00        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
-                0x00000d00                __aeabi_idiv0
-                0x00000d00                __aeabi_ldiv0
- .text.__errno  0x00000d04        0xc c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
-                0x00000d04                __errno
+                0x00000b00       0x54 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
+                0x00000b00                CySysFlashSetWaitCycles
+ .text          0x00000b54      0x114 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                0x00000b54                __aeabi_uidiv
+                0x00000b54                __udivsi3
+                0x00000c60                __aeabi_uidivmod
+ .text          0x00000c68        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x00000c68                __aeabi_idiv0
+                0x00000c68                __aeabi_ldiv0
+ .text.__errno  0x00000c6c        0xc c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00000c6c                __errno
  .text.__libc_init_array
-                0x00000d10       0x4c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
-                0x00000d10                __libc_init_array
- .text.memcpy   0x00000d5c       0x12 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x00000d5c                memcpy
+                0x00000c78       0x4c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x00000c78                __libc_init_array
+ .text.memcpy   0x00000cc4       0x12 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00000cc4                memcpy
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x00000d6e        0x0 linker stubs
+ .glue_7t       0x00000cd6        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x00000d6e        0x0 linker stubs
+ .glue_7        0x00000cd6        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x00000d6e        0x0 linker stubs
+ .vfp11_veneer  0x00000cd6        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00000d70        0x0
- .v4_bx         0x00000d70        0x0 linker stubs
+.v4_bx          0x00000cd8        0x0
+ .v4_bx         0x00000cd8        0x0 linker stubs
 
-.iplt           0x00000d70        0x0
- .iplt          0x00000d70        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x00000cd8        0x0
+ .iplt          0x00000cd8        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00000d70        0x4
+.eh_frame       0x00000cd8        0x4
  *(.eh_frame)
- .eh_frame      0x00000d70        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .eh_frame      0x00000d70        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .eh_frame      0x00000cd8        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x00000cd8        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000d74                __exidx_end = .
+                0x00000cdc                __exidx_end = .
 
-.rodata         0x00000d74       0x9c
+.rodata         0x00000cdc       0x6c
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00000d74        0x5 .\CortexM0p\ARM_GCC_541\Debug\main.o
- *fill*         0x00000d79        0x3 
+ .rodata        0x00000cdc        0x5 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ *fill*         0x00000ce1        0x3 
  .rodata.str1.4
-                0x00000d7c       0x14 .\CortexM0p\ARM_GCC_541\Debug\main.o
- .rodata        0x00000d90       0x30 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .rodata        0x00000dc0       0x17 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
-                0x00000dc0                cyImoFreqMhz2DpllOffset
+                0x00000ce4       0x14 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .rodata        0x00000cf8       0x17 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x00000cf8                cyImoFreqMhz2DpllOffset
  .rodata.str1.1
-                0x00000dd7        0x2 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
-                0x00000ddc                . = ALIGN (0x4)
- *fill*         0x00000dd9        0x3 
+                0x00000d0f        0x2 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x00000d14                . = ALIGN (0x4)
+ *fill*         0x00000d11        0x3 
  *(.init)
- .init          0x00000ddc        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00000ddc                _init
- .init          0x00000de0        0x8 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x00000de8                . = ALIGN (0x4)
-                0x00000de8                __preinit_array_start = .
+ .init          0x00000d14        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00000d14                _init
+ .init          0x00000d18        0x8 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00000d20                . = ALIGN (0x4)
+                0x00000d20                __preinit_array_start = .
  *(.preinit_array)
-                0x00000de8                __preinit_array_end = .
-                0x00000de8                . = ALIGN (0x4)
-                0x00000de8                __init_array_start = .
+                0x00000d20                __preinit_array_end = .
+                0x00000d20                . = ALIGN (0x4)
+                0x00000d20                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00000de8        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .init_array    0x00000dec        0x4 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
-                0x00000df0                __init_array_end = .
-                0x00000df0                . = ALIGN (0x4)
+ .init_array    0x00000d20        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x00000d24        0x4 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x00000d28                __init_array_end = .
+                0x00000d28                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00000df0        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00000df0                _fini
- .fini          0x00000df4        0x8 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x00000dfc                . = ALIGN (0x4)
-                0x00000dfc                __fini_array_start = .
+ .fini          0x00000d28        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00000d28                _fini
+ .fini          0x00000d2c        0x8 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00000d34                . = ALIGN (0x4)
+                0x00000d34                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00000dfc        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .fini_array    0x00000d34        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00000e00                __fini_array_end = .
-                0x00000e00                . = ALIGN (0x4)
+                0x00000d38                __fini_array_end = .
+                0x00000d38                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00000e00                . = ALIGN (0x4)
+                0x00000d38                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00000e00                . = ALIGN (0x4)
-                0x00000e00                __cy_regions = .
-                0x00000e00        0x4 LONG 0xe10 __cy_region_init_ram
-                0x00000e04        0x4 LONG 0x20000080 __cy_region_start_data
-                0x00000e08        0x4 LONG 0x88 __cy_region_init_size_ram
-                0x00000e0c        0x4 LONG 0x30 __cy_region_zero_size_ram
-                0x00000e10                __cy_regions_end = .
-                0x00000e10                . = ALIGN (0x8)
-                0x00000e10                _etext = .
+                0x00000d38                . = ALIGN (0x4)
+                0x00000d38                __cy_regions = .
+                0x00000d38        0x4 LONG 0xd48 __cy_region_init_ram
+                0x00000d3c        0x4 LONG 0x20000080 __cy_region_start_data
+                0x00000d40        0x4 LONG 0x88 __cy_region_init_size_ram
+                0x00000d44        0x4 LONG 0x30 __cy_region_zero_size_ram
+                0x00000d48                __cy_regions_end = .
+                0x00000d48                . = ALIGN (0x8)
+                0x00000d48                _etext = .
 
 .cy_checksum_exclude
-                0x00000e10        0x0
+                0x00000d48        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x20000000       0x80
@@ -890,7 +887,7 @@ END GROUP
 .noinit
  *(.noinit)
 
-.data           0x20000080       0x88 load address 0x00000e10
+.data           0x20000080       0x88 load address 0x00000d48
                 0x20000080                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x20000080        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
@@ -918,10 +915,10 @@ END GROUP
  *(.ram)
                 0x20000108                _edata = .
 
-.igot.plt       0x20000108        0x0 load address 0x00000e98
+.igot.plt       0x20000108        0x0 load address 0x00000dd0
  .igot.plt      0x20000108        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x20000108       0x30 load address 0x00000e98
+.bss            0x20000108       0x30 load address 0x00000dd0
                 0x20000108                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -944,11 +941,11 @@ END GROUP
                 0x20000138                __end = .
                 0x20000138                PROVIDE (end, .)
                 0x20000138                PROVIDE (__bss_end__, .)
-                0x00000e10                __cy_region_init_ram = LOADADDR (.data)
+                0x00000d48                __cy_region_init_ram = LOADADDR (.data)
                 0x00000088                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000030                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x20000138       0x80 load address 0x00000e98
+.heap           0x20000138       0x80 load address 0x00000dd0
                 0x20000138                . = _end
                 0x200001b8                . = (. + 0x80)
  *fill*         0x20000138       0x80 
@@ -988,8 +985,8 @@ END GROUP
                 0x90600000        0x1 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x00000e98        0x0 load address 0x90600004
- .rel.iplt      0x00000e98        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x00000dd0        0x0 load address 0x90600004
+ .rel.iplt      0x00000dd0        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -1020,211 +1017,211 @@ END GROUP
  .debug_aranges
                 0x00000068       0x48 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
  .debug_aranges
-                0x000000b0      0x218 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
+                0x000000b0      0x218 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
  .debug_aranges
-                0x000002c8       0x58 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+                0x000002c8       0x68 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
  .debug_aranges
-                0x00000320       0x68 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
+                0x00000330       0x50 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
  .debug_aranges
-                0x00000388       0x50 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+                0x00000380       0x58 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
  .debug_aranges
-                0x000003d8       0x58 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+                0x000003d8       0x60 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
  .debug_aranges
-                0x00000430       0x60 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+                0x00000438       0x40 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
  .debug_aranges
-                0x00000490       0x40 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+                0x00000478       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
  .debug_aranges
-                0x000004d0       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+                0x000004c0       0x80 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
  .debug_aranges
-                0x00000518       0x80 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+                0x00000540       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
  .debug_aranges
-                0x00000598       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+                0x00000588       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
  .debug_aranges
-                0x000005e0       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+                0x000005d0       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
  .debug_aranges
-                0x00000628       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+                0x00000618      0x190 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
  .debug_aranges
-                0x00000670      0x190 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x000007a8       0xd8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
  .debug_aranges
-                0x00000800       0xd8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+                0x00000880       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
  .debug_aranges
-                0x000008d8       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+                0x000008c8       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
  .debug_aranges
-                0x00000920       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
+                0x000008e8       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x00000940       0x20 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
+                0x00000908       0x58 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
  .debug_aranges
                 0x00000960       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x555f
+.debug_info     0x00000000     0x5515
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x41c .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_info    0x0000041c       0xfb .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_info    0x00000517       0xf8 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
  .debug_info    0x0000060f      0x3a5 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_info    0x000009b4     0x15d9 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_info    0x00001f8d      0x618 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .debug_info    0x000025a5      0x672 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_info    0x00002c17      0x2c4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
- .debug_info    0x00002edb      0x23a .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
- .debug_info    0x00003115      0x220 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
- .debug_info    0x00003335      0x1a0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
- .debug_info    0x000034d5      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
- .debug_info    0x00003672      0x305 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
- .debug_info    0x00003977      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
- .debug_info    0x00003b14      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
- .debug_info    0x00003cb1      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
- .debug_info    0x00003e4e      0xbd0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
- .debug_info    0x00004a1e      0x444 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
- .debug_info    0x00004e62      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
- .debug_info    0x00004fff       0xa4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
- .debug_info    0x000050a3       0xa5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
- .debug_info    0x00005148      0x417 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
+ .debug_info    0x000009b4     0x156d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .debug_info    0x00001f21      0x682 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .debug_info    0x000025a3      0x2c4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+ .debug_info    0x00002867      0x23a .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+ .debug_info    0x00002aa1      0x220 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+ .debug_info    0x00002cc1      0x1a0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+ .debug_info    0x00002e61      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+ .debug_info    0x00002ffe      0x305 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+ .debug_info    0x00003303      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+ .debug_info    0x000034a0      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+ .debug_info    0x0000363d      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+ .debug_info    0x000037da      0xbd0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+ .debug_info    0x000043aa      0x444 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+ .debug_info    0x000047ee      0x19d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .debug_info    0x0000498b       0xa4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
+ .debug_info    0x00004a2f       0xa5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
+ .debug_info    0x00004ad4      0x62a .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .debug_info    0x000050fe      0x417 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
 
-.debug_abbrev   0x00000000     0x1745
+.debug_abbrev   0x00000000     0x177f
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x124 .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_abbrev  0x00000124       0xa3 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_abbrev  0x000001c7       0x5d .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
  .debug_abbrev  0x00000224      0x1d0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_abbrev  0x000003f4      0x152 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_abbrev  0x00000546      0x165 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .debug_abbrev  0x000006ab      0x172 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_abbrev  0x0000081d      0x109 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
- .debug_abbrev  0x00000926       0xd5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
- .debug_abbrev  0x000009fb      0x14f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
- .debug_abbrev  0x00000b4a       0xfb .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
- .debug_abbrev  0x00000c45       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
- .debug_abbrev  0x00000d0d      0x19a .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
- .debug_abbrev  0x00000ea7       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
- .debug_abbrev  0x00000f6f       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
- .debug_abbrev  0x00001037       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
- .debug_abbrev  0x000010ff      0x209 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
- .debug_abbrev  0x00001308      0x1af .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
- .debug_abbrev  0x000014b7       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
- .debug_abbrev  0x0000157f       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
- .debug_abbrev  0x00001593       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
- .debug_abbrev  0x000015a7      0x19e .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
+ .debug_abbrev  0x000003f4      0x152 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .debug_abbrev  0x00000546      0x181 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .debug_abbrev  0x000006c7      0x109 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+ .debug_abbrev  0x000007d0       0xd5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+ .debug_abbrev  0x000008a5      0x14f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+ .debug_abbrev  0x000009f4       0xfb .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+ .debug_abbrev  0x00000aef       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+ .debug_abbrev  0x00000bb7      0x19a .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+ .debug_abbrev  0x00000d51       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+ .debug_abbrev  0x00000e19       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+ .debug_abbrev  0x00000ee1       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+ .debug_abbrev  0x00000fa9      0x209 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+ .debug_abbrev  0x000011b2      0x1af .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+ .debug_abbrev  0x00001361       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .debug_abbrev  0x00001429       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
+ .debug_abbrev  0x0000143d       0x14 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00001451      0x190 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .debug_abbrev  0x000015e1      0x19e .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
 
-.debug_line     0x00000000     0x261d
+.debug_line     0x00000000     0x2603
  *(.debug_line)
- .debug_line    0x00000000      0x1c0 .\CortexM0p\ARM_GCC_541\Debug\main.o
- .debug_line    0x000001c0       0x87 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x00000247      0x141 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00000388      0x247 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_line    0x000005cf      0x730 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_line    0x00000cff      0x2e3 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .debug_line    0x00000fe2      0x31b .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_line    0x000012fd       0xea .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
- .debug_line    0x000013e7      0x108 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
- .debug_line    0x000014ef      0x119 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
- .debug_line    0x00001608       0xe7 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
- .debug_line    0x000016ef       0xbb .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
- .debug_line    0x000017aa      0x153 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
- .debug_line    0x000018fd       0xba .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
- .debug_line    0x000019b7       0xba .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
- .debug_line    0x00001a71       0xc2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
- .debug_line    0x00001b33      0x4c5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
- .debug_line    0x00001ff8      0x284 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
- .debug_line    0x0000227c       0xbb .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
- .debug_line    0x00002337       0x9d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
- .debug_line    0x000023d4       0x68 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
- .debug_line    0x0000243c      0x1e1 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
+ .debug_line    0x00000000      0x1b8 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_line    0x000001b8       0x87 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x0000023f      0x141 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000380      0x247 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_line    0x000005c7      0x716 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .debug_line    0x00000cdd      0x321 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .debug_line    0x00000ffe       0xea .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+ .debug_line    0x000010e8      0x108 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+ .debug_line    0x000011f0      0x119 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+ .debug_line    0x00001309       0xe7 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+ .debug_line    0x000013f0       0xbb .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+ .debug_line    0x000014ab      0x153 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+ .debug_line    0x000015fe       0xba .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+ .debug_line    0x000016b8       0xba .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+ .debug_line    0x00001772       0xc2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+ .debug_line    0x00001834      0x4c5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+ .debug_line    0x00001cf9      0x284 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+ .debug_line    0x00001f7d       0xbb .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .debug_line    0x00002038       0x9d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
+ .debug_line    0x000020d5       0x68 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
+ .debug_line    0x0000213d      0x2e5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .debug_line    0x00002422      0x1e1 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
 
-.debug_frame    0x00000000     0x17ec
+.debug_frame    0x00000000     0x1804
  *(.debug_frame)
  .debug_frame   0x00000000       0x48 .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_frame   0x00000048       0x48 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_frame   0x00000090       0xbc .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_frame   0x0000014c      0x6dc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_frame   0x00000828      0x108 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .debug_frame   0x00000930      0x140 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_frame   0x00000a70       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
- .debug_frame   0x00000b38       0xd8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
- .debug_frame   0x00000c10       0xb0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
- .debug_frame   0x00000cc0       0x78 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
- .debug_frame   0x00000d38       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
- .debug_frame   0x00000da8      0x110 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
- .debug_frame   0x00000eb8       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
- .debug_frame   0x00000f28       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
- .debug_frame   0x00000f98       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
- .debug_frame   0x00001008      0x414 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
- .debug_frame   0x0000141c      0x1dc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
- .debug_frame   0x000015f8       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
- .debug_frame   0x00001668       0xa8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
- .debug_frame   0x00001710       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x00001730       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x00001750       0x28 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x00001778       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x000017a4       0x28 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x000017cc       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000014c      0x6f4 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .debug_frame   0x00000840      0x140 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .debug_frame   0x00000980       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+ .debug_frame   0x00000a48       0xd8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+ .debug_frame   0x00000b20       0xb0 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+ .debug_frame   0x00000bd0       0x78 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+ .debug_frame   0x00000c48       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+ .debug_frame   0x00000cb8      0x110 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+ .debug_frame   0x00000dc8       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+ .debug_frame   0x00000e38       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+ .debug_frame   0x00000ea8       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+ .debug_frame   0x00000f18      0x414 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+ .debug_frame   0x0000132c      0x1dc .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+ .debug_frame   0x00001508       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .debug_frame   0x00001578      0x108 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .debug_frame   0x00001680       0xa8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
+ .debug_frame   0x00001728       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00001748       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00001768       0x28 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00001790       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000017bc       0x28 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000017e4       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x23a5
+.debug_str      0x00000000     0x2545
  *(.debug_str)
- .debug_str     0x00000000      0x4e9 .\CortexM0p\ARM_GCC_541\Debug\main.o
-                                0x53b (size before relaxing)
- .debug_str     0x000004e9       0x60 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x00000000      0x513 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                                0x57b (size before relaxing)
+ .debug_str     0x00000513       0x60 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x1f4 (size before relaxing)
- .debug_str     0x00000549       0x59 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00000573       0x59 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
                                 0x1e1 (size before relaxing)
- .debug_str     0x000005a2      0x15c .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_str     0x000005cc      0x156 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
                                 0x328 (size before relaxing)
- .debug_str     0x000006fe      0xb01 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
-                                0xfbf (size before relaxing)
- .debug_str     0x000011ff      0x1b1 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
-                                0x5b1 (size before relaxing)
- .debug_str     0x000013b0       0x5f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
-                                0x49a (size before relaxing)
- .debug_str     0x0000140f       0xee .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+ .debug_str     0x00000722      0xc7a .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+                               0x1183 (size before relaxing)
+ .debug_str     0x0000139c      0x1c5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+                                0x495 (size before relaxing)
+ .debug_str     0x00001561       0xee .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
                                 0x2b0 (size before relaxing)
- .debug_str     0x000014fd       0xe7 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+ .debug_str     0x0000164f       0xe7 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
                                 0x29f (size before relaxing)
- .debug_str     0x000015e4       0x9d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+ .debug_str     0x00001736       0x9d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
                                 0x2dd (size before relaxing)
- .debug_str     0x00001681       0x94 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+ .debug_str     0x000017d3       0x94 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
                                 0x275 (size before relaxing)
- .debug_str     0x00001715       0x8a .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+ .debug_str     0x00001867       0x90 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
                                 0x241 (size before relaxing)
- .debug_str     0x0000179f      0x146 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+ .debug_str     0x000018f7      0x146 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
                                 0x31f (size before relaxing)
- .debug_str     0x000018e5       0x69 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+ .debug_str     0x00001a3d       0x69 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
                                 0x23a (size before relaxing)
- .debug_str     0x0000194e       0x69 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+ .debug_str     0x00001aa6       0x69 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
                                 0x23a (size before relaxing)
- .debug_str     0x000019b7       0x99 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+ .debug_str     0x00001b0f       0x99 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
                                 0x272 (size before relaxing)
- .debug_str     0x00001a50      0x4f9 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+ .debug_str     0x00001ba8      0x4f9 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
                                 0x73c (size before relaxing)
- .debug_str     0x00001f49      0x2d9 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+ .debug_str     0x000020a1      0x2d9 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
                                 0x4d3 (size before relaxing)
- .debug_str     0x00002222       0x66 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .debug_str     0x0000237a       0x66 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
                                 0x241 (size before relaxing)
- .debug_str     0x00002288      0x11d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
+ .debug_str     0x000023e0       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+                                0x5bc (size before relaxing)
+ .debug_str     0x00002428      0x11d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
                                 0x33b (size before relaxing)
 
-.debug_loc      0x00000000     0x20af
+.debug_loc      0x00000000     0x201a
  *(.debug_loc)
  .debug_loc     0x00000000       0x26 .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_loc     0x00000026      0x14f .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_loc     0x00000175      0x8e7 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_loc     0x00000a5c      0x2c6 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .debug_loc     0x00000d22      0x1eb .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_loc     0x00000f0d      0x12d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
- .debug_loc     0x0000103a       0x7e .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
- .debug_loc     0x000010b8       0x96 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
- .debug_loc     0x0000114e       0xc1 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
- .debug_loc     0x0000120f       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
- .debug_loc     0x000012b1       0x82 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
- .debug_loc     0x00001333       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
- .debug_loc     0x000013d5       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
- .debug_loc     0x00001477       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
- .debug_loc     0x00001519      0x5e3 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
- .debug_loc     0x00001afc      0x354 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
- .debug_loc     0x00001e50       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
- .debug_loc     0x00001ef2      0x1bd .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
+ .debug_loc     0x00000175      0x814 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .debug_loc     0x00000989      0x20a .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .debug_loc     0x00000b93      0x12d .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+ .debug_loc     0x00000cc0       0x7e .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+ .debug_loc     0x00000d3e       0x96 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+ .debug_loc     0x00000dd4       0xc1 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+ .debug_loc     0x00000e95       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+ .debug_loc     0x00000f37       0x82 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+ .debug_loc     0x00000fb9       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+ .debug_loc     0x0000105b       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+ .debug_loc     0x000010fd       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+ .debug_loc     0x0000119f      0x5e3 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+ .debug_loc     0x00001782      0x354 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+ .debug_loc     0x00001ad6       0xa2 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .debug_loc     0x00001b78      0x2e5 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+ .debug_loc     0x00001e5d      0x1bd .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1234,21 +1231,21 @@ END GROUP
  .debug_ranges  0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\main.o
  .debug_ranges  0x00000018       0x18 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_ranges  0x00000030       0x38 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .debug_ranges  0x00000068      0x208 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .debug_ranges  0x00000270       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .debug_ranges  0x000002b8       0x58 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
- .debug_ranges  0x00000310       0x40 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
- .debug_ranges  0x00000350       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
- .debug_ranges  0x00000398       0x50 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
- .debug_ranges  0x000003e8       0x30 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
- .debug_ranges  0x00000418       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
- .debug_ranges  0x00000450       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
- .debug_ranges  0x000004c0       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
- .debug_ranges  0x000004f8       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
- .debug_ranges  0x00000530       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
- .debug_ranges  0x00000568      0x180 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
- .debug_ranges  0x000006e8       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
- .debug_ranges  0x000007b0       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .debug_ranges  0x00000068      0x208 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .debug_ranges  0x00000270       0x58 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
+ .debug_ranges  0x000002c8       0x40 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+ .debug_ranges  0x00000308       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+ .debug_ranges  0x00000350       0x50 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+ .debug_ranges  0x000003a0       0x30 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+ .debug_ranges  0x000003d0       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+ .debug_ranges  0x00000408       0x70 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+ .debug_ranges  0x00000478       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+ .debug_ranges  0x000004b0       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+ .debug_ranges  0x000004e8       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+ .debug_ranges  0x00000520      0x180 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+ .debug_ranges  0x000006a0       0xc8 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+ .debug_ranges  0x00000768       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .debug_ranges  0x000007a0       0x48 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
  .debug_ranges  0x000007e8       0x38 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
 
 .comment        0x00000000       0x6e
@@ -1257,9 +1254,8 @@ END GROUP
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
- .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
- .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
- .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
@@ -1272,6 +1268,7 @@ END GROUP
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
  .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
 
 .debug_weaknames
@@ -1307,39 +1304,39 @@ END GROUP
  .ARM.attributes
                 0x000000fb       0x32 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
  .ARM.attributes
-                0x0000012d       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_FUNCS.o)
+                0x0000012d       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_FUNCS.o)
  .ARM.attributes
-                0x0000015f       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
+                0x0000015f       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_COMMANDS.o)
  .ARM.attributes
-                0x00000191       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_NRF_COMMANDS.o)
+                0x00000191       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
  .ARM.attributes
-                0x000001c3       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART.o)
+                0x000001c3       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
  .ARM.attributes
-                0x000001f5       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI.o)
+                0x000001f5       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
  .ARM.attributes
-                0x00000227       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI_UART.o)
+                0x00000227       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
  .ARM.attributes
-                0x00000259       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_SPI.o)
+                0x00000259       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
  .ARM.attributes
-                0x0000028b       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(IRQ.o)
+                0x0000028b       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
  .ARM.attributes
-                0x000002bd       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(isr_IRQ.o)
+                0x000002bd       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
  .ARM.attributes
-                0x000002ef       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SS.o)
+                0x000002ef       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
  .ARM.attributes
-                0x00000321       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CE.o)
+                0x00000321       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
  .ARM.attributes
-                0x00000353       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(SPI_sclk_m.o)
+                0x00000353       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
  .ARM.attributes
-                0x00000385       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLib.o)
+                0x00000385       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
  .ARM.attributes
-                0x000003b7       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyLFClk.o)
+                0x000003b7       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
  .ARM.attributes
-                0x000003e9       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(LED.o)
+                0x000003e9       0x22 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
  .ARM.attributes
-                0x0000041b       0x22 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(UART_AsmGnu.o)
+                0x0000040b       0x22 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
  .ARM.attributes
-                0x0000043d       0x22 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyBootAsmGnu.o)
+                0x0000042d       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(nRF24_LL_SPI.o)
  .ARM.attributes
                 0x0000045f       0x32 .\CortexM0p\ARM_GCC_541\Debug\02_EnhancedShockBurst_Rx.a(CyFlash.o)
  .ARM.attributes

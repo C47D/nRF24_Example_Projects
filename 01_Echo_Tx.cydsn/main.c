@@ -38,8 +38,8 @@ int main(void)
     UART_PutString("Echo test project\r\n");
     
     nRF24_start();
-    nRF24_setRxPipe0Address(TX_ADDR, 5);
-    nRF24_setTxAddress(TX_ADDR, 5);
+    nRF24_set_rx_pipe_0_address(TX_ADDR, 5);
+    nRF24_set_tx_address(TX_ADDR, 5);
 
     while (1) {
         
@@ -53,19 +53,19 @@ int main(void)
         UART_PutString("\r\nSending letter ");
         UART_PutChar(data);
         UART_PutString("\r\n");
-        nRF24_PTX_Transmit(&data, 1);
+        nRF24_transmit(&data, 1);
         
         while(false == irq_flag);
         
         // TX_DT IRQ is asserted when the ACK packet is received by the PTX.
-        nRF24_clearAllIRQs();
+        nRF24_clear_all_irqs();
         
         // wait until we get the ACK+payload
-        while(nRF24_isRXFIFOEmpty());
+        while(nRF24_is_rx_fifo_empty());
         
         UART_PutString("\r\nData received: ");
         // Get the data sent from the Rx
-        nRF24_getRxPayload(&received, 1);
+        nRF24_get_rx_payload(&received, 1);
         
         // print the received char
         char received_str[10];
@@ -82,7 +82,7 @@ int main(void)
 void print_status(void)
 {
     char array[10];
-    uint8_t sts = nRF24_getStatus();
+    uint8_t sts = nRF24_get_status();
     UART_PutString("Status: 0x");
     sprintf(array, "%02X\r\n", sts);
     UART_PutString(array);

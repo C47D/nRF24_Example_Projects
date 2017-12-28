@@ -48,9 +48,9 @@ int main(void)
     UART_PutString("Basic project, Rx\r\n");
     
     nRF24_start();
-    nRF24_setRxPipe0Address(RX_ADDR, 5);
-    nRF24_setTxAddress(RX_ADDR, 5);
-    nRF24_startListening();
+    nRF24_set_rx_pipe_0_address(RX_ADDR, 5);
+    nRF24_set_tx_address(RX_ADDR, 5);
+    nRF24_start_listening();
     
     while (1) {
         
@@ -59,16 +59,16 @@ int main(void)
             // Get and clear the flag that caused the IRQ interrupt,
             // in this project the only IRQ cause is the caused by
             // receiving data (NRF_STATUS_RX_DR_MASK)
-            NrfIRQ flag = nRF24_getIRQFlag();
-            nRF24_clearIRQFlag(flag);
+            nrf_irq flag = nRF24_get_irq_flag();
+            nRF24_clear_irq_flag(flag);
             
             LED_Write(~LED_Read());
             
             // How many bytes are in the pipe0 (data received)?
-            uint8_t payload_size = nRF24_getPayloadSize(NRF_PIPE0);
+            uint8_t payload_size = nRF24_get_payload_size(NRF_PIPE0_PAYLOAD_SIZE);
             
             // get the data from the transmitter
-            nRF24_getRxPayload(&data, payload_size);
+            nRF24_get_rx_payload(&data, payload_size);
             
             // send data via UART
             UART_PutChar(data);

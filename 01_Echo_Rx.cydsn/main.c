@@ -28,11 +28,11 @@ int main(void)
     
     nRF24_start();
     // Uploading Payload for ACK packet
-    nRF24_rxWritePayload(NRF_PIPE0, &count, 1);
+    nRF24_rx_write_payload(NRF_PIPE0, &count, 1);
     
-    nRF24_setRxPipe0Address(RX_ADDR, 5);
-    nRF24_setTxAddress(RX_ADDR, 5);
-    nRF24_startListening();
+    nRF24_set_rx_pipe_0_address(RX_ADDR, 5);
+    nRF24_set_tx_address(RX_ADDR, 5);
+    nRF24_start_listening();
 
     while (1) {
         
@@ -40,14 +40,14 @@ int main(void)
         while(false == irq_flag);
         
         // The RX_DR IRQ is asserted after the packet is received by the PRX
-        nRF24_clearIRQFlag(NRF_RX_DR_IRQ);
+        nRF24_clear_irq_flag(NRF_RX_DR_IRQ);
         
         // Get the data
-        nRF24_getRxPayload(&data, 1);
+        nRF24_get_rx_payload(&data, 1);
         
         // increment 'count' and put it on the TX FIFO for the next ACK packet
         count++;
-        nRF24_rxWritePayload(NRF_PIPE0, &count, 1);
+        nRF24_rx_write_payload(NRF_PIPE0, &count, 1);
         
         irq_flag = false;
         

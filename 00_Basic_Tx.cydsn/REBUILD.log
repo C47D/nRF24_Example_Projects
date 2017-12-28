@@ -1,0 +1,90 @@
+--------------- Rebuild Started: 12/27/2017 21:27:08 Project: 00_Basic_Tx, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\main.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\cymetadata.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\nRF24_LL_SPI.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_SPI_UART.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_SPI.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_BOOT.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_SPI_BOOT.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SS.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SS_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\IRQ.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\IRQ_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\isr_IRQ.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\CE.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\CE_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_SCBCLK.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_sclk_m.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_sclk_m_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_miso_m.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_miso_m_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_mosi_m.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\SPI_mosi_m_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\Cm0Start.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\CyFlash.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\CyLib.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\cyPm.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\cyutils.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\CyLFClk.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\UART.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\UART_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\UART_INT.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\UART_BOOT.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\UART_IntClock.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\LED.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\LED_PM.o"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\00_Basic_Tx.hex"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\00_Basic_Tx.elf"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\00_Basic_Tx.map"
+Deleting file ".\00_Basic_Tx.cycdx"
+Deleting file ".\00_Basic_Tx.svd"
+Deleting file ".\00_Basic_Tx.rpt"
+Deleting file ".\00_Basic_Tx_timing.html"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
+Deleting file ".\CortexM0\ARM_GCC_541\Debug\.deps\SOURCE_ASM__ARM_GCC_GENERIC.P"
+cydsfit.exe -.appdatapath "C:\Users\Xwx47\AppData\Local\Cypress Semiconductor\PSoC Creator\4.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\00_Basic_Tx.cydsn\00_Basic_Tx.cyprj -d CY8C4245AXI-483 -s C:\Users\Xwx47\Documents\Creator\nRF24_Example_Projects\00_Basic_Tx.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
+main.c: In function 'main':
+main.c:33:5: warning: implicit declaration of function 'nRF24_setRxPipe0Address' [-Wimplicit-function-declaration]
+     nRF24_setRxPipe0Address(TX_ADDR, 5);
+     ^
+main.c:35:5: warning: implicit declaration of function 'nRF24_setTxAddress' [-Wimplicit-function-declaration]
+     nRF24_setTxAddress(TX_ADDR, 5);
+     ^
+main.c:49:9: warning: implicit declaration of function 'nRF24_PTX_Transmit' [-Wimplicit-function-declaration]
+         nRF24_PTX_Transmit(&data, 1);
+         ^
+main.c:57:9: error: unknown type name 'NrfIRQ'
+         NrfIRQ flag = nRF24_getIRQFlag();
+         ^
+main.c:57:23: warning: implicit declaration of function 'nRF24_getIRQFlag' [-Wimplicit-function-declaration]
+         NrfIRQ flag = nRF24_getIRQFlag();
+                       ^
+main.c:72:9: warning: implicit declaration of function 'nRF24_clearIRQFlag' [-Wimplicit-function-declaration]
+         nRF24_clearIRQFlag(flag);
+         ^
+main.c: In function 'print_status':
+main.c:84:22: warning: implicit declaration of function 'nRF24_getStatus' [-Wimplicit-function-declaration]
+     uint8_t status = nRF24_getStatus();
+                      ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 12/27/2017 21:28:16 ---------------

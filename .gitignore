@@ -1,6 +1,7 @@
 # Ignore PSoC Creator temp and user specific files
 
 # Ignore Archive directory, project bundles there
+scanner.cydsn/*
 opt_table.cydsn/*
 tests_c11.cydsn/*
 cli_tx.cydsn/*

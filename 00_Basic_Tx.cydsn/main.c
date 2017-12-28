@@ -30,9 +30,9 @@ int main(void)
     UART_PutString("Basic project: Tx\r\n");
     
     nRF24_start();
-    nRF24_setRxPipe0Address(TX_ADDR, 5);
+    nRF24_set_rx_pipe_0_address(TX_ADDR, 5);
     // set tx pipe address to match the receiver address
-    nRF24_setTxAddress(TX_ADDR, 5);
+    nRF24_set_tx_address(TX_ADDR, 5);
 
     while (1) {
     
@@ -46,7 +46,7 @@ int main(void)
         print_status();
         UART_PutString("\r\nSending letter ");
         UART_PutCRLF(data);
-        nRF24_PTX_Transmit(&data, 1);
+        nRF24_transmit(&data, 1);
         
         print_status();
         while(false == irq_flag);
@@ -54,7 +54,7 @@ int main(void)
         // Get and clear the flag that caused the IRQ interrupt,
         // in this project the only IRQ cause is the caused by
         // transmitting data (NRF_STATUS_TX_DS_MASK) or timeout
-        NrfIRQ flag = nRF24_getIRQFlag();
+        nrf_irq flag = nRF24_get_irq_flag();
         
         switch (flag) {
         case NRF_TX_DS_IRQ:
@@ -69,7 +69,7 @@ int main(void)
             break;
         }
         
-        nRF24_clearIRQFlag(flag);
+        nRF24_clear_irq_flag(flag);
         
         irq_flag = false;
         
@@ -81,7 +81,7 @@ int main(void)
 void print_status(void)
 {
     char status_str[20];
-    uint8_t status = nRF24_getStatus();
+    uint8_t status = nRF24_get_status();
     sprintf(status_str, "0x%2X\r\n", status);
     UART_PutString(status_str);
 }

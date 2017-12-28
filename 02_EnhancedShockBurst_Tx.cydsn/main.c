@@ -55,16 +55,16 @@ int main(void)
     nRF24_start();
     
     // set pipe0 addr to get the ACK from the receiver
-    nRF24_setRxPipe0Address(TX_ADDR, 5);
+    nRF24_set_rx_pipe_0_address(TX_ADDR, 5);
     // set tx pipe address to match the receiver address
-    nRF24_setTxAddress(TX_ADDR, 5);
+    nRF24_set_tx_address(TX_ADDR, 5);
     
     Timer_Start();
 
     while (1) {
         
         if (true == transfer_flag) {
-            nRF24_PTX_Transmit(&DATA[i], 1);
+            nRF24_transmit(&DATA[i], 1);
             i++;
             if (3 == i) {
                 i = 0;
@@ -77,8 +77,8 @@ int main(void)
             // Get and clear the flag that caused the IRQ interrupt,
             // in this project the only IRQ cause is the caused by
             // transmitting data (NRF_STATUS_TX_DS_MASK)
-            NrfIRQ flag = nRF24_getIRQFlag();
-            nRF24_clearIRQFlag(flag);
+            nrf_irq flag = nRF24_get_irq_flag();
+            nRF24_clear_irq_flag(flag);
             
             //UART_PutChar(0x0C);
             switch (flag) {
