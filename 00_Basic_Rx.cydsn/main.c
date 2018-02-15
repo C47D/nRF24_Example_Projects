@@ -29,7 +29,7 @@ int main(void)
     UART_PutString("Basic project, Rx\r\n");
     
     nRF24_start();
-    nRF24_set_rx_pipe_0_address(RX_ADDR, 5);
+    nRF24_set_rx_pipe_address(NRF_ADDR_PIPE0, RX_ADDR, 5);
     nRF24_start_listening();
     
     while (1) {

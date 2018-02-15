@@ -38,7 +38,7 @@ int main(void)
     UART_PutString("Echo test project\r\n");
     
     nRF24_start();
-    nRF24_set_rx_pipe_0_address(TX_ADDR, 5);
+    nRF24_set_rx_pipe_address(NRF_ADDR_PIPE0, TX_ADDR, 5);
     nRF24_set_tx_address(TX_ADDR, 5);
 
     while (1) {

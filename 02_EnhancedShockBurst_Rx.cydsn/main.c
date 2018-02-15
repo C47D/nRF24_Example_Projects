@@ -48,7 +48,7 @@ int main(void)
     UART_PutString("Basic project, Rx\r\n");
     
     nRF24_start();
-    nRF24_set_rx_pipe_0_address(RX_ADDR, 5);
+    nRF24_set_rx_pipe_address(NRF_ADDR_PIPE0, RX_ADDR, 5);
     nRF24_set_tx_address(RX_ADDR, 5);
     nRF24_start_listening();
     
@@ -65,7 +65,7 @@ int main(void)
             LED_Write(~LED_Read());
             
             // How many bytes are in the pipe0 (data received)?
-            uint8_t payload_size = nRF24_get_payload_size(NRF_PIPE0_PAYLOAD_SIZE);
+            uint8_t payload_size = nRF24_get_payload_size(NRF_PLD_SIZE_PIPE0);
             
             // get the data from the transmitter
             nRF24_get_rx_payload(&data, payload_size);

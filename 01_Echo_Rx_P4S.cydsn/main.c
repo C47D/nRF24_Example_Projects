@@ -38,7 +38,7 @@ int main(void)
     
     nRF24_rx_write_payload(NRF_PIPE0, &count, 1);
     
-    nRF24_set_rx_pipe_0_address(RX_ADDR, 5);
+    nRF24_set_rx_pipe_address(NRF_ADDR_PIPE0, RX_ADDR, 5);
     nRF24_set_tx_address(RX_ADDR, 5);
     
     nRF24_start_listening();

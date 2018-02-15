@@ -30,7 +30,7 @@ int main(void)
     UART_PutString("Basic project: Tx\r\n");
     
     nRF24_start();
-    nRF24_set_rx_pipe_0_address(TX_ADDR, 5);
+    nRF24_set_rx_pipe_address(NRF_ADDR_PIPE0, TX_ADDR, 5);
     // set tx pipe address to match the receiver address
     nRF24_set_tx_address(TX_ADDR, 5);
 

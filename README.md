@@ -1,7 +1,7 @@
 # nRF24 Example Projects
 
 This repoitory contain multiple example projects using the nRF24 component for PSoC devices.
-The nRF24 component is developed in a separated repository, you can see it here: ![nRF24_Component](https://github.com/C47D/nRF24_Component).
+The nRF24 component is developed in a separated repository, you can see it here: [nRF24_Component](https://github.com/C47D/nRF24_Component).
 
 This projects are developed using PSoC Creator 4.1 and multiple PSoC kits, PSoC 4200 devices, PSoC 4S, PSoC 4M and PSoC 5LP devices.
 
