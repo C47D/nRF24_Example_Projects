@@ -1,15 +1,23 @@
 # Basic Rx
 
-This is the Radio receiver (Rx) part of the Basic project. The nRF24 radio is configured as follows:
+This is the Radio receiver (Rx) part of the Basic project.
+The nRF24 radio is configured as follows:
 
 
 
 
-Once the API is generated you have all the nRF24 component functions available, in this project we use the most basic features of the nRF24 radio. All the application is written on the main.c file.
+Once the API is generated you have all the nRF24 component functions
+available, in this project we use the most basic features of the nRF24 radio.
+All the application is written on the main.c file.
 
-We will use the IRQ pin of the nRF24 to trigger an interrupt when the nRF24 radio gets an event, in this case the only interrupt enabled is the Rx interrupt ().
+We will use the IRQ pin of the nRF24 to trigger an interrupt when the nRF24
+radio gets an event, in this case the only interrupt enabled is the Rx
+interrupt.
 
-Assuming you already used PSoC before you should know that when using the interrupt component we can specify the function that will be executed when the interrupt is triggered, in this case the function to be executed is named ```C IRQ_Handler ``` and we configure it as follows:
+Assuming you already used PSoC before you should know that when using the
+interrupt component we can specify the function that will be executed when
+the interrupt is triggered, in this case the function to be executed is named
+```C IRQ_Handler ``` and we configure it as follows:
 
 ```C isr_IRQ_StartEx(IRQ_Handler) ```
 
