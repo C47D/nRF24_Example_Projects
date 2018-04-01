@@ -38,7 +38,24 @@ Tx: CY8CKIT-042 (PSoC4200)
 ## 01 Echo (Working)
 In this project the Tx radio will get 1 byte from the UART and send it to the Rx radio, the Rx radio will print the received data via UART and reply back with an ACK packet containing the count of received packets, the Tx radio will receive the ACK packet from the Rx radio and print it via UART.
 
-Rx: CY8CKIT-059 (PSoC5LP)
-Tx: CY8CKIT-042 (PSoC4200)
+PSoC Rx: CY8CKIT-059 (PSoC5LP)
+PSoC Tx: CY8CKIT-042 (PSoC4200)
+
+```
+                PSoC Tx            nRF24 Tx                   nRF24 Rx             PSoC Rx
+              +---------+  MOSI  +----------+               +-----------+  MOSI  +----------+
+   UART       |         +------->+          |               |           <--------+          |
++--------+ TX |         |  MISO  |          |               |           |  MISO  |          |
+|        +---->         <--------+          |     DATA      |           +-------->          |
++--------+    |         |  SCLK  |          |  +--------->  |           |  SCLK  |          |
+              |         +------->+          |               |           <--------+          |
+              |         |  /SS   |          |               |           |  /SS   |          |
+              |         +------->+          |     COUNT     |           <--------+          |
+              |         |  CE    |          |  <----------  |           |  CE    |          |
+              |         +------->+          |               |           <--------+          |
+              |         |  IRQ   |          |               |           |  IRQ   |          |
+              |         +--------+          |               |           +-------->          |
+              +---------+        +----------+               +-----------+        +----------+
+```
 
 ## More examples to come...
