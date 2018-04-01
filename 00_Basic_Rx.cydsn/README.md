@@ -17,9 +17,14 @@ interrupt.
 Assuming you already used PSoC before you should know that when using the
 interrupt component we can specify the function that will be executed when
 the interrupt is triggered, in this case the function to be executed is named
-```C IRQ_Handler ``` and we configure it as follows:
+```C
+IRQ_Handler 
+```
+and we configure it as follows:
 
-```C isr_IRQ_StartEx(IRQ_Handler) ```
+```C
+isr_IRQ_StartEx(IRQ_Handler)
+```
 
 Next we start the UART component:
 

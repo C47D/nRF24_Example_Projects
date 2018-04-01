@@ -2,7 +2,7 @@
  * 01_Echo_Rx
  * 
  * The nrf24 radio is configured to send back ACK + 1 byte payload.
- * The payload byte is the last received char turned into uppercase.
+ * The payload byte is the cound of received data packets.
  */
 #include "project.h"
 #include <stdbool.h>
