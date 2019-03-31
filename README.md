@@ -77,4 +77,8 @@ PSoC Tx: CY8CKIT-042 (PSoC4200)
               +---------+        +----------+               +-----------+        +----------+
 ```
 
+## Custom SPI DMA
+
+Here the user uses a custom function to handle all the SPI communication via DMA. Available since component v3.0.
+
 ## More examples to come...

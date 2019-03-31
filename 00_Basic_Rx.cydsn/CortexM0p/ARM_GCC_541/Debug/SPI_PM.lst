@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
   28:Generated_Source\PSoC4/SPI_PM.c **** #endif /* (SPI_SCB_MODE_EZI2C_INC) */
   29:Generated_Source\PSoC4/SPI_PM.c **** 
   30:Generated_Source\PSoC4/SPI_PM.c **** #if(SPI_SCB_MODE_SPI_INC || SPI_SCB_MODE_UART_INC)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 2
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 2
 
 
   31:Generated_Source\PSoC4/SPI_PM.c ****     #include "SPI_SPI_UART_PVT.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
   77:Generated_Source\PSoC4/SPI_PM.c ****     if(SPI_SCB_WAKE_ENABLE_CHECK)
   78:Generated_Source\PSoC4/SPI_PM.c ****     {
   79:Generated_Source\PSoC4/SPI_PM.c ****         if(SPI_SCB_MODE_I2C_RUNTM_CFG)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 3
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 3
 
 
   80:Generated_Source\PSoC4/SPI_PM.c ****         {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
   41 000a 1370     		strb	r3, [r2]
  129:Generated_Source\PSoC4/SPI_PM.c **** 
  130:Generated_Source\PSoC4/SPI_PM.c ****         if(0u != SPI_backup.enableState)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 4
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 4
 
 
   42              		.loc 1 130 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  160:Generated_Source\PSoC4/SPI_PM.c **** {
   67              		.loc 1 160 0
   68              		.cfi_startproc
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 5
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 5
 
 
   69              		@ args = 0, pretend = 0, frame = 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  209:Generated_Source\PSoC4/SPI_PM.c **** 
  210:Generated_Source\PSoC4/SPI_PM.c ****     #else
  211:Generated_Source\PSoC4/SPI_PM.c **** 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 6
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 6
 
 
  212:Generated_Source\PSoC4/SPI_PM.c ****         if(0u != SPI_backup.enableState)
@@ -348,40 +348,40 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  110 0006 00000000 		.4byte	.Ldebug_abbrev0
  111 000a 04       		.byte	0x4
  112 000b 01       		.uleb128 0x1
- 113 000c 72000000 		.4byte	.LASF22
+ 113 000c BC000000 		.4byte	.LASF22
  114 0010 0C       		.byte	0xc
- 115 0011 86010000 		.4byte	.LASF23
- 116 0015 04010000 		.4byte	.LASF24
+ 115 0011 82010000 		.4byte	.LASF23
+ 116 0015 43000000 		.4byte	.LASF24
  117 0019 00000000 		.4byte	.Ldebug_ranges0+0
  118 001d 00000000 		.4byte	0
  119 0021 00000000 		.4byte	.Ldebug_line0
  120 0025 02       		.uleb128 0x2
  121 0026 01       		.byte	0x1
  122 0027 06       		.byte	0x6
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 7
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 7
 
 
- 123 0028 BF010000 		.4byte	.LASF0
+ 123 0028 BB010000 		.4byte	.LASF0
  124 002c 02       		.uleb128 0x2
  125 002d 01       		.byte	0x1
  126 002e 08       		.byte	0x8
- 127 002f 59010000 		.4byte	.LASF1
+ 127 002f 5F010000 		.4byte	.LASF1
  128 0033 02       		.uleb128 0x2
  129 0034 02       		.byte	0x2
  130 0035 05       		.byte	0x5
- 131 0036 75010000 		.4byte	.LASF2
+ 131 0036 D3010000 		.4byte	.LASF2
  132 003a 02       		.uleb128 0x2
  133 003b 02       		.byte	0x2
  134 003c 07       		.byte	0x7
- 135 003d AC010000 		.4byte	.LASF3
+ 135 003d A8010000 		.4byte	.LASF3
  136 0041 02       		.uleb128 0x2
  137 0042 04       		.byte	0x4
  138 0043 05       		.byte	0x5
- 139 0044 6C010000 		.4byte	.LASF4
+ 139 0044 72010000 		.4byte	.LASF4
  140 0048 02       		.uleb128 0x2
  141 0049 04       		.byte	0x4
  142 004a 07       		.byte	0x7
- 143 004b 49000000 		.4byte	.LASF5
+ 143 004b 93000000 		.4byte	.LASF5
  144 004f 02       		.uleb128 0x2
  145 0050 08       		.byte	0x8
  146 0051 05       		.byte	0x5
@@ -389,7 +389,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  148 0056 02       		.uleb128 0x2
  149 0057 08       		.byte	0x8
  150 0058 07       		.byte	0x7
- 151 0059 5B000000 		.4byte	.LASF7
+ 151 0059 A5000000 		.4byte	.LASF7
  152 005d 03       		.uleb128 0x3
  153 005e 04       		.byte	0x4
  154 005f 05       		.byte	0x5
@@ -399,41 +399,41 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  158 0066 07       		.byte	0x7
  159 0067 21000000 		.4byte	.LASF8
  160 006b 04       		.uleb128 0x4
- 161 006c 43000000 		.4byte	.LASF9
+ 161 006c 8D000000 		.4byte	.LASF9
  162 0070 02       		.byte	0x2
- 163 0071 D201     		.2byte	0x1d2
+ 163 0071 E401     		.2byte	0x1e4
  164 0073 2C000000 		.4byte	0x2c
  165 0077 04       		.uleb128 0x4
  166 0078 0E000000 		.4byte	.LASF10
  167 007c 02       		.byte	0x2
- 168 007d D401     		.2byte	0x1d4
+ 168 007d E601     		.2byte	0x1e6
  169 007f 48000000 		.4byte	0x48
  170 0083 02       		.uleb128 0x2
  171 0084 04       		.byte	0x4
  172 0085 04       		.byte	0x4
- 173 0086 D7010000 		.4byte	.LASF11
+ 173 0086 4E010000 		.4byte	.LASF11
  174 008a 02       		.uleb128 0x2
  175 008b 08       		.byte	0x8
  176 008c 04       		.byte	0x4
- 177 008d 7F010000 		.4byte	.LASF12
+ 177 008d 7B010000 		.4byte	.LASF12
  178 0091 02       		.uleb128 0x2
  179 0092 01       		.byte	0x1
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 8
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 8
 
 
  180 0093 08       		.byte	0x8
- 181 0094 67010000 		.4byte	.LASF13
+ 181 0094 6D010000 		.4byte	.LASF13
  182 0098 04       		.uleb128 0x4
- 183 0099 A6010000 		.4byte	.LASF14
+ 183 0099 A2010000 		.4byte	.LASF14
  184 009d 02       		.byte	0x2
- 185 009e 7E02     		.2byte	0x27e
+ 185 009e 9002     		.2byte	0x290
  186 00a0 A4000000 		.4byte	0xa4
  187 00a4 05       		.uleb128 0x5
  188 00a5 77000000 		.4byte	0x77
  189 00a9 02       		.uleb128 0x2
  190 00aa 08       		.byte	0x8
  191 00ab 04       		.byte	0x4
- 192 00ac CB010000 		.4byte	.LASF15
+ 192 00ac C7010000 		.4byte	.LASF15
  193 00b0 02       		.uleb128 0x2
  194 00b1 04       		.byte	0x4
  195 00b2 07       		.byte	0x7
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  225 00f1 26010000 		.4byte	0x126
  226 00f5 00       		.byte	0
  227 00f6 09       		.uleb128 0x9
- 228 00f7 4E010000 		.4byte	.LASF19
+ 228 00f7 54010000 		.4byte	.LASF19
  229 00fb 01       		.byte	0x1
  230 00fc 9F       		.byte	0x9f
  231 00fd 00000000 		.4byte	.LFB2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  234 0106 9C       		.byte	0x9c
  235 0107 15010000 		.4byte	0x115
  236 010b 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 9
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 9
 
 
  237 010c 0E000000 		.4byte	.LVL1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  291 001e 03       		.uleb128 0x3
  292 001f 24       		.uleb128 0x24
  293 0020 00       		.byte	0
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 10
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 10
 
 
  294 0021 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  348 0057 00       		.byte	0
  349 0058 00       		.byte	0
  350 0059 08       		.uleb128 0x8
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 11
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 11
 
 
  351 005a 16       		.uleb128 0x16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  405 0093 0B       		.uleb128 0xb
  406 0094 49       		.uleb128 0x49
  407 0095 13       		.uleb128 0x13
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 12
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 12
 
 
  408 0096 3F       		.uleb128 0x3f
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  458 0000 6C6F6E67 		.ascii	"long long int\000"
  458      206C6F6E 
  458      6720696E 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 13
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 13
 
 
  458      7400
@@ -742,103 +742,103 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 1
  468 0039 5350495F 		.ascii	"SPI_Sleep\000"
  468      536C6565 
  468      7000
- 469              	.LASF9:
- 470 0043 75696E74 		.ascii	"uint8\000"
- 470      3800
- 471              	.LASF5:
- 472 0049 6C6F6E67 		.ascii	"long unsigned int\000"
- 472      20756E73 
- 472      69676E65 
- 472      6420696E 
- 472      7400
- 473              	.LASF7:
- 474 005b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 474      206C6F6E 
- 474      6720756E 
- 474      7369676E 
- 474      65642069 
- 475              	.LASF22:
- 476 0072 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 476      43313120 
- 476      352E342E 
- 476      31203230 
- 476      31363036 
- 477 00a5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
- 477      20726576 
- 477      6973696F 
- 477      6E203233 
- 477      37373135 
- 478 00d8 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
- 478      67202D66 
- 478      66756E63 
- 478      74696F6E 
- 478      2D736563 
- 479              	.LASF24:
- 480 0104 433A5C55 		.ascii	"C:\\Users\\Xwx47\\Documents\\Creator\\nRF24_Example"
- 480      73657273 
- 480      5C587778 
- 480      34375C44 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 14
+ 469              	.LASF24:
+ 470 0043 433A5C55 		.ascii	"C:\\Users\\d3bug\\Documents\\Creator\\nRF24_Example"
+ 470      73657273 
+ 470      5C643362 
+ 470      75675C44 
+ 470      6F63756D 
+ 471 0071 5F50726F 		.ascii	"_Projects\\00_Basic_Rx.cydsn\000"
+ 471      6A656374 
+ 471      735C3030 
+ 471      5F426173 
+ 471      69635F52 
+ 472              	.LASF9:
+ 473 008d 75696E74 		.ascii	"uint8\000"
+ 473      3800
+ 474              	.LASF5:
+ 475 0093 6C6F6E67 		.ascii	"long unsigned int\000"
+ 475      20756E73 
+ 475      69676E65 
+ 475      6420696E 
+ 475      7400
+ 476              	.LASF7:
+ 477 00a5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 477      206C6F6E 
+ 477      6720756E 
+ 477      7369676E 
+ 477      65642069 
+ 478              	.LASF22:
+ 479 00bc 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 479      43313120 
+ 479      352E342E 
+ 479      31203230 
+ 479      31363036 
+ 480 00ef 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 480      20726576 
+ 480      6973696F 
+ 480      6E203233 
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 14
 
 
- 480      6F63756D 
- 481 0132 5F50726F 		.ascii	"_Projects\\00_Basic_Rx.cydsn\000"
- 481      6A656374 
- 481      735C3030 
- 481      5F426173 
- 481      69635F52 
- 482              	.LASF19:
- 483 014e 5350495F 		.ascii	"SPI_Wakeup\000"
- 483      57616B65 
- 483      757000
- 484              	.LASF1:
- 485 0159 756E7369 		.ascii	"unsigned char\000"
- 485      676E6564 
- 485      20636861 
- 485      7200
- 486              	.LASF13:
- 487 0167 63686172 		.ascii	"char\000"
- 487      00
- 488              	.LASF4:
- 489 016c 6C6F6E67 		.ascii	"long int\000"
- 489      20696E74 
+ 480      37373135 
+ 481 0122 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 481      67202D66 
+ 481      66756E63 
+ 481      74696F6E 
+ 481      2D736563 
+ 482              	.LASF11:
+ 483 014e 666C6F61 		.ascii	"float\000"
+ 483      7400
+ 484              	.LASF19:
+ 485 0154 5350495F 		.ascii	"SPI_Wakeup\000"
+ 485      57616B65 
+ 485      757000
+ 486              	.LASF1:
+ 487 015f 756E7369 		.ascii	"unsigned char\000"
+ 487      676E6564 
+ 487      20636861 
+ 487      7200
+ 488              	.LASF13:
+ 489 016d 63686172 		.ascii	"char\000"
  489      00
- 490              	.LASF2:
- 491 0175 73686F72 		.ascii	"short int\000"
- 491      7420696E 
- 491      7400
+ 490              	.LASF4:
+ 491 0172 6C6F6E67 		.ascii	"long int\000"
+ 491      20696E74 
+ 491      00
  492              	.LASF12:
- 493 017f 646F7562 		.ascii	"double\000"
+ 493 017b 646F7562 		.ascii	"double\000"
  493      6C6500
  494              	.LASF23:
- 495 0186 47656E65 		.ascii	"Generated_Source\\PSoC4\\SPI_PM.c\000"
+ 495 0182 47656E65 		.ascii	"Generated_Source\\PSoC4\\SPI_PM.c\000"
  495      72617465 
  495      645F536F 
  495      75726365 
  495      5C50536F 
  496              	.LASF14:
- 497 01a6 72656733 		.ascii	"reg32\000"
+ 497 01a2 72656733 		.ascii	"reg32\000"
  497      3200
  498              	.LASF3:
- 499 01ac 73686F72 		.ascii	"short unsigned int\000"
+ 499 01a8 73686F72 		.ascii	"short unsigned int\000"
  499      7420756E 
  499      7369676E 
  499      65642069 
  499      6E7400
  500              	.LASF0:
- 501 01bf 7369676E 		.ascii	"signed char\000"
+ 501 01bb 7369676E 		.ascii	"signed char\000"
  501      65642063 
  501      68617200 
  502              	.LASF15:
- 503 01cb 6C6F6E67 		.ascii	"long double\000"
+ 503 01c7 6C6F6E67 		.ascii	"long double\000"
  503      20646F75 
  503      626C6500 
- 504              	.LASF11:
- 505 01d7 666C6F61 		.ascii	"float\000"
+ 504              	.LASF2:
+ 505 01d3 73686F72 		.ascii	"short int\000"
+ 505      7420696E 
  505      7400
  506              	.LASF20:
  507 01dd 5350495F 		.ascii	"SPI_Stop\000"
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc24snup.s 			page 15
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccIRgzhw.s 			page 15
 
 
  507      53746F70 

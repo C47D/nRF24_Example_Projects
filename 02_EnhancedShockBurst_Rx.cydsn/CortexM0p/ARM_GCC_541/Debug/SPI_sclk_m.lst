@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
   28:Generated_Source\PSoC4/SPI_sclk_m.c **** #else
   29:Generated_Source\PSoC4/SPI_sclk_m.c ****     #if (CY_PSOC4_4200L)
   30:Generated_Source\PSoC4/SPI_sclk_m.c ****         #define SPI_sclk_m_SetP4PinDriveMode(shift, mode)  \
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 2
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 2
 
 
   31:Generated_Source\PSoC4/SPI_sclk_m.c ****         do { \
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
   38 0006 0B40     		ands	r3, r1
   39 0008 8001     		lsls	r0, r0, #6
   40              	.LVL1:
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 3
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 3
 
 
   41 000a 1843     		orrs	r0, r3
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  108:Generated_Source\PSoC4/SPI_sclk_m.c **** * \funcusage
  109:Generated_Source\PSoC4/SPI_sclk_m.c **** *  \snippet SPI_sclk_m_SUT.c usage_SPI_sclk_m_Write
  110:Generated_Source\PSoC4/SPI_sclk_m.c **** *******************************************************************************/
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 4
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 4
 
 
  111:Generated_Source\PSoC4/SPI_sclk_m.c **** void SPI_sclk_m_Write(uint8 value)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  126:Generated_Source\PSoC4/SPI_sclk_m.c **** *
  127:Generated_Source\PSoC4/SPI_sclk_m.c **** * The pin's status register returns the current logic level present on the 
  128:Generated_Source\PSoC4/SPI_sclk_m.c **** * physical pin.
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 5
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 5
 
 
  129:Generated_Source\PSoC4/SPI_sclk_m.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  154:Generated_Source\PSoC4/SPI_sclk_m.c **** * register. For output pins this is a useful function to determine the value 
  155:Generated_Source\PSoC4/SPI_sclk_m.c **** * just written to the pin.
  156:Generated_Source\PSoC4/SPI_sclk_m.c **** *
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 6
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 6
 
 
  157:Generated_Source\PSoC4/SPI_sclk_m.c **** * \return 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  182:Generated_Source\PSoC4/SPI_sclk_m.c **** *  The pin position as listed in the Pins component. You may OR these to be 
  183:Generated_Source\PSoC4/SPI_sclk_m.c **** *  able to configure the interrupt mode of multiple pins within a Pins 
  184:Generated_Source\PSoC4/SPI_sclk_m.c **** *  component. Or you may use SPI_sclk_m_INTR_ALL to configure the
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 7
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 7
 
 
  185:Generated_Source\PSoC4/SPI_sclk_m.c **** *  interrupt mode of all the pins in the Pins component.       
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  184              		.size	SPI_sclk_m_SetInterruptMode, .-SPI_sclk_m_SetInterruptMode
  185              		.section	.text.SPI_sclk_m_ClearInterrupt,"ax",%progbits
  186              		.align	2
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 8
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 8
 
 
  187              		.global	SPI_sclk_m_ClearInterrupt
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  213              	.L18:
  214              		.align	2
  215              	.L17:
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 9
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 9
 
 
  216 0010 10020440 		.word	1074004496
@@ -497,8 +497,8 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  229 000b 01       		.uleb128 0x1
  230 000c BC010000 		.4byte	.LASF28
  231 0010 0C       		.byte	0xc
- 232 0011 AA000000 		.4byte	.LASF29
- 233 0015 FF000000 		.4byte	.LASF30
+ 232 0011 EA000000 		.4byte	.LASF29
+ 233 0015 22000000 		.4byte	.LASF30
  234 0019 00000000 		.4byte	.Ldebug_ranges0+0
  235 001d 00000000 		.4byte	0
  236 0021 00000000 		.4byte	.Ldebug_line0
@@ -509,7 +509,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  241 002c 02       		.uleb128 0x2
  242 002d 01       		.byte	0x1
  243 002e 08       		.byte	0x8
- 244 002f 39000000 		.4byte	.LASF1
+ 244 002f 79000000 		.4byte	.LASF1
  245 0033 02       		.uleb128 0x2
  246 0034 02       		.byte	0x2
  247 0035 05       		.byte	0x5
@@ -517,7 +517,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  249 003a 02       		.uleb128 0x2
  250 003b 02       		.byte	0x2
  251 003c 07       		.byte	0x7
- 252 003d 79000000 		.4byte	.LASF3
+ 252 003d B9000000 		.4byte	.LASF3
  253 0041 02       		.uleb128 0x2
  254 0042 04       		.byte	0x4
  255 0043 05       		.byte	0x5
@@ -525,7 +525,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  257 0048 02       		.uleb128 0x2
  258 0049 04       		.byte	0x4
  259 004a 07       		.byte	0x7
- 260 004b 67000000 		.4byte	.LASF5
+ 260 004b A7000000 		.4byte	.LASF5
  261 004f 02       		.uleb128 0x2
  262 0050 08       		.byte	0x8
  263 0051 05       		.byte	0x5
@@ -533,32 +533,32 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  265 0056 02       		.uleb128 0x2
  266 0057 08       		.byte	0x8
  267 0058 07       		.byte	0x7
- 268 0059 22000000 		.4byte	.LASF7
+ 268 0059 3F010000 		.4byte	.LASF7
  269 005d 03       		.uleb128 0x3
  270 005e 04       		.byte	0x4
  271 005f 05       		.byte	0x5
  272 0060 696E7400 		.ascii	"int\000"
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 10
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 10
 
 
  273 0064 02       		.uleb128 0x2
  274 0065 04       		.byte	0x4
  275 0066 07       		.byte	0x7
- 276 0067 D6000000 		.4byte	.LASF8
+ 276 0067 16010000 		.4byte	.LASF8
  277 006b 04       		.uleb128 0x4
  278 006c AD010000 		.4byte	.LASF9
  279 0070 02       		.byte	0x2
- 280 0071 D201     		.2byte	0x1d2
+ 280 0071 E401     		.2byte	0x1e4
  281 0073 2C000000 		.4byte	0x2c
  282 0077 04       		.uleb128 0x4
- 283 0078 93000000 		.4byte	.LASF10
+ 283 0078 D3000000 		.4byte	.LASF10
  284 007c 02       		.byte	0x2
- 285 007d D301     		.2byte	0x1d3
+ 285 007d E501     		.2byte	0x1e5
  286 007f 3A000000 		.4byte	0x3a
  287 0083 04       		.uleb128 0x4
- 288 0084 A3000000 		.4byte	.LASF11
+ 288 0084 E3000000 		.4byte	.LASF11
  289 0088 02       		.byte	0x2
- 290 0089 D401     		.2byte	0x1d4
+ 290 0089 E601     		.2byte	0x1e6
  291 008b 48000000 		.4byte	0x48
  292 008f 02       		.uleb128 0x2
  293 0090 04       		.byte	0x4
@@ -567,7 +567,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  296 0096 02       		.uleb128 0x2
  297 0097 08       		.byte	0x8
  298 0098 04       		.byte	0x4
- 299 0099 8C000000 		.4byte	.LASF13
+ 299 0099 CC000000 		.4byte	.LASF13
  300 009d 02       		.uleb128 0x2
  301 009e 01       		.byte	0x1
  302 009f 08       		.byte	0x8
@@ -575,7 +575,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  304 00a4 04       		.uleb128 0x4
  305 00a5 00000000 		.4byte	.LASF15
  306 00a9 02       		.byte	0x2
- 307 00aa 7E02     		.2byte	0x27e
+ 307 00aa 9002     		.2byte	0x290
  308 00ac B0000000 		.4byte	0xb0
  309 00b0 05       		.uleb128 0x5
  310 00b1 83000000 		.4byte	0x83
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  327 00da 06       		.uleb128 0x6
  328 00db 56010000 		.4byte	.LASF17
  329 00df 01       		.byte	0x1
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 11
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 11
 
 
  330 00e0 6F       		.byte	0x6f
@@ -614,7 +614,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  340 00f6 6B000000 		.4byte	0x6b
  341 00fa 21000000 		.4byte	.LLST1
  342 00fe 08       		.uleb128 0x8
- 343 00ff 47000000 		.4byte	.LASF24
+ 343 00ff 87000000 		.4byte	.LASF24
  344 0103 01       		.byte	0x1
  345 0104 71       		.byte	0x71
  346 0105 6B000000 		.4byte	0x6b
@@ -639,7 +639,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  365 0136 01       		.uleb128 0x1
  366 0137 9C       		.byte	0x9c
  367 0138 06       		.uleb128 0x6
- 368 0139 E3000000 		.4byte	.LASF22
+ 368 0139 23010000 		.4byte	.LASF22
  369 013d 01       		.byte	0x1
  370 013e CF       		.byte	0xcf
  371 013f 00000000 		.4byte	.LFB4
@@ -648,7 +648,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  374 0148 9C       		.byte	0x9c
  375 0149 77010000 		.4byte	0x177
  376 014d 07       		.uleb128 0x7
- 377 014e 9A000000 		.4byte	.LASF23
+ 377 014e DA000000 		.4byte	.LASF23
  378 0152 01       		.byte	0x1
  379 0153 CF       		.byte	0xcf
  380 0154 77000000 		.4byte	0x77
@@ -658,13 +658,13 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  384 0161 01       		.byte	0x1
  385 0162 CF       		.byte	0xcf
  386 0163 77000000 		.4byte	0x77
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 12
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 12
 
 
  387 0167 01       		.uleb128 0x1
  388 0168 51       		.byte	0x51
  389 0169 0B       		.uleb128 0xb
- 390 016a CE000000 		.4byte	.LASF25
+ 390 016a 0E010000 		.4byte	.LASF25
  391 016e 01       		.byte	0x1
  392 016f D1       		.byte	0xd1
  393 0170 83000000 		.4byte	0x83
@@ -672,7 +672,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  395 0175 53       		.byte	0x53
  396 0176 00       		.byte	0
  397 0177 0C       		.uleb128 0xc
- 398 0178 4D000000 		.4byte	.LASF26
+ 398 0178 8D000000 		.4byte	.LASF26
  399 017c 01       		.byte	0x1
  400 017d EC       		.byte	0xec
  401 017e 6B000000 		.4byte	0x6b
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  441 0019 0B       		.uleb128 0xb
  442 001a 03       		.uleb128 0x3
  443 001b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 13
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 13
 
 
  444 001c 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  498 0053 01       		.uleb128 0x1
  499 0054 13       		.uleb128 0x13
  500 0055 00       		.byte	0
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 14
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 14
 
 
  501 0056 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  555 008d 00       		.byte	0
  556 008e 00       		.byte	0
  557 008f 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 15
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 15
 
 
  558 0090 05       		.uleb128 0x5
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  612 00c7 00       		.byte	0
  613              		.section	.debug_loc,"",%progbits
  614              	.Ldebug_loc0:
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 16
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 16
 
 
  615              	.LLST0:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  669 0081 08000000 		.4byte	.LVL9
  670 0085 0C000000 		.4byte	.LVL10
  671 0089 0100     		.2byte	0x1
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 17
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 17
 
 
  672 008b 50       		.byte	0x50
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  722      01010101 
  723              	.LASF15:
  724 0000 72656733 		.ascii	"reg32\000"
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 18
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 18
 
 
  724      3200
@@ -1033,85 +1033,85 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  729              	.LASF12:
  730 001c 666C6F61 		.ascii	"float\000"
  730      7400
- 731              	.LASF7:
- 732 0022 6C6F6E67 		.ascii	"long long unsigned int\000"
- 732      206C6F6E 
- 732      6720756E 
- 732      7369676E 
- 732      65642069 
- 733              	.LASF1:
- 734 0039 756E7369 		.ascii	"unsigned char\000"
- 734      676E6564 
- 734      20636861 
- 734      7200
- 735              	.LASF24:
- 736 0047 64725661 		.ascii	"drVal\000"
- 736      6C00
- 737              	.LASF26:
- 738 004d 5350495F 		.ascii	"SPI_sclk_m_ClearInterrupt\000"
- 738      73636C6B 
- 738      5F6D5F43 
- 738      6C656172 
- 738      496E7465 
- 739              	.LASF5:
- 740 0067 6C6F6E67 		.ascii	"long unsigned int\000"
- 740      20756E73 
- 740      69676E65 
- 740      6420696E 
- 740      7400
- 741              	.LASF3:
- 742 0079 73686F72 		.ascii	"short unsigned int\000"
- 742      7420756E 
- 742      7369676E 
- 742      65642069 
- 742      6E7400
- 743              	.LASF13:
- 744 008c 646F7562 		.ascii	"double\000"
- 744      6C6500
- 745              	.LASF10:
- 746 0093 75696E74 		.ascii	"uint16\000"
- 746      313600
- 747              	.LASF23:
- 748 009a 706F7369 		.ascii	"position\000"
- 748      74696F6E 
- 748      00
- 749              	.LASF11:
- 750 00a3 75696E74 		.ascii	"uint32\000"
- 750      333200
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 19
+ 731              	.LASF30:
+ 732 0022 433A5C55 		.ascii	"C:\\Users\\d3bug\\Documents\\Creator\\nRF24_Example"
+ 732      73657273 
+ 732      5C643362 
+ 732      75675C44 
+ 732      6F63756D 
+ 733 0050 5F50726F 		.ascii	"_Projects\\02_EnhancedShockBurst_Rx.cydsn\000"
+ 733      6A656374 
+ 733      735C3032 
+ 733      5F456E68 
+ 733      616E6365 
+ 734              	.LASF1:
+ 735 0079 756E7369 		.ascii	"unsigned char\000"
+ 735      676E6564 
+ 735      20636861 
+ 735      7200
+ 736              	.LASF24:
+ 737 0087 64725661 		.ascii	"drVal\000"
+ 737      6C00
+ 738              	.LASF26:
+ 739 008d 5350495F 		.ascii	"SPI_sclk_m_ClearInterrupt\000"
+ 739      73636C6B 
+ 739      5F6D5F43 
+ 739      6C656172 
+ 739      496E7465 
+ 740              	.LASF5:
+ 741 00a7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 741      20756E73 
+ 741      69676E65 
+ 741      6420696E 
+ 741      7400
+ 742              	.LASF3:
+ 743 00b9 73686F72 		.ascii	"short unsigned int\000"
+ 743      7420756E 
+ 743      7369676E 
+ 743      65642069 
+ 743      6E7400
+ 744              	.LASF13:
+ 745 00cc 646F7562 		.ascii	"double\000"
+ 745      6C6500
+ 746              	.LASF10:
+ 747 00d3 75696E74 		.ascii	"uint16\000"
+ 747      313600
+ 748              	.LASF23:
+ 749 00da 706F7369 		.ascii	"position\000"
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 19
 
 
- 751              	.LASF29:
- 752 00aa 47656E65 		.ascii	"Generated_Source\\PSoC4\\SPI_sclk_m.c\000"
- 752      72617465 
- 752      645F536F 
- 752      75726365 
- 752      5C50536F 
- 753              	.LASF25:
- 754 00ce 696E7472 		.ascii	"intrCfg\000"
- 754      43666700 
- 755              	.LASF8:
- 756 00d6 756E7369 		.ascii	"unsigned int\000"
- 756      676E6564 
- 756      20696E74 
- 756      00
- 757              	.LASF22:
- 758 00e3 5350495F 		.ascii	"SPI_sclk_m_SetInterruptMode\000"
- 758      73636C6B 
- 758      5F6D5F53 
- 758      6574496E 
- 758      74657272 
- 759              	.LASF30:
- 760 00ff 433A5C55 		.ascii	"C:\\Users\\Xwx47\\Documents\\Creator\\nRF24_Example"
- 760      73657273 
- 760      5C587778 
- 760      34375C44 
- 760      6F63756D 
- 761 012d 5F50726F 		.ascii	"_Projects\\02_EnhancedShockBurst_Rx.cydsn\000"
- 761      6A656374 
- 761      735C3032 
- 761      5F456E68 
- 761      616E6365 
+ 749      74696F6E 
+ 749      00
+ 750              	.LASF11:
+ 751 00e3 75696E74 		.ascii	"uint32\000"
+ 751      333200
+ 752              	.LASF29:
+ 753 00ea 47656E65 		.ascii	"Generated_Source\\PSoC4\\SPI_sclk_m.c\000"
+ 753      72617465 
+ 753      645F536F 
+ 753      75726365 
+ 753      5C50536F 
+ 754              	.LASF25:
+ 755 010e 696E7472 		.ascii	"intrCfg\000"
+ 755      43666700 
+ 756              	.LASF8:
+ 757 0116 756E7369 		.ascii	"unsigned int\000"
+ 757      676E6564 
+ 757      20696E74 
+ 757      00
+ 758              	.LASF22:
+ 759 0123 5350495F 		.ascii	"SPI_sclk_m_SetInterruptMode\000"
+ 759      73636C6B 
+ 759      5F6D5F53 
+ 759      6574496E 
+ 759      74657272 
+ 760              	.LASF7:
+ 761 013f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 761      206C6F6E 
+ 761      6720756E 
+ 761      7369676E 
+ 761      65642069 
  762              	.LASF17:
  763 0156 5350495F 		.ascii	"SPI_sclk_m_Write\000"
  763      73636C6B 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 1
  771      61747573 
  771      00
  772              	.LASF14:
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\cc9p1O1c.s 			page 20
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccL4ILy6.s 			page 20
 
 
  773 019e 63686172 		.ascii	"char\000"

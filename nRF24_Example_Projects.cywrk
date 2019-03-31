@@ -3,7 +3,7 @@
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
 <CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize" version="5" xml_contents_version="3" name="nRF24_Example_Projects" persistent="nRF24_Example_Projects.cywrk" platform="NOT_USED">
-<current_project name=".\02_EnhancedShockBurst_Tx.cydsn\02_EnhancedShockBurst_Tx.cyprj" />
+<current_project name=".\03_Custom_SPI_DMA.cydsn\03_Custom_SPI_DMA.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
@@ -16,10 +16,11 @@
 <v>.\01_Echo_Rx_P4S.cydsn\01_Echo_Rx_P4S.cyprj</v>
 <v>.\opt_table.cydsn\opt_table.cyprj</v>
 <v>.\scanner.cydsn\scanner.cyprj</v>
+<v>.\03_Custom_SPI_DMA.cydsn\03_Custom_SPI_DMA.cyprj</v>
 </projects>
 <workspace_id v="f968dd57-2101-4315-84bf-3811ec50e4c7" />
-<WriteAppVersionLastSavedWith v="4.1.0.3210" />
-<WriteAppMarketingVersionLastSavedWith v="4.1 Update 1" />
+<WriteAppVersionLastSavedWith v="4.2.0.641" />
+<WriteAppMarketingVersionLastSavedWith v="4.2" />
 <CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize+CyPrjDependencyList" version="4">
 <wrkspc_dependencies>
 <wrkspc_dependency project="01_Echo_Rx.cydsn\01_Echo_Rx.cyprj" dependency="nRF24_Component\nRF24.cylib\nRF24.cyprj" />
@@ -28,6 +29,7 @@
 <wrkspc_dependency project="00_Basic_Rx.cydsn\00_Basic_Rx.cyprj" dependency="nRF24_Component\nRF24.cylib\nRF24.cyprj" />
 <wrkspc_dependency project="02_EnhancedShockBurst_Tx.cydsn\02_EnhancedShockBurst_Tx.cyprj" dependency="nRF24_Component\nRF24.cylib\nRF24.cyprj" />
 <wrkspc_dependency project="02_EnhancedShockBurst_Rx.cydsn\02_EnhancedShockBurst_Rx.cyprj" dependency="nRF24_Component\nRF24.cylib\nRF24.cyprj" />
+<wrkspc_dependency project="03_Custom_SPI_DMA.cydsn\03_Custom_SPI_DMA.cyprj" dependency="nRF24_Component\nRF24.cylib\nRF24.cyprj" />
 </wrkspc_dependencies>
 </CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316>
 <CyGuid_63b68103-67f5-4406-8da6-5c8625765b82 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize+CyIgnoredSystemDepsList" version="1">

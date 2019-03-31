@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
   28:Generated_Source\PSoC4/SPI_PM.c **** #endif /* (SPI_SCB_MODE_EZI2C_INC) */
   29:Generated_Source\PSoC4/SPI_PM.c **** 
   30:Generated_Source\PSoC4/SPI_PM.c **** #if(SPI_SCB_MODE_SPI_INC || SPI_SCB_MODE_UART_INC)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 2
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 2
 
 
   31:Generated_Source\PSoC4/SPI_PM.c ****     #include "SPI_SPI_UART_PVT.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
   77:Generated_Source\PSoC4/SPI_PM.c ****     if(SPI_SCB_WAKE_ENABLE_CHECK)
   78:Generated_Source\PSoC4/SPI_PM.c ****     {
   79:Generated_Source\PSoC4/SPI_PM.c ****         if(SPI_SCB_MODE_I2C_RUNTM_CFG)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 3
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 3
 
 
   80:Generated_Source\PSoC4/SPI_PM.c ****         {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
   41 000a 1370     		strb	r3, [r2]
  129:Generated_Source\PSoC4/SPI_PM.c **** 
  130:Generated_Source\PSoC4/SPI_PM.c ****         if(0u != SPI_backup.enableState)
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 4
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 4
 
 
   42              		.loc 1 130 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  160:Generated_Source\PSoC4/SPI_PM.c **** {
   67              		.loc 1 160 0
   68              		.cfi_startproc
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 5
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 5
 
 
   69              		@ args = 0, pretend = 0, frame = 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  209:Generated_Source\PSoC4/SPI_PM.c **** 
  210:Generated_Source\PSoC4/SPI_PM.c ****     #else
  211:Generated_Source\PSoC4/SPI_PM.c **** 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 6
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 6
 
 
  212:Generated_Source\PSoC4/SPI_PM.c ****         if(0u != SPI_backup.enableState)
@@ -351,21 +351,21 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  113 000c 72000000 		.4byte	.LASF22
  114 0010 0C       		.byte	0xc
  115 0011 85010000 		.4byte	.LASF23
- 116 0015 0A010000 		.4byte	.LASF24
+ 116 0015 28010000 		.4byte	.LASF24
  117 0019 00000000 		.4byte	.Ldebug_ranges0+0
  118 001d 00000000 		.4byte	0
  119 0021 00000000 		.4byte	.Ldebug_line0
  120 0025 02       		.uleb128 0x2
  121 0026 01       		.byte	0x1
  122 0027 06       		.byte	0x6
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 7
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 7
 
 
  123 0028 BE010000 		.4byte	.LASF0
  124 002c 02       		.uleb128 0x2
  125 002d 01       		.byte	0x1
  126 002e 08       		.byte	0x8
- 127 002f 62010000 		.4byte	.LASF1
+ 127 002f 15010000 		.4byte	.LASF1
  128 0033 02       		.uleb128 0x2
  129 0034 02       		.byte	0x2
  130 0035 05       		.byte	0x5
@@ -401,12 +401,12 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  160 006b 04       		.uleb128 0x4
  161 006c 43000000 		.4byte	.LASF9
  162 0070 02       		.byte	0x2
- 163 0071 D201     		.2byte	0x1d2
+ 163 0071 E401     		.2byte	0x1e4
  164 0073 2C000000 		.4byte	0x2c
  165 0077 04       		.uleb128 0x4
  166 0078 0E000000 		.4byte	.LASF10
  167 007c 02       		.byte	0x2
- 168 007d D401     		.2byte	0x1d4
+ 168 007d E601     		.2byte	0x1e6
  169 007f 48000000 		.4byte	0x48
  170 0083 02       		.uleb128 0x2
  171 0084 04       		.byte	0x4
@@ -418,15 +418,15 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  177 008d 7E010000 		.4byte	.LASF12
  178 0091 02       		.uleb128 0x2
  179 0092 01       		.byte	0x1
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 8
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 8
 
 
  180 0093 08       		.byte	0x8
- 181 0094 70010000 		.4byte	.LASF13
+ 181 0094 23010000 		.4byte	.LASF13
  182 0098 04       		.uleb128 0x4
  183 0099 A5010000 		.4byte	.LASF14
  184 009d 02       		.byte	0x2
- 185 009e 7E02     		.2byte	0x27e
+ 185 009e 9002     		.2byte	0x290
  186 00a0 A4000000 		.4byte	0xa4
  187 00a4 05       		.uleb128 0x5
  188 00a5 77000000 		.4byte	0x77
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  225 00f1 26010000 		.4byte	0x126
  226 00f5 00       		.byte	0
  227 00f6 09       		.uleb128 0x9
- 228 00f7 57010000 		.4byte	.LASF19
+ 228 00f7 0A010000 		.4byte	.LASF19
  229 00fb 01       		.byte	0x1
  230 00fc 9F       		.byte	0x9f
  231 00fd 00000000 		.4byte	.LFB2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  234 0106 9C       		.byte	0x9c
  235 0107 15010000 		.4byte	0x115
  236 010b 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 9
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 9
 
 
  237 010c 0E000000 		.4byte	.LVL1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  291 001e 03       		.uleb128 0x3
  292 001f 24       		.uleb128 0x24
  293 0020 00       		.byte	0
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 10
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 10
 
 
  294 0021 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  348 0057 00       		.byte	0
  349 0058 00       		.byte	0
  350 0059 08       		.uleb128 0x8
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 11
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 11
 
 
  351 005a 16       		.uleb128 0x16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  405 0093 0B       		.uleb128 0xb
  406 0094 49       		.uleb128 0x49
  407 0095 13       		.uleb128 0x13
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 12
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 12
 
 
  408 0096 3F       		.uleb128 0x3f
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  458 0000 6C6F6E67 		.ascii	"long long int\000"
  458      206C6F6E 
  458      6720696E 
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 13
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 13
 
 
  458      7400
@@ -776,32 +776,32 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  479              	.LASF11:
  480 0104 666C6F61 		.ascii	"float\000"
  480      7400
- 481              	.LASF24:
- 482 010a 433A5C55 		.ascii	"C:\\Users\\Xwx47\\Documents\\Creator\\nRF24_Example"
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 14
+ 481              	.LASF19:
+ 482 010a 5350495F 		.ascii	"SPI_Wakeup\000"
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 14
 
 
- 482      73657273 
- 482      5C587778 
- 482      34375C44 
- 482      6F63756D 
- 483 0138 5F50726F 		.ascii	"_Projects\\01_Echo_Rx_P4S.cydsn\000"
- 483      6A656374 
- 483      735C3031 
- 483      5F456368 
- 483      6F5F5278 
- 484              	.LASF19:
- 485 0157 5350495F 		.ascii	"SPI_Wakeup\000"
- 485      57616B65 
- 485      757000
- 486              	.LASF1:
- 487 0162 756E7369 		.ascii	"unsigned char\000"
- 487      676E6564 
- 487      20636861 
- 487      7200
- 488              	.LASF13:
- 489 0170 63686172 		.ascii	"char\000"
- 489      00
+ 482      57616B65 
+ 482      757000
+ 483              	.LASF1:
+ 484 0115 756E7369 		.ascii	"unsigned char\000"
+ 484      676E6564 
+ 484      20636861 
+ 484      7200
+ 485              	.LASF13:
+ 486 0123 63686172 		.ascii	"char\000"
+ 486      00
+ 487              	.LASF24:
+ 488 0128 433A5C55 		.ascii	"C:\\Users\\d3bug\\Documents\\Creator\\nRF24_Example"
+ 488      73657273 
+ 488      5C643362 
+ 488      75675C44 
+ 488      6F63756D 
+ 489 0156 5F50726F 		.ascii	"_Projects\\01_Echo_Rx_P4S.cydsn\000"
+ 489      6A656374 
+ 489      735C3031 
+ 489      5F456368 
+ 489      6F5F5278 
  490              	.LASF4:
  491 0175 6C6F6E67 		.ascii	"long int\000"
  491      20696E74 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 1
  505      7400
  506              	.LASF20:
  507 01e0 5350495F 		.ascii	"SPI_Stop\000"
-ARM GAS  C:\Users\Xwx47\AppData\Local\Temp\ccHV2p60.s 			page 15
+ARM GAS  C:\Users\d3bug\AppData\Local\Temp\ccTkDh1d.s 			page 15
 
 
  507      53746F70 

@@ -1,12 +1,8 @@
-C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/CortexM0p/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfittergnu.inc 
+C:/Users/d3bug/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/CortexM0p/ARM_GCC_541/Debug/CyBootAsmGnu.o : C:/Users/d3bug/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s C:/Users/d3bug/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc C:/Users/d3bug/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfittergnu.inc 
 
-C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
+C:/Users/d3bug/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
 
-C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc : 
+C:/Users/d3bug/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc : 
 
-C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfittergnu.inc : 
-
-C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/CortexM0p/ARM_GCC_541/Debug/UART_AsmGnu.o : C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/UART_AsmGnu.s C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfittergnu.inc 
-
-C:/Users/Xwx47/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/UART_AsmGnu.s : 
+C:/Users/d3bug/Documents/Creator/nRF24_Example_Projects/01_Echo_Rx_P4S.cydsn/Generated_Source/PSoC4/cyfittergnu.inc : 
 

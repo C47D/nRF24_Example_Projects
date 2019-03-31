@@ -82,7 +82,7 @@ void print_status(void)
 {
     char status_str[20];
     uint8_t status = nRF24_get_status();
-    sprintf(status_str, "0x%2X\r\n", status);
+    sprintf(status_str, "0x%02X\r\n", status);
     UART_PutString(status_str);
 }
 
